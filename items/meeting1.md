@@ -4,6 +4,7 @@ This following is a very simple team meeting template. You should expand it base
 ## Team Meeting 1 - Week 6 - Sunday, 4th September 2022 (1 pm - 2:05 pm)
 **Absent:**
 No members were absent.
+<br>
 **Lead/scribe:** Rhonda
 
 ## Agreed Procedure
