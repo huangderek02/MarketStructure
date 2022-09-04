@@ -12,13 +12,14 @@ Stand up Procedure: ...
 ## Agenda Items
 | Number | Item |
 | :--- | ---: |
-| 1 | Fill out when2meet to map everyone's avaliability for Team meetings - https://www.when2meet.com/?16660748-wcLcZ |
-| 2 | Organise recurring group meeting day and time |
-| 3 | Discuss conflict resolution protocol |
-| 4 | Discuss what type of marketplace app we will design |
-| 5 | Delegate tasks |
-| 6 | Discuss schedule for development activities and group deadlines |
-| 7 | Discuss work to complete for Week 7 checkpoint |
+| 1 | Team member introductions |
+| 2 | Fill out when2meet to map everyone's avaliability for Team meetings - https://www.when2meet.com/?16660748-wcLcZ |
+| 3 | Organise recurring group meeting day and time |
+| 4 | Discuss conflict resolution protocol |
+| 5 | Discuss what type of marketplace app we will design |
+| 6 | Delegate tasks |
+| 7 | Discuss schedule for development activities and group deadlines |
+| 8 | Discuss work to complete for Week 7 checkpoint |
 
 ## Meeting Minutes
 - ...
