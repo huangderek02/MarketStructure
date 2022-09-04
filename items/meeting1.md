@@ -1,10 +1,10 @@
-# [Team Name]
+# Gorderhuifamda Team
 This following is a very simple team meeting template. You should expand it based on the scope and nature of your discussion.
 
-## Team Meeting [number] - Week [number] - [date] (start-end time)
+## Team Meeting 1 - Week 6 - Sunday, 4th September 2022 (1 pm -end time)
 **Absent:**
 <br>
-**Lead/scribe:**
+**Lead/scribe:** Rhonda
 
 ## Agreed Procedure
 Stand up Procedure: ...
