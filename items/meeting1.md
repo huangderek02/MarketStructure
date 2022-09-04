@@ -17,7 +17,7 @@ Stand up Procedure: ...
 | 3 | Discuss conflict resolution protocol |
 | 4 | Discuss what type of marketplace app we will design |
 | 5 | Delegate tasks |
-| 6 | Discuss schedule for group deadlines |
+| 6 | Discuss schedule for development activities and group deadlines |
 | 7 | Discuss work to complete for Week 7 checkpoint |
 
 ## Meeting Minutes
