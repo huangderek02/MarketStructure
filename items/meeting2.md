@@ -1,7 +1,7 @@
 # [Team Name]
 This following is a very simple team meeting template. You should expand it based on the scope and nature of your discussion.
 
-## Team Meeting [number] - Week [number] - [date] (start-end time)
+## Team Meeting 2 - Week [number] - 10/09/2022 (3-4pm)
 **Absent:**
 <br>
 **Lead/scribe:**
