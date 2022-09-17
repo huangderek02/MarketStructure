@@ -12,10 +12,10 @@ Abbreviations:
  
  
  
- <exp>		= <term>, <exp> | <term>
- <term>		= <id> | <op_keyword> | <id_keyword> | "<id>"  
- <id>		= (any string non keyword or symbol string)
+ <exp>			= <term>, <exp> | <term>
+ <term>			= <id> | <op_keyword> | <id_keyword> | "<id>"  
+ <id>			= (any string non keyword or symbol string)
  <op_keyword>	= PAGES <op> <int> | COST <op> <int>
- <op> 		= < | > | =
- <int>		= (any positive or 0 integer)
+ <op> 			= < | > | =
+ <int>			= (any positive or 0 integer)
  <id_keyword>	= TOPIC: <id> | CODE: <id>
