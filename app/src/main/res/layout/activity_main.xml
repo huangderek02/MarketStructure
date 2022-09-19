@@ -55,16 +55,15 @@
         android:id="@+id/main_login_bt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below ="@id/main_join_bt"
+        android:layout_below="@id/main_join_bt"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/button"
         android:padding="20dp"
-        android:textAllCaps="false"
-        android:textSize="18sp"
         android:text="Already have an Account? Login"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        />
+        android:textSize="18sp" />
 
 </RelativeLayout>
 
