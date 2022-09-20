@@ -1,7 +1,7 @@
 # Gorderhuifamda Team
 This following is a very simple team meeting template. You should expand it based on the scope and nature of your discussion.
 
-## Team Meeting 1 - Week 6 - Tuesday, 20th September 2022 (7 pm - 8 pm)
+## Part 1 Task 2 & 3 Specifc Team Meeting 1 - Week 7 - Tuesday, 20th September 2022 (7 pm - 8 pm)
 **Absent:**
 No members were absent - This meeting was specifically for Tasks 2 & 3 for Part 1 of the assignment which is assigned to Derek, Huiguang and Rhonda. 
 <br>
