@@ -6,6 +6,15 @@ import java.util.Arrays;
 /**
  * 
  * @author u7117043
+ * 
+ * The Tokenizer Class takes a String and tokenizes it, storing it in a list.
+ * Special phrases: symbols, keywords and positive integers are stored as separate tokens. (see static final class variables)
+ * 
+ * Tokenizer ignores whitespace at the start and end of a token. Tokens stops at comma to allow for some flexibility 
+ * in use of special phrases in a string:
+ * 
+ * E.g. The following string: "The 1900's greatest potato = a black hole" 
+ * will be tokenized as SINGLE STRING rather than: ["The", 1900, "'s greatest potato", =, "a black hole"]
  *
  */
 
@@ -19,18 +28,13 @@ public class Tokenizer {
  * However not every string will result in a return.
  */
 	
-//	public String text;
-//	
-//	public int currentIndex;
-//	
-//	public Ojbect currentToken;
 
 	/*
 	 * List of special characters and keywords that act as separate tokens.
 	 * 
 	 * We keep digits as characters since the search terms can include them. (Not just used as integers)
 	 */
-	static final ArrayList<Character> symbols = new ArrayList<Character>(Arrays.asList('<', '>','=', '"', ',', ':'));
+	static final ArrayList<Character> symbols = new ArrayList<Character>(Arrays.asList('<', '>','=', /*'"',*/ ',', ':'));
 	
 	static final ArrayList<String> keywords = new ArrayList<String>(Arrays.asList("PAGES", "COST", "TOPIC", "CODE"));
 	
@@ -138,7 +142,11 @@ public class Tokenizer {
 	 * - uncomment the instance variables at the start of class and use those instead (refactoring may help clarify code though)
 	 * 
 	 * 
-	 * Given a string return as a list of tokens
+	 * Given a string return as a list of tokens:
+	 * Integers are stored as [Integer]
+	 * symbols are stored as [Characters]
+	 * keywords and identifiers (non 
+	 * 
 	 * 
 	 */
 	public ArrayList<Object> tokenizeString(String text){
@@ -149,7 +157,7 @@ public class Tokenizer {
 		String remainingText = consumeWhiteSpace(text);
 		
 		/*
-		 * Adds tokens to the list in order.
+		 * Adds tokens to the list while text still remains.
 		 */
 		while(!remainingText.isEmpty()) {
 
@@ -228,9 +236,9 @@ public class Tokenizer {
 			
 			
 
-			//If next token is a symbol store corresponding symbol
+			//If next token is a symbol store corresponding symbol as a Character
 			if(symbols.contains(remainingText.charAt(0))) {
-				tokens.add("" + remainingText.charAt(0));
+				tokens.add(remainingText.charAt(0));
 								
 				if(remainingText.length() > 1) {
 					remainingText = consumeWhiteSpace(remainingText.substring(1, remainingText.length()));
@@ -315,7 +323,7 @@ public class Tokenizer {
 	
 
 	
-	
+	//TODO REMOVE WHEN DONE
 	
 	public static void main(String[] args) {
 		
@@ -369,6 +377,15 @@ public class Tokenizer {
 		for(Object ins: result) {
 			System.out.println(ins + " : is of class " + ins.getClass());
 		}
+		
+		char c1 = 'a';
+		Character c2 = 'a';
+		
+		System.out.println();
+		
+		String potato = "The 1900's greatest potato = a black hole, Another Token";
+		
+		System.out.println(a.tokenizeString(potato));
 		
 //		r = a.consumeWhiteSpace(r);
 //		
