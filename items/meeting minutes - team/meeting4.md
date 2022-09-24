@@ -1,10 +1,10 @@
 # Gorderhuifamda Team
 This following is a very simple team meeting template. You should expand it based on the scope and nature of your discussion.
 
-## Team Meeting 3 - Week 2 of Teaching break - 17/09/2022 (3-4pm)
+## Team Meeting 3 - Week 2 of Teaching break - 24/09/2022 (3-4pm)
 **Absent:** no members were absent
 <br>
-**Lead/scribe:** Ratchanont Treevijitpaisan
+**Lead/scribe:** Huiguang Zhang
 
 ## Agreed Procedure
 Stand up Procedure:
@@ -19,25 +19,25 @@ Stand up Procedure:
 | Number |                                                            Item |
 |:-------|----------------------------------------------------------------:|
 | 1      |                          Update  on research working on process |
-| 2      |   Split the task and try to implemented at least UI for the app |
-| 3      | Discuss schedule for development activities and group deadlines |
-| 4      |                  Discuss work to complete for Week 7 checkpoint |
+| 2      |                 discuss about the feature about number of pages |
+| 3      |             Discuss about whether add the old-new in the filter |
+| 4      |       Discuss about whether should we add the trolly in the app |
 
 
 ## Meeting Minutes
 **Agenda Item 1: Update  on research working on process:**
 - Decide on trial and error implementing android marketplace app.
 
-**Agenda Item 2: Split the task and try to implemented at least UI for the app:**
+**Agenda Item 2: discuss about the feature about number of pages:**
+- decide to add that as a search feature.
 
+**Agenda Item 3: Discuss about whether add the old-new in the filter:**
+- decide to add that .
 
-**Agenda Item 3: Discuss schedule for development activities and group deadlines:**
-- Set the deadline and try to suceed it individually.
-- Keep update process in messenger group or ms team.
-- Will discuss in further detail in next meeting
+**Agenda Item 4: Discuss about whether should we add the trolly in the app:**
+- decide to design the UI first.
 
-**Agenda Item 4: Discuss work to complete for Week 7 checkpoint:**
-**Next meeting date and time: Saturday, 24th September 2022 at 3 pm**
+**Next meeting date and time: Saturday, 1st October 2022 at 3 pm**
 
 ## TODO Items
 | Task | Assignee |
