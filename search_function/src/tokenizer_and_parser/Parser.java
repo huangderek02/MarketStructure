@@ -22,12 +22,13 @@ import java.util.Arrays;
  * Context Free Grammar
  * 
  * <exp>		= <term>, <exp> | <term>
- * <term>		= <id> | <op_keyword> | <id_keyword> | 	(unused alternative) "<id>"  
+ * <term>		= <id> | <op_keyword> | <id_keyword> | 	
  * <id>			= (any string non keyword or symbol string)
- * <op_keyword>	= PAGES <op> <int> | COST <op> <int>
+ * <op_keyword>	= PAGES <op> <int> | COST <op> <int> | EDITION <op> <int>
  * <op> 		= < | > | =
- * <int>		= (any positive or 0 integer)
- * <id_keyword>	= TOPIC: <id> | CODE: <id>
+ * <int>		= (any positive or 0 integer less than 9999)
+ * <id_keyword>	= TOPIC: <id> | CODE: <id> | ISBN: <isbn>
+ * <isbn> 	    = (a string that conforms to isbn format, see isbn section)  
  * 
  * 
  * The way the search function will work is by applying filters in sequential order:
@@ -56,6 +57,8 @@ public class Parser {
 	
 	ArrayList<String> codeTerms = new ArrayList<String>();
 	
+	ArrayList<String> errorStrings = new ArrayList<String>();
+	
 	/*
 	 * Stores integers related to this filtering: 
 	 * - Integer at [0] is related to < 
@@ -64,14 +67,18 @@ public class Parser {
 	 */
 	Integer[] pageOperation = new Integer[3];
 	Integer[] costOperation = new Integer[3];
+	Integer[] editionOperation = new Integer[3];
+	
+	//Only check for one ISBN
+	String ISBN = null;
 	
 	
 	//Import special strings and characters
 	static final ArrayList<Character> operators = new ArrayList<Character>(Arrays.asList('<', '>','='));
 	
-	static final ArrayList<String> op_keywords = new ArrayList<String>(Arrays.asList("PAGES", "COST"));
+	static final ArrayList<String> op_keywords = new ArrayList<String>(Arrays.asList("PAGES", "COST", "EDITION"));
 	
-	static final ArrayList<String> id_keywords = new ArrayList<String>(Arrays.asList("TOPIC", "CODE"));
+	static final ArrayList<String> id_keywords = new ArrayList<String>(Arrays.asList("TOPIC", "CODE", "ISBN"));
 	
 	static final ArrayList<Character> digits = Tokenizer.digits;
 	
@@ -83,9 +90,19 @@ public class Parser {
 	 * Should be called every time we parseSearch
 	 */
 	public void resetParser() {
-		searchTerms = new ArrayList<String>();
+		
+		searchTerms	= new ArrayList<String>();
+		topicTerms = new ArrayList<String>();
+		codeTerms = new ArrayList<String>();
+		errorStrings = new ArrayList<String>();
+		
+		
 		pageOperation = new Integer[3];
 		costOperation = new Integer[3];
+		editionOperation = new Integer[3];
+		
+		ISBN = null;
+		
 	}
 	
 	/**
@@ -100,15 +117,10 @@ public class Parser {
 		
 		ArrayList<Object> tokens = tokenizer.tokenizeString(text);
 		
-		//TODO:Remove when finished
-		System.out.println(tokens);
-		
 		parseExpression(tokens);
 	}
 	
-	/*
-	 * TODO: Need to check if the first token is a comma or invalid and remove it
-	 * 
+	/* 
 	 * Extract information from an expression. An expression should be:
 	 * <exp> = <term>, <exp> | <term>
 	 */
@@ -118,7 +130,8 @@ public class Parser {
 		
 		//A term should not start with a comma token. Ignore if they are present
 		if(tokens.get(0) == (Object) ',') {
-			System.out.println("Warning: Search term starts with a comma!");
+			
+			errorStrings.add("Warning: Search term starts with a comma!");
 			tokens.remove(0);
 			parseExpression(tokens);
 			return;
@@ -126,9 +139,16 @@ public class Parser {
 		
 		//A term should not start with an operator.
 		if(operators.contains(tokens.get(0))) {
-			//TODO add to errors
-			System.out.println("Attempted to start a term with operator: [" + tokens.get(0).toString() +  "], ADD TO ERRORS");
-			tokens.remove(0);
+			
+			errorStrings.add("Attempted to start a term with operator: [" + tokens.get(0).toString() +  "]");
+			while(!tokens.isEmpty()) {
+				
+				if(tokens.get(0).equals(',')) {
+					tokens.remove(0);
+					break;
+				}
+				tokens.remove(0);
+			}
 			parseExpression(tokens);
 			return;
 		}
@@ -148,8 +168,6 @@ public class Parser {
 			tokens.remove(0);
 		}
 		
-//		System.out.println("\nremoved all before comma " + tokens);
-		
 		//If the previous term was the final term in the list of tokens.
 		if(tokens.isEmpty()) return;
 
@@ -159,7 +177,6 @@ public class Parser {
 	
 	
 	/*
-	 * TODO: Add statement for "<id>". Only if we are using hard and soft search
 	 * 
 	 * Extract information from a term. A term should be:
 	 * <term>		= <id> | <op_keyword> | <id_keyword> | "<id>" 
@@ -176,7 +193,11 @@ public class Parser {
 		else {
 			String identifier = parseIdentifier(tokens.get(0));
 			
-			if(identifier == null) return;
+			if(identifier == null) {
+				
+				errorStrings.add("Your search term: [" + tokens.get(0) + "] is too short or invalid!" );
+				return;
+			}
 			
 			searchTerms.add(identifier);
 		}
@@ -185,14 +206,14 @@ public class Parser {
 	
 	/*
 	 * Extract information from an op_keyword:
-	 * <op_keyword>	= PAGES <op> <int> | COST <op> <int>
+	 * <op_keyword>	= PAGES <op> <int> | COST <op> <int> | EDITION <op> <int>
 	 */
 	private void parseOPKeyword(ArrayList<Object> tokens) {
 		
 		//Not enough tokens to be valid
 		if(tokens.size() < 3) {
-			//TODO: Add to errors
-			System.out.println("Tried to parse keyword with less than 3 tokens!, ADD TO ERRORS");
+			
+			errorStrings.add("Keyword [" + tokens.get(0) + "] is missing an operator or integer!");
 			return;
 		}
 		
@@ -204,16 +225,16 @@ public class Parser {
 		//2nd token must be an operator to be valid
 		if(operators.contains(tokens.get(1))) op = (Character) tokens.get(1);
 		else {
-			//TODO: Add to errors
-			System.out.println("Invalid operator: [" + tokens.get(1).toString() +  "] following keyword: " + tokens.get(0).toString() + "ADD TO ERRORS");
+			
+			errorStrings.add("Invalid operator: [" + tokens.get(1).toString() +  "] following keyword [" + tokens.get(0).toString() +"]");
 			return;
 		}
 		
-		//3rd token must be a positive integer (and or 0)
+		//3rd token must be a positive integer (and 0 but less than 10 thousand)
 		if(tokens.get(2).getClass() == Integer.class) posInt = (Integer) tokens.get(2);
 		else {
-			//TODO: Add to errors
-			System.out.println("Invalid integer: [" + tokens.get(2).toString() +  "] following keyword: " + tokens.get(0).toString() + tokens.get(1).toString() + "ADD TO ERRORS");
+			
+			errorStrings.add("Invalid integer: [" + tokens.get(2).toString() +  "] following keyword [" + tokens.get(0).toString() + " " + tokens.get(1).toString() + "] is too large or not an integer!");
 			return;
 		}
 		
@@ -239,21 +260,100 @@ public class Parser {
 			
 			//Impossible block unless error in code or operator is missing case statement
 			
-			System.out.println("Invalid operator: + " + op + " Check ArrayList operators and that parseOPKeyword has switch case for this operator");
+			System.out.println("Invalid operator: " + op + " Check ArrayList operators and that parseOPKeyword has switch case for this operator");
 			return;
 		
 		}
 
+		
+		//Replace only if the number is null or if number will filter more searches
 		if(key == "PAGES") {
-			pageOperation[index] = posInt;
-			return;
+			
+			
+			//Empty number or =
+			if(index == 2) {
+				pageOperation[index] = posInt;
+				return;
+
+			}
+
+			//Entry for less than <
+			if(index == 0) {
+				if(pageOperation[1] != null && pageOperation[1] > posInt) errorStrings.add("Your range for [PAGES] is invalid!");
+				
+				if(pageOperation[0] == null || pageOperation[0] > posInt) pageOperation[index] = posInt;
+
+			}
+				
+			
+			//Entry for less than >
+			if(index == 1) {
+				if(pageOperation[0] != null && pageOperation[0] < posInt) errorStrings.add("Your range for [PAGES] is invalid!");
+				
+				if(pageOperation[1] == null || pageOperation[1] > posInt) pageOperation[index] = posInt;
+
+			}
+			
 		}
 		
-		if(key == "COST") {
-			costOperation[index] = posInt;
-			return;
+		else if(key == "COST") {
+			
+			
+			//Empty number or =
+			if(index == 2) {
+				costOperation[index] = posInt;
+				return;
+
+			}
+
+			//Entry for less than <
+			if(index == 0) {
+				if(costOperation[1] != null && costOperation[1] > posInt) errorStrings.add("Your range for [COST] is invalid!");
+				
+				if(costOperation[0] == null || costOperation[0] > posInt) costOperation[index] = posInt;
+
+			}
+				
+			
+			//Entry for less than >
+			if(index == 1) {
+				if(costOperation[0] != null &&costOperation[0] < posInt) errorStrings.add("Your range for [COST] is invalid!");
+				
+				if(costOperation[1] == null || costOperation[1] > posInt) costOperation[index] = posInt;
+
+			}
+			
 		}
 		
+		else if(key == "EDITION") {
+			
+			//Empty number or =
+			if(index == 2) {
+				editionOperation[index] = posInt;
+				return;
+
+			}
+
+			//Entry for less than <
+			if(index == 0) {
+				if(editionOperation[1] != null && editionOperation[1] > posInt) errorStrings.add("Your range for [EDITION] is invalid!");
+				
+				if(editionOperation[0] == null || editionOperation[0] > posInt) editionOperation[index] = posInt;
+
+			}
+				
+			
+			//Entry for less than >
+			if(index == 1) {
+				if(editionOperation[0] != null &&  editionOperation[0] < posInt) errorStrings.add("Your range for [EDITION] is invalid!");
+				
+				if(editionOperation[1] == null || editionOperation[1] > posInt) editionOperation[index] = posInt;
+
+			}
+			
+		}
+		
+		//Add additional OPkeyword if statements here
 		
 	}
 
@@ -263,29 +363,56 @@ public class Parser {
 	 * <id_keyword>	= TOPIC: <id> | CODE: <id>
 	 */
 	private void parseIDKeyword(ArrayList<Object> tokens) {
-		// TODO 
+		
+		//Already checked first token is a keyword in parseTerm()
+		String key = (String) tokens.get(0);
+		
+		
+		
 		
 		//Not enough tokens to be valid
 		if(tokens.size() < 3) {
-			//TODO: Add to errors
-			System.out.println("Tried to parse keyword with less than 3 tokens!, ADD TO ERRORS");
+			
+			errorStrings.add("Keyword [" + tokens.get(0) + "] is missing colon or identifer!");
 			return;
 		}
 		
 		if(tokens.get(1) != (Object) ':') {
-			//TODO: Add to errors
-			System.out.println("Invalid symbol: [" + tokens.get(1).toString() + "] following keyword: " + tokens.get(0).toString() +  ", ADD TO ERRORS" );
+			
+			errorStrings.add("Invalid symbol: [" + tokens.get(1).toString() + "] following keyword [" + tokens.get(0).toString() +  "]" );
 			return;
 		}
 
-		//Note that method is called if and only if 1st token is a string
-		String key = (String) tokens.get(0);
+		//ISBN takes an integer rather than an identifier
+		if(key == "ISBN") {
+			
+			if(tokens.get(2).getClass() != String.class) {
+				
+				errorStrings.add("Your ISBN: [" + tokens.get(2).toString() + "] contains an error!" );
+				return;
+			}
+			
+			String isbn = isbnFormat((String) tokens.get(2));
+			
+			if(isbn == null) {
+				errorStrings.add("Your ISBN: [" + tokens.get(2).toString() + "] contains an error!" );
+				return;
+			}
+			
+			if(ISBN != null) errorStrings.add("Warning: You can only search for one ISBN at a time! " + ISBN + " was ignored");
+			ISBN = isbn;
+			return;
+		}
+		
 		
 		//The third token is the related ID
 		String id = parseIdentifier(tokens.get(2));
 
-		//Note that if the id has an error it will be dealt with by parseIdentifier
-		if(id == null) return;
+		//Error if identifier is a keyword or not long enough
+		if(id == null) {
+			errorStrings.add("The term: [" + tokens.get(2) + "] following keyword [" + tokens.get(0) + "] is invalid!" );
+			return;
+		}
 		
 		
 		if(key == "TOPIC") {
@@ -298,9 +425,12 @@ public class Parser {
 			return;
 		}
 		
-		System.out.println("Tried to parseIDKeyword but keyword was not and ID keyword!");
+		System.out.println("Tried to parseIDKeyword but keyword was not an ID keyword!");
 	}
 	
+
+
+
 	/*
 	 * NOTE: 
 	 * - This returns a String unlike other parse methods since 
@@ -309,26 +439,25 @@ public class Parser {
 	 * - This takes a single token rather than the entire list
 	 * 
 	 * Extract information from an id:
-	 * <id> = (any string)
+	 * <id> = (any string of length greater than 2)
 	 * 
 	 * id cannot be a used keyword, symbol, integer and must be of type String
 	 * id should be at least 3 letters minimum
+	 * 
+	 * Error messages are dealt with in higher method calls since we want to let
+	 * the user know which part of their search is incorrect
 	 * 
 	 * @return null if requirements not met. Else the first token as type String
 	 */
 	private String parseIdentifier(Object token) {
 		
-		if(token.getClass() != String.class) {
-			//TODO: Add to errors
-			System.out.println("Invalid search term: [" + token.toString() + "], ADD TO ERRORS" );
+		if(token.getClass() != String.class || op_keywords.contains(token) || id_keywords.contains(token)) {
 			return null;
 		}
 		
 		String searchTerm = (String) token;
 		
 		if(searchTerm.length() < 3) {
-			//TODO: Add to errors
-			System.out.println("Your search term: [" + searchTerm + "] is too short, ADD TO ERRORS" );
 			return null;
 		}
 		
@@ -337,67 +466,34 @@ public class Parser {
 		
 	}
 
-	
 
-	
-	public static void main(String[] args) {
-		Parser a = new Parser();
-		
-		Object[] o = new Object[3];
-		Integer i = 1;
-		o[1] = i;
-		if(o[1].getClass() == Integer.class) System.out.println("ASDASD");
-		
-//		a.parseSearch("There once was a ship, that put to see, PAGES<12, COST < TOPIC, Ez,  ");
-//		
-//		for(Integer ai: a.pageOperation) {
-//			System.out.println(ai);
-//		}
-//		
-		a.parseSearch(",<myNumbers: 123,TOPIC:ENGN12312, CODE :   AS1	, 123");
-		
-		
-		System.out.println("page operation: ");
-		for(Integer ai: a.pageOperation) {
-			System.out.println(ai);
-		}
-	
-		System.out.println("cost operation: ");
-		for(Integer ai: a.costOperation) {
-			System.out.println(ai);
-		}
-	
-		System.out.println("topic terms: " + a.topicTerms);
-		System.out.println("code terms: " + a.codeTerms);
-		System.out.println("search terms: " + a.searchTerms);
- 
-
-	}
-	
-	/*Testing methods, not related to class
+	/**
 	 * 
-	 * 	ArrayList<Integer> intA = new ArrayList<Integer>();
-		
-		intA.add(1);
-		intA.add(2);
-		intA.add(3);
-		
-		System.out.println(testm(intA));
+	 * An isbn is either 10 or 13 digits long. Dashes are allowed
 	 * 
+	 * @Return null if invalid. ISBN without dashes if valid
 	 */
-	private static String testm(ArrayList<Integer> ii) {
-		
-		testn(ii);
-		
-		return ii.toString();
-	}
 
-	private static ArrayList<Integer> testn(ArrayList<Integer> ii) {
+	private String isbnFormat(String string) {
 		
-		ii.remove(0);
+		String isbn = "";
 		
-		return ii;
+		for(int index = 0; index < string.length(); index++) {
+
+			if(!digits.contains(string.charAt(index)) && string.charAt(index) != '-') return null;
+			
+			if(digits.contains(string.charAt(index))) isbn = isbn + string.charAt(index);
+			
+		}
+		
+		
+		if(isbn.length() != 10 && isbn.length() != 13) 	return null;
+		
+		
+		return isbn;
 	}
+	
+
 	
 
 }
