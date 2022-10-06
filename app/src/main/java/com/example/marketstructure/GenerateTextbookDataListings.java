@@ -3,7 +3,7 @@ package com.example.marketstructure;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenerateTextbookDataListings extends TextbookData {
+public class GenerateTextbookDataListings extends ListingTextbookData {
     public static List<Textbook> listings;
     public GenerateTextbookDataListings() {
         listings = new ArrayList<>();
@@ -16,7 +16,7 @@ public class GenerateTextbookDataListings extends TextbookData {
 
     public static Textbook getRandomTextbook() {
         Textbook randomTextbook;
-        ArrayList<Textbook> textbooks = TextbookData.textbooks;
+        ArrayList<Textbook> textbooks = ListingTextbookData.textbooks;
         int index = (int) (Math.random() * textbooks.size());
         randomTextbook = textbooks.get(index);
         return randomTextbook;
