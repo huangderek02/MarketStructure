@@ -53,5 +53,5 @@ The following dictates who will be scribe in this and the next meeting.
 | Name |
 | :---: |
 | Rhonda - scribe for meeting 1|
-| Derek - scribe for this) |
+| Derek - scribe for this meeting (2)) |
 | Huiguang - scribe for meeting 3 | 
