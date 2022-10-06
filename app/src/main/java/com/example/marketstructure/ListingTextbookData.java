@@ -46,7 +46,7 @@ public class ListingTextbookData {
 
     }
 
-    static String[] sellerUser = {"James Smith", "Robert Johnson", "John Williams",	"Michael Brown",
+    static String[] sellerUsernames = {"James Smith", "Robert Johnson", "John Williams",	"Michael Brown",
             "David Jones", "William Garcia", "Richard Miller", "Joseph Davis", "Thomas Rodriguez",
             "Charles Martinez",	"Christopher Hernandez", "Daniel Lopez", "Matthew Gonzales",
             "Anthony Wilson", "Mark Anderson", "Donald Taylor", "Steven Moore", "Paul Jackson",
@@ -87,9 +87,17 @@ public class ListingTextbookData {
             "Natalie Borg",	"Brittany Dimitrov", "Charlotte Markov", "Marie Johannes", "Kayla Silva",
             "Alexis Sokolov", "Lori Volkov",};
 
-    static String[] condition = {"New", "Used"};
+    static String[] conditions = {"New", "Used"};
 
-    static String[] additionalDetails = {"Textbook has partial water damage", "Textbook has clear contact cover"};
+    static String[] additionalDetailsNew = {"Textbook is still in original packaging"
+            , "Textbook includes ebook code", "N/A"};
 
-    static String[] listingStatus = {"Active", "Shipped", "Inactive"};
+    static String[] additionalDetailsUsed = {"Textbook has partial water damage"
+            , "Textbook has clear contact cover", "Textbook ebook code has been used",
+            "A few textbook page corners have been folded to be used as a bookmark",
+            "A few textbook page corners have been torn and sticky taped back together",
+            "Textbook is in good condition, only used for 6 months", "N/A",
+            "Textbook is in good condition, only used for 1 year"};
+
+    static String[] listingStatuses = {"Active", "Shipped", "Inactive"};
 }
