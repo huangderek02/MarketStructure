@@ -1,71 +1,36 @@
 package com.example.marketstructure;
 
 public class Textbook {
-    String listingId;
-    String sellerUsername;
-    String textbookImageURL;
-    int price;
-    String ISBN;
+    String isbn;
     String title;
     int edition;
-    String author;
+    String authors;
+    String textbookImageURL;
+    double price;
     int yearPublished;
     int numberOfPages;
     String topicCode;
     String topic;
-    String condition;
-    String additionalDetails;
-    String listingStatus;
-    String listingLastUpdatedDate;
 
-
-    public Textbook(String listingId, String sellerUsername, String textbookImageURL, int price,
-                    String ISBN, String title, int edition, String author, int yearPublished, int numberOfPages,
-                    String topicCode, String topic, String condition, String additionalDetails,
-                    String listingStatus, String listingLastUpdatedDate){
-
-    }
-
-
-
-    public String getListingId() {
-        return listingId;
-    }
-
-    public void setListingId(String listingId) {
-        this.listingId = listingId;
-    }
-
-    public String getSellerUsername() {
-        return sellerUsername;
-    }
-
-    public void setSellerUsername(String sellerUsername) {
-        this.sellerUsername = sellerUsername;
-    }
-
-    public String getTextbookImageURL() {
-        return textbookImageURL;
-    }
-
-    public void setTextbookImageURL(String textbookImageURL) {
+    public Textbook(String isbn, String title, int edition, String authors, String textbookImageURL, double price, int yearPublished, int numberOfPages, String topicCode, String topic) {
+        this.isbn = isbn;
+        this.title = title;
+        this.edition = edition;
+        this.authors = authors;
         this.textbookImageURL = textbookImageURL;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
         this.price = price;
+        this.yearPublished = yearPublished;
+        this.numberOfPages = numberOfPages;
+        this.topicCode = topicCode;
+        this.topic = topic;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
     public String getTitle() {
@@ -84,12 +49,28 @@ public class Textbook {
         this.edition = edition;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthors(String author) {
+        this.authors = authors;
+    }
+
+    public String getTextbookImageURL() {
+        return textbookImageURL;
+    }
+
+    public void setTextbookImageURL(String textbookImageURL) {
+        this.textbookImageURL = textbookImageURL;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public int getYearPublished() {
@@ -123,37 +104,4 @@ public class Textbook {
     public void setTopic(String topic) {
         this.topic = topic;
     }
-
-    public String getCondition() {
-        return condition;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
-
-    public String getAdditionalDetails() {
-        return additionalDetails;
-    }
-
-    public void setAdditionalDetails(String additionalDetails) {
-        this.additionalDetails = additionalDetails;
-    }
-
-    public String getListingStatus() {
-        return listingStatus;
-    }
-
-    public void setListingStatus(String listingStatus) {
-        this.listingStatus = listingStatus;
-    }
-
-    public String getListingLastUpdatedDate() {
-        return listingLastUpdatedDate;
-    }
-
-    public void setListingLastUpdatedDate(String listingLastUpdatedDate) {
-        this.listingLastUpdatedDate = listingLastUpdatedDate;
-    }
-
 }
