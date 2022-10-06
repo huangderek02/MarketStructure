@@ -5,12 +5,14 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class TextbookData {
-    public static void main(String[] args) {
-        Textbook textbook1 = new Textbook("9780521629577","Accretion Power in Astrophysics",3, "Juhan Frank, Andrew King, Derek Raine","textbook_9780521629577.png",141.95,2002,400,"ASTR","Astrology");
-        Textbook textbook2 = new Textbook("9780521671866","Galaxies in the Universe",2, "Linda S. Sparke, John S. Gallagher, III","textbook_9780521671866.png",92.95,2007,440,"ASTR","Astrology");
-        Textbook textbook3 = new Textbook("9781488617362","Accounting",9, "Tracie Miller-Nobles, Brenda Mattison, Ella Mae Matsumura, Peter Best, David Keene","textbook_9781488617362.png",163.75,2020,1128,"BUSN","Business");
-        Textbook textbook4 = new Textbook("9781488620683","Organisational Behaviour",9, "Stephen Robbins, Timothy A. Judge, Marissa Edwards, Peter Sandiford, Martin Fitzgerald","textbook_9781488620683.png",156.40,2019,496,"MGMT","Management");
+    static ArrayList<Textbook> textbooks = new ArrayList<Textbook>();
 
+    public static void main(String[] args) {
+        textbooks.add(new Textbook("9780521629577", "Accretion Power in Astrophysics", 3, "Juhan Frank, Andrew King, Derek Raine", "textbook_9780521629577.png", 141.95, 2002, 400, "ASTR", "Astrology"));
+        textbooks.add(new Textbook("9780521671866", "Galaxies in the Universe", 2, "Linda S. Sparke, John S. Gallagher, III", "textbook_9780521671866.png", 92.95, 2007, 440, "ASTR", "Astrology"));
+        textbooks.add(new Textbook("9781488617362", "Accounting", 9, "Tracie Miller-Nobles, Brenda Mattison, Ella Mae Matsumura, Peter Best, David Keene", "textbook_9781488617362.png", 163.75, 2020, 1128, "BUSN", "Business"));
+        textbooks.add(new Textbook("9781488620683", "Organisational Behaviour", 9, "Stephen Robbins, Timothy A. Judge, Marissa Edwards, Peter Sandiford, Martin Fitzgerald", "textbook_9781488620683.png", 156.40, 2019, 496, "MGMT", "Management"));
+        /*
         ArrayList<Textbook> textbookDetailsList = new ArrayList<Textbook>(Arrays.asList(textbook1, textbook2, textbook3, textbook4));
         HashMap<String, ArrayList<String>> textbooksMap = new HashMap<String, ArrayList<String>>();
 
@@ -40,4 +42,8 @@ public class TextbookData {
             }
         System.out.println(textbooksMap);
         }
+
+         */
+    }
+
 }
