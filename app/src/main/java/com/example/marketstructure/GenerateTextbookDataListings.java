@@ -53,8 +53,12 @@ public class GenerateTextbookDataListings extends ListingTextbookData {
 
     public static double getRandomPrice(double minPrice, double maxPrice) {
         double price = Math.random() * (maxPrice - minPrice + 1) + minPrice;
-        if (getRandomCondition().equals("New")) {
+        if (getRandomCondition().equals("New")
+                && getRandomAdditionalDetails() != "Textbook ebook code has been used") {
             return price - (price * 0.10);
+        } else if (getRandomCondition().equals("New")
+                && getRandomAdditionalDetails().equals("Textbook ebook code has been used")) {
+            return price - (price * 0.05);
         } else if (getRandomCondition().equals("Used")
                 && getRandomAdditionalDetails().equals("Textbook has clear contact cover")
                 || getRandomAdditionalDetails().equals("Textbook ebook code has been used")
