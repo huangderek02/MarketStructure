@@ -11,10 +11,16 @@
         <entry key="..\:/Users/FameCS/Desktop/COMP6442_Lab/ga-22s2-comp2100-6442/app/src/main/res/layout/activity_market.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/FameCS/Desktop/COMP6442_Lab/ga-22s2-comp2100-6442/app/src/main/res/layout/activity_register.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/FameCS/Desktop/COMP6442_Lab/ga-22s2-comp2100-6442/app/src/main/res/layout/activity_start.xml" value="0.36666666666666664" />
+        <entry key="..\:/ga-22s2-comp2100-6442/app/src/main/res/layout/activity_login.xml" value="0.225" />
+        <entry key="..\:/ga-22s2-comp2100-6442/app/src/main/res/layout/activity_main.xml" value="0.225" />
+        <entry key="..\:/ga-22s2-comp2100-6442/app/src/main/res/layout/activity_market.xml" value="0.225" />
+        <entry key="..\:/ga-22s2-comp2100-6442/app/src/main/res/layout/activity_register.xml" value="0.225" />
+        <entry key="..\:/ga-22s2-comp2100-6442/app/src/main/res/layout/activity_start.xml" value="0.225" />
+        <entry key="..\:/ga-22s2-comp2100-6442/app/src/main/res/layout/textbooklayout.xml" value="0.16" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

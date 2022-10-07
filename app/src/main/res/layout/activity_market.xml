@@ -6,4 +6,187 @@
     android:layout_height="match_parent"
     tools:context=".MarketActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="128dp"
+        android:layout_height="169dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="153dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="126dp"
+        android:layout_height="167dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="334dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="127dp"
+        android:layout_height="158dp"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="517dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="59dp"
+        android:layout_height="20dp"
+        android:text="Ttile"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="517dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="154dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="185dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edition"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="214dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year Published"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="241dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ISBN"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="295dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="363dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edition"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="388dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year Published"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="417dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ISBN"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="442dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="469dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="544dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="569dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year Published"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="596dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ISBN"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="622dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="648dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="411dp"
+        android:layout_height="596dp"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="137dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        tools:layout_editor_absoluteX="271dp"
+        tools:layout_editor_absoluteY="47dp" />
+
+
+
