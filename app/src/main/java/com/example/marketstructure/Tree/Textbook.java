@@ -1,4 +1,4 @@
-package com.example.marketstructure;
+package com.example.marketstructure.Tree;
 
 public class Textbook {
     private String isbn;
@@ -34,7 +34,7 @@ public class Textbook {
     }
 
     public String getTitle() {
-        return title;
+        return title.toLowerCase().trim();
     }
 
     public void setTitle(String title) {
