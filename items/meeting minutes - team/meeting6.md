@@ -93,7 +93,6 @@ beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
 ## TODO Items
 | Task | Assignee |
 | :--- | ---: |
-| Decide on marketplace app idea by Tuesday evening, 6th September | All team members | 
 | Part 1 - Basic App Requirement 1 - Login Screen | Fame |
 | Part 1 - Basic App Requirement 2 - Create Data Files | Derek, Huiguang and Rhonda |
 | Part 1 - Basic App Requirement 3 - Load Data Files | Derek, Huiguang and Rhonda |
@@ -106,7 +105,7 @@ beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
 | Part 2 - Additional/General Feature 6 - Creating Processes - New User Registration (easy) | Fame |
 | Part 2 - Additional/General Feature 7 - Peer to Peer Messaging - Provide users with the ability to message each other directly. (hard) | Huiguang |
 | Part 2 - Additional/General Feature 8 - Firebase Integration - Use Firebase to implement user Authentication/Authorisation. (easy) | Fame |
-| Report | All |
+| Report | All team members |
 
 ## Scribe Rotation
 The following dictates who will be scribe in this and the next meeting.
