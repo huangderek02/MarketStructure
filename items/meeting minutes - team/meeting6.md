@@ -55,6 +55,7 @@ Stand up Procedure:
 - Completed UI Screen for MarketActivity
 - Research into Firestore implementation
 
+
 **Agenda Item 2: Determine additional/general features and delegate** 
 **Search-related features:**
 - 1. Search functionality can handle partially valid and invalid search queries. (medium) - Gordon
@@ -78,6 +79,7 @@ beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
 
 **Firebase Integration**
 - 1. Use Firebase to implement user Authentication/Authorisation. (easy) - Fame
+
 
 **Agenda Item 4: Discuss work to complete for Week 10 checkpoint including report:**
 - Almost fully complete Part 1 Basic App requirements for the App first and start implementation of additional features.
