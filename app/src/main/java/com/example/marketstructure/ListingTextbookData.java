@@ -10,7 +10,15 @@ public class ListingTextbookData {
     public static void main(String[] args) {
         textbooks.add(new Textbook("9780521629577", "Accretion Power in Astrophysics", 3, "Juhan Frank, Andrew King, Derek Raine", "textbook_9780521629577.png", 141.95, 2002, 400, "ASTR", "Astrology"));
         textbooks.add(new Textbook("9780521671866", "Galaxies in the Universe", 2, "Linda S. Sparke, John S. Gallagher, III", "textbook_9780521671866.png", 92.95, 2007, 440, "ASTR", "Astrology"));
+        textbooks.add(new Textbook("9781488626241", "Campbell Biology", 12, "Lisa A. Urry, Noel Meyers, Michael L. Cain, Steven A. Wasserman, Peter V. Minorsky", "textbook_9781488626241.png", 164.95, 2021, 1552, "BIOL", "Biology"));
         textbooks.add(new Textbook("9781488617362", "Accounting", 9, "Tracie Miller-Nobles, Brenda Mattison, Ella Mae Matsumura, Peter Best, David Keene", "textbook_9781488617362.png", 163.75, 2020, 1128, "BUSN", "Business"));
+        textbooks.add(new Textbook("9781488612640", "Horngren's Cost Accounting: A Managerial Emphasis", 3, "Charles T. Horngren, Srikant M. Datar, Madhav V. Rajan, William Maguire, Rebecca Tan", "textbook_9781488612640.png", 158.50, 2017, 848, "BUSN", "Business"));
+        textbooks.add(new Textbook("9780655700326", "Financial Accounting", 9, "David Keene, Tracie Miller-Nobles, Brenda Mattison, Ella Mae Matsumura, Peter Best", "textbook_9780655700326.png", 153.24, 2020, 864, "BUSN", "Business"));
+        textbooks.add(new Textbook("9781292408767", "Chemistry: The Central Science in SI Units", 15, "Theodore Brown, H. LeMay, Bruce Bursten, Catherine Murphy, Patrick Woodward", "textbook_9781292408767.png", 139.95, 2021, 1664, "CHEM", "Chemistry"));
+        textbooks.add(new Textbook("9780198768128", "Inorganic Chemistry", 7, "Mark Weller, Tina Overton, Jonathan Rourke, Fraser Armstrong", "textbook_9780198768128.png", 120.95, 2018, 912, "CHEM", "Chemistry"));
+        textbooks.add(new Textbook("9780199270293", "Organic Chemistry", 2, "Jonathan Clayden, Nick Greeves, Stuart Warren", "textbook_9780199270293.png", 127.95, 2012, 1264, "CHEM", "Chemistry"));
+        textbooks.add(new Textbook("9780134494166", "Clean Architecture: A Craftsman's Guide to Software Structure and Design", 1, "Robert Martin", "textbook_9780134494166.png", 50.35, 2017, 432, "COMP", "Computing"));
+        textbooks.add(new Textbook("9781292096131", "Software Engineering", 10, "Ian Sommerville", "textbook_9781292096131.png", 138.55, 2015, 816, "COMP", "Computing"));
         textbooks.add(new Textbook("9781488620683", "Organisational Behaviour", 9, "Stephen Robbins, Timothy A. Judge, Marissa Edwards, Peter Sandiford, Martin Fitzgerald", "textbook_9781488620683.png", 156.40, 2019, 496, "MGMT", "Management"));
     }
 
@@ -64,8 +72,8 @@ public class ListingTextbookData {
             , "Textbook has clear contact cover", "Textbook ebook code has been used",
             "A few textbook page corners have been folded to be used as a bookmark",
             "A few textbook page corners have been torn and sticky taped back together",
-            "Textbook is in good condition, only used for 6 months", "N/A",
-            "Textbook is in good condition, only used for 1 year"};
+            "Textbook is in good condition, used for 6 months", "N/A",
+            "Textbook is in good condition, used for 1 year"};
 
     static String[] listingStatuses = {"Active", "Shipped", "Inactive"};
 }

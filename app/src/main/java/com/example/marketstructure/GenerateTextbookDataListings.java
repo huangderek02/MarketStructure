@@ -1,7 +1,10 @@
 package com.example.marketstructure;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
 
 public class GenerateTextbookDataListings extends ListingTextbookData {
     public static List<Textbook> listings;
@@ -62,12 +65,21 @@ public class GenerateTextbookDataListings extends ListingTextbookData {
         } else if (getRandomCondition().equals("Used")
                 && getRandomAdditionalDetails().equals("Textbook has clear contact cover")
                 || getRandomAdditionalDetails().equals("Textbook ebook code has been used")
-                || getRandomAdditionalDetails().equals("Textbook is in good condition, only used for 6 months")
+                || getRandomAdditionalDetails().equals("Textbook is in good condition, used for 6 months")
                 || getRandomAdditionalDetails().equals("N/A")
-                || getRandomAdditionalDetails().equals("Textbook is in good condition, only used for 1 year")) {
+                || getRandomAdditionalDetails().equals("Textbook is in good condition, used for 1 year")) {
             return price - (price * 0.20);
         } else {
             return price - (price * 0.30);
         }
+    }
+
+    public static String getRandomDate() {
+        Random random = new Random();
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.MONTH, Math.abs(random.nextInt()) % 12);
+        calendar.set(Calendar.DAY_OF_MONTH, Math.abs(random.nextInt()) % 30);
+        calendar.setLenient(true);
+        return calendar.get(calendar.DAY_OF_MONTH) + "/" + calendar.get(calendar.MONTH) + "/" + calendar.get(calendar.YEAR);
     }
 }

@@ -24,105 +24,36 @@ public class MarketActivity extends AppCompatActivity {
     public static final String TAG = "MarketActivity";
     // add sample listings data
     public void addListings() {
-        addListing1();
-        addListing2();
-        addListing3();
+        addListing();
     }
 
-    public void addListing1() {
-        Map<String, Object> listing = new HashMap<>();
-        listing.put("seller", "JohnSmith");
-        listing.put("isbn", "9781488620683");
-        listing.put("title", "Organisational Behaviour");
-        listing.put("edition", 9);
-        listing.put("authors", "Stephen Robbins, Timothy A. Judge, Marissa Edwards, Peter Sandiford and Martin Fitzgerald");
-        listing.put("yearPublished", 2019);
-        listing.put("numberOfPages", 496);
-        listing.put("topicCode", "MGMT");
-        listing.put("topic", "Management");
-        listing.put("price", 100.95);
-        listing.put("condition", "Used");
-        listing.put("additionalDetails", "This textbook has been used for about 6 months and is in good condition");
-        listing.put("listingLastUpdatedDate", "19/09/2022");
-        listing.put("listingStatus", "Active");
-        db.collection("listings")
-                .add(listing)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
-    }
-
-    public void addListing2() {
-        Map<String, Object> listing = new HashMap<>();
-        listing.put("seller", "JaneBrown");
-        listing.put("isbn", "9781137468574");
-        listing.put("title", "Organisational Behaviour");
-        listing.put("edition", 2);
-        listing.put("authors", "Muayyad Jabri");
-        listing.put("yearPublished", 2017);
-        listing.put("numberOfPages", 318);
-        listing.put("topicCode", "MGMT");
-        listing.put("topic", "Management");
-        listing.put("price", 80);
-        listing.put("condition", "New");
-        listing.put("additionalDetails", "");
-        listing.put("listingLastUpdatedDate", "20/09/2022");
-        listing.put("listingStatus", "Active");
-        db.collection("listings")
-                .add(listing)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
-    }
-
-    public void addListing3() {
-        Map<String, Object> listing = new HashMap<>();
-        listing.put("seller", "BillJones");
-        listing.put("isbn", "9781430262503");
-        listing.put("title", "Beginning Haskell: A Project-Based Approach");
-        listing.put("edition", 1);
-        listing.put("authors", "Alejandro Serrano Mena");
-        listing.put("yearPublished", 2014);
-        listing.put("numberOfPages", 409);
-        listing.put("topicCode", "COMP");
-        listing.put("topic", "Computing");
-        listing.put("price", 35);
-        listing.put("condition", "Used");
-        listing.put("additionalDetails", "This textbook has a clear contact cover");
-        listing.put("listingLastUpdatedDate", "21/09/2022");
-        listing.put("listingStatus", "Active");
-        db.collection("listings")
-                .add(listing)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
+    public void addListing() {
+        int i = 0;
+        while (i < 2000) {
+            Map<String, Object> listing = new HashMap<>();
+            listing.put("seller", GenerateTextbookDataListings.getRandomSellerUsername());
+            listing.put("textbook", GenerateTextbookDataListings.getRandomTextbook());
+            listing.put("price", GenerateTextbookDataListings.getRandomPrice(GenerateTextbookDataListings.getRandomTextbook().price - GenerateTextbookDataListings.getRandomTextbook().price * 0.2, GenerateTextbookDataListings.getRandomTextbook().price));
+            listing.put("condition", GenerateTextbookDataListings.getRandomCondition());
+            listing.put("additionalDetails", GenerateTextbookDataListings.getRandomAdditionalDetails());
+            listing.put("listingLastUpdatedDate", GenerateTextbookDataListings.getRandomDate());
+            listing.put("listingStatus", GenerateTextbookDataListings.getRandomListingStatus());
+            db.collection("listings")
+                    .add(listing)
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error adding document", e);
+                        }
+                    });
+            i++;
+        }
     }
 
     private RecyclerView recyclerView;
