@@ -1,8 +1,8 @@
-package com.example.marketstructure;
+package com.example.marketstructure.generatedata;
+
+import com.example.marketstructure.Textbook;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 
 public class ListingTextbookData {
     static ArrayList<Textbook> textbooks = new ArrayList<Textbook>();
@@ -19,7 +19,7 @@ public class ListingTextbookData {
         textbooks.add(new Textbook("9780199270293", "Organic Chemistry", 2, "Jonathan Clayden, Nick Greeves, Stuart Warren", "textbook_9780199270293.png", 127.95, 2012, 1264, "CHEM", "Chemistry"));
         textbooks.add(new Textbook("9780134494166", "Clean Architecture: A Craftsman's Guide to Software Structure and Design", 1, "Robert Martin", "textbook_9780134494166.png", 50.35, 2017, 432, "COMP", "Computing"));
         textbooks.add(new Textbook("9781292096131", "Software Engineering", 10, "Ian Sommerville", "textbook_9781292096131.png", 138.55, 2015, 816, "COMP", "Computing"));
-        textbooks.add(new Textbook("9781488620683", "Macroeconomics", 6, "Stephen Williamson", "textbook_9781292215761.png", 146.95, 2017, 732, "ECON", "Economics"));
+        textbooks.add(new Textbook("9781292215761", "Macroeconomics", 6, "Stephen Williamson", "textbook_9781292215761.png", 146.95, 2017, 732, "ECON", "Economics"));
         textbooks.add(new Textbook("9781488620683", "Organisational Behaviour", 9, "Stephen Robbins, Timothy A. Judge, Marissa Edwards, Peter Sandiford, Martin Fitzgerald", "textbook_9781488620683.png", 156.40, 2019, 496, "MGMT", "Management"));
     }
 

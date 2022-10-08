@@ -1,12 +1,13 @@
-package com.example.marketstructure;
+package com.example.marketstructure.generatedata;
 
-import java.text.DateFormat;
+import com.example.marketstructure.Textbook;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
-public class GenerateTextbookDataListings extends ListingTextbookData {
+public class GenerateTextbookDataListings {
     public static List<Textbook> listings;
     public GenerateTextbookDataListings() {
         listings = new ArrayList<>();
@@ -14,42 +15,42 @@ public class GenerateTextbookDataListings extends ListingTextbookData {
 
     public static String getRandomSellerUsername() {
         String randomSellerUsername;
-        String[] sellerUsername = sellerUsernames;
-        int index = (int) (Math.random() * sellerUsernames.length);
+        String[] sellerUsername = ListingTextbookData.sellerUsernames;
+        int index = (int) (Math.random() * ListingTextbookData.sellerUsernames.length);
         randomSellerUsername = sellerUsername[index];
         return randomSellerUsername;
     }
 
     public static Textbook getRandomTextbook() {
         Textbook randomTextbook;
-        int index = (int) (Math.random() * textbooks.size());
-        randomTextbook = textbooks.get(index);
+        int index = (int) (Math.random() * ListingTextbookData.textbooks.size());
+        randomTextbook = ListingTextbookData.textbooks.get(index);
         return randomTextbook;
     }
 
     public static String getRandomCondition() {
         String randomCondition;
-        int index = (int) (Math.random() * conditions.length);
-        randomCondition = conditions[index];
+        int index = (int) (Math.random() * ListingTextbookData.conditions.length);
+        randomCondition = ListingTextbookData.conditions[index];
         return randomCondition;
     }
 
     public static String getRandomListingStatus() {
         String randomListingStatus;
-        int index = (int) (Math.random() * listingStatuses.length);
-        randomListingStatus = listingStatuses[index];
+        int index = (int) (Math.random() * ListingTextbookData.listingStatuses.length);
+        randomListingStatus = ListingTextbookData.listingStatuses[index];
         return randomListingStatus;
     }
 
     public static String getRandomAdditionalDetails() {
         String randomAdditionalDetails;
         if (getRandomCondition().equals("New")) {
-            int index = (int) (Math.random() * additionalDetailsNew.length);
-            randomAdditionalDetails = additionalDetailsNew[index];
+            int index = (int) (Math.random() * ListingTextbookData.additionalDetailsNew.length);
+            randomAdditionalDetails = ListingTextbookData.additionalDetailsNew[index];
             return randomAdditionalDetails;
         } else {
-            int index = (int) (Math.random() * additionalDetailsUsed.length);
-            randomAdditionalDetails = additionalDetailsUsed[index];
+            int index = (int) (Math.random() * ListingTextbookData.additionalDetailsUsed.length);
+            randomAdditionalDetails = ListingTextbookData.additionalDetailsUsed[index];
             return randomAdditionalDetails;
         }
     }
@@ -57,7 +58,7 @@ public class GenerateTextbookDataListings extends ListingTextbookData {
     public static double getRandomPrice(double minPrice, double maxPrice) {
         double price = Math.random() * (maxPrice - minPrice + 1) + minPrice;
         if (getRandomCondition().equals("New")
-                && getRandomAdditionalDetails() != "Textbook ebook code has been used") {
+                && getRandomAdditionalDetails().equals("Textbook ebook code has been used")) {
             return price - (price * 0.10);
         } else if (getRandomCondition().equals("New")
                 && getRandomAdditionalDetails().equals("Textbook ebook code has been used")) {
