@@ -84,8 +84,8 @@ beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
 <br>
 
 **Agenda Item 4: Discuss work to complete for Week 10 checkpoint including report:**
-- Almost fully complete Part 1 Basic App requirements for the App first and start implementation of additional features.
-- Start writing report for partially/fully implemented features - Rhonda will create and share word document in group chat
+- Almost fully complete Part 1 Basic App requirements for the App first and start implementation of additional features by next Thursday
+- Start writing report for partially/fully implemented features by next Thursday- Rhonda will create and share word document in group chat
 - Discussed deadline for Checkpoint 10 is Friday (Fame and Rhonda's Lab)
 
 **Next meeting date and time: Saturday, 15th October 2022 at 3 pm**
@@ -100,12 +100,13 @@ beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
 | Part 1 - Basic App Requirement 4 - Search Function | Gordon and Fame |
 | Part 2 - Additional/General Feature 1 - Search-related Feature - Search functionality can handle partially valid and invalid search queries. (medium) | Gordon |
 | Part 2 - Additional/General Feature 2 - Search-related Feature - Sort a list of products returned from a search based on price, popularity, rating, availability, etc. (easy) | Gordon |
-| Part 2 - Additional/General Feature 3 - Search-related Feature - Filter a list of products returned from a search based on their categories (e.g., kids, adults, kitchen, bedroom, etc.) (easy)) | Gordon |
+| Part 2 - Additional/General Feature 3 - Search-related Feature - Filter a list of products returned from a search based on their categories (e.g., kids, adults, kitchen, bedroom, etc.) (easy) | Gordon |
 | Part 2 - Additional/General Feature 4 - User Interactivity - The ability to micro-interact with items in your app (e.g. add to watchlist/add to cart/like an item/report an item/add reviews (stars)) [stored in-memory]. (easy) | Derek & Rhonda |
 | Part 2 - Additional/General Feature 5 - Creating Processes - Your app may allow users to post an item and set the selling method to 'bidding'. After bidding starts, other users can bid on the item and users may be notified if their bid has been beaten. The user (bidder) must be able to set the new price. (easy) |  Rhonda |
 | Part 2 - Additional/General Feature 6 - Creating Processes - New User Registration (easy) | Fame |
 | Part 2 - Additional/General Feature 7 - Peer to Peer Messaging - Provide users with the ability to message each other directly. (hard) | Huiguang |
 | Part 2 - Additional/General Feature 8 - Firebase Integration - Use Firebase to implement user Authentication/Authorisation. (easy) | Fame |
+| Report | All |
 
 ## Scribe Rotation
 The following dictates who will be scribe in this and the next meeting.
