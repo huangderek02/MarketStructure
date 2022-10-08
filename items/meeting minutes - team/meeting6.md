@@ -26,6 +26,7 @@ Stand up Procedure:
 
 ## Meeting Minutes
 **Agenda Item 1: Individual updates on progress**
+<br>
 **Fame:**
 - Has created package for Tree and working on RedBlack Tree implementation
 - Will look into creating a BST as a backup
@@ -54,9 +55,10 @@ Stand up Procedure:
 **Derek:**
 - Completed UI Screen for MarketActivity
 - Research into Firestore implementation
-
+<br>
 
 **Agenda Item 2: Determine additional/general features and delegate** 
+<br>
 **Search-related features:**
 - 1. Search functionality can handle partially valid and invalid search queries. (medium) - Gordon
 - 2. Sort a list of products returned from a search based on price, popularity, rating, availability, etc.
@@ -79,7 +81,7 @@ beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
 
 **Firebase Integration**
 - 1. Use Firebase to implement user Authentication/Authorisation. (easy) - Fame
-
+<br>
 
 **Agenda Item 4: Discuss work to complete for Week 10 checkpoint including report:**
 - Almost fully complete Part 1 Basic App requirements for the App first and start implementation of additional features.
