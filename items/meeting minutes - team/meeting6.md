@@ -1,7 +1,7 @@
 # Gorderhuifamda Team
 This following is a very simple team meeting template. You should expand it based on the scope and nature of your discussion.
 
-## Team Meeting 6 - Week 9 - Saturday, 8th October 2022 (3 pm - 4 pm)
+## Team Meeting 6 - Week 9 - Saturday, 8th October 2022 (3:10 pm - 4:50 pm)
 **Absent:**
 No members were absent.
 <br>
