@@ -16,6 +16,10 @@ import java.util.Arrays;
  * E.g. The following string: "The 1900's greatest potato = a black hole" 
  * will be tokenized as SINGLE STRING rather than: ["The", 1900, "'s greatest potato", =, "a black hole"]
  *
+ *
+ * PROBLEMS/NOTES:
+ * - Integers > 9999 are stored as strings. This is to avoid user errors from inputting a number greater than max int allowed
+ * 
  */
 
 public class Tokenizer {
@@ -36,7 +40,7 @@ public class Tokenizer {
 	 */
 	static final ArrayList<Character> symbols = new ArrayList<Character>(Arrays.asList('<', '>','=', /*'"',*/ ',', ':'));
 	
-	static final ArrayList<String> keywords = new ArrayList<String>(Arrays.asList("PAGES", "COST", "TOPIC", "CODE"));
+	static final ArrayList<String> keywords = new ArrayList<String>(Arrays.asList("PAGES", "COST", "TOPIC", "CODE", "EDITION", "ISBN"));
 	
 	static final ArrayList<Character> digits = new ArrayList<Character>(Arrays.asList('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'));
 	
@@ -51,7 +55,7 @@ public class Tokenizer {
 		
 		String r = text;
 		
-		if(!r.isEmpty() && (r.charAt(0) == ' ' || r.charAt(0) == '\t')) {
+		if(!r.isEmpty() && (r.charAt(0) == ' ' || r.charAt(0) == '\t' || r.charAt(0) == '\n')) {
 			r = r.substring(1,r.length());
 			r = consumeWhiteSpace(r);
 		}
@@ -70,12 +74,12 @@ public class Tokenizer {
 	 * @param text The text we want to remove white spaces from
 	 * @return String without initial white spaces. Spaces later are left as is
 	 */
-	public String consumeEndSpace(String text) {
+	protected String consumeEndSpace(String text) {
 		
 		int finalCharIndex = 0;
 		
 		for(int i = 0; i < text.length(); i ++) {
-			if(text.charAt(i) != ' ' && text.charAt(i) != '\t') finalCharIndex = i + 1;
+			if(text.charAt(i) != ' ' && text.charAt(i) != '\t' && text.charAt(i) != '\n') finalCharIndex = i + 1;
 			
 		}
 		
@@ -91,7 +95,8 @@ public class Tokenizer {
 	 * Check if the next token is a keyword.
 	 * @param text The text given should not be empty.
 	 */
-	private boolean nextIsKeyword(String text) {
+	/*
+	protected boolean nextIsKeyword(String text) {
 
 		for(String k:keywords) {
 			if(text.length() < k.length()) continue;
@@ -99,7 +104,7 @@ public class Tokenizer {
 		}
 		return false;
 	}
-	
+	*/
 	
 	/**
 	 * NOTE:
@@ -111,10 +116,10 @@ public class Tokenizer {
 	 * White space after an integer is ignored. An integer ends when it reaches a comma (or text is empty)
 	 * @param text The text given should not be empty.
 	 */
-	private boolean nextIsInteger(String text) {
+	protected boolean nextIsInteger(String text) {
 		
 		
-		if(text.charAt(0) == ' ' || text.charAt(0) == '\t') {
+		if(text.charAt(0) == ' ' || text.charAt(0) == '\t' || text.charAt(0) == '\n') {
 			text = consumeWhiteSpace(text);
 			
 			if(text.isEmpty() || text.charAt(0) == ',') return true;
@@ -157,6 +162,12 @@ public class Tokenizer {
 		String remainingText = consumeWhiteSpace(text);
 		
 		/*
+		 * The checking if the token is a keyword is nested in a for loop 
+		 * but after we also want to restart from the top of the while loop
+		 */
+		boolean nextLoop = false;
+		
+		/*
 		 * Adds tokens to the list while text still remains.
 		 */
 		while(!remainingText.isEmpty()) {
@@ -170,69 +181,19 @@ public class Tokenizer {
 					tokens.add(k);
 					
 					remainingText = consumeWhiteSpace(remainingText.substring(k.length(), remainingText.length()));
-					 break;
+					nextLoop = true;
+					break;
 				}
 			}
-			if(remainingText.isEmpty()) break;
-		
 			
-			/*	
-			 * TODO: Delete this once 100% sure
-			 * 
-			 * BACKUP
-			 * Old code.
-			 * 
-			 * Not as concise but works and is easy to follow. Needs if statement for every keyword
-			 * 
-			if(nextIsKeyword(remainingText)) {
-				
-				//keyword is PAGES
-				if(remainingText.substring(0,5).equals("PAGES")) {
-					
-					tokens.add("PAGES");
-					
-					if(remainingText.length() > 5)remainingText = remainingText.substring(5, remainingText.length());
-					else remainingText = "";
-				}
-				
-				//keyword is TOPIC
-				else if(remainingText.substring(0,5).equals("TOPIC")) {
-					
-					tokens.add("TOPIC");
-					
-					if(remainingText.length() > 5)remainingText = remainingText.substring(5, remainingText.length());
-					else remainingText = "";
-				}
-				
-				//keyword is COST
-				else if(remainingText.substring(0,4).equals("COST") ) {
-					tokens.add("COST");
-					
-					if(remainingText.length() > 4)remainingText = remainingText.substring(4, remainingText.length());
-					else remainingText = "";
-				}
-				
-				//keyword is CODE
-				else if(remainingText.substring(0,4).equals("CODE")) {
-					tokens.add("CODE");
-					
-					if(remainingText.length() > 4)remainingText = remainingText.substring(4, remainingText.length());
-					else remainingText = "";
-				}
-				
-				else if(remainingText.substring(0,7).equals("POTATOE")) {
-					tokens.add("POTATOE");
-					
-					if(remainingText.length() > 7)remainingText = remainingText.substring(7, remainingText.length());
-					else remainingText = "";
-				}
-				
-				//After any symbol, whether it is an operator or not, the next token starts after we ignore white space infront of it
-				remainingText = consumeWhiteSpace(remainingText);
-				
-				
+			if(remainingText.isEmpty()) break;
+			
+			if(nextLoop) {
+				nextLoop = false;
+				continue;
 			}
-				*/
+		
+
 			
 			
 
@@ -251,7 +212,7 @@ public class Tokenizer {
 			
 			/*
 			 * If next token is an integer (Separated from identifiers to make it easy to understand)
-			 * save token as an integer.
+			 * save token as an integer. If it is too long save as a string
 			 * 
 			 * NOTE:
 			 * consumeEndWhiteSpace makes the if statement for integer (ln 158 -170) redundant if we keep as strings
@@ -267,7 +228,14 @@ public class Tokenizer {
 					remainingText = remainingText.substring(1,remainingText.length());
 				}
 				
-				tokens.add(Integer.parseInt(integerToken));
+
+				//If the integer is too large add as a string
+				if(integerToken.length() > 4) {
+					tokens.add(integerToken);
+				}
+				
+				else tokens.add(Integer.parseInt(integerToken));
+				
 				remainingText = consumeWhiteSpace(remainingText);
 				
 			}
@@ -322,78 +290,5 @@ public class Tokenizer {
 	}
 	
 
-	
-	//TODO REMOVE WHEN DONE
-	
-	public static void main(String[] args) {
-		
-		//Testing methods
-		Tokenizer a = new Tokenizer();
-		
-		String s  = " ";
-		s = a.consumeEndSpace(s);
-		
-		System.out.println(s + "|END");
-		
-		s = "123, adb ";
-		
-//		int sAsInt = Integer.parseInt(s);	//Must be after consume white space		
-//		System.out.println(sAsInt); 		//ignores front zeroes
-		
-		System.out.println("0123456789");
-		System.out.println("Is s an integer? " + a.nextIsInteger(s));
-		
-		
-		//Testing with Object class
-		
-		Object ob = "420 a";
-		
-		Integer obi = 0;
-		
-		try {
-			obi = Integer.parseInt((String )ob);
-		}
-		catch(Exception e){
-			System.out.println("Object is no an Integer");
-
-		}
-		
-		if(String.class.isInstance(ob)) System.out.println("ob is an object \n");
-		else System.out.println("Not an instance of class \n");
-		
-		
-		
-		//Testing sub section of method
-		
-		String r = "PAGES <    123   , a, abc de 	, TOPIC PAGES COST  CODE CODE < < > = 12 PAGES, POTATOE";
-		
-		ArrayList<Object> result = a.tokenizeString(r);
-		
-		System.out.println(result);
-		
-
-		System.out.println(r);
-		
-		for(Object ins: result) {
-			System.out.println(ins + " : is of class " + ins.getClass());
-		}
-		
-		char c1 = 'a';
-		Character c2 = 'a';
-		
-		System.out.println();
-		
-		String potato = "The 1900's greatest potato = a black hole, Another Token";
-		
-		System.out.println(a.tokenizeString(potato));
-		
-//		r = a.consumeWhiteSpace(r);
-//		
-//		System.out.println("Next is a keyword? " + a.nextIsKeyword(r));
-//		
-
-		
-	} //End of Main
-	
 	
 }
