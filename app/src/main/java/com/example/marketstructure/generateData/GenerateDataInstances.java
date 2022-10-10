@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -14,7 +15,7 @@ import java.util.Map;
 
 public class GenerateDataInstances extends GenerateTextbookDataListings {
     // add Cloud Firestore instance to access database
-    private static FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private static FirebaseFirestore db = FirebaseFirestore.getInstance(FirebaseApp.getInstance("https://marketplace-db-6139c.firebaseio.com/"));
 
     public static final String TAG = "MarketActivity";
     // add sample listings data
@@ -22,7 +23,7 @@ public class GenerateDataInstances extends GenerateTextbookDataListings {
         int i = 0;
         while (i < 2500) {
             Map<String, Object> listing = new HashMap<>();
-            listing.put("listingId", i+1);
+            listing.put("listingId", i);
             listing.put("seller", getRandomSellerUsername());
             listing.put("textbook", getRandomTextbook());
             listing.put("price", getRandomPrice(getRandomTextbook().getPrice() - getRandomTextbook().getPrice() * 0.2, getRandomTextbook().getPrice()));
