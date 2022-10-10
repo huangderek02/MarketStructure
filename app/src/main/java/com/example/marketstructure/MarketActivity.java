@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.marketstructure.generateData.GenerateDataInstances;
+
 public class MarketActivity extends AppCompatActivity {
 
 
@@ -11,5 +13,6 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
+        GenerateDataInstances.addListings();
     }
 }

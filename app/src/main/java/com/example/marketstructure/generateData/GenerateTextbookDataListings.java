@@ -1,4 +1,4 @@
-package com.example.marketstructure.generatedata;
+package com.example.marketstructure.generateData;
 
 import com.example.marketstructure.Textbook;
 
@@ -48,22 +48,31 @@ public class GenerateTextbookDataListings {
             int index = (int) (Math.random() * ListingTextbookData.additionalDetailsNew.length);
             randomAdditionalDetails = ListingTextbookData.additionalDetailsNew[index];
             return randomAdditionalDetails;
+        } else if (getRandomCondition().equals("Used - Good")) {
+            int index = (int) (Math.random() * ListingTextbookData.additionalDetailsUsedGood.length);
+            randomAdditionalDetails = ListingTextbookData.additionalDetailsUsedGood[index];
+            return randomAdditionalDetails;
         } else {
-            int index = (int) (Math.random() * ListingTextbookData.additionalDetailsUsed.length);
-            randomAdditionalDetails = ListingTextbookData.additionalDetailsUsed[index];
+            int index = (int) (Math.random() * ListingTextbookData.additionalDetailsUsedWorn.length);
+            randomAdditionalDetails = ListingTextbookData.additionalDetailsUsedWorn[index];
             return randomAdditionalDetails;
         }
     }
 
+    /* Generate a random price for textbook where original textbook price is reduced by 5% - 30%
+        depending on the condition of the textbook. The poorer the condition, the higher reduction
+        in price.
+     */
     public static double getRandomPrice(double minPrice, double maxPrice) {
         double price = Math.random() * (maxPrice - minPrice + 1) + minPrice;
         if (getRandomCondition().equals("New")
-                && getRandomAdditionalDetails().equals("Textbook ebook code has been used")) {
-            return price - (price * 0.10);
+                && getRandomAdditionalDetails().equals("Textbook is still in original packaging")
+                || getRandomAdditionalDetails().equals("Textbook includes ebook code")) {
+            return price - (price * 0.05);
         } else if (getRandomCondition().equals("New")
                 && getRandomAdditionalDetails().equals("Textbook ebook code has been used")) {
-            return price - (price * 0.05);
-        } else if (getRandomCondition().equals("Used")
+            return price - (price * 0.10);
+        } else if (getRandomCondition().equals("Good")
                 && getRandomAdditionalDetails().equals("Textbook has clear contact cover")
                 || getRandomAdditionalDetails().equals("Textbook ebook code has been used")
                 || getRandomAdditionalDetails().equals("Textbook is in good condition, used for 6 months")

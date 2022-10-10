@@ -1,4 +1,4 @@
-package com.example.marketstructure.generatedata;
+package com.example.marketstructure.generateData;
 
 import com.example.marketstructure.Textbook;
 
@@ -148,18 +148,20 @@ public class ListingTextbookData {
             "Natalie Borg",	"Brittany Dimitrov", "Charlotte Markov", "Marie Johannes", "Kayla Silva",
             "Alexis Sokolov", "Lori Volkov",};
 
-    static String[] conditions = {"New", "Good", "Worn", "Used"};
+    static String[] conditions = {"New", "Used - Good", "Used - Worn"};
 
     static String[] additionalDetailsNew = {"Textbook is still in original packaging"
             , "Textbook includes ebook code", "N/A", "Textbook ebook code has been used"};
 
-    static String[] additionalDetailsUsed = {"Textbook has partial water damage"
-            , "Textbook has clear contact cover", "Textbook ebook code has been used",
-            "A few textbook page corners have been folded to be used as a bookmark",
-            "A few textbook page corners have been torn and sticky taped back together",
-            "Textbook is in good condition, used for 6 months", "N/A",
-            "Textbook is in good condition, used for 1 year"};
+    static String[] additionalDetailsUsedGood = {"Textbook has clear contact cover",
+            "Textbook ebook code has been used", "Textbook is in good condition, used for 6 months",
+            "Textbook is in good condition, used for 1 year", "N/A"};
+
+    static String[] additionalDetailsUsedWorn = {"Textbook has partial water damage"
+            , "A few textbook page corners have been folded to be used as a bookmark",
+            "A few textbook page corners have been torn and sticky taped back together", "N/A"};
 
     static String[] listingStatuses = {"Active - Purchase Now", "Active - Bidding"
-            , "Processed - Shipped", "Complete - Inactive", "Fraud Listing/Seller Identified"};
+            , "Processed - Shipped", "Processed - Delivered", "Complete - Inactive",
+            "Fraud Listing/Seller Identified"};
 }

@@ -1,4 +1,4 @@
-package com.example.marketstructure.generatedata;
+package com.example.marketstructure.generateData;
 
 import android.util.Log;
 
@@ -14,18 +14,15 @@ import java.util.Map;
 
 public class GenerateDataInstances extends GenerateTextbookDataListings {
     // add Cloud Firestore instance to access database
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private static FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     public static final String TAG = "MarketActivity";
     // add sample listings data
-    public void addListings() {
-        addListing();
-    }
-
-    public void addListing() {
+    public static void addListings() {
         int i = 0;
-        while (i < 2000) {
+        while (i < 2500) {
             Map<String, Object> listing = new HashMap<>();
+            listing.put("listingId", i+1);
             listing.put("seller", getRandomSellerUsername());
             listing.put("textbook", getRandomTextbook());
             listing.put("price", getRandomPrice(getRandomTextbook().getPrice() - getRandomTextbook().getPrice() * 0.2, getRandomTextbook().getPrice()));
