@@ -21,7 +21,7 @@ public class GenerateDataInstances extends GenerateTextbookDataListings {
     // add sample listings data
     public static void addListings() {
         int i = 0;
-        while (i < 2500) {
+        while (i < 1000) {
             Map<String, Object> listing = new HashMap<>();
             listing.put("listingId", i);
             listing.put("seller", getRandomSellerUsername());
