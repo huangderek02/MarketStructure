@@ -10,7 +10,8 @@ import java.util.ArrayList;
  * 
  * This class stores textbooks in a B-Tree with a set max number of keys. 
  * 
- * TODO: implement FIND()
+ * 
+ * Errors: split() 
  * 
  * TODO: implement tests
  * 
@@ -66,28 +67,40 @@ public class BTree {
 		for(int i = 0; i < maxChildren; i++) children.add(null);
 	}
 	
-	
+
 	/**
-	 * UNUSED 
-	 * 
-	 * Children B-Trees of a node are null on creation Used by insert.
-	 * 
-	 * @param index index of new child BTree
+	 * Return list of textbooks with title that contains the term
+	 * @param term
 	 */
-	private void createChild(int index) {
+	public ArrayList<Textbook> find(String term) {
 		
-		if(index > maxChildren - 1 || index < 0) {
-			System.out.println("Idiot. Your index is out of rnage");
+
+		ArrayList<Textbook> returnList = new ArrayList<Textbook>();
+		
+		if(term == null) return returnList;
+		
+		int nextChild = 0;	//Search this child for more textbooks
+		
+		
+		for(Textbook textbook: keys) {
+			if(textbook == null) break;
+			
+			if(textbook.title.contains(term)) {
+				returnList.add(textbook);
+			}
+			
+			//Search child of the first textbook alphabetically greater than the term. Will be 0 if all greater than the term
+			if(textbook.title.compareTo(term) < 0) {
+				nextChild = keys.indexOf(textbook) +1;
+			}
+			
 		}
 		
-		BTree newChild = new BTree(this);
-
+		if(children.get(nextChild) == null) return returnList;
+		returnList.addAll(children.get(nextChild).find(term));
 		
-		for(int i = 0; i < maxKeys; i++) newChild.keys.add(null);
-		for(int i = 0; i < maxChildren; i++) newChild.children.add(null);
+		return returnList;
 		
-		children.set(index, newChild);
-
 	}
 	
 	
@@ -306,15 +319,21 @@ public class BTree {
 		}
 		
 		/* When parent is not root and full split the parent. 
-		 * Note that in insert() will recursively split the tree until it can be added.
+		 * Note that insert() will recursively split the tree until it can be added.
+		 * 
+		 * FIXME: Contains error. We need to change the parent but it is null for some situations. 
+		 * 		  Additionally some keys go missing
 		 */
 		if(!parent.isRoot) {
+			
 			parent.split();
+			int newParentIndex = this.parent.parent.children.indexOf(this.parent) + 1;
+			this.parent = this.parent.parent.children.get(newParentIndex);
+			
+			
 			return;
 		}
 		
-		
-		System.out.println("NEED TO COMPLETE SPLIT METHOD");
 	}
 
 
@@ -432,7 +451,7 @@ public class BTree {
 	
 	@Override
 	public String toString() {
-		return "Keys: " + keys + ", \nChildren: " + children ;
+		return "\nKeys: " + keys + ", Children: " + children ;
 		
 	}
 	
@@ -456,7 +475,21 @@ public class BTree {
 		Textbook t9 = new Textbook("i book");
 		Textbook t10 = new Textbook("j book");
 		Textbook t11 = new Textbook("k book");
-		
+		Textbook t12 = new Textbook("l book");
+		Textbook t13 = new Textbook("m book");	
+		Textbook t14 = new Textbook("n book");	
+		Textbook t15 = new Textbook("o book");
+		Textbook t16 = new Textbook("p book");
+		Textbook t17 = new Textbook("q book");
+		Textbook t18 = new Textbook("r book");
+		Textbook t19 = new Textbook("s book");
+		Textbook t20 = new Textbook("t book");
+		Textbook t21 = new Textbook("u book");
+		Textbook t22 = new Textbook("v book");
+		Textbook t23 = new Textbook("w book");
+		Textbook t24 = new Textbook("x book");
+		Textbook t25 = new Textbook("y book");
+		Textbook t26 = new Textbook("z book");
 		
 		test.insert(t1);
 		test.insert(t2);
@@ -464,39 +497,23 @@ public class BTree {
 		test.insert(t4);
 		test.insert(t5);
 		test.insert(t6);
-		
-		//Split for 7	
 		test.insert(t7);
 		test.insert(t8);
 		test.insert(t9);
 		test.insert(t10);
-		
-		//Split for 11
 		test.insert(t11);
-		
-		
-//		Textbook t1 = new Textbook("a book");
-//		Textbook t2 = new Textbook("b book");
-//		Textbook t3 = new Textbook("c book");
-//		Textbook t4 = new Textbook("d book");
-//		Textbook t5 = new Textbook("e book");
-//		Textbook t6 = new Textbook("f book");
-//		Textbook t7 = new Textbook("g book");
-//		
-//		tbooks.add(t1);
-//		tbooks.add(t2);
-//		tbooks.add(t3);
-//		tbooks.add(t4);
-//		tbooks.add(t5);
-//		tbooks.add(t6);
-//
-//		test.keys = tbooks;
-//		
-//		test.splitRoot();
-//		
-//		test.keys = tbooks;
-//		
-//		test.splitRoot();
+		test.insert(t12);
+		test.insert(t13);
+//		test.insert(t14);	//
+//		test.insert(t15);
+//		test.insert(t16);
+//		test.insert(t17);
+//		test.insert(t18);
+//		test.insert(t19);
+//		test.insert(t20);
+
+
+		System.out.println(test.find("book"));
 		
 		System.out.println("\nTest BTree has the following properties: \n");
 		System.out.println(test);
@@ -519,6 +536,10 @@ public class BTree {
 		}
 		
 		System.out.println(allNull(intarray));
+		
+		String ts1 =  "asdasd";
+		
+		System.out.println("ts1 contains " + ts1.contains("dasd"));
 		
 
 	}
