@@ -11,12 +11,23 @@ import java.util.ArrayList;
  * This class stores textbooks in a B-Tree with a set max number of keys. 
  * 
  * 
- * Errors: split() 
+ * Errors: 
  * 
- * TODO: implement tests
+ * split(), having a BTree of height greater than 3 breaks the tree. 
+ * Suspected error in children when splitting causing null pointer error
+ *--------------------------------------------------------------------------------------
+ * Improvements/refactoring/cleaning:
  * 
- * TODO: integrate with tokenizer and parser
+ * 	insert(): 
+ *	 - split into smaller methods
+ *	 - add multiple ways to insert (currently uses title only)
  * 
+ * 	isRoot variable: 
+ *	 - redundant as boolean (checking parent does the same)
+ * 
+ * 	find():
+ * 	- add more precise find (This is related to improving insert method)
+ * -------------------------------------------------------------------------------------
  * 
  * @author u7117043
  *
@@ -116,16 +127,12 @@ public class BTree {
 			//When root has no children and is not full
 			if(keys.contains(null) && allNull(children)) {
 				
-				System.out.println("Root: keys not full and children are null, inserting " + textbook);	//TODO remove
-				
 				insertIntoKeys(textbook);
 				return;
 			}
 			
 			//When root has no children and is full
 			if(!keys.contains(null) && allNull(children)) {
-				
-				System.out.println("Root: keys full and children are null, inserting " + textbook);	//TODO remove
 				
 				splitRoot();
 				insert(textbook);
@@ -144,7 +151,7 @@ public class BTree {
 				 * When we reach a title that is "greater than" the inserting textbook title alphabetically
 				 */
 				if(tb == null || textbook.title.compareTo(tb.title) < 0) {
-					children.get(i).insert(textbook);	//TODO solve insert for children
+					children.get(i).insert(textbook);
 					return;
 				}
 
@@ -161,18 +168,12 @@ public class BTree {
 		//When subtree has no children and is not full
 		if(keys.contains(null) && allNull(children)) {
 			
-			System.out.println("Non Root: keys not full and children are null, inserting " + textbook);	//TODO remove
-			
 			insertIntoKeys(textbook);
 			return;
 		}
 		
 		//When subtree has no children and is full
 		if(!keys.contains(null) && allNull(children)) {
-			
-			System.out.println("Non Root: keys full and children are null, inserting " + textbook);	//TODO remove
-			
-			//TODO split parent and insert again
 			
 			split();
 			parent.insert(textbook);
@@ -386,9 +387,6 @@ public class BTree {
 		//Need to add right most pointer. Should be set at median index (Hard to think about. Shown by doing an example)
 		rightChild.children.set(median, children.get(maxChildren - 1));
 		
-		//TODO remove
-		if(medianTB == null) System.out.println("medianTB WAS NULL!?!");
-		
 		keys = new ArrayList<Textbook>();
 		children = new ArrayList<BTree>();
 		
@@ -430,7 +428,6 @@ public class BTree {
 			//Set to earliest null
 			if(tb == null) {
 				keys.set(i, textbook);
-//				System.out.println("A texbook was null! (Insertintokeys)");	TODO remove
 				return;
 			}
 			
@@ -456,92 +453,5 @@ public class BTree {
 	}
 	
 	
-	
-	
-	public static void main(String[] args) {
-		
-		BTree test = new BTree(3);
-	
-		ArrayList<Textbook> tbooks = new ArrayList<Textbook>();
-		
-		Textbook t1 = new Textbook("a book");
-		Textbook t2 = new Textbook("b book");
-		Textbook t3 = new Textbook("c book");
-		Textbook t4 = new Textbook("d book");
-		Textbook t5 = new Textbook("e book");
-		Textbook t6 = new Textbook("f book");
-		Textbook t7 = new Textbook("g book");
-		Textbook t8 = new Textbook("h book");
-		Textbook t9 = new Textbook("i book");
-		Textbook t10 = new Textbook("j book");
-		Textbook t11 = new Textbook("k book");
-		Textbook t12 = new Textbook("l book");
-		Textbook t13 = new Textbook("m book");	
-		Textbook t14 = new Textbook("n book");	
-		Textbook t15 = new Textbook("o book");
-		Textbook t16 = new Textbook("p book");
-		Textbook t17 = new Textbook("q book");
-		Textbook t18 = new Textbook("r book");
-		Textbook t19 = new Textbook("s book");
-		Textbook t20 = new Textbook("t book");
-		Textbook t21 = new Textbook("u book");
-		Textbook t22 = new Textbook("v book");
-		Textbook t23 = new Textbook("w book");
-		Textbook t24 = new Textbook("x book");
-		Textbook t25 = new Textbook("y book");
-		Textbook t26 = new Textbook("z book");
-		
-		test.insert(t1);
-		test.insert(t2);
-		test.insert(t3);
-		test.insert(t4);
-		test.insert(t5);
-		test.insert(t6);
-		test.insert(t7);
-		test.insert(t8);
-		test.insert(t9);
-		test.insert(t10);
-		test.insert(t11);
-		test.insert(t12);
-		test.insert(t13);
-//		test.insert(t14);	//
-//		test.insert(t15);
-//		test.insert(t16);
-//		test.insert(t17);
-//		test.insert(t18);
-//		test.insert(t19);
-//		test.insert(t20);
-
-
-		System.out.println(test.find("book"));
-		
-		System.out.println("\nTest BTree has the following properties: \n");
-		System.out.println(test);
-		
-		System.out.println(test.maxKeys);
-		System.out.println(test.maxChildren);
-		System.out.println(test.keys);
-		System.out.println(test.children);
-		
-		//For any BTree this should be itself (and be the same)
-		for(BTree treeinchild: test.children) {
-			if(treeinchild == null) continue;
-			System.out.println("Child has parent" + treeinchild.parent.keys);
-		}
-		
-		ArrayList<Integer> intarray = new ArrayList<Integer>();
-		
-		for(int i = 0; i < 10; i++) {
-			intarray.add(i);
-		}
-		
-		System.out.println(allNull(intarray));
-		
-		String ts1 =  "asdasd";
-		
-		System.out.println("ts1 contains " + ts1.contains("dasd"));
-		
-
-	}
 
 }
