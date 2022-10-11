@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -15,7 +16,8 @@ import java.util.Map;
 
 public class GenerateDataInstances extends GenerateTextbookDataListings {
     // add Cloud Firestore instance to access database
-    private static FirebaseFirestore db = FirebaseFirestore.getInstance(FirebaseApp.getInstance("https://marketplace-db-6139c.firebaseio.com/"));
+    private static FirebaseFirestore db = FirebaseFirestore.getInstance();
+            //FirebaseApp.getInstance("https://marketplace-db-6139c.firebaseio.com/")
 
     public static final String TAG = "MarketActivity";
     // add sample listings data
@@ -31,6 +33,7 @@ public class GenerateDataInstances extends GenerateTextbookDataListings {
             listing.put("additionalDetails", getRandomAdditionalDetails());
             listing.put("listingLastUpdatedDate", getRandomDate());
             listing.put("listingStatus", getRandomListingStatus());
+
             db.collection("listings")
                     .add(listing)
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
