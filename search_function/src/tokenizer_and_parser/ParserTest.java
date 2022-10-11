@@ -28,7 +28,7 @@ import java.util.ArrayList;
 public class ParserTest {
 	
 	
-	Parser parser = new Parser();
+	Parser parser = Parser.getInstance();
 	String input = "";
 	ArrayList<String> expectedStrings = new ArrayList<String>();
 	Integer[] expectedArray = new Integer[3];
