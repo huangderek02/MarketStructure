@@ -2,6 +2,7 @@ package com.example.marketstructure.generateData;
 
 import com.example.marketstructure.Textbook;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -64,23 +65,24 @@ public class GenerateTextbookDataListings {
         in price.
      */
     public static double getRandomPrice(double minPrice, double maxPrice) {
+        final DecimalFormat df = new DecimalFormat("0.00");
         double price = Math.random() * (maxPrice - minPrice + 1) + minPrice;
         if (getRandomCondition().equals("New")
                 && getRandomAdditionalDetails().equals("Textbook is still in original packaging")
                 || getRandomAdditionalDetails().equals("Textbook includes ebook code")) {
-            return price - (price * 0.05);
+            return Double.parseDouble(df.format(price - (price * 0.05)));
         } else if (getRandomCondition().equals("New")
                 && getRandomAdditionalDetails().equals("Textbook ebook code has been used")) {
-            return price - (price * 0.10);
+            return Double.parseDouble(df.format(price - (price * 0.10)));
         } else if (getRandomCondition().equals("Good")
                 && getRandomAdditionalDetails().equals("Textbook has clear contact cover")
                 || getRandomAdditionalDetails().equals("Textbook ebook code has been used")
                 || getRandomAdditionalDetails().equals("Textbook is in good condition, used for 6 months")
                 || getRandomAdditionalDetails().equals("N/A")
                 || getRandomAdditionalDetails().equals("Textbook is in good condition, used for 1 year")) {
-            return price - (price * 0.20);
+            return Double.parseDouble(df.format(price - (price * 0.20)));
         } else {
-            return price - (price * 0.30);
+            return Double.parseDouble(df.format(price - (price * 0.30)));
         }
     }
 
