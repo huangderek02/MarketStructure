@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class ListingTextbookData {
     static ArrayList<Textbook> textbooks = new ArrayList<Textbook>();
 
-    public static void main(String[] args) {
+    static {
         // Add Astrology (ASTR) Textbooks
         textbooks.add(new Textbook("9780521629577", "Accretion Power in Astrophysics", 3, "Juhan Frank, Andrew King, Derek Raine", "textbook9780521629577.png", 141.95, 2002, 400, "ASTR", "Astrology"));
         textbooks.add(new Textbook("9780521671866", "Galaxies in the Universe", 2, "Linda S. Sparke, John S. Gallagher, III", "textbook9780521671866.png", 92.95, 2007, 440, "ASTR", "Astrology"));

@@ -1,22 +1,22 @@
 package com.example.marketstructure;
 
 public class Listing extends Textbook {
-    String listingId;
-    String sellerUsername;
-    String isbn;
-    String title;
-    int edition;
-    String authors;
-    String textbookImageURL;
-    double price;
-    int yearPublished;
-    int numberOfPages;
-    String topicCode;
-    String topic;
-    String condition;
-    String additionalDetails;
-    String listingStatus;
-    String listingLastUpdatedDate;
+    private String listingId;
+    private String sellerUsername;
+    private String isbn;
+    private String title;
+    private int edition;
+    private String authors;
+    private String textbookImageURL;
+    private double price;
+    private int yearPublished;
+    private int numberOfPages;
+    private String topicCode;
+    private String topic;
+    private String condition;
+    private String additionalDetails;
+    private String listingStatus;
+    private String listingLastUpdatedDate;
 
     public Listing(String isbn, String title, int edition, String authors, String textbookImageURL, double price, int yearPublished, int numberOfPages, String topicCode, String topic) {
         super(isbn, title, edition, authors, textbookImageURL, price, yearPublished, numberOfPages, topicCode, topic);

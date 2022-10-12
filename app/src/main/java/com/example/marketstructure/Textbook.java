@@ -1,16 +1,16 @@
 package com.example.marketstructure;
 
 public class Textbook {
-    String isbn;
-    String title;
-    int edition;
-    String authors;
-    String textbookImageURL;
-    double price;
-    int yearPublished;
-    int numberOfPages;
-    String topicCode;
-    String topic;
+    private String isbn;
+    private String title;
+    private int edition;
+    private String authors;
+    private String textbookImageURL;
+    private double price;
+    private int yearPublished;
+    private int numberOfPages;
+    private String topicCode;
+    private String topic;
 
     public Textbook(String isbn, String title, int edition, String authors, String textbookImageURL, double price, int yearPublished, int numberOfPages, String topicCode, String topic) {
         this.isbn = isbn;
