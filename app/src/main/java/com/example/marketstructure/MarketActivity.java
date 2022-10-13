@@ -1,12 +1,12 @@
 package com.example.marketstructure;
 
-import static com.example.marketstructure.generateData.GenerateTextbookDataListings.getRandomAdditionalDetails;
-import static com.example.marketstructure.generateData.GenerateTextbookDataListings.getRandomCondition;
-import static com.example.marketstructure.generateData.GenerateTextbookDataListings.getRandomDate;
-import static com.example.marketstructure.generateData.GenerateTextbookDataListings.getRandomListingStatus;
-import static com.example.marketstructure.generateData.GenerateTextbookDataListings.getRandomPrice;
-import static com.example.marketstructure.generateData.GenerateTextbookDataListings.getRandomSellerUsername;
-import static com.example.marketstructure.generateData.GenerateTextbookDataListings.getRandomTextbook;
+import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomAdditionalDetails;
+import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomCondition;
+import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomDate;
+import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomListingStatus;
+import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomListingPrice;
+import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomSellerUsername;
+import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomTextbook;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class MarketActivity extends AppCompatActivity {
     public static final String TAG = "MarketActivity";
@@ -40,9 +41,9 @@ public class MarketActivity extends AppCompatActivity {
             listing.put("listingId", String.valueOf(i));
             listing.put("seller", getRandomSellerUsername());
             listing.put("textbook", getRandomTextbook());
-            listing.put("price", getRandomPrice(getRandomTextbook().getPrice() - getRandomTextbook().getPrice() * 0.2, getRandomTextbook().getPrice()));
             listing.put("condition", getRandomCondition());
-            listing.put("additionalDetails", getRandomAdditionalDetails());
+            listing.put("additionalDetails", getRandomAdditionalDetails(Objects.requireNonNull(listing.get("condition"))));
+            listing.put("listingPrice", getRandomListingPrice((Textbook) (listing.get("textbook")), listing.get("condition"), listing.get("additionalDetails")));
             listing.put("listingLastUpdatedDate", getRandomDate());
             listing.put("listingStatus", getRandomListingStatus());
 

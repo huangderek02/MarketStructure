@@ -8,7 +8,7 @@ public class Listing extends Textbook {
     private int edition;
     private String authors;
     private String textbookImageURL;
-    private double price;
+    private double listingPrice;
     private int yearPublished;
     private int numberOfPages;
     private String topicCode;
@@ -18,8 +18,8 @@ public class Listing extends Textbook {
     private String listingStatus;
     private String listingLastUpdatedDate;
 
-    public Listing(String isbn, String title, int edition, String authors, String textbookImageURL, double price, int yearPublished, int numberOfPages, String topicCode, String topic) {
-        super(isbn, title, edition, authors, textbookImageURL, price, yearPublished, numberOfPages, topicCode, topic);
+    public Listing(String isbn, String title, int edition, String authors, String textbookImageURL, double listingPrice, int yearPublished, int numberOfPages, String topicCode, String topic) {
+        super(isbn, title, edition, authors, textbookImageURL, listingPrice, yearPublished, numberOfPages, topicCode, topic);
     }
 
 
@@ -47,12 +47,12 @@ public class Listing extends Textbook {
         this.textbookImageURL = textbookImageURL;
     }
 
-    public double getPrice() {
-        return price;
+    public double getListingPrice() {
+        return listingPrice;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setListingPrice(double listingPrice) {
+        this.listingPrice = listingPrice;
     }
 
     public String getIsbn() {

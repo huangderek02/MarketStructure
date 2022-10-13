@@ -6,19 +6,19 @@ public class Textbook {
     private int edition;
     private String authors;
     private String textbookImageURL;
-    private double price;
+    private double originalPrice;
     private int yearPublished;
     private int numberOfPages;
     private String topicCode;
     private String topic;
 
-    public Textbook(String isbn, String title, int edition, String authors, String textbookImageURL, double price, int yearPublished, int numberOfPages, String topicCode, String topic) {
+    public Textbook(String isbn, String title, int edition, String authors, String textbookImageURL, double originalPrice, int yearPublished, int numberOfPages, String topicCode, String topic) {
         this.isbn = isbn;
         this.title = title;
         this.edition = edition;
         this.authors = authors;
         this.textbookImageURL = textbookImageURL;
-        this.price = price;
+        this.originalPrice = originalPrice;
         this.yearPublished = yearPublished;
         this.numberOfPages = numberOfPages;
         this.topicCode = topicCode;
@@ -53,7 +53,7 @@ public class Textbook {
         return authors;
     }
 
-    public void setAuthors(String author) {
+    public void setAuthors(String authors) {
         this.authors = authors;
     }
 
@@ -65,12 +65,12 @@ public class Textbook {
         this.textbookImageURL = textbookImageURL;
     }
 
-    public double getPrice() {
-        return price;
+    public double getOriginalPrice() {
+        return originalPrice;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setOriginalPrice(double originalPrice) {
+        this.originalPrice = originalPrice;
     }
 
     public int getYearPublished() {

@@ -2,15 +2,17 @@ package com.example.marketstructure.generateData;
 
 import com.example.marketstructure.Textbook;
 
+import org.w3c.dom.Text;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
-public class GenerateTextbookDataListings {
+public class GenerateRandomListings {
     public static List<Textbook> listings;
-    public GenerateTextbookDataListings() {
+    public GenerateRandomListings() {
         listings = new ArrayList<>();
     }
 
@@ -43,13 +45,13 @@ public class GenerateTextbookDataListings {
         return randomListingStatus;
     }
 
-    public static String getRandomAdditionalDetails() {
+    public static String getRandomAdditionalDetails(Object condition) {
         String randomAdditionalDetails;
-        if (getRandomCondition().equals("New")) {
+        if (condition.equals("New")) {
             int index = (int) (Math.random() * ListingTextbookData.additionalDetailsNew.length);
             randomAdditionalDetails = ListingTextbookData.additionalDetailsNew[index];
             return randomAdditionalDetails;
-        } else if (getRandomCondition().equals("Used - Good")) {
+        } else if (condition.equals("Used - Good")) {
             int index = (int) (Math.random() * ListingTextbookData.additionalDetailsUsedGood.length);
             randomAdditionalDetails = ListingTextbookData.additionalDetailsUsedGood[index];
             return randomAdditionalDetails;
@@ -64,25 +66,30 @@ public class GenerateTextbookDataListings {
         depending on the condition of the textbook. The poorer the condition, the higher reduction
         in price.
      */
-    public static double getRandomPrice(double minPrice, double maxPrice) {
+    public static String getRandomListingPrice(Textbook textbook, Object condition, Object additionalDetails) {
         final DecimalFormat df = new DecimalFormat("0.00");
-        double price = Math.random() * (maxPrice - minPrice + 1) + minPrice;
-        if (getRandomCondition().equals("New")
-                && getRandomAdditionalDetails().equals("Textbook is still in original packaging")
-                || getRandomAdditionalDetails().equals("Textbook includes ebook code")) {
-            return Double.parseDouble(df.format(price - (price * 0.05)));
-        } else if (getRandomCondition().equals("New")
-                && getRandomAdditionalDetails().equals("Textbook ebook code has been used")) {
-            return Double.parseDouble(df.format(price - (price * 0.10)));
-        } else if (getRandomCondition().equals("Good")
-                && getRandomAdditionalDetails().equals("Textbook has clear contact cover")
-                || getRandomAdditionalDetails().equals("Textbook ebook code has been used")
-                || getRandomAdditionalDetails().equals("Textbook is in good condition, used for 6 months")
-                || getRandomAdditionalDetails().equals("N/A")
-                || getRandomAdditionalDetails().equals("Textbook is in good condition, used for 1 year")) {
-            return Double.parseDouble(df.format(price - (price * 0.20)));
+        double originalPrice = textbook.getOriginalPrice();
+        double maxPrice = originalPrice - (originalPrice * 0.05);
+        double minPrice = originalPrice - (originalPrice * 0.10);
+        double randomListingPrice = Math.random() * (maxPrice - minPrice) + minPrice;
+
+        if (condition.equals("New")
+                && (additionalDetails.equals("Textbook is still in original packaging")
+                || additionalDetails.equals("Textbook includes ebook code"))) {
+            return df.format(randomListingPrice);
+        } else if (condition.equals("New")
+                && (additionalDetails.equals("Textbook ebook code has been used")
+                || additionalDetails.equals("N/A"))) {
+            return df.format(randomListingPrice - (randomListingPrice * 0.05));
+        } else if (condition.equals("Used - Good")
+                && (additionalDetails.equals("Textbook has clear contact cover")
+                || additionalDetails.equals("Textbook ebook code has been used")
+                || additionalDetails.equals("Textbook is in good condition, used for 6 months")
+                || additionalDetails.equals("N/A")
+                || additionalDetails.equals("Textbook is in good condition, used for 1 year"))) {
+            return df.format(randomListingPrice - (randomListingPrice * 0.10));
         } else {
-            return Double.parseDouble(df.format(price - (price * 0.30)));
+            return df.format(randomListingPrice - (randomListingPrice * 0.15));
         }
     }
 
