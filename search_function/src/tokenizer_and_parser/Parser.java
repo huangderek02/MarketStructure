@@ -46,8 +46,8 @@ import java.util.Arrays;
  *  
  *  NOTES:
  *  - Integer tokens will be less than 10000 and greater than or equal to 0
- *  - related to operators stored as an array, related to id's stored in arraylist
- *  - isbn stored as single string 
+ *  - keywords related to operators stored as an array, related to id's stored in arraylist
+ *  - isbn stored as single string, ignoring dashes
  * 
  */
 
@@ -429,6 +429,7 @@ public class Parser {
 			return;
 		}
 		
+		id = id.toLowerCase();
 		
 		if(key == "TOPIC") {
 			topicTerms.add(id);
