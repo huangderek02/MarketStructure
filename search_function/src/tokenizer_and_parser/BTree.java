@@ -49,7 +49,7 @@ public class BTree {
 	 * Constructor for a new BTree. This should be called once
 	 * when we construct a BTree.
 	 * 
-	 * @param maxKeys the max number of keys.
+	 * @param maxKeys The max number of Textbooks in a BTree keys
 	 */
 	BTree(int maxKeys){
 		this.maxKeys = maxKeys;
@@ -81,27 +81,27 @@ public class BTree {
 
 	/**
 	 * Return list of textbooks with title that contains the term
-	 * @param term
+	 * @param term The string in the book's title we are looking for
 	 */
 	public ArrayList<Textbook> find(String term) {
-		
 
 		ArrayList<Textbook> returnList = new ArrayList<Textbook>();
 		
 		if(term == null) return returnList;
 		
+		term = term.toLowerCase();
 		int nextChild = 0;	//Search this child for more textbooks
 		
 		
 		for(Textbook textbook: keys) {
 			if(textbook == null) break;
 			
-			if(textbook.title.contains(term)) {
+			if(textbook.getTitle().toLowerCase().contains(term)) {
 				returnList.add(textbook);
 			}
 			
 			//Search child of the first textbook alphabetically greater than the term. Will be 0 if all greater than the term
-			if(textbook.title.compareTo(term) < 0) {
+			if(textbook.getTitle().toLowerCase().compareTo(term) < 0) {
 				nextChild = keys.indexOf(textbook) +1;
 			}
 			
@@ -150,7 +150,7 @@ public class BTree {
 				 * 
 				 * When we reach a title that is "greater than" the inserting textbook title alphabetically
 				 */
-				if(tb == null || textbook.title.compareTo(tb.title) < 0) {
+				if(tb == null || textbook.getTitle().compareTo(tb.getTitle()) < 0) {
 					children.get(i).insert(textbook);
 					return;
 				}
@@ -191,7 +191,7 @@ public class BTree {
 			 * 
 			 * When we reach a title that is "greater than" the inserting textbook title alphabetically
 			 */
-			if(tb == null || textbook.title.compareTo(tb.title) < 0) {
+			if(tb == null || textbook.getTitle().compareTo(tb.getTitle()) < 0) {
 				children.get(i).insert(textbook);
 				return;
 			}
@@ -432,7 +432,7 @@ public class BTree {
 			}
 			
 			//Add title in alphabetical order and remove a null to keep size the same
-			if(textbook.title.compareTo(tb.title) < 0) {
+			if(textbook.getTitle().compareTo(tb.getTitle()) < 0) {
 				keys.add(i, textbook);
 				keys.remove(null);
 				return;

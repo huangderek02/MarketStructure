@@ -25,33 +25,42 @@ public class BTreeTest{
 	private static BTree tree7 = new BTree(7);
 	ArrayList<Textbook> expectedKeys;
 	
+	//Testbook subclass for tests. Only title is relevant
+	private static class TextbookTitleOnly extends Textbook {
+
+		private TextbookTitleOnly(String title) {
+			super(null, title, 0, null, null, 0,0, 0, null, null);
+		}
+		
+	}
+	
 	//Arbitrary textbooks for testing
-	static Textbook a = new Textbook("a book");
-	static Textbook b = new Textbook("b book");
-	static Textbook c = new Textbook("c book");
-	static Textbook d = new Textbook("d book");
-	static Textbook e = new Textbook("e book");
-	static Textbook f = new Textbook("f book");
-	static Textbook g = new Textbook("g book");
-	static Textbook h = new Textbook("h book");
-	static Textbook i = new Textbook("i book");
-	static Textbook j = new Textbook("j book");
-	static Textbook k = new Textbook("k book");
-	static Textbook l = new Textbook("l book");
-	static Textbook m = new Textbook("m book");	
-	static Textbook n = new Textbook("n book");	
-	static Textbook o = new Textbook("o book");
-	static Textbook p = new Textbook("p book");
-	static Textbook q = new Textbook("q book");
-	static Textbook r = new Textbook("r book");
-	static Textbook s = new Textbook("s book");
-	static Textbook t = new Textbook("t book");
-	static Textbook u = new Textbook("u book");
-	static Textbook v = new Textbook("v book");
-	static Textbook w = new Textbook("w book");
-	static Textbook x = new Textbook("x book");
-	static Textbook y = new Textbook("y book");
-	static Textbook z = new Textbook("z book");
+	static Textbook a = new TextbookTitleOnly("a book");
+	static Textbook b = new TextbookTitleOnly("b book");
+	static Textbook c = new TextbookTitleOnly("c book");
+	static Textbook d = new TextbookTitleOnly("d book");
+	static Textbook e = new TextbookTitleOnly("e book");
+	static Textbook f = new TextbookTitleOnly("f book");
+	static Textbook g = new TextbookTitleOnly("g book");
+	static Textbook h = new TextbookTitleOnly("h book");
+	static Textbook i = new TextbookTitleOnly("i book");
+	static Textbook j = new TextbookTitleOnly("j book");
+	static Textbook k = new TextbookTitleOnly("k book");
+	static Textbook l = new TextbookTitleOnly("l book");
+	static Textbook m = new TextbookTitleOnly("m book");	
+	static Textbook n = new TextbookTitleOnly("n book");	
+	static Textbook o = new TextbookTitleOnly("o book");
+	static Textbook p = new TextbookTitleOnly("p book");
+	static Textbook q = new TextbookTitleOnly("q book");
+	static Textbook r = new TextbookTitleOnly("r book");
+	static Textbook s = new TextbookTitleOnly("s book");
+	static Textbook t = new TextbookTitleOnly("t book");
+	static Textbook u = new TextbookTitleOnly("u book");
+	static Textbook v = new TextbookTitleOnly("v book");
+	static Textbook w = new TextbookTitleOnly("w book");
+	static Textbook x = new TextbookTitleOnly("x book");
+	static Textbook y = new TextbookTitleOnly("y book");
+	static Textbook z = new TextbookTitleOnly("z book");
 	
 	@Before
 	public void setUp() {
