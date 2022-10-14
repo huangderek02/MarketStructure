@@ -70,8 +70,8 @@ beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
 <br>
 
 **Agenda Item 4: Discuss work to complete for Week 10 checkpoint including report:**
-- Almost fully complete Part 1 Basic App requirements for the App first and start implementation of additional features by next Thursday
-- Start writing report for partially/fully implemented features by next Thursday- Rhonda will create and share word document in group chat
+- Start implementation of additional features by next Thursday
+- Start writing report for partially/fully implemented features by next Thursday
 - Discussed deadline for Checkpoint 10 is Friday (Fame and Rhonda's Lab)
 
 **Next meeting date and time: Saturday, 15th October 2022 at 3 pm**
