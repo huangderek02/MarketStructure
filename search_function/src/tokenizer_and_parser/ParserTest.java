@@ -28,7 +28,7 @@ import java.util.ArrayList;
 public class ParserTest {
 	
 	
-	Parser parser = new Parser();
+	Parser parser = Parser.getInstance();
 	String input = "";
 	ArrayList<String> expectedStrings = new ArrayList<String>();
 	Integer[] expectedArray = new Integer[3];
@@ -90,7 +90,7 @@ public class ParserTest {
 		
 		parser.parseSearch(input);
 		
-		expectedStrings.add("Potates>");
+		expectedStrings.add("potates>");
 		expectedStrings.add("mathes");
 		expectedStrings.add("123a");
 		
@@ -105,7 +105,7 @@ public class ParserTest {
 		
 		parser.parseSearch(input);
 		
-		expectedStrings.add("Potates>");
+		expectedStrings.add("potates>");
 		expectedStrings.add("mathes");
 		expectedStrings.add("123a");
 		
@@ -136,7 +136,7 @@ public class ParserTest {
 	@Test(timeout = 1000)
 	public void parserTestPageOperation() {
 		
-		input = "PAGES = 453, PAGES: 12, PAGES < 12123123, PAGES < 4, PAGES < 20, PAGES > 2, PAGES > 10, PAGES = 36";
+		input = "PAGES = 453, PAGES: 12, PAGES < 12123123, PAGES < 4, PAGES < 20, PAGES > 2, PAGES > 10, PAGES > 3, PAGES = 36";
 		
 		expectedArray[0] = 4;
 		expectedArray[1] = 2;
