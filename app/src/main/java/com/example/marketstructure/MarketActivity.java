@@ -11,6 +11,7 @@ import static com.example.marketstructure.generateData.GenerateRandomListings.ge
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -25,13 +26,14 @@ import java.util.Objects;
 
 public class MarketActivity extends AppCompatActivity {
     public static final String TAG = "MarketActivity";
-    private static FirebaseFirestore db = FirebaseFirestore.getInstance();
+    @SuppressLint("StaticFieldLeak")
+    public static FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseFirestore.getInstance();
         addListings();
     }
 
