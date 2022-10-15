@@ -8,15 +8,11 @@ import static com.example.marketstructure.generateData.GenerateRandomListings.ge
 import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomSellerUsername;
 import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomTextbook;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -43,24 +39,14 @@ public class MarketActivity extends AppCompatActivity {
             listing.put("textbook", getRandomTextbook());
             listing.put("condition", getRandomCondition());
             listing.put("additionalDetails", getRandomAdditionalDetails(Objects.requireNonNull(listing.get("condition"))));
-            listing.put("listingPrice", getRandomListingPrice((Textbook) (listing.get("textbook")), listing.get("condition"), listing.get("additionalDetails")));
+            listing.put("listingPrice", getRandomListingPrice((Textbook) (Objects.requireNonNull(listing.get("textbook"))), Objects.requireNonNull(listing.get("condition")), listing.get("additionalDetails")));
             listing.put("listingLastUpdatedDate", getRandomDate());
             listing.put("listingStatus", getRandomListingStatus());
 
             db.collection("listings")
                     .add(listing)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.w(TAG, "Error adding document", e);
-                        }
-                    });
+                    .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
+                    .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
         }
     }
 }
