@@ -132,17 +132,17 @@ The group member who requires a decison to be made should contact the other memb
 
 *I used the following data structures in my project:*
 
-1. *LinkedList*
+1. *ArrayList*
 
-   * *Objective: It is used for storing xxxx for xxx feature.*
+   * *Objective: It is used for storing BTree keys and children for textbook searcher.*
 
    * *Locations: line xxx in XXX.java, ..., etc.*
 
    * *Reasons:*
 
-     * *It is more efficient than Arraylist for insertion with a time complexity O(1)*
+     * Provides faster access to elements in the middle of list compared to linkedlist (O(1))
 
-     * *We don't need to access the item by index for this feature*
+     * Provides methods not available to arrays
 
 2. ...
 
