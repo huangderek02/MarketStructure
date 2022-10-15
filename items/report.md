@@ -31,7 +31,7 @@ The following is a report template to help your team successfully provide all th
 
 | UID | Name | Role |
 | :--- | :----: | ---: |
-| [u7117043] | [name] | [role] |
+| [u7117043] | [Gordon Lum] | [Worked on classes related to textbook searcher] |
 | [uid] | [name] | [role] |
 | [uid] | [name] | [role] |
 | [uid] | [name] | [role] |
