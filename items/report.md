@@ -65,17 +65,17 @@ The following is a report template to help your team successfully provide all th
 
 [Sickness or unability to work]
 
-If a team member is unwell, whoever has completed their delegated task first will help complete the unwell team member's part.
+*If a team member is unwell, whoever has completed their delegated task first will help complete the unwell team member's part.
 The unwell team member will help the other team member with their other assigned tasks. Key requirements of the assignment will be prioritised.
 
 [Decision making]
 
-When the group member has issues or needs to make a decision that is open ended, we will reach consensus and solve the issue by majority vote.
+*When the group member has issues or needs to make a decision that is open ended, we will reach consensus and solve the issue by majority vote.
 The group member who requires a decison to be made should contact the other members in the group chat or next meeting.
 
 [Not meeting expected deadlines]
 
-If a team member is having difficulties completing a task, they will flag the issue with other team members via the group chat and  we will work through the issue together. If a solution is not reached, further research and help from tutors will be conducted. Any findings or possible solutions reported in group chat or next meeting.
+*If a team member is having difficulties completing a task, they will flag the issue with other team members via the group chat and  we will work through the issue together. If a solution is not reached, further research and help from tutors will be conducted. Any findings or possible solutions reported in group chat or next meeting.
 
 [Other responsibilities]
 
