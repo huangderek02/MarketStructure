@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 /**
- * 
+ * Class and ALL methods created by:
  * @author u7117043
  * 
  * The actual textbook filterer that gets the textbooks for the UI.

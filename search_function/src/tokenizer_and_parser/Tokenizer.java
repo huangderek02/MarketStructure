@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * 
+ * Class and ALL methods created by:
  * @author u7117043
  * 
  * The Tokenizer Class takes a String and tokenizes it, storing it in a list.

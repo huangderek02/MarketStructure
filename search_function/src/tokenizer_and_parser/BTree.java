@@ -3,6 +3,8 @@ package tokenizer_and_parser;
 import java.util.ArrayList;
 
 /**
+ * Class and ALL methods created by:
+ * @author u7117043
  * 
  * BTree Class for textbooks.
  * 
@@ -28,8 +30,6 @@ import java.util.ArrayList;
  * 	find():
  * 	- add more precise find (This is related to improving insert method)
  * -------------------------------------------------------------------------------------
- * 
- * @author u7117043
  *
  */
 public class BTree {
