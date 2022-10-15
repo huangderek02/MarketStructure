@@ -83,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (cPassword.matches(password)) {
+                if (!cPassword.matches(password)) {
                     Toast.makeText(getApplicationContext(), "Passwords do not match!", Toast.LENGTH_SHORT).show();
                     return;
                 }

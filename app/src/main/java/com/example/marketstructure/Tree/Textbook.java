@@ -1,36 +1,71 @@
 package com.example.marketstructure.Tree;
 
 public class Textbook {
-    private String isbn;
-    private String title;
-    private int edition;
-    private String authors;
-    private String textbookImageURL;
-    private double originalPrice;
-    private int yearPublished;
-    private int numberOfPages;
-    private String topicCode;
-    private String topic;
+    String listingId;
+    String sellerUsername;
+    String textbookImageURL;
+    int price;
+    String ISBN;
+    String title;
+    int edition;
+    String author;
+    int yearPublished;
+    int numberOfPages;
+    String topicCode;
+    String topic;
+    String condition;
+    String additionalDetails;
+    String listingStatus;
+    String listingLastUpdatedDate;
 
-    public Textbook(String isbn, String title, int edition, String authors, String textbookImageURL, double originalPrice, int yearPublished, int numberOfPages, String topicCode, String topic) {
-        this.isbn = isbn;
-        this.title = title;
-        this.edition = edition;
-        this.authors = authors;
+
+    public Textbook(String listingId, String sellerUsername, String textbookImageURL, int price,
+                    String ISBN, String title, int edition, String author, int yearPublished, int numberOfPages,
+                    String topicCode, String topic, String condition, String additionalDetails,
+                    String listingStatus, String listingLastUpdatedDate){
+
+    }
+
+
+
+    public String getListingId() {
+        return listingId;
+    }
+
+    public void setListingId(String listingId) {
+        this.listingId = listingId;
+    }
+
+    public String getSellerUsername() {
+        return sellerUsername;
+    }
+
+    public void setSellerUsername(String sellerUsername) {
+        this.sellerUsername = sellerUsername;
+    }
+
+    public String getTextbookImageURL() {
+        return textbookImageURL;
+    }
+
+    public void setTextbookImageURL(String textbookImageURL) {
         this.textbookImageURL = textbookImageURL;
-        this.originalPrice = originalPrice;
-        this.yearPublished = yearPublished;
-        this.numberOfPages = numberOfPages;
-        this.topicCode = topicCode;
-        this.topic = topic;
     }
 
-    public String getIsbn() {
-        return isbn;
+    public int getPrice() {
+        return price;
     }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
     }
 
     public String getTitle() {
@@ -49,28 +84,12 @@ public class Textbook {
         this.edition = edition;
     }
 
-    public String getAuthors() {
-        return authors;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setAuthors(String authors) {
-        this.authors = authors;
-    }
-
-    public String getTextbookImageURL() {
-        return textbookImageURL;
-    }
-
-    public void setTextbookImageURL(String textbookImageURL) {
-        this.textbookImageURL = textbookImageURL;
-    }
-
-    public double getOriginalPrice() {
-        return originalPrice;
-    }
-
-    public void setOriginalPrice(double originalPrice) {
-        this.originalPrice = originalPrice;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public int getYearPublished() {
@@ -104,4 +123,37 @@ public class Textbook {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
+
+    public String getAdditionalDetails() {
+        return additionalDetails;
+    }
+
+    public void setAdditionalDetails(String additionalDetails) {
+        this.additionalDetails = additionalDetails;
+    }
+
+    public String getListingStatus() {
+        return listingStatus;
+    }
+
+    public void setListingStatus(String listingStatus) {
+        this.listingStatus = listingStatus;
+    }
+
+    public String getListingLastUpdatedDate() {
+        return listingLastUpdatedDate;
+    }
+
+    public void setListingLastUpdatedDate(String listingLastUpdatedDate) {
+        this.listingLastUpdatedDate = listingLastUpdatedDate;
+    }
+
 }
