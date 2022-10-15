@@ -16,7 +16,7 @@
         android:theme="@style/Theme.MarketStructure"
         tools:targetApi="31">
         <activity
-            android:name=".StartActivity"
+            android:name=".UserActivity"
             android:exported="false" />
         <activity
             android:name=".MarketActivity"
