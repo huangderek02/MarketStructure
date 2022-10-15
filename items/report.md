@@ -63,7 +63,7 @@ The following is a report template to help your team successfully provide all th
 
 ## Conflict Resolution Protocol
 
-If a team member is unwell, whoever has completed their delegated task first will help complete the unwell team member's part. The unwell team member will help the other team member with their other assigned tasks. Key requirements of the assignment will be priorised.
+*If a team member is unwell, whoever has completed their delegated task first will help complete the unwell team member's part.* The unwell team member will help the other team member with their other assigned tasks. Key requirements of the assignment will be priorised.
 When the group has issues, we will reach consensus and solve the issue by majority vote.
 If a team member is having difficulties completing a task, they will flag the issue with other team members via the group chat and  we will work through the issue together.
 Team member responsibilities:
