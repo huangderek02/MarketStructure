@@ -50,7 +50,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="Enter your name"
-        android:inputType="textPassword"
+        android:inputType="textPersonName"
         android:maxLines="1"
         android:textColor="@android:color/black" />
 
