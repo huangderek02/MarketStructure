@@ -39,6 +39,7 @@ Stand up Procedure:
 
 **Gordon:**
 - Search related features completed but needs to be integrated into UI.
+- Start on UML for report
 
 **Derek:**
 - Completed code for uploading data from Firestore to UI
@@ -81,6 +82,7 @@ beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
 | Task | Assignee |
 | :--- | ---: |
 | Part 1 - Additional/General Feature 0 - UI listing - Add search button to search for book. (easy) | Derek |
+| Part 1 - Additional/General Feature 0 - UI listing - Add search button to search for book. (easy) | Derek |
 | Part 2 - Additional/General Feature 1 - Search-related Feature - Search functionality can handle partially valid and invalid search queries. (medium) | Gordon |
 | Part 2 - Additional/General Feature 2 - Search-related Feature - Sort a list of products returned from a search based on price, popularity, rating, availability, etc. (easy) | Gordon |
 | Part 2 - Additional/General Feature 3 - Search-related Feature - Filter a list of products returned from a search based on their categories (e.g., kids, adults, kitchen, bedroom, etc.) (easy) | Gordon |
@@ -92,6 +94,7 @@ beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
 | Part 2 - Surprize Feature - Fraud Detection - Use observer design pattern to notify users of scammers. (easy) | Rhonda |
 | Part 2 - Surprize Feature - Fraud Detection - Build another activity to report sellers (An editText widget to give details about the seller's actions) . (easy) | Derek |
 | Part 2 - Surprize Feature - Fraud Detection - Create Seller class with all relevant attributes) . (easy) | Derek |
+| Send all relevant classes for UML | All team members |
 | Report | All team members |
 
 ## Scribe Rotation
