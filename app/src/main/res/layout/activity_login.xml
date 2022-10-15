@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="monospace"
         android:text="TextWarehouse Login"
         android:textAllCaps="false"
@@ -26,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textLogin"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="Email Address"
@@ -38,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lg_email"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="Password"
@@ -52,7 +54,7 @@
         android:layout_below="@+id/lg_password"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:background="@color/red"
         android:text="Login"
         android:textColor="@color/white"
@@ -72,11 +74,14 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center|bottom"
-        android:layout_marginBottom="20dp"
-        android:visibility="gone" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:padding="30dp"
+        android:elevation="20dp"
+        android:visibility="gone"
+        android:background="@drawable/bg_round"/>
 
 
 
