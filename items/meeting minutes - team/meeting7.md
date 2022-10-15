@@ -29,15 +29,16 @@ Stand up Procedure:
 **Fame:**
 - Completed code for uploading data from Firestore to UI
 - Fixed code for generating data
+- Forgot password functionality
 
 **Rhonda:**
-
+- Added a report button to report a fraudulent seller.
 
 **Huiguang:**
 
 
 **Gordon:**
-
+- Search related features completed but needs to be integrated into UI.
 
 **Derek:**
 - Completed code for uploading data from Firestore to UI
@@ -79,6 +80,7 @@ beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
 ## TODO Items
 | Task | Assignee |
 | :--- | ---: |
+| Part 1 - Additional/General Feature 0 - UI listing - Add search button to search for book. (easy) | Derek |
 | Part 2 - Additional/General Feature 1 - Search-related Feature - Search functionality can handle partially valid and invalid search queries. (medium) | Gordon |
 | Part 2 - Additional/General Feature 2 - Search-related Feature - Sort a list of products returned from a search based on price, popularity, rating, availability, etc. (easy) | Gordon |
 | Part 2 - Additional/General Feature 3 - Search-related Feature - Filter a list of products returned from a search based on their categories (e.g., kids, adults, kitchen, bedroom, etc.) (easy) | Gordon |
@@ -87,6 +89,9 @@ beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
 | Part 2 - Additional/General Feature 6 - Creating Processes - New User Registration (easy) | Fame |
 | Part 2 - Additional/General Feature 7 - Peer to Peer Messaging - Provide users with the ability to message each other directly. (hard) | Huiguang |
 | Part 2 - Additional/General Feature 8 - Firebase Integration - Use Firebase to implement user Authentication/Authorisation. (easy) | Fame |
+| Part 2 - Surprize Feature - Fraud Detection - Use observer design pattern to notify users of scammers. (easy) | Rhonda |
+| Part 2 - Surprize Feature - Fraud Detection - Build another activity to report sellers (An editText widget to give details about the seller's actions) . (easy) | Derek |
+| Part 2 - Surprize Feature - Fraud Detection - Create Seller class with all relevant attributes) . (easy) | Derek |
 | Report | All team members |
 
 ## Scribe Rotation
