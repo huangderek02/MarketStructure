@@ -68,7 +68,7 @@ public class GenerateRandomListings {
      */
     public static String getRandomListingPrice(Textbook textbook, Object condition, Object additionalDetails) {
         final DecimalFormat df = new DecimalFormat("0.00");
-        double originalPrice = textbook.getOriginalPrice();
+        double originalPrice = Double.parseDouble(textbook.getOriginalPrice());
         double maxPrice = originalPrice - (originalPrice * 0.05);
         double minPrice = originalPrice - (originalPrice * 0.10);
         double randomListingPrice = Math.random() * (maxPrice - minPrice) + minPrice;

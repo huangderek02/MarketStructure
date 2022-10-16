@@ -1,0 +1,84 @@
+package com.example.marketstructure;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
+    private final ArrayList<Listing> arrayList;
+    private final Context context;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    public RecyclerViewAdapter(ArrayList<Listing> arrayList, Context context) {
+        this.arrayList = arrayList;
+        this.context = context;
+    }
+
+    public class RecyclerViewHolder extends RecyclerView.ViewHolder {
+        ImageView iv_textbook_image;
+        TextView tv_price;
+        TextView tv_condition;
+        TextView tv_seller;
+        TextView tv_listing_status;
+
+        public RecyclerViewHolder(View itemView) {
+            super(itemView);
+            this.iv_textbook_image = itemView.findViewById(R.id.iv_textbook_image_cl);
+            this.tv_price = itemView.findViewById(R.id.tv_price_display_cl);
+            this.tv_condition = itemView.findViewById(R.id.tv_condition_display_cl);
+            this.tv_seller = itemView.findViewById(R.id.tv_seller_display_cl);
+            this.tv_listing_status = itemView.findViewById(R.id.tv_listing_status_display_cl);
+        }
+    }
+
+    @Override
+    public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        // Inflate Layout
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout, parent, false);
+        return new RecyclerViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerViewHolder holder, int position) {
+        // Set the data to textview and imageview.
+        Listing listing = arrayList.get(position);
+
+        Resources resources = this.context.getApplicationContext().getResources();
+        int textbookImageId = resources.getIdentifier("textbookImageName", "drawable", "drawable");
+        holder.iv_textbook_image.setImageResource(textbookImageId);
+        holder.tv_price.setText(String.valueOf(listing.getListingPrice()));
+        holder.tv_condition.setText(listing.getCondition());
+        holder.tv_seller.setText(listing.getSellerUsername());
+        holder.tv_listing_status.setText(listing.getListingStatus());
+
+
+        holder.iv_textbook_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(view.getContext(), DisplayListingDetailsActivity.class);
+                intent.putExtra(resources.getString(R.string.intent_listing_price), listing.getListingPrice());
+                intent.putExtra(resources.getString(R.string.intent_condition), listing.getCondition());
+                intent.putExtra(resources.getString(R.string.intent_seller), listing.getSellerUsername());
+                intent.putExtra(resources.getString(R.string.intent_listing_status) , listing.getListingStatus());
+                context.startActivity(intent);
+            }
+        });
+    }
+    @Override
+    public int getItemCount() {
+        return arrayList.size();
+    }
+}
