@@ -156,7 +156,7 @@ The group member who requires a decison to be made should contact the other memb
 
 *[What design patterns did your team utilise? Where and why?]*
 
-**Grammar(s)**
+**Grammar**
 
 Production Rules:
 
@@ -175,28 +175,31 @@ Production Rules:
 -      <id_keyword> ::= TOPIC: <id> | CODE: <id> | ISBN: <isbn>
 -      <isbn> ::= (a string that conforms to isbn format, see isbn section below) 
 
-*[ISBN]*
+[ISBN]
 
 10 or 13 digit number that can include dashes (like in real isbn).
 Only the number string is stored (including leading zeroes)
 
-*[CFG Design]*
+[CFG Design]
 
 * Non-ambiguous grammar.
 * All strings are accepted as a valid grammar due to being apart of a searcher
 * A comma is used to separate terms from each other. Comma is an inuitive separator and not common in titles. Titles that have a comma do not start with one allowing for search to occur even if it does.
 
 
-**Tokenizer and Parsers**
+**Tokenizer and Parser Classes**
 
-Tokenizer is used to convert a search string into the parts that define the Context Free Grammar. The tokenizer developed accepts all strings and does not throw an error due to its use in a searcher. It ignores whitespace between important characters, keywords and terms as they are unimportant to the grammar and could cause errors in the parser. 
+
+The tokenizer class is used to convert a search string into the parts that define the Context Free Grammar and is used by the parser class. The tokenizer developed accepts all strings and does not throw an error due to its use in a searcher. It ignores whitespace between important characters, keywords and terms as they are unimportant to the grammar and could cause errors in the parser. 
 
 The tokenizer can store positive integers (including 0) below 10000 and stores other integers as a string, it stores operators as Characters and it stores important keywords and all other terms as strings. It is noted that this implementation could be improved by using enumerators to help the parser in its decison making by instead checking the type of the tokne rather than if a token is a keyword. 
 
 The tokenizer instantly converts a string into tokens which is a design choice to split the process of searching for a textbook into individual parts. This simplifies the testing of the parser as it is no longer repeatedly calling the tokenizer class when dealing with tokens allowing for easier identification of an error between the tokenizer and parser. Tokens are stored as an Arraylist due to the inbuilt methods in the List interface allowing for quick access and removal of tokens compare to arrays.
 
 
-*[Where do you use tokenisers and parsers? How are they built? What are the advantages of the designs?]*
+The parser class is used to derive information from a string and check if it follows the defined grammar. It is used by the TextbookSearcher class in order to obtain information regarding which textbooks to find. When parsing a string, it is given to the tokenizer which returns an ArrayList of tokens. The parser then traverses through the list checking if each token follows the grammar. Information regarding what the user wants to search is located in a term which is separated from other terms by a comma (see [Production Rules]). 
+If a term is valid, information contained in the term is stored in the instance variables which can be accessed by the TextbookSearcher class. If an individual term is invalid, the error is stored in another variable and the term is discarded. This implementation allows for the user's search string to contain syntax errors. In addition, information with regards to filtering is stored separately from the search terms (see [Implemented Features](#implemented-features)).
+
 
 **Surprise Item**
 
@@ -208,14 +211,14 @@ The tokenizer instantly converts a string into tokens which is a design choice t
 
 ## Summary of Known Errors and Bugs
 
-*[Where are the known errors and bugs? What consequences might they lead to?]*
 
-*Here is an example:*
+1. Search Function Method Bug
 
-1. *Bug 1:*
 
-- *A space bar (' ') in the sign in email will crash the application.*
+- Severity: Medium (Affects major feature. Minor work around required)
+- BTree Class > insert() method: Causes Null Pointer Exception when inserting large number of Textbooks
 - ...
+
 
 2. *Bug 2:*
 3. ...
