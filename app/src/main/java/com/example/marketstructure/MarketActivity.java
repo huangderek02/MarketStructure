@@ -18,14 +18,12 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -34,7 +32,6 @@ import java.util.Map;
 import java.util.Objects;
 
 public class MarketActivity extends AppCompatActivity {
-    public static final String TAG = "MarketActivity";
     @SuppressLint("StaticFieldLeak")
     public static FirebaseFirestore db = FirebaseFirestore.getInstance();
     ListView listView;
@@ -48,10 +45,9 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
         addListings();
         databaseReference = FirebaseDatabase.getInstance().getReference("listings");
-        listView = (ListView) findViewById(R.id.list_view);
+        listView = findViewById(R.id.list_view);
         arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrayList);
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
@@ -87,6 +83,7 @@ public class MarketActivity extends AppCompatActivity {
     }
 
     public void addListings() {
+        CollectionReference listings = db.collection("listings");
         for (int i = 0; i < 10; i++) {
             Map<String, Object> listing = new HashMap<>();
             listing.put("listingId", String.valueOf(i));
@@ -97,11 +94,13 @@ public class MarketActivity extends AppCompatActivity {
             listing.put("listingPrice", getRandomListingPrice((Textbook) (Objects.requireNonNull(listing.get("textbook"))), Objects.requireNonNull(listing.get("condition")), listing.get("additionalDetails")));
             listing.put("listingLastUpdatedDate", getRandomDate());
             listing.put("listingStatus", getRandomListingStatus());
-
-            db.collection("listings")
-                    .add(listing)
+            listings.document(String.valueOf(i)).set(listing);
+            /*
+            listings.add(listing)
                     .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
                     .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
+
+             */
         }
     }
 }
