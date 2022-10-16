@@ -37,4 +37,9 @@
     <string name="view_sellers_profile_button">View Seller\'s Profile</string>
     <string name="make_bid_button">Make Bid</string>
     <string name="report_listing_button">REPORT LISTING</string>
+    <string name="intent_listing_price" />
+    <string name="intent_condition" />
+    <string name="intent_seller" />
+    <string name="intent_listing_status" />
+    <string name="b_search">Search</string>
 </resources>

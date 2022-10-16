@@ -3,25 +3,76 @@ package com.example.marketstructure;
 public class Listing extends Textbook {
     private String listingId;
     private String sellerUsername;
+    private Textbook textbook;
+   /*
     private String isbn;
     private String title;
     private int edition;
     private String authors;
-    private String textbookImageURL;
-    private double listingPrice;
+    private String textbookImageName;
+
+    */
+    private String listingPrice;
+    /*
     private int yearPublished;
     private int numberOfPages;
     private String topicCode;
     private String topic;
+     */
     private String condition;
     private String additionalDetails;
     private String listingStatus;
     private String listingLastUpdatedDate;
-
-    public Listing(String isbn, String title, int edition, String authors, String textbookImageURL, double listingPrice, int yearPublished, int numberOfPages, String topicCode, String topic) {
-        super(isbn, title, edition, authors, textbookImageURL, listingPrice, yearPublished, numberOfPages, topicCode, topic);
+    /*
+    public Listing(String isbn, String title, int edition, String authors, String textbookImageName,
+                   String originalPrice, int yearPublished, int numberOfPages, String topicCode,
+                   String topic, String listingId, String sellerUsername, Textbook textbook,
+                   String listingPrice, String condition, String additionalDetails,
+                   String listingStatus, String listingLastUpdatedDate) {
+        super(isbn, title, edition, authors, textbookImageName, originalPrice, yearPublished, numberOfPages, topicCode, topic);
+        this.listingId = listingId;
+        this.sellerUsername = sellerUsername;
+        this.textbook = textbook;
+        this.listingPrice = listingPrice;
+        this.condition = condition;
+        this.additionalDetails = additionalDetails;
+        this.listingStatus = listingStatus;
+        this.listingLastUpdatedDate = listingLastUpdatedDate;
     }
 
+     */
+
+    public Listing(String listingId, String sellerUsername, Textbook textbook, String listingPrice, String condition, String additionalDetails, String listingStatus, String listingLastUpdatedDate) {
+        this.listingId = listingId;
+        this.sellerUsername = sellerUsername;
+        this.textbook = textbook;
+        this.listingPrice = listingPrice;
+        this.condition = condition;
+        this.additionalDetails = additionalDetails;
+        this.listingStatus = listingStatus;
+        this.listingLastUpdatedDate = listingLastUpdatedDate;
+    }
+    /*
+    public Listing(String isbn, String title, int edition, String authors, String textbookImageName,
+                   String originalPrice, int yearPublished, int numberOfPages, String topicCode,
+                   String topic, String listingId, String sellerUsername, String listingPrice,
+                   String condition, String additionalDetails, String listingStatus, String listingLastUpdatedDate) {
+        super(isbn, title, edition, authors, textbookImageName, originalPrice, yearPublished, numberOfPages, topicCode, topic);
+        this.listingId = listingId;
+        this.sellerUsername = sellerUsername;
+        this.listingPrice = listingPrice;
+        this.condition = condition;
+        this.additionalDetails = additionalDetails;
+        this.listingStatus = listingStatus;
+        this.listingLastUpdatedDate = listingLastUpdatedDate;
+    }
+
+     */
+
+    public Listing(){
+        super();
+
+    }
 
     public String getListingId() {
         return listingId;
@@ -39,84 +90,20 @@ public class Listing extends Textbook {
         this.sellerUsername = sellerUsername;
     }
 
-    public String getTextbookImageId() {
-        return textbookImageURL;
-    }
-
-    public void setTextbookImageId(String textbookImageId) {
-        this.textbookImageURL = textbookImageId;
-    }
-
-    public double getListingPrice() {
+    public String getListingPrice() {
         return listingPrice;
     }
 
-    public void setListingPrice(double listingPrice) {
+    public void setListingPrice(String listingPrice) {
         this.listingPrice = listingPrice;
     }
 
-    public String getIsbn() {
-        return isbn;
+    public Textbook getTextbook() {
+        return textbook;
     }
 
-    public void setIsbn(String ISBN) {
-        this.isbn = isbn;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public int getEdition() {
-        return edition;
-    }
-
-    public void setEdition(int edition) {
-        this.edition = edition;
-    }
-
-    public String getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(String authors) {
-        this.authors = authors;
-    }
-
-    public int getYearPublished() {
-        return yearPublished;
-    }
-
-    public void setYearPublished(int yearPublished) {
-        this.yearPublished = yearPublished;
-    }
-
-    public int getNumberOfPages() {
-        return numberOfPages;
-    }
-
-    public void setNumberOfPages(int numberOfPages) {
-        this.numberOfPages = numberOfPages;
-    }
-
-    public String getTopicCode() {
-        return topicCode;
-    }
-
-    public void setTopicCode(String topicCode) {
-        this.topicCode = topicCode;
-    }
-
-    public String getTopic() {
-        return topic;
-    }
-
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setTextbook(Textbook textbook) {
+        this.textbook = textbook;
     }
 
     public String getCondition() {

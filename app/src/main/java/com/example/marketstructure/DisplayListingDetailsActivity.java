@@ -61,7 +61,7 @@ public class DisplayListingDetailsActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot documentSnapshot = task.getResult();
                     if (documentSnapshot.exists()) {
-                        int textbookImageId = getResources().getIdentifier(documentSnapshot.getString("textbookImageId"), "drawable", getPackageName());
+                        int textbookImageId = getResources().getIdentifier(documentSnapshot.getString("textbookImageName"), "drawable", getPackageName());
                         iv_textbook_image.setImageResource(textbookImageId);
                         tv_listing_id.setText(documentSnapshot.getString("listingId"));
                         tv_listing_status.setText(documentSnapshot.getString("listingStatus"));
