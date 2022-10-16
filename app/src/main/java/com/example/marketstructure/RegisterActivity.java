@@ -128,12 +128,10 @@ public class RegisterActivity extends AppCompatActivity {
                     userList.put("email", email);
                     userList.put("name", name);
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    db.collection("userList")
-                            .add(userList)
-                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    db.collection("userList").document(uid).set(userList)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    Log.d(tag, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                public void onSuccess(Void unused) {
                                     Toast.makeText(RegisterActivity.this,"create user with email complete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(RegisterActivity.this, MarketActivity.class);
                                     startActivity(intent);

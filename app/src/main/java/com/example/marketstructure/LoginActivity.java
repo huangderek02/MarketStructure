@@ -141,7 +141,8 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this,"Login Success. ", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, MarketActivity.class);
+                            //test
+                            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
                             progressBar.setVisibility(View.GONE);
                             startActivity(intent);
                             finish();
