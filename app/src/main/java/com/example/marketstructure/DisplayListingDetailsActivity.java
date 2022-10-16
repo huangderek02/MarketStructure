@@ -71,6 +71,7 @@ public class DisplayListingDetailsActivity extends AppCompatActivity {
                         tv_textbook_name.setText(documentSnapshot.getString("title"));
                         tv_authors.setText(documentSnapshot.getString("authors"));
                         tv_edition.setText(documentSnapshot.getString("edition"));
+                        tv_year_published.setText(documentSnapshot.getString("yearPublished"));
                         tv_number_of_pages.setText(documentSnapshot.getString("numberOfPages"));
                         tv_topic_code.setText(documentSnapshot.getString("topicCode"));
                         tv_topic.setText(documentSnapshot.getString("topic"));
@@ -94,6 +95,5 @@ public class DisplayListingDetailsActivity extends AppCompatActivity {
                 startActivity(b);
             }
         });
-
     }
 }
