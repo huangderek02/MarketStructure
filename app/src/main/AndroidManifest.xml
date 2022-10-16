@@ -23,7 +23,7 @@
             android:name=".MarketActivity"
             android:exported="true" />
         <activity
-            android:name=".TextbookDetailViewerActivity"
+            android:name=".DisplayListingDetailsActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"

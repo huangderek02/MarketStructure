@@ -35,13 +35,13 @@ import java.util.Objects;
 
 public class MarketActivity extends AppCompatActivity {
     public static final String TAG = "MarketActivity";
-    private static FirebaseFirestore db = FirebaseFirestore.getInstance();
+    @SuppressLint("StaticFieldLeak")
+    public static FirebaseFirestore db = FirebaseFirestore.getInstance();
     ListView listView;
     DatabaseReference databaseReference;
     ArrayList<String> arrayList;
     ArrayAdapter<String> arrayAdapter;
-    @SuppressLint("StaticFieldLeak")
-    public static FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
     @SuppressLint("MissingInflatedId")
     @Override

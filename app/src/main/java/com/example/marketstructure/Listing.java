@@ -39,12 +39,12 @@ public class Listing extends Textbook {
         this.sellerUsername = sellerUsername;
     }
 
-    public String getTextbookImageURL() {
+    public String getTextbookImageId() {
         return textbookImageURL;
     }
 
-    public void setTextbookImageURL(String textbookImageURL) {
-        this.textbookImageURL = textbookImageURL;
+    public void setTextbookImageId(String textbookImageId) {
+        this.textbookImageURL = textbookImageId;
     }
 
     public double getListingPrice() {
