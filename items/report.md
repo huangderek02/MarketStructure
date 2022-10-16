@@ -216,8 +216,11 @@ If a term is valid, information contained in the term is stored in the instance 
 
 
 - Severity: Medium (Affects major feature. Minor work around required)
-- BTree Class > insert() method: Causes Null Pointer Exception when inserting large number of Textbooks
-- ...
+
+- BTree Class > insert() method: Causes Null Pointer Exception when inserting large number of Textbooks. 
+It has been identified to exist in the split() method. See [BTreeTest] Class
+
+- Work around solution: Instantiate BTree with a larger maxKeys value to avoid 
 
 
 2. *Bug 2:*
