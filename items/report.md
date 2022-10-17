@@ -241,7 +241,17 @@ Instantiate BTree with a larger maxKeys value to avoid. This solution works due 
 
 ## Testing Summary
 
-*[What features have you tested? What is your testing coverage?]*
+**[BTreeTest] testing methods in [BTree]**
+ 
+3 Test Cases:
+- Tests textbooks stored in keys of root
+- Tests textbooks stored in keys of a nonroot
+- Tests inserting lots of textbooks into a BTree
+
+Code coverage: 88% of BTree
+
+Tests only check if the keys if the keys in a BTree have the correct 
+
 
 *Here is an example:*
 
