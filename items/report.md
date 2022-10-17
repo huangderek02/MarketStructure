@@ -132,23 +132,27 @@ The group member who requires a decison to be made should contact the other memb
 
 *I used the following data structures in my project:*
 
-1. *ArrayList*
 
-   * *Objective: It is used for storing BTree keys and children for textbook searcher.*
 
-   * *Locations: line xxx in XXX.java, ..., etc.*
+**Data Structures**
 
-   * *Reasons:*
+1. ArrayList
+
+   * Objective: It is used for storing BTree keys and children for textbook searcher, Used to return a list of tokens in Tokenizer
+
+   * Locations: line 40 and 41 in BTree.java, line 157 Tokenizer.java
+
+   * Reasons:
 
      * Provides faster access to elements in the middle of list compared to linkedlist (O(1))
 
-     * Provides methods not available to arrays
+     * Provides methods not available to arrays (contains, indexOf, remove)
+
+     * Size is not fixed. Can keep adding elements
 
 2. ...
 
 3. ...
-
-**Data Structures**
 
 *[What data structures did your team utilise? Where and why?]*
 
@@ -215,12 +219,19 @@ If a term is valid, information contained in the term is stored in the instance 
 1. Search Function Method Bug
 
 
-- Severity: Medium (Affects major feature. Minor work around required)
+Severity/Priority: Medium (Affects major feature. Minor work around required)
 
-- BTree Class > insert() method: Causes Null Pointer Exception when inserting large number of Textbooks. 
-It has been identified to exist in the split() method. See [BTreeTest] Class
+Location: [BTree] Class > insert() method: Causes Null Pointer Exception when inserting large number of Textbooks. 
 
-- Work around solution: Instantiate BTree with a larger maxKeys value to avoid 
+Description: 
+
+[BTreeTest] Class has a test that produces the error. It is believed that the error occurs due to a pointer error where the parent is not correctly assigned and occurs during the split() method. This is because the BTree works as intended if its height is atmost 3 and fails when attempting to split to a height of 4. 
+
+Work around solution:
+
+Instantiate BTree with a larger maxKeys value to avoid. This solution works due to the lower number of textbooks used. In addition a BTree generally does not have a large height but it will be an issue if the app is upscaled to contain much more textbooks. 
+
+-
 
 
 2. *Bug 2:*
@@ -268,12 +279,17 @@ Feature Category: Firebase Integration <br>
 
 ## Team Meetings
 
-*Here is an example (you could start numbering your meetings from 1):*
+Meetings have occured every Saturday at around 3pm with additional meetings as required:
 
-- *[Team Meeting 0](./meeting0.md)*
-- ...
+- 04/09/22: [Team Meeting 1](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/items/meeting%20minutes%20-%20team/meeting1.md)  
+- 10/09/22: [Team Meeting 2](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/items/meeting%20minutes%20-%20team/meeting2.md)
+- 17/09/22: [Team Meeting 3](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/items/meeting%20minutes%20-%20team/meeting3.md)
 
-* Link to the minutes of your meetings as above. There must be at least 4 team meetings. 
-Note that you must commit your minute meetings shortly after your meeting has taken place (e.g., within 24h), otherwise your meeting minute will not be accepted.
-Uour meetings should also have a reasonable date span across Week 6 to 11.*
+- 24/09/22: [Team Meeting 4](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/items/meeting%20minutes%20-%20team/meeting4.md)
+
+- 01/10/22: [Team Meeting 5](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/items/meeting%20minutes%20-%20team/meeting5.md)
+- 08/10/22: [Team Meeting 6](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/items/meeting%20minutes%20-%20team/meeting6.md)
+
+- 15/10/22: [Team Meeting 7](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/items/meeting%20minutes%20-%20team/meeting7.md)
+
  
