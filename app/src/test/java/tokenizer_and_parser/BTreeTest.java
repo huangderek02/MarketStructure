@@ -77,8 +77,6 @@ public class BTreeTest{
 	
 	@Test(timeout = 1000)
 	public void BTreeTestRoot() {
-		tree3 = new BTree(3);
-		tree7 = new BTree(7);
 		
 		doubleInsert(b);
 		doubleInsert(a);
@@ -111,7 +109,6 @@ public class BTreeTest{
 	
 	@Test(timeout = 1000)
 	public void BTreeTestNonChild3() {
-		tree3 = new BTree(3);
 		
 		tree3.insert(t);
 		tree3.insert(a);
@@ -192,17 +189,42 @@ public class BTreeTest{
 
 	}
 	
-	//TODO
+
 	@Test(timeout = 1000)
 	public void FindTest() {
-		
+		setUp();
+		tree3.insert(a);
+		tree3.insert(z);
+		tree3.insert(m);
+		tree3.insert(n);
+		tree3.insert(k);
+		tree3.insert(s);
+		tree3.insert(v);
+		tree3.insert(t);
+		tree3.insert(i);
+		tree3.insert(k);
+		tree3.insert(x);
+		tree3.insert(c);
+
+		expectedKeys.add(c);
+		assertEquals(expectedKeys,tree3.find("c"));
+
+		expectedKeys.clear();
+		expectedKeys.add(a);
+		assertEquals(expectedKeys,tree3.find("a"));
+
+		expectedKeys.clear();
+		expectedKeys.add(z);
+		assertEquals(expectedKeys,tree3.find("z"));
+
+		expectedKeys.clear();
+		expectedKeys.add(i);
+		assertEquals(expectedKeys,tree3.find("i"));
 	}
 	
 	//Null Pointer Exception: assertions redundant until fixed 
 	@Test(timeout = 1000)
 	public void BTreeTestBigTest() {
-		
-		tree3 = new BTree(3);
 		
 		tree3.insert(a);
 		tree3.insert(b);

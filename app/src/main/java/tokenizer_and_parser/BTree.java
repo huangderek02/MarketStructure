@@ -99,7 +99,7 @@ public class BTree {
 			if(textbook.getTitle().toLowerCase().contains(term)) {
 				returnList.add(textbook);
 			}
-			
+
 			//Search child of the first textbook alphabetically greater than the term. Will be 0 if all greater than the term
 			if(textbook.getTitle().toLowerCase().compareTo(term) < 0) {
 				nextChild = keys.indexOf(textbook) +1;
@@ -267,7 +267,7 @@ public class BTree {
 
 		
 		// (When parent is or is not root and)? NOT full insert median into parent
-		if(/*parent.isRoot &&*/ parent.keys.contains(null)) {
+		if(parent.keys.contains(null)) {
 			
 			//Correct the new parent for the left and right child's children.
 			for(BTree bt : leftChild.children) {
