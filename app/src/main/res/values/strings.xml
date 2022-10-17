@@ -35,11 +35,27 @@
     <string name="topic_display">Topic</string>
     <string name="fraud_warning">WARNING: Listing/Seller has been identified as Fraudulent. Proceed with Caution!</string>
     <string name="view_sellers_profile_button">View Seller\'s Profile</string>
-    <string name="make_bid_button">Make Bid</string>
+    <string name="b_buy_now">Buy Now</string>
     <string name="report_listing_button">REPORT LISTING</string>
     <string name="intent_listing_price" />
     <string name="intent_condition" />
     <string name="intent_seller" />
     <string name="intent_listing_status" />
     <string name="b_search">Search</string>
+    <string name="checkout_menu_description">Welcome to the Checkout Menu! \n
+        \n
+        Please note the following before selecting a payment method: \n
+        "\u2022" Textbooks paid via CASH can only be collected in-store, delivery is not available \n
+        "\u2022" Textbooks paid via CARD can be delivered or collected in-store \n
+        "\u2022" Flat rate of $10 for standard shipping (arrives within 2 to 6 business days) \n
+        "\u2022" Flat rate of $15 for express shipping (arrives within 1 to 3 business days) \n
+        \n
+        Please select payment method: \n
+    </string>
+    <string name="b_cash_payment">cash</string>
+    <string name="b_card_payment">Card</string>
+    <string name="checkout_menu_title">CHECKOUT MENU</string>
+    <string name="iv_cash_payment_desc">cash_payment</string>
+    <string name="iv_book_shopping_cart_desc">book_shopping_cart</string>
+    <string name="iv_card_payment_desc">card_payment</string>
 </resources>

@@ -11,6 +11,7 @@ import static com.example.marketstructure.generateData.GenerateRandomListings.ge
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
@@ -43,7 +44,7 @@ import java.util.Objects;
 public class MarketActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private ArrayList<Listing> listingsArrayList = new ArrayList<>();
+    private ArrayList<Listing> listingsArrayList = new ArrayList<Listing>();
     ProgressDialog progressDialog;
     private Listing listing = new Listing("","",null,"","","","","");
     //private Listing listing = new Listing("","",0,"","","",0,0,"","","","","","","","","");
@@ -59,13 +60,15 @@ public class MarketActivity extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Loading Listing...");
+        progressDialog.setMessage("Loading Listings...");
         progressDialog.show();
 
         recyclerView = findViewById(R.id.recyclerView);
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(listingsArrayList, this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
         EventChangeListener();
@@ -109,6 +112,23 @@ public class MarketActivity extends AppCompatActivity {
     }
 
     private void EventChangeListener() {
+        db.collection("listings")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e("Firestore error",error.getMessage());
+                            return;
+                        }
+                        assert value != null;
+                        for (DocumentChange documentChange : value.getDocumentChanges()) {
+                           // if (documentChange.getType() == DocumentChange.Type.ADDED) {
+                                listingsArrayList.add(documentChange.getDocument().toObject(Listing.class));
+                            }
+                        }
+                 //   }
+                });
+        /*
         db.collection("listings").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -122,6 +142,8 @@ public class MarketActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+         */
     }
 
     public void addListings() {

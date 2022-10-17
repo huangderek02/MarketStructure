@@ -42,6 +42,11 @@ public class Listing extends Textbook {
 
      */
 
+    public Listing(){
+        super();
+
+    }
+
     public Listing(String listingId, String sellerUsername, Textbook textbook, String listingPrice, String condition, String additionalDetails, String listingStatus, String listingLastUpdatedDate) {
         this.listingId = listingId;
         this.sellerUsername = sellerUsername;
@@ -68,11 +73,6 @@ public class Listing extends Textbook {
     }
 
      */
-
-    public Listing(){
-        super();
-
-    }
 
     public String getListingId() {
         return listingId;
