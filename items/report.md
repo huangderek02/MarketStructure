@@ -241,6 +241,9 @@ Instantiate BTree with a larger maxKeys value to avoid. This solution works due 
 
 ## Testing Summary
 
+**Tests for Classes Related to Search Function**
+Test classes for BTree, Tokenizer and Parser classes were created to increase confidence in the reliability of the search function. It is noted that a test class for TextbookSearcher is not included but should be if further work beyond the project is done. For the test classes that exist a "high" code coverage in the 90%+ is reached but this is an unreliable value to use when considering what is actually tested. Actual confidence 
+
 **[BTreeTest] testing methods in [BTree]**
  
 3 Test Cases:
@@ -249,7 +252,7 @@ Instantiate BTree with a larger maxKeys value to avoid. This solution works due 
 - Tests inserting lots of textbooks into a BTree
 - Tests find() method for getting textbooks
 
-Code coverage: 96% of BTree
+Code coverage: 96% of BTree (88% method coverage)
 
 The focus of the tests is on the values of a BTree's keys as it is where Textbooks will be stored. While the code coverage is large, the actual testing does not check for many methods defined in BTree. The testing approach can be improved as a result but was not completed due to time limitations.
 
@@ -266,9 +269,23 @@ The focus of the tests is on the values of a BTree's keys as it is where Textboo
 - Tests Integers stored in costOperation
 - Tests Integers stored in editionOperation
 
-Code Coverage: 90.7% of Parser
+Code Coverage: 90.7% of Parser (100% method coverage)
 
-Unit tests focused on the instance variables of parser. Since a parser uses a grammar to parse a string which involves looping, each method of the parseX methods are linked and thus makes unit testing on a single method impossible. 
+Unit tests focused on the instance variables of parser. Since a parser uses a grammar to parse a string which involves looping, each method of the parseX methods are linked and thus makes unit testing on a single method redundant due to simplicity or impossible. The tests thus focus on the result of a parse string which is stored in the instance variables. It is noted that an integration test, testing all results, is not included .
+
+**[TokenizerTest] testing methods in [Tokenizer]**
+
+5 Test Cases
+- Test for consumeWhiteSpace()
+- Test for consumeEndSpace()
+- Test for nextIsInteger()
+- 2 tests for tokenizeString()
+
+Code Coverage: 98.7% of Tokenizer (100% method coverage)
+
+The test class tests every method in the Tokenizer class. It is noted that each test case could be separated to be a unit test, and as a result be improved, but was not done due to time limitations. Each test attempts to cover every statement condition as it is impossible to cover every case. The tokenizerString() method contains two tests but could be extended as it integrates the other methods. However a randomized test string from a random online string generator was obtained for a complex test. Overall there is decent confidence that the tokenizer works as intended.
+
+
 
 
 *Here is an example:*
