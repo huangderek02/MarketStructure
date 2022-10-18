@@ -45,6 +45,7 @@ public class MarketActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ArrayList<Listing> listingsArrayList = new ArrayList<Listing>();
+    private ArrayList<Listing> listingsArrayList2 = new ArrayList<Listing>();
     ProgressDialog progressDialog;
     private Listing listing = new Listing("","",null,"","","","","");
     //private Listing listing = new Listing("","",0,"","","",0,0,"","","","","","","","","");
@@ -56,22 +57,37 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
-        addListings();
-
+        listingsArrayList = addListings();
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading Listings...");
-        progressDialog.show();
-
-        recyclerView = findViewById(R.id.recyclerView);
-
+        //progressDialog.show();
+        recyclerView = findViewById(R.id.recycle_view);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(listingsArrayList, this);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
+
+
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+        //EventChangeListener();
 
-        EventChangeListener();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /*
         databaseReference = FirebaseDatabase.getInstance().getReference("listings");
         listView = findViewById(R.id.list_view);
@@ -123,6 +139,7 @@ public class MarketActivity extends AppCompatActivity {
                         assert value != null;
                         for (DocumentChange documentChange : value.getDocumentChanges()) {
                            // if (documentChange.getType() == DocumentChange.Type.ADDED) {
+
                                 listingsArrayList.add(documentChange.getDocument().toObject(Listing.class));
                             }
                         }
@@ -146,9 +163,10 @@ public class MarketActivity extends AppCompatActivity {
          */
     }
 
-    public void addListings() {
+    public ArrayList<Listing> addListings() {
         CollectionReference listings = db.collection("listings");
-        for (int i = 0; i < 10; i++) {
+        ArrayList<Listing> arrayList = new ArrayList<>();
+        for (int i = 0; i < 25000; i++) {
             Map<String, Object> listing = new HashMap<>();
             listing.put("listingId", String.valueOf(i));
             listing.put("sellerUsername", getRandomSellerUsername());
@@ -159,6 +177,14 @@ public class MarketActivity extends AppCompatActivity {
             listing.put("listingLastUpdatedDate", getRandomDate());
             listing.put("listingStatus", getRandomListingStatus());
             listings.document(String.valueOf(i)).set(listing);
+            Listing listing1 = new Listing((String) listing.get("listingId"),(String) listing.get("sellerUsername"), (Textbook) listing.get("textbook"),
+                    (String) listing.get("listingPrice"),(String) listing.get("condition"),(String) listing.get("additionalDetails"),(String) listing.get("listingStatus"),
+                    (String) listing.get("listingLastUpdatedDate"));
+
+
+
+            arrayList.add(listing1);
         }
+        return arrayList;
     }
 }
