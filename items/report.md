@@ -1,4 +1,4 @@
-# [Team Name] Report
+# Gorderhuifam Report
 
 The following is a report template to help your team successfully provide all the details necessary for your report in a structured and organised manner. Please give a straightforward and concise report that best demonstrates your project. Note that a good report will give a better impression of your project to the reviewers.
 
@@ -32,9 +32,9 @@ The following is a report template to help your team successfully provide all th
 | UID | Name | Role |
 | :--- | :----: | ---: |
 | [u7117043] | [Gordon Lum] | [Worked on classes related to textbook searcher] |
-| [uid] | [name] | [role] |
-| [uid] | [name] | [role] |
-| [uid] | [name] | [role] |
+| [u7300484] | [Derek Huang] | [role] |
+| [u7366836] | [Huiguang Zhang] | [role] |
+| [u7127350] | [Rhonda Luu] | [role] |
 
 ## Summary of Individual Contributions
 
@@ -52,8 +52,25 @@ U7117043, Gordon Lum, Contribution: X%
 * All test classes in [tokenizer_and_parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/test/java/tokenizer_and_parser)
 
 
+U7300484, Derek Huang, Contribution: X%
+* A.class
+* B.class: function1(), function2(), ...
+* ....
 
-*UID1, Name1, I contribute 30% of the code. Here are my contributions:*
+
+U7366836, Huiguang Zhang, Contribution: X%
+* A.class
+* B.class: function1(), function2(), ...
+* ....
+
+
+U7444134, Ratchanont Treevijitpaisan, Contribution: X%
+* A.class
+* B.class: function1(), function2(), ...
+* ....
+
+
+*U7127350 , Rhonda Luu, Contribution: X%
 * A.class
 * B.class: function1(), function2(), ...
 * ....
@@ -96,13 +113,44 @@ The group member who requires a decison to be made should contact the other memb
 
 ## Application Description
 
+[App name] is a markplace application that is specifically made for university students. It provies a place to search and purchase secondhand textbooks related to their courses. 
+
+
+**Application Use Cases and or Examples**
+
+Bob is studying for a building degree and is currently enrolled in BUIL1011, BUIL1100 and ENGN1211. He wants to purchase the textbooks for further study but like most university, is poor and doesnt want to be eating 2 minute noodles for the entire semester. 
+* Bob needs to buy 3 textbooks
+* He creates an account with an email and password on [app name]
+* He logs in to his account which takes him to the marketplace
+* He searches for his textbook using the search function and filters: "Can I Fix It?, Yes you can!, Engineering for Beginners"
+* The application loads the textbooks and he clicks on a second hand one that is in a used condition.
+* The application moves to a page where Bob can buy the textbook
+* Bob buys the book and it moves back to the marketplace page
+* Bob repeats this for the other two books
+
+Target Users: Students studying at university
+
+* User can create an account using an email and password
+* User can login to the application using an existing email and password
+
+* User can search for textbooks by title or by ISBN
+* User can filter textbooks found by cost, pages, edition, topic, class code
+* User can sort textbooks found in ascending or descending order: alphabetically, price, topic, pages
+* User can view listings available, there prices and sellers if they exist
+* User can purchase an existing textbook
+
+* User can send messages to other users
+* User gets warned about potential fraud and scams 
+
+
+-----------------------------------------------------------------------------------
+
 *[What is your application, what does it do? Include photos or diagrams if necessary]*
 
 *Here is a pet specific application example*
 
 *PetBook is a social media application specifically targetting pet owners... it provides... certified practitioners, such as veterians are indicated by a label next to their profile...*
 
-**Application Use Cases and or Examples**
 
 *[Provide use cases and examples of people using your application. Who are the target users of your application? How do the users use your application?]*
 
