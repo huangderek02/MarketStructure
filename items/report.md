@@ -190,6 +190,14 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 **Design Patterns**
 
+* State
+
+* Singleton
+
+* Observer (?)
+
+
+
 *[What design patterns did your team utilise? Where and why?]*
 
 **Grammar**
@@ -337,13 +345,15 @@ The test class tests every method in the Tokenizer class. It is noted that each 
 
 *Here are some examples:*
 
-Feature Category: Privacy <br>
+Feature Category: Voice Your Feature <br>
 *Implemented features:*
-1. Feature 1: **Users may ... . (easy)**
-   * Class X, methods Z, Y, Lines of code: 10-100
-   * Class Y, methods K, L, M, Lines of code: 35-150
-   * Your description: ...
+1. Feature 1: User registration including changing details (easy)
+   * Class [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java), (The class is used to register a new user, all methods) Lines of code: 28-159
+   * Class [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
+   * Description: Users may create an account using an email and password. Password needs to be atleast 6 characters long and user needs to confirm the password. The account can be used to login to the application. A progress bar shows how far the user is from creating a new account. Users can change their password and email or delete their account in their profile page.
+
 <br>
+
 2. Feature 2: **A user can only ... . (medium)**
 <br>
 
