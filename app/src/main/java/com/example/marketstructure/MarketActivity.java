@@ -8,7 +8,6 @@ import static com.example.marketstructure.generateData.GenerateRandomListings.ge
 import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomSellerUsername;
 import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomTextbook;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,22 +17,12 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -41,20 +30,20 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class MarketActivity extends AppCompatActivity implements RecyclerViewInterface{
+public class MarketActivity extends AppCompatActivity implements RecyclerViewClickListener {
 
     private RecyclerView recyclerView;
     private ArrayList<Listing> listingsArrayList = new ArrayList<Listing>();
     private ArrayList<Listing> listingsArrayList2 = new ArrayList<Listing>();
     ProgressDialog progressDialog;
     private Listing listing = new Listing("","",null,"","","","","");
+    private RecyclerViewClickListener recyclerViewClickListener;
     //private Listing listing = new Listing("","",0,"","","",0,0,"","","","","","","","","");
 
-    Button visitProfile = findViewById(R.id.button_to_profile);
+    Button visitProfile;
 
     @SuppressLint("StaticFieldLeak")
     public static FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -71,7 +60,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewInt
         recyclerView = findViewById(R.id.recycle_view);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(listingsArrayList, this);
 
-
+        visitProfile = findViewById(R.id.button_to_profile);
 
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -80,9 +69,23 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewInt
         //EventChangeListener();
 
 
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent b = new Intent(MarketActivity.this,DisplayListingDetailsActivity.class);
+                startActivity(b);
+            }
+        });
 
 
 
+        visitProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent b = new Intent(MarketActivity.this, ProfileActivity.class);
+                startActivity(b);
+            }
+        });
 
 
 
@@ -168,13 +171,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewInt
                 });
 
          */
-        visitProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent b = new Intent(MarketActivity.this, ProfileActivity.class);
-                startActivity(b);
-            }
-        });
+
     }
 
 
@@ -203,10 +200,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewInt
         return arrayList;
     }
 
-    @Override
-    public void onItemClick(int pos) {
 
-    }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {

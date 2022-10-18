@@ -1,7 +1,6 @@
 package com.example.marketstructure;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,18 +18,17 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
 
-    private final RecyclerViewInterface recyclerViewInterface;
+
 
     private final ArrayList<Listing> arrayList;
     private final Context context;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public RecyclerViewAdapter(ArrayList<Listing> arrayList, Context context,
-                               RecyclerViewInterface recyclerViewInterface) {
+    public RecyclerViewAdapter( ArrayList<Listing> arrayList, Context context) {
+
         this.arrayList = arrayList;
         this.context = context;
-        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
@@ -48,6 +46,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             this.tv_seller = itemView.findViewById(R.id.tv_seller_display_cl);
             this.tv_listing_status = itemView.findViewById(R.id.tv_listing_status_display_cl);
         }
+
+
     }
     @NonNull
     @Override
@@ -85,6 +85,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         
          */
     }
+
     @Override
     public int getItemCount() {
         return arrayList.size();

@@ -27,8 +27,8 @@
             android:name=".CheckoutActivityMenu"
             android:exported="false" />
         <activity
-            android:name=".UserActivity"
-            android:exported="false" />
+            android:name=".ProfileActivity"
+            android:exported="true" />
         <activity
             android:name=".MarketActivity"
             android:exported="true" />
