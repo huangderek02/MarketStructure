@@ -483,19 +483,11 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-<<<<<<< HEAD
-        android:id="@+id/b_make_bid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/make_bid_button"
-=======
         android:id="@+id/b_buy_now"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/b_buy_now"
->>>>>>> 9682dfee6ace7a456437ee386eb71d0d6a6aacf6
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.606"
