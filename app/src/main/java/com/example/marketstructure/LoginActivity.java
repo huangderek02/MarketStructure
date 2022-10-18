@@ -47,16 +47,19 @@ public class LoginActivity extends AppCompatActivity {
                 String password = login_password.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
+                    login_email.setError("Empty Email");
                     Toast.makeText(getApplicationContext(), "Please enter email address!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if(TextUtils.isEmpty(password)){
+                    login_password.setError("Empty Password");
                     Toast.makeText(getApplicationContext(),"Please enter password!",Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if(password.length() < 6){
+                    login_password.setError("Password length is less than 6");
                     Toast.makeText(getApplicationContext(),"Password is too short, minimum size is at least 6!", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -141,10 +144,12 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this,"Login Success. ", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, MarketActivity.class);
+                            //test
+                            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
                             progressBar.setVisibility(View.GONE);
                             startActivity(intent);
                             finish();
+                            Toast.makeText(LoginActivity.this,"Login Success. ", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(LoginActivity.this,"Authentication failed. ", Toast.LENGTH_SHORT).show();
                         }

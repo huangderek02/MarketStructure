@@ -59,31 +59,37 @@ public class RegisterActivity extends AppCompatActivity {
                 String cPassword = inputConPass.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
+                    inputEmail.setError("Empty Email are invalid");
                     Toast.makeText(getApplicationContext(), "Please enter email address!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(name)) {
+                    inputName.setError("Empty name are invalid");
                     Toast.makeText(getApplicationContext(), "Please enter username!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)) {
+                    inputPassword.setError("Empty password are invalid");
                     Toast.makeText(getApplicationContext(), "Please enter password!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(cPassword)) {
+                    inputConPass.setError("Empty password are invalid");
                     Toast.makeText(getApplicationContext(), "Please confirmed password!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (password.length() < 6) {
+                    inputPassword.setError("Password length is less than 6");
                     Toast.makeText(getApplicationContext(), "Password is too short, minimum size is at least 6!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (!cPassword.matches(password)) {
+                    inputConPass.setError("Password not match");
                     Toast.makeText(getApplicationContext(), "Passwords do not match!", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -128,12 +134,10 @@ public class RegisterActivity extends AppCompatActivity {
                     userList.put("email", email);
                     userList.put("name", name);
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    db.collection("userList")
-                            .add(userList)
-                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    db.collection("userList").document(uid).set(userList)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    Log.d(tag, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                public void onSuccess(Void unused) {
                                     Toast.makeText(RegisterActivity.this,"create user with email complete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(RegisterActivity.this, MarketActivity.class);
                                     startActivity(intent);
