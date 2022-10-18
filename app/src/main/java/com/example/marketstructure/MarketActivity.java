@@ -18,6 +18,7 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -41,7 +42,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class MarketActivity extends AppCompatActivity {
+public class MarketActivity extends AppCompatActivity implements RecyclerViewInterface{
 
     private RecyclerView recyclerView;
     private ArrayList<Listing> listingsArrayList = new ArrayList<Listing>();
@@ -125,6 +126,7 @@ public class MarketActivity extends AppCompatActivity {
         addListings();
 
          */
+
     }
 
     private void EventChangeListener() {
@@ -186,5 +188,15 @@ public class MarketActivity extends AppCompatActivity {
             arrayList.add(listing1);
         }
         return arrayList;
+    }
+
+    @Override
+    public void onItemClick(int pos) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }
