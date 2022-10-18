@@ -247,10 +247,28 @@ Instantiate BTree with a larger maxKeys value to avoid. This solution works due 
 - Tests textbooks stored in keys of root
 - Tests textbooks stored in keys of a nonroot
 - Tests inserting lots of textbooks into a BTree
+- Tests find() method for getting textbooks
 
-Code coverage: 88% of BTree
+Code coverage: 96% of BTree
 
-Tests only check if the keys if the keys in a BTree have the correct 
+The focus of the tests is on the values of a BTree's keys as it is where Textbooks will be stored. While the code coverage is large, the actual testing does not check for many methods defined in BTree. The testing approach can be improved as a result but was not completed due to time limitations.
+
+
+**[ParserTest] testing methods in [Parser]**
+
+8 Test Cases:
+- Tests Strings stored in searchTerms
+- Tests Strings stored in topichTerms
+- Tests Strings stored in codeTerms
+- Tests Strings stored in errorTerms
+- Tests String stored in ISBN
+- Tests Integers stored in pageOperation
+- Tests Integers stored in costOperation
+- Tests Integers stored in editionOperation
+
+Code Coverage: 90.7% of Parser
+
+Unit tests focused on the instance variables of parser. Since a parser uses a grammar to parse a string which involves looping, each method of the parseX methods are linked and thus makes unit testing on a single method impossible. 
 
 
 *Here is an example:*
