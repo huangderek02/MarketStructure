@@ -27,11 +27,20 @@ import java.util.Comparator;
  * 1) Get the text in the search bar as a string.
  * 2) Create a Textbook Searcher instance
  * 3) Use the TextbookSearcher method parserSearch() with the search string as input
- * 4) Use the TextbookSearcher method getResults() to get the related textbooks.
+ * 4) Use one of the sort methods on the Textbook Searcher instance (Most likely is sortAlphabeticalAscending)
+ * 5) Use the TextbookSearcher method getResults() to get the related textbooks.
  * 
  * OPTIONAL
- * 5) Add error toast(s) when something goes wrong
- * 
+ * 6) Add error toast(s) when something goes wrong or results are empty
+ *
+ * Example:
+ *
+ * TextbookSearcher tbSearcher = new TextbookSearcher();
+ * tbSearcher.parseSearch("The users search string goes here");
+ * tbSearcher.sortAlphabeticalAscending();
+ *
+ * ArrayList<Textbook> results = tbSearcher.getResults();	<-- update recycle viewer with this
+ *
  */
 public class TextbookSearcher extends ListingTextbookData{
 
