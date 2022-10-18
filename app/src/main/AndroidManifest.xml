@@ -26,6 +26,9 @@
             android:name=".DisplayListingDetailsActivity"
             android:exported="true" />
         <activity
+            android:name=".textbookDetailViewerActivity"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
