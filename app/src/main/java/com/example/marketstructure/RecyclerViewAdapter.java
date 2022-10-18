@@ -13,9 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
+
     private final ArrayList<Listing> arrayList;
     private final Context context;
 
@@ -33,7 +36,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView tv_seller;
         TextView tv_listing_status;
 
-        public RecyclerViewHolder(View itemView) {
+        public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             this.iv_textbook_image = itemView.findViewById(R.id.iv_textbook_image_cl);
             this.tv_price = itemView.findViewById(R.id.tv_price_display_cl);
@@ -42,28 +45,27 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             this.tv_listing_status = itemView.findViewById(R.id.tv_listing_status_display_cl);
         }
     }
-
+    @NonNull
     @Override
-    public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Inflate Layout
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout, parent, false);
+         View view = LayoutInflater.from(context).inflate(R.layout.card_layout, parent, false);
         return new RecyclerViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(RecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerViewAdapter.RecyclerViewHolder holder, int position) {
         // Set the data to textview and imageview.
         Listing listing = arrayList.get(position);
 
         Resources resources = this.context.getApplicationContext().getResources();
         int textbookImageId = resources.getIdentifier("textbookImageName", "drawable", "drawable");
         holder.iv_textbook_image.setImageResource(textbookImageId);
-        holder.tv_price.setText(String.valueOf(listing.getListingPrice()));
+        holder.tv_price.setText(listing.getListingPrice());
         holder.tv_condition.setText(listing.getCondition());
         holder.tv_seller.setText(listing.getSellerUsername());
         holder.tv_listing_status.setText(listing.getListingStatus());
-
-
+        /*
         holder.iv_textbook_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,6 +78,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 context.startActivity(intent);
             }
         });
+        
+         */
     }
     @Override
     public int getItemCount() {

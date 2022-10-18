@@ -1,7 +1,6 @@
 package com.example.marketstructure;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -47,7 +46,7 @@ public class DisplayListingDetailsActivity extends AppCompatActivity {
         Button b_view_seller_profile = findViewById(R.id.b_view_seller_profile);
         Button b_message_seller = findViewById(R.id.b_message_seller);
         Button b_report_listing = findViewById(R.id.b_report_listing);
-        Button b_make_bid = findViewById(R.id.b_make_bid);
+        Button b_make_bid = findViewById(R.id.b_buy_now);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
