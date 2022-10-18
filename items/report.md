@@ -113,10 +113,23 @@ The group member who requires a decison to be made should contact the other memb
 
 ## Application Description
 
-[App name] is a markplace application that is specifically made for university students. It provies a place to search and purchase secondhand textbooks related to their courses. 
+[App name] is a markplace application that is specifically made for university students. It provies a quick and easy way to obtain cheaper, secondhand textbooks and avoid having to purchase new ones. Clients can create an account using an email and password to be able to access these services, search for textbooks and view available listings with different prices and sellers. 
 
 
-**Application Use Cases and or Examples**
+**Application Use Cases and Examples**
+
+Target Users: Students studying at university
+
+* User can create an account using an email and password
+* User can login to the application using an existing email and password
+* User can search for textbooks by title or by ISBN
+* User can filter textbooks found by cost, pages, edition, topic, class code
+* User can sort textbooks found in ascending or descending order: alphabetically, price, topic, pages
+* User can view listings available, there prices and sellers if they exist
+* User can purchase an existing textbook
+* User can send messages to other users
+* User gets warned about potential fraud and scams 
+
 
 Bob is studying for a building degree and is currently enrolled in BUIL1011, BUIL1100 and ENGN1211. He wants to purchase the textbooks for further study but like most university, is poor and doesnt want to be eating 2 minute noodles for the entire semester. 
 * Bob needs to buy 3 textbooks
@@ -128,19 +141,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 * Bob buys the book and it moves back to the marketplace page
 * Bob repeats this for the other two books
 
-Target Users: Students studying at university
 
-* User can create an account using an email and password
-* User can login to the application using an existing email and password
-
-* User can search for textbooks by title or by ISBN
-* User can filter textbooks found by cost, pages, edition, topic, class code
-* User can sort textbooks found in ascending or descending order: alphabetically, price, topic, pages
-* User can view listings available, there prices and sellers if they exist
-* User can purchase an existing textbook
-
-* User can send messages to other users
-* User gets warned about potential fraud and scams 
 
 
 -----------------------------------------------------------------------------------
@@ -151,32 +152,6 @@ Target Users: Students studying at university
 
 *PetBook is a social media application specifically targetting pet owners... it provides... certified practitioners, such as veterians are indicated by a label next to their profile...*
 
-
-*[Provide use cases and examples of people using your application. Who are the target users of your application? How do the users use your application?]*
-
-*Here is a pet training application example*
-
-*Molly wants to inquiry about her cat, McPurr's recent troublesome behaviour*
-1. *Molly notices that McPurr has been hostile since...*
-2. *She makes a post about... with the tag...*
-3. *Lachlan, a vet, writes a reply to Molly's post...*
-4. ...
-5. *Molly gives Lachlan's reply a 'tick' response*
-
-*Here is a map navigation application example*
-
-*Targets Users: Drivers*
-
-* *Users can use it to navigate in order to reach the destinations.*
-* *Users can learn the traffic conditions*
-* ...
-
-*Target Users: Those who want to find some good restaurants*
-
-* *Users can find nearby restaurants and the application can give recommendations*
-* ...
-
-*List all the use cases in text descriptions or create use case diagrams. Please refer to https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/ for use case diagram.*
 
 ## Application UML
 
