@@ -16,10 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -50,6 +53,8 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewInt
     ProgressDialog progressDialog;
     private Listing listing = new Listing("","",null,"","","","","");
     //private Listing listing = new Listing("","",0,"","","",0,0,"","","","","","","","","");
+
+    Button visitProfile = findViewById(R.id.button_to_profile);
 
     @SuppressLint("StaticFieldLeak")
     public static FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -163,7 +168,15 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewInt
                 });
 
          */
+        visitProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent b = new Intent(MarketActivity.this, ProfileActivity.class);
+                startActivity(b);
+            }
+        });
     }
+
 
     public ArrayList<Listing> addListings() {
         CollectionReference listings = db.collection("listings");
