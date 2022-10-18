@@ -21,15 +21,12 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.marketstructure.generateData.DataInRecycleView;
-import com.example.marketstructure.generateData.RecycleViewAdapterDerek;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -37,7 +34,6 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.auth.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,7 +44,7 @@ import java.util.Objects;
 public class MarketActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private ArrayList<Listing> listingsArrayList = new ArrayList<>();
+    private ArrayList<Listing> listingsArrayList = new ArrayList<Listing>();
     ProgressDialog progressDialog;
     private Listing listing = new Listing("","",null,"","","","","");
     //private Listing listing = new Listing("","",0,"","","",0,0,"","","","","","","","","");
@@ -61,40 +57,20 @@ public class MarketActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
         addListings();
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycle_view);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        List<DataInRecycleView> dataList = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            DataInRecycleView data = new DataInRecycleView(listing.getTitle(),listing.getIsbn());
-            dataList.add(data);
-        }
-        RecycleViewAdapterDerek recycleViewAdapter = new RecycleViewAdapterDerek(dataList);
-        recyclerView.setAdapter(recycleViewAdapter);
-//        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-//        DatabaseReference myRef = database.child("listings:/");
-//        myRef.child(listing.getListingId()).addListenerForSingleValueEvent(new ValueEventListener() {
-//
-//            @Override
-//
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//
-//                //user = dataSnapshot.getValue(User.class);
-//
-//            }
-//
-//            @Override
-//
-//            public void onCancelled(DatabaseError databaseError) {}
-//
-//        });
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Loading Listing...");
+        progressDialog.setMessage("Loading Listings...");
         progressDialog.show();
-        recyclerView = findViewById(R.id.recycle_view);
+
+        recyclerView = findViewById(R.id.recyclerView);
+
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(listingsArrayList, this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
         EventChangeListener();
         /*
         databaseReference = FirebaseDatabase.getInstance().getReference("listings");
@@ -136,6 +112,23 @@ public class MarketActivity extends AppCompatActivity {
     }
 
     private void EventChangeListener() {
+        db.collection("listings")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e("Firestore error",error.getMessage());
+                            return;
+                        }
+                        assert value != null;
+                        for (DocumentChange documentChange : value.getDocumentChanges()) {
+                           // if (documentChange.getType() == DocumentChange.Type.ADDED) {
+                                listingsArrayList.add(documentChange.getDocument().toObject(Listing.class));
+                            }
+                        }
+                 //   }
+                });
+        /*
         db.collection("listings").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -149,6 +142,8 @@ public class MarketActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+         */
     }
 
     public void addListings() {
