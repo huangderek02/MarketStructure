@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+D:\Uni\Classes\COMP2100\Coding Files\Labs\ga-22s2-comp2100-6442\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+75931715.index
+2397761174.index
+3353822697.index
+1608788231.index

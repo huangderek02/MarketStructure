@@ -1,7 +1,7 @@
 # Gorderhuifamda Team
 This following is a very simple team meeting template. You should expand it based on the scope and nature of your discussion.
 
-## Team Meeting 1 - Week 6 - Sunday, 4th September 2022 (1:15 pm - 2:05 pm)
+## Team Meeting 6 - Week 9 - Saturday, 8th October 2022 (3:10 pm - 4:50 pm)
 **Absent:**
 No members were absent.
 <br>
@@ -19,67 +19,100 @@ Stand up Procedure:
 ## Agenda Items
 | Number | Item |
 | :--- | ---: |
-| 1 | Team member introductions |
-| 2 | Fill out when2meet to map everyone's avaliability for Team meetings - https://www.when2meet.com/?16660748-wcLcZ |
-| 3 | Organise recurring group meeting day and time |
-| 4 | Discuss conflict resolution protocol |
-| 5 | Discuss what type of marketplace app we will design |
-| 6 | Delegate tasks |
-| 7 | Discuss schedule for development activities and group deadlines |
-| 8 | Discuss work to complete for Week 7 checkpoint |
+| 1 | Individual updates on progress |
+| 2 | Determine additional/general features and delegate |
+| 3 | Update Project Timeline |
+| 4 | Discuss work to complete for Week 10 checkpoint including report |
 
 ## Meeting Minutes
-**Agenda Item 4: Discuss conflict resolution protocol**
-- If a team member is unwell, whoever has completed their delegated task first will help complete the unwell team member's part. The unwell team member will help the other team member with their other assigned tasks. Key requirements of the assignment will be priorised.
-- When the group has issues, we will reach consensus and solve the issue by majority vote.
-- If a team member is having difficulties completing a task, they will flag the issue with other team members via the group chat and  we will work through the issue together.
-- Team member responsibilities:
-- Everyone must use good code documentation to ensure that others can read through the code easily and troublshoot the issue/help complete the task.
-- Time estimates will be set to complete tasks
-- Updates on our progress on tasks and any issues will be communicated in the group chat and in team meetings, we might use trello (Rhonda will look into this)
-- Ensure that diagrams are clear, large and easier for marker/team members to read
+**Agenda Item 1: Individual updates on progress**
+<br>
+**Fame:**
+- Has created package for Tree and working on RedBlack Tree implementation
+- Will look into creating a BST as a backup
+- Continue to work on Login Screen and hopefully finish by next Wednesday
+- Look into Design Patterns
 
-**Agenda Item 5: Discuss what type of marketplace app we will design:** 
-- App feature for trading and/or selling:
-- Current ideas are app to sell: 1) cars & car parts and 2) uni textbook and resources
-- Will brainstorm ideas in groupchat (send through throughout the week) and decide on an idea by Tuesday evening
+**Rhonda:**
+- Almost finished creating data instances to load into Firestore, just adding more textbooks and images - hopefully completed by tonight
+- Created methods to randomly select sellerUsernames, textbooks, price, condition, additonal details, etc... for a specific listing
+- Have split the Textbook and Listing classes
+- Plan to load data from Firestore by tomorrow using Derek and Huiguang's buit UI screens
+- Create new package for Generate Data suggested by Fame
 
-**Agenda Item 6: Delegate tasks:**
-- Part 1 Basic App requirements delegated
-- Part 2 Additional feature requirements will be delegated in next few meetings once app idea has been decided
-- Estimated Additional feature delegations are: 1-2 each depending on difficulty of additional feature
+**Huiguang:**
+- Completed UI Screen for textbookDetailViewerActivity
+- Working on chat feature, has been able to display chat messages on UI screens
+- Research into Firestore implementation
+- Unsure how to implement for other user to reply, team suggests to login in to another user acount to implement messaging
 
-**Agenda Item 7: Discuss schedule for development activities and group deadlines:**
-- Focus on Part 1 Basic App requirements for the App first, everyone will have a play around in Android studio and conduct research to see how to implement each task. Does not need to be fully implemented by next team meeting.
-- Discussed estimated deadline for Check point 7 by Tuesday (Gordon's Lab) otherwise Wednesday (Derek and Huiguang's Lab) or Friday (Fame and Rhonda's Lab)
+**Gordon:**
+- Has completed Tokeniser and Parser - just need to edit a few comments and grammar.
+- Has pushed as a separate package for now
+- Currently working on BTree
+- Notes for Rhonda: Suggestion to not make attributes for Textbook private as static, getter and setter functions are redundant. Also add new condition options
 
-**Agenda Item 8: Discuss work to complete for Week 7 checkpoint:**
-- Hopefully have UML created
-- Will discuss in further detail in next meeting
+**Derek:**
+- Completed UI Screen for MarketActivity
+- Research into Firestore implementation
+<br>
 
-**Next meeting Agenda Items:**
-- Elaborate on decided marketplace app idea
-- Discuss progress and learnings on how to implement the basic app requirements assigned
-- Discuss schedule for development activities and group deadlines
-- Discuss work to complete for Week 7 checkpoint
+**Agenda Item 2: Determine additional/general features and delegate** 
+<br>
+**Search-related features:**
+- 1. Search functionality can handle partially valid and invalid search queries. (medium) - Gordon
+- 2. Sort a list of products returned from a search based on price, popularity, rating, availability, etc.
+(easy) - Gordon
+- 3. Filter a list of products returned from a search based on their categories (e.g., kids, adults, kitchen,
+bedroom, etc.) (easy) - Gordon
 
-**Next meeting date and time: Saturday, 10th September 2022 at 3 pm**
+**User Interactivity**
+- 1. The ability to micro-interact with items in your app (e.g. add to watchlist/add to cart/like an
+item/report an item/add reviews (stars)) [stored in-memory]. (easy) - Derek & Rhonda
+
+**Creating Processes**
+- 5. Bidding process. Your app may allow users to post an item and set the selling method to 'bidding'.
+After bidding starts, other users can bid on the item and users may be notified if their bid has been
+beaten. The user (bidder) must be able to set the new price. (easy) - Rhonda
+- Suggested Feature. New User Registration (easy) - Fame
+
+**Peer to Peer Messaging**
+- 1. Provide users with the ability to message each other directly. (hard) - Huiguang
+
+**Firebase Integration**
+- 1. Use Firebase to implement user Authentication/Authorisation. (easy) - Fame
+<br>
+
+**Agenda Item 4: Discuss work to complete for Week 10 checkpoint including report:**
+- Almost fully complete Part 1 Basic App requirements for the App first and start implementation of additional features by next Thursday
+- Start writing report for partially/fully implemented features by next Thursday- Rhonda will create and share word document in group chat
+- Discussed deadline for Checkpoint 10 is Friday (Fame and Rhonda's Lab)
+
+**Next meeting date and time: Saturday, 15th October 2022 at 3 pm**
 
 ## TODO Items
 | Task | Assignee |
 | :--- | ---: |
-| Decide on marketplace app idea by Tuesday evening, 6th September | All team members | 
-| Part 1 - Basic App Requirement 1 - Login Screen Research | Fame |
-| Part 1 - Basic App Requirement 2 - Create Data Files Research | Derek, Huiguang and Rhonda |
-| Part 1 - Basic App Requirement 3 - Load Data Files Research | Derek, Huiguang and Rhonda |
-| Part 1 - Basic App Requirement 4 - Search Function Research | Gordon and Fame |
+| Part 1 - Basic App Requirement 1 - Login Screen | Fame |
+| Part 1 - Basic App Requirement 2 - Create Data Files | Derek, Huiguang and Rhonda |
+| Part 1 - Basic App Requirement 3 - Load Data Files | Derek, Huiguang and Rhonda |
+| Part 1 - Basic App Requirement 4 - Search Function | Gordon and Fame |
+| Part 2 - Additional/General Feature 1 - Search-related Feature - Search functionality can handle partially valid and invalid search queries. (medium) | Gordon |
+| Part 2 - Additional/General Feature 2 - Search-related Feature - Sort a list of products returned from a search based on price, popularity, rating, availability, etc. (easy) | Gordon |
+| Part 2 - Additional/General Feature 3 - Search-related Feature - Filter a list of products returned from a search based on their categories (e.g., kids, adults, kitchen, bedroom, etc.) (easy) | Gordon |
+| Part 2 - Additional/General Feature 4 - User Interactivity - The ability to micro-interact with items in your app (e.g. add to watchlist/add to cart/like an item/report an item/add reviews (stars)) [stored in-memory]. (easy) | Derek & Rhonda |
+| Part 2 - Additional/General Feature 5 - Creating Processes - Your app may allow users to post an item and set the selling method to 'bidding'. After bidding starts, other users can bid on the item and users may be notified if their bid has been beaten. The user (bidder) must be able to set the new price. (easy) |  Rhonda |
+| Part 2 - Additional/General Feature 6 - Creating Processes - New User Registration (easy) | Fame |
+| Part 2 - Additional/General Feature 7 - Peer to Peer Messaging - Provide users with the ability to message each other directly. (hard) | Huiguang |
+| Part 2 - Additional/General Feature 8 - Firebase Integration - Use Firebase to implement user Authentication/Authorisation. (easy) | Fame |
+| Report | All team members |
 
 ## Scribe Rotation
 The following dictates who will be scribe in this and the next meeting.
 | Name |
 | :---: |
 | Rhonda - scribe for this meeting |
-| Derek - scribe for next meeting (2) |
-| Fame - scribe for meeting 3 | 
-| Huiguang - scribe for meeting 4 | 
-| Gordon - scribe for meeting 5 | 
+| Derek - scribe for next meeting 7 |
+| Fame - scribe for meeting 8 | 
+| Huiguang - scribe for meeting 9 | 
+| Gordon - scribe for meeting 10 | 

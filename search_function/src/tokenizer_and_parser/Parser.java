@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * 
+ * Class and ALL methods created by:
  * @author u7117043
  *  
- * NOTE:
- * "<id>" for <term> is not yet implemented in tokenizer. If used it will allow symbols or keywords in the identifier.
  * 
  * Abbreviations:
  * - exp = expression
@@ -45,6 +43,11 @@ import java.util.Arrays;
  * If a filter results in no books stop or skip it and show user which filter resulted in no books (maybe add message saying how many books before this filter)
  * 		- e.g. "No books found with: COST < 10, however 5 books found without this filter"
  *  
+ *  
+ *  NOTES:
+ *  - Integer tokens will be less than 10000 and greater than or equal to 0
+ *  - keywords related to operators stored as an array, related to id's stored in arraylist
+ *  - isbn stored as single string, ignoring dashes
  * 
  */
 
@@ -82,6 +85,18 @@ public class Parser {
 	
 	static final ArrayList<Character> digits = Tokenizer.digits;
 	
+	/*
+	 * Singleton DP: Only one instance of parser should exists
+	 */
+	
+	private static Parser instance = null;
+	
+	private Parser() {};
+	
+	public static Parser getInstance() {
+		if(instance == null) instance = new Parser();
+		return instance;
+	}
 	
 	
 	/**
@@ -414,6 +429,7 @@ public class Parser {
 			return;
 		}
 		
+		id = id.toLowerCase();
 		
 		if(key == "TOPIC") {
 			topicTerms.add(id);
