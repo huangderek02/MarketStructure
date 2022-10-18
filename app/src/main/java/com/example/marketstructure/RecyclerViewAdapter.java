@@ -19,14 +19,18 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
 
+    private final RecyclerViewInterface recyclerViewInterface;
+
     private final ArrayList<Listing> arrayList;
     private final Context context;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public RecyclerViewAdapter(ArrayList<Listing> arrayList, Context context) {
+    public RecyclerViewAdapter(ArrayList<Listing> arrayList, Context context,
+                               RecyclerViewInterface recyclerViewInterface) {
         this.arrayList = arrayList;
         this.context = context;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
