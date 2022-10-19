@@ -20,15 +20,18 @@ public class Sellers extends AppCompatActivity {
     Button flagSellerButton;
     boolean flagged = false;
     TextView status;
+    TextView av_r;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller);
-
+        av_r = findViewById(R.id.average_rating);
+        av_r.setText("no rating now");
         avgRtngBtn = findViewById(R.id.view_avg_rtng);
         ratingBar = findViewById(R.id.ratingBar);
         status = findViewById(R.id.status);
+        status.setText("unflaggeg");
         flagSellerButton = findViewById(R.id.flag_seler);
 
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -55,7 +58,7 @@ public class Sellers extends AppCompatActivity {
                         msg = "You're the greatest!";
                         break;
                 }
-
+                av_r.setText(String.valueOf(sum(Ratings) / Ratings.size()));
                 Toast.makeText(Sellers.this, msg, Toast.LENGTH_SHORT).show();
             }
         });
@@ -75,12 +78,12 @@ public class Sellers extends AppCompatActivity {
                                 "We'll look into it." ,
                         Toast.LENGTH_SHORT).show();
                 flagged = true;
+                if(flagged){
+                    status.setText("Flagged");
+                }
             }
         });
 
-        if(flagged ==true){
-            status.setText("Flagged");
-        }
     }
 
     static float sum(ArrayList<Float> arr)
