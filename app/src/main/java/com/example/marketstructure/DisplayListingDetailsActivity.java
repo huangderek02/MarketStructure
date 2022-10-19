@@ -56,22 +56,22 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         Intent intent = getIntent();
         //String documentId = intent.getStringExtra("documentId");
 
-        Listing listingFromAdapter = (Listing) intent.getExtras().getSerializable("listing");
-        tv_listing_id.setText(listingFromAdapter.getListingId());
-        tv_listing_status.setText(listingFromAdapter.getListingStatus());
-        tv_condition.setText(listingFromAdapter.getCondition());
-        tv_listing_price.setText(listingFromAdapter.getListingPrice());
-        tv_isbn.setText(listingFromAdapter.getIsbn());
-        tv_textbook_name.setText(listingFromAdapter.getTitle());
-        tv_authors.setText(listingFromAdapter.getAuthors());
-        tv_edition.setText(listingFromAdapter.getEdition());
-        tv_year_published.setText(listingFromAdapter.getYearPublished());
-        tv_number_of_pages.setText(listingFromAdapter.getNumberOfPages());
-        tv_topic_code.setText(listingFromAdapter.getTopicCode());
-        tv_topic.setText(listingFromAdapter.getTopic());
-        tv_additional_details.setText(listingFromAdapter.getAdditionalDetails());
-        tv_seller.setText(listingFromAdapter.getSellerUsername());
-        tv_listing_last_updated.setText(listingFromAdapter.getListingLastUpdatedDate());
+//        Listing listingFromAdapter = (Listing) intent.getExtras().getSerializable("listing");
+//        tv_listing_id.setText(listingFromAdapter.getListingId());
+//        tv_listing_status.setText(listingFromAdapter.getListingStatus());
+//        tv_condition.setText(listingFromAdapter.getCondition());
+//        tv_listing_price.setText(listingFromAdapter.getListingPrice());
+//        tv_isbn.setText(listingFromAdapter.getIsbn());
+//        tv_textbook_name.setText(listingFromAdapter.getTitle());
+//        tv_authors.setText(listingFromAdapter.getAuthors());
+//        tv_edition.setText(listingFromAdapter.getEdition());
+//        tv_year_published.setText(listingFromAdapter.getYearPublished());
+//        tv_number_of_pages.setText(listingFromAdapter.getNumberOfPages());
+//        tv_topic_code.setText(listingFromAdapter.getTopicCode());
+//        tv_topic.setText(listingFromAdapter.getTopic());
+//        tv_additional_details.setText(listingFromAdapter.getAdditionalDetails());
+//        tv_seller.setText(listingFromAdapter.getSellerUsername());
+//        tv_listing_last_updated.setText(listingFromAdapter.getListingLastUpdatedDate());
 
 
 //        DocumentReference documentReference = db.collection("listings").document(documentId);

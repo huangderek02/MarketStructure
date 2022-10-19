@@ -4,7 +4,7 @@ public class Textbook {
     String listingId;
     String sellerUsername;
     String textbookImageURL;
-    int price;
+    int originalPrice;
     String ISBN;
     String title;
     int edition;
@@ -53,11 +53,11 @@ public class Textbook {
     }
 
     public int getPrice() {
-        return price;
+        return originalPrice;
     }
 
     public void setPrice(int price) {
-        this.price = price;
+        this.originalPrice = price;
     }
 
     public String getISBN() {
