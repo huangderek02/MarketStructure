@@ -55,6 +55,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
+
         listingsArrayList = addListings();
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
@@ -69,6 +70,12 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+
+
+
+
+
         //EventChangeListener();
 
 

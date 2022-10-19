@@ -1,6 +1,8 @@
 package com.example.marketstructure;
 
-public class Listing extends Textbook {
+import java.io.Serializable;
+
+public class Listing extends Textbook implements Serializable {
     private String listingId;
     private String sellerUsername;
     private Textbook textbook;

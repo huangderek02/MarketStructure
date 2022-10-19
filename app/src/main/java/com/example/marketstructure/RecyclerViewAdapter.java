@@ -7,8 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,22 +16,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-import java.io.Serializable;
+import java.io.File;
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> implements Serializable {
-
-
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
 
     private final ArrayList<Listing> arrayList;
     private final Context context;
 
-
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String documentId = db.collection("listings").document().getId();
 
-    public RecyclerViewAdapter( ArrayList<Listing> arrayList, Context context) {
-
+    public RecyclerViewAdapter(ArrayList<Listing> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -51,15 +46,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             this.tv_seller = itemView.findViewById(R.id.tv_seller_display_cl);
             this.tv_listing_status = itemView.findViewById(R.id.tv_listing_status_display_cl);
         }
-
-
     }
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Inflate Layout
          View view = LayoutInflater.from(context).inflate(R.layout.card_layout, parent, false);
-        return new RecyclerViewHolder(view);
+         //RecyclerViewHolder holder = new RecyclerViewHolder(view);
+         return new RecyclerViewHolder(view);
     }
 
 
@@ -67,7 +61,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.RecyclerViewHolder holder, int position) {
         // Set the data to textview and imageview.
         Listing listing = arrayList.get(position);
-
         Resources resources = this.context.getApplicationContext().getResources();
         int textbookImageId = resources.getIdentifier("textbookImageName", "drawable", "drawable");
         holder.iv_textbook_image.setImageResource(textbookImageId);
@@ -75,27 +68,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.tv_condition.setText(listing.getCondition());
         holder.tv_seller.setText(listing.getSellerUsername());
         holder.tv_listing_status.setText(listing.getListingStatus());
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent(view.getContext(), DisplayListingDetailsActivity.class);
-                intent.putExtra(resources.getString(R.string.intent_listing_price), listing.getListingPrice());
-                intent.putExtra(resources.getString(R.string.intent_condition), listing.getCondition());
-                intent.putExtra(resources.getString(R.string.intent_seller), listing.getSellerUsername());
-                intent.putExtra(resources.getString(R.string.intent_listing_status) , listing.getListingStatus());
-                intent.putExtra("documentId", documentId);
-                context.startActivity(intent);
-
+                Intent b = new Intent(view.getContext(),DisplayListingDetailsActivity.class);
+                b.putExtra("listing",listing);
+                context.startActivity(b);
 
             }
         });
 
 
     }
-
-
     @Override
     public int getItemCount() {
         return arrayList.size();

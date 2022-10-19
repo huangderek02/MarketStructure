@@ -54,41 +54,59 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         Intent intent = getIntent();
-        String documentId = intent.getStringExtra("documentId");
+        //String documentId = intent.getStringExtra("documentId");
 
-        DocumentReference documentReference = db.collection("listings").document(documentId);
-        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot documentSnapshot = task.getResult();
-                    if (documentSnapshot.exists()) {
-                        int textbookImageId = getResources().getIdentifier(documentSnapshot.getString("textbookImageName"), "drawable", getPackageName());
-                        iv_textbook_image.setImageResource(textbookImageId);
-                        tv_listing_id.setText(documentSnapshot.getString("listingId"));
-                        tv_listing_status.setText(documentSnapshot.getString("listingStatus"));
-                        tv_condition.setText(documentSnapshot.getString("condition"));
-                        tv_listing_price.setText(documentSnapshot.getString("listingPrice"));
-                        tv_isbn.setText(documentSnapshot.getString("isbn"));
-                        tv_textbook_name.setText(documentSnapshot.getString("title"));
-                        tv_authors.setText(documentSnapshot.getString("authors"));
-                        tv_edition.setText(documentSnapshot.getString("edition"));
-                        tv_year_published.setText(documentSnapshot.getString("yearPublished"));
-                        tv_number_of_pages.setText(documentSnapshot.getString("numberOfPages"));
-                        tv_topic_code.setText(documentSnapshot.getString("topicCode"));
-                        tv_topic.setText(documentSnapshot.getString("topic"));
-                        tv_additional_details.setText(documentSnapshot.getString("additionalDetails"));
-                        tv_seller.setText(documentSnapshot.getString("seller"));
-                        tv_listing_last_updated.setText(documentSnapshot.getString("listingLastUpdatedDate"));
-                        Log.d(TAG, "DocumentSnapshot data: " + documentSnapshot.getData());
-                        } else {
-                            Log.d(TAG, "No such document");
-                        }
-                    } else {
-                        Log.d(TAG, "get failed with ", task.getException());
-                    }
-                }
-        });
+        Listing listingFromAdapter = (Listing) intent.getExtras().getSerializable("listing");
+        tv_listing_id.setText(listingFromAdapter.getListingId());
+        tv_listing_status.setText(listingFromAdapter.getListingStatus());
+        tv_condition.setText(listingFromAdapter.getCondition());
+        tv_listing_price.setText(listingFromAdapter.getListingPrice());
+        tv_isbn.setText(listingFromAdapter.getIsbn());
+        tv_textbook_name.setText(listingFromAdapter.getTitle());
+        tv_authors.setText(listingFromAdapter.getAuthors());
+        tv_edition.setText(listingFromAdapter.getEdition());
+        tv_year_published.setText(listingFromAdapter.getYearPublished());
+        tv_number_of_pages.setText(listingFromAdapter.getNumberOfPages());
+        tv_topic_code.setText(listingFromAdapter.getTopicCode());
+        tv_topic.setText(listingFromAdapter.getTopic());
+        tv_additional_details.setText(listingFromAdapter.getAdditionalDetails());
+        tv_seller.setText(listingFromAdapter.getSellerUsername());
+        tv_listing_last_updated.setText(listingFromAdapter.getListingLastUpdatedDate());
+
+
+//        DocumentReference documentReference = db.collection("listings").document(documentId);
+//        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                if (task.isSuccessful()) {
+//                    DocumentSnapshot documentSnapshot = task.getResult();
+//                    if (documentSnapshot.exists()) {
+//                        int textbookImageId = getResources().getIdentifier(documentSnapshot.getString("textbookImageName"), "drawable", getPackageName());
+//                        iv_textbook_image.setImageResource(textbookImageId);
+//                        tv_listing_id.setText(documentSnapshot.getString("listingId"));
+//                        tv_listing_status.setText(documentSnapshot.getString("listingStatus"));
+//                        tv_condition.setText(documentSnapshot.getString("condition"));
+//                        tv_listing_price.setText(documentSnapshot.getString("listingPrice"));
+//                        tv_isbn.setText(documentSnapshot.getString("isbn"));
+//                        tv_textbook_name.setText(documentSnapshot.getString("title"));
+//                        tv_authors.setText(documentSnapshot.getString("authors"));
+//                        tv_edition.setText(documentSnapshot.getString("edition"));
+//                        tv_year_published.setText(documentSnapshot.getString("yearPublished"));
+//                        tv_number_of_pages.setText(documentSnapshot.getString("numberOfPages"));
+//                        tv_topic_code.setText(documentSnapshot.getString("topicCode"));
+//                        tv_topic.setText(documentSnapshot.getString("topic"));
+//                        tv_additional_details.setText(documentSnapshot.getString("additionalDetails"));
+//                        tv_seller.setText(documentSnapshot.getString("seller"));
+//                        tv_listing_last_updated.setText(documentSnapshot.getString("listingLastUpdatedDate"));
+//                        Log.d(TAG, "DocumentSnapshot data: " + documentSnapshot.getData());
+//                        } else {
+//                            Log.d(TAG, "No such document");
+//                        }
+//                    } else {
+//                        Log.d(TAG, "get failed with ", task.getException());
+//                    }
+//                }
+//        });
 
         b_message_seller.setOnClickListener(new View.OnClickListener() {
             @Override
