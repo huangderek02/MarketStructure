@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.example.marketstructure.R;
 
-public class DeliveryOptionsActivity extends AppCompatActivity {
+public class DeliveryOptionsMenuActivity extends AppCompatActivity {
 
     Button b_standard_delivery = findViewById(R.id.b_standard_delivery);
     Button b_express_delivery = findViewById(R.id.b_express_delivery);
@@ -22,7 +22,7 @@ public class DeliveryOptionsActivity extends AppCompatActivity {
         b_standard_delivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DeliveryOptionsActivity.this,DeliveryDetailsActivity.class);
+                Intent intent = new Intent(DeliveryOptionsMenuActivity.this,DeliveryDetailsActivity.class);
                 intent.putExtra("deliveryOption", "standard");
                 startActivity(intent);
             }
@@ -31,7 +31,7 @@ public class DeliveryOptionsActivity extends AppCompatActivity {
         b_express_delivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DeliveryOptionsActivity.this,DeliveryDetailsActivity.class);
+                Intent intent = new Intent(DeliveryOptionsMenuActivity.this,DeliveryDetailsActivity.class);
                 intent.putExtra("Delivery Option", "express");
                 startActivity(intent);
             }

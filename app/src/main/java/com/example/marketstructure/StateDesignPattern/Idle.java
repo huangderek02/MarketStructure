@@ -10,8 +10,8 @@ public class Idle extends State {
 
     @Override
     public void handle(Event event) {
-        if (event.equals(Event.AnyButton)) {
-            getListing().setState(new WaitingToSelect(listing));
+        if (event.equals(Event.SearchForListing)) {
+            getListing().setState(new WaitingToSelectListing(listing));
         }
     }
 }

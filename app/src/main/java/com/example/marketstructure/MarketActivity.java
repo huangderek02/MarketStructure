@@ -110,6 +110,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
 
 
 
+
         /*
         databaseReference = FirebaseDatabase.getInstance().getReference("listings");
         listView = findViewById(R.id.list_view);
