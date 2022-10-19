@@ -170,17 +170,19 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 1. ArrayList
 
-   * Objective: It is used for storing BTree keys and children for textbook searcher, Used to return a list of tokens in Tokenizer
+   * Objective: It is used for storing BTree keys and children for textbook searcher, Used to return a list of tokens in Tokenizer, Used to store list of symbols, keywords, digits in Tokenizer 
 
-   * Locations: line 40 and 41 in BTree.java, line 157 Tokenizer.java
+   * Locations: line 40 and 41 in BTree.java, line 41, 43, 45, 157 Tokenizer.java
 
    * Reasons:
 
      * Provides faster access to elements in the middle of list compared to linkedlist (O(1))
 
-     * Provides methods not available to arrays (contains, indexOf, remove)
+     * Provides methods not available to arrays or enumerables (contains, indexOf, remove)
 
      * Size is not fixed. Can keep adding elements
+
+     * 
 
 2. ...
 
