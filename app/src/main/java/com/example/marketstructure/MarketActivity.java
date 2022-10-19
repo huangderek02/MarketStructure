@@ -249,4 +249,94 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
+
+
+    /**
+     * TODO: Delete this comment
+     *
+     * Untested code from u7117043 (Gordon) to get search bar and recycle view working.
+     */
+
+    //Used to check sorting pattern
+    private Integer sortingPattern = 0;
+    private TextbookSearcher myTBSearcher = new TextbookSearcher();
+
+    /**
+     * onClick for searchButton:
+     * Gets the string in the searh_text, finds and updates textbooks in Recycleview
+     */
+    public void updateTextbooks(View v){
+        String query = searchText.getText().toString();
+        myTBSearcher.parseSearch(query);
+
+        sortResults();
+        updateRecycle();
+
+    }
+
+    /**
+     * onClick for sort_button:
+     * Increment sortingPattern and then sort results. Update the recycle view with new sorting pattern
+     */
+    public void sortRecycle(View v){
+        if(sortingPattern >= 9) sortingPattern = 0;
+        else sortingPattern++;
+
+        sortResults();
+        updateRecycle();
+    }
+
+    /**
+     * Update recycle viewer with new listings from a user search or sort
+     */
+    public void updateRecycle(){
+
+//        recyclerView = findViewById(R.id.recycle_view);
+//        RecyclerViewAdapter adapter = new RecyclerViewAdapter(myTBSearcher.getResults(), this);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setAdapter(adapter);
+    }
+
+    /**
+     * Sort results of a search depending on sorting pattern integer.
+     * Sorting pattern integer is changed by the sort button.
+     */
+    public void sortResults(){
+        switch(sortingPattern){
+            case 1:
+                myTBSearcher.sortAlphabeticalDescending();
+                break;
+            case 2:
+                myTBSearcher.sortCostAscending();
+                break;
+            case 3:
+                myTBSearcher.sortCostDescending();
+                break;
+            case 4:
+                myTBSearcher.sortTopicAscending();
+                break;
+            case 5:
+                myTBSearcher.sortTopicDescending();
+                break;
+            case 6:
+                myTBSearcher.sortEditionAscending();
+                break;
+            case 7:
+                myTBSearcher.sortEditionDescending();
+                break;
+            case 8:
+                myTBSearcher.sortPageAscending();
+                break;
+            case 9:
+                myTBSearcher.sortPageDescending();
+                break;
+            default:
+                myTBSearcher.sortAlphabeticalAscending();
+        }
+    }
+
+
+
+
 }
