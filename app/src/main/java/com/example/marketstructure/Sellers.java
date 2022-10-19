@@ -19,7 +19,7 @@ public class Sellers extends AppCompatActivity {
     RatingBar ratingBar;
     Button flagSellerButton;
     boolean flagged = false;
-    TextView status = findViewById(R.id.status);
+    TextView status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,8 @@ public class Sellers extends AppCompatActivity {
 
         avgRtngBtn = findViewById(R.id.view_avg_rtng);
         ratingBar = findViewById(R.id.ratingBar);
+        status = findViewById(R.id.status);
+        flagSellerButton = findViewById(R.id.flag_seler);
 
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override

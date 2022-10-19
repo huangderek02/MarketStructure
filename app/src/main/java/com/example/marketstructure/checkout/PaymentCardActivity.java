@@ -11,6 +11,6 @@ public class PaymentCardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checkout_3_payment_card);
+        //setContentView(R.layout.activity_checkout_3_payment_card);
     }
 }

@@ -11,6 +11,6 @@ public class CheckoutActivityMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checkout_1_payment_method_menu);
+        //setContentView(R.layout.activity_checkout_1_payment_method_menu);
     }
 }

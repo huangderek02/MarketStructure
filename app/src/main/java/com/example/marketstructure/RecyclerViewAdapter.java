@@ -16,16 +16,19 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> implements Serializable {
 
 
 
     private final ArrayList<Listing> arrayList;
     private final Context context;
 
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    String documentId = db.collection("listings").document().getId();
 
     public RecyclerViewAdapter( ArrayList<Listing> arrayList, Context context) {
 
@@ -82,6 +85,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 intent.putExtra(resources.getString(R.string.intent_condition), listing.getCondition());
                 intent.putExtra(resources.getString(R.string.intent_seller), listing.getSellerUsername());
                 intent.putExtra(resources.getString(R.string.intent_listing_status) , listing.getListingStatus());
+                intent.putExtra("documentId", documentId);
                 context.startActivity(intent);
 
 
