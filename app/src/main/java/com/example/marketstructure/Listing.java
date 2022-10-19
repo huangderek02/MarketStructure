@@ -62,7 +62,7 @@ public class Listing extends Textbook implements Serializable {
         this.listingStatus = listingStatus;
         this.listingLastUpdatedDate = listingLastUpdatedDate;
     }
-
+    /*
     private State state = new Idle(this);
 
     public State getState() {
@@ -79,6 +79,8 @@ public class Listing extends Textbook implements Serializable {
 
         // END YOUR CODE
     }
+
+     */
     /*
     public Listing(String isbn, String title, int edition, String authors, String textbookImageName,
                    String originalPrice, int yearPublished, int numberOfPages, String topicCode,

@@ -45,6 +45,18 @@
             android:name=".ChatActivity"
             android:exported="true" />
         <activity
+            android:name=".Checkout.DeliveryDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Checkout.DeliveryOptionsMenuActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Checkout.PaymentMethodMenu"
+            android:exported="true" />
+        <activity
+            android:name=".Checkout.PaymentCardActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

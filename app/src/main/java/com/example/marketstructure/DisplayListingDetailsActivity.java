@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.marketstructure.Checkout.DeliveryOptionsMenuActivity;
 import com.example.marketstructure.GenerateData.ReportSellersActivity;
 import com.example.marketstructure.StateDesignPattern.Event;
+import com.example.marketstructure.StateDesignPattern.OrderStatus;
+import com.example.marketstructure.StateDesignPattern.State;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
@@ -131,15 +133,15 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
                 startActivity(b);
             }
         });
-
         b_buy_now.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DisplayListingDetailsActivity.this, DeliveryOptionsMenuActivity.class);
+                intent.putExtra("price", listingFromAdapter.getListingPrice());
                 startActivity(intent);
+                OrderStatus.getState();
             }
         });
-
     }
 
     @Override

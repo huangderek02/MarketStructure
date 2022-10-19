@@ -27,8 +27,11 @@
         android:layout_width="305dp"
         android:layout_height="98dp"
         android:text="@string/checkout_menu_description"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="206dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_book_shopping_cart"
+        app:layout_constraintVertical_bias="0.062" />
 
     <ImageView
         android:id="@+id/iv_book_shopping_cart"
@@ -39,8 +42,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_payment_method_menu_title"
-        app:layout_constraintVertical_bias="0.021"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124"
         app:srcCompat="@drawable/book_in_cart"
         tools:srcCompat="@drawable/book_in_cart" />
 
@@ -52,10 +55,10 @@
         android:contentDescription="@string/iv_card_payment_desc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@+id/iv_cash_payment"
         app:layout_constraintTop_toBottomOf="@+id/tv_checkout_menu_desc"
-        app:layout_constraintVertical_bias="0.082"
+        app:layout_constraintVertical_bias="0.096"
         app:srcCompat="@drawable/card_payment_book"
         tools:srcCompat="@drawable/card_payment_book" />
 
@@ -94,18 +97,21 @@
         android:text="@string/b_card_payment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toEndOf="@+id/b_cash_payment"
         app:layout_constraintTop_toBottomOf="@+id/iv_card_payment"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.012" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/b_cancel"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="655dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView4"
@@ -113,10 +119,11 @@
         android:layout_height="39dp"
         android:text="@string/fraud_warning"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.111" />
 
     <ImageView
         android:id="@+id/imageView"

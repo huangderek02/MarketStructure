@@ -11,13 +11,13 @@ import com.example.marketstructure.R;
 
 public class PaymentMethodMenu extends AppCompatActivity {
 
-    Button b_cash_payment = findViewById(R.id.b_cash_payment);
-    Button b_card_payment = findViewById(R.id.b_card_payment);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_3_payment_method_menu);
+
+        Button b_cash_payment = findViewById(R.id.b_cash_payment);
+        Button b_card_payment = findViewById(R.id.b_card_payment);
 
         b_card_payment.setOnClickListener(new View.OnClickListener() {
             @Override

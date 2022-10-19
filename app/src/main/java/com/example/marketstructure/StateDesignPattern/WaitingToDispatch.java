@@ -1,26 +1,24 @@
 package com.example.marketstructure.StateDesignPattern;
 
-import com.example.marketstructure.Listing;
-
 public class WaitingToDispatch extends State {
 
-    public WaitingToDispatch(Listing listing) {
-        super(listing);
+    public WaitingToDispatch(OrderStatus status) {
+        super(status);
     }
 
     @Override
     public void handle(Event event) {
         if (event.equals(Event.TextbookDispatchedNotPaid)) {
-            getListing().setState(new WaitingToPay(listing));
+            getOrderStatus().setState(new WaitingToPay(status));
         }
         if (event.equals(Event.TextbookDispatched)) {
-            getListing().setState(new Delivered(listing));
+            getOrderStatus().setState(new Delivered(status));
         }
         if (event.equals(Event.Cancelled)) {
-            getListing().setState(new Idle(listing));
+            getOrderStatus().setState(new Idle(status));
         }
         if (event.equals(Event.Timeout)) {
-            getListing().setState(new Idle(listing));
+            getOrderStatus().setState(new Idle(status));
         }
     }
 }

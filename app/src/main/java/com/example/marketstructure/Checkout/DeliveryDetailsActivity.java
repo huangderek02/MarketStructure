@@ -12,13 +12,13 @@ import com.example.marketstructure.R;
 
 public class DeliveryDetailsActivity extends AppCompatActivity {
 
-    Button b_proceed_to_payment = findViewById(R.id.b_proceed_to_payment);
-    Button b_cancel = findViewById(R.id.b_cancel_deliver_details);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_2_delivery_details);
+
+        Button b_proceed_to_payment = findViewById(R.id.b_proceed_to_payment);
+        Button b_cancel = findViewById(R.id.b_cancel_deliver_details);
 
         Intent intent = getIntent();
         String deliveryOption = intent.getStringExtra("deliveryOption");

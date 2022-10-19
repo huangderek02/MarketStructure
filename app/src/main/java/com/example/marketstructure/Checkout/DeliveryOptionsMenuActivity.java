@@ -11,13 +11,13 @@ import com.example.marketstructure.R;
 
 public class DeliveryOptionsMenuActivity extends AppCompatActivity {
 
-    Button b_standard_delivery = findViewById(R.id.b_standard_delivery);
-    Button b_express_delivery = findViewById(R.id.b_express_delivery);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_1_delivery_options_menu);
+
+        Button b_standard_delivery = findViewById(R.id.b_standard_delivery);
+        Button b_express_delivery = findViewById(R.id.b_express_delivery);
 
         b_standard_delivery.setOnClickListener(new View.OnClickListener() {
             @Override
