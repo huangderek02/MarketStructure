@@ -7,19 +7,19 @@ public class Textbook implements Serializable {
     private String title;
     private int edition;
     private String authors;
-    private String textbookImageURL;
+    private String textbookImageName;
     private double originalPrice;
     private int yearPublished;
     private int numberOfPages;
     private String topicCode;
     private String topic;
 
-    public Textbook(String isbn, String title, int edition, String authors, String textbookImageURL, double originalPrice, int yearPublished, int numberOfPages, String topicCode, String topic) {
+    public Textbook(String isbn, String title, int edition, String authors, String textbookImageName, double originalPrice, int yearPublished, int numberOfPages, String topicCode, String topic) {
         this.isbn = isbn;
         this.title = title;
         this.edition = edition;
         this.authors = authors;
-        this.textbookImageURL = textbookImageURL;
+        this.textbookImageName = textbookImageName;
         this.originalPrice = originalPrice;
         this.yearPublished = yearPublished;
         this.numberOfPages = numberOfPages;
@@ -61,12 +61,12 @@ public class Textbook implements Serializable {
         this.authors = authors;
     }
 
-    public String getTextbookImageURL() {
-        return textbookImageURL;
+    public String getTextbookImageName() {
+        return textbookImageName;
     }
 
-    public void setTextbookImageURL(String textbookImageURL) {
-        this.textbookImageURL = textbookImageURL;
+    public void setTextbookImageName(String textbookImageURL) {
+        this.textbookImageName = textbookImageName;
     }
 
     public double getOriginalPrice() {

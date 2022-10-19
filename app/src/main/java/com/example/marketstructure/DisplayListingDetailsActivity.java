@@ -1,6 +1,7 @@
 package com.example.marketstructure;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,6 +52,9 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         String documentId = intent.getStringExtra("documentId");
 
         Listing listingFromAdapter = (Listing) intent.getExtras().getSerializable("listing");
+        int textbookImageId = getResources().getIdentifier("@drawable/"+listingFromAdapter.getTextbook().getTextbookImageName(),null, getPackageName());
+        Drawable resources = getResources().getDrawable(textbookImageId);
+        iv_textbook_image.setImageDrawable(resources);
         tv_listing_id.setText(listingFromAdapter.getListingId());
         tv_listing_status.setText(listingFromAdapter.getListingStatus());
         tv_condition.setText(listingFromAdapter.getCondition());
@@ -58,9 +62,9 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         tv_isbn.setText(listingFromAdapter.getTextbook().getIsbn());
         tv_textbook_name.setText(listingFromAdapter.getTextbook().getTitle());
         tv_authors.setText(listingFromAdapter.getTextbook().getAuthors());
-        //tv_edition.setText(listingFromAdapter.getTextbook().getEdition());
-        //tv_year_published.setText(listingFromAdapter.getTextbook().getYearPublished());
-        //tv_number_of_pages.setText(listingFromAdapter.getTextbook().getNumberOfPages());
+//        tv_edition.setText(listingFromAdapter.getTextbook().getEdition());
+//        tv_year_published.setText(listingFromAdapter.getTextbook().getYearPublished());
+//        tv_number_of_pages.setText(listingFromAdapter.getTextbook().getNumberOfPages());
         tv_topic_code.setText(listingFromAdapter.getTextbook().getTopicCode());
         tv_topic.setText(listingFromAdapter.getTextbook().getTopic());
         tv_additional_details.setText(listingFromAdapter.getAdditionalDetails());
