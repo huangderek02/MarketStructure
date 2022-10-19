@@ -1,12 +1,12 @@
 package com.example.marketstructure;
 
-import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomAdditionalDetails;
-import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomCondition;
-import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomDate;
-import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomListingStatus;
-import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomListingPrice;
-import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomSellerUsername;
-import static com.example.marketstructure.generateData.GenerateRandomListings.getRandomTextbook;
+import static com.example.marketstructure.GenerateData.GenerateRandomListings.getRandomAdditionalDetails;
+import static com.example.marketstructure.GenerateData.GenerateRandomListings.getRandomCondition;
+import static com.example.marketstructure.GenerateData.GenerateRandomListings.getRandomDate;
+import static com.example.marketstructure.GenerateData.GenerateRandomListings.getRandomListingStatus;
+import static com.example.marketstructure.GenerateData.GenerateRandomListings.getRandomListingPrice;
+import static com.example.marketstructure.GenerateData.GenerateRandomListings.getRandomSellerUsername;
+import static com.example.marketstructure.GenerateData.GenerateRandomListings.getRandomTextbook;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +20,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
