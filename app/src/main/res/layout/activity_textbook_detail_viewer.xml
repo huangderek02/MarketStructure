@@ -430,8 +430,8 @@
 
     <TextView
         android:id="@+id/tv_fraud_warning"
-        android:layout_width="371dp"
-        android:layout_height="38dp"
+        android:layout_width="370dp"
+        android:layout_height="41dp"
         android:text="@string/fraud_warning"
         android:textAlignment="center"
         android:textAllCaps="true"
@@ -477,7 +477,7 @@
         android:text="@string/report_listing_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b_view_seller_profile"
         app:layout_constraintVertical_bias="0.0" />
@@ -490,7 +490,7 @@
         android:text="@string/b_buy_now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toEndOf="@+id/b_report_listing"
         app:layout_constraintTop_toBottomOf="@+id/b_message_seller"
         app:layout_constraintVertical_bias="0.0" />
