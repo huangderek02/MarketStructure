@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
@@ -69,6 +70,9 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
         //EventChangeListener();
+
+
+
 
 
 //        recyclerView.setOnClickListener(new View.OnClickListener() {

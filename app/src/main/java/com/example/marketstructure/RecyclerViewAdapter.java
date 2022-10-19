@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -82,6 +83,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 intent.putExtra(resources.getString(R.string.intent_seller), listing.getSellerUsername());
                 intent.putExtra(resources.getString(R.string.intent_listing_status) , listing.getListingStatus());
                 context.startActivity(intent);
+
+
             }
         });
 

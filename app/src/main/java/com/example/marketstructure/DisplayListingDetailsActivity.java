@@ -54,9 +54,9 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         Intent intent = getIntent();
-        String documentId = intent.getStringExtra("documentId");
+        String listingId = intent.getStringExtra("listingId");
 
-        DocumentReference documentReference = db.collection("listings").document(documentId);
+        DocumentReference documentReference = db.collection("listings").document(listingId);
         documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
