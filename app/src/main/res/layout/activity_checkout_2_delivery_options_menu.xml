@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Checkout.DeliveryOptionsActivity">
+
+    <ImageView
+        android:id="@+id/iv_in_store_delivery"
+        android:layout_width="195dp"
+        android:layout_height="124dp"
+        android:contentDescription="@string/iv_collect_in_store_desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_delivery_options_title"
+        app:layout_constraintVertical_bias="0.029"
+        app:srcCompat="@drawable/bookstore" />
+
+    <Button
+        android:id="@+id/b_collect_in_store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_collect_in_store_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_in_store_delivery"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <Button
+        android:id="@+id/b_express_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/b_express_delivery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_express_delivery"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <Button
+        android:id="@+id/b_standard_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/b_standard_delivery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_standard_delivery"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <TextView
+        android:id="@+id/tv_delivery_options_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_delivery_options_title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <ImageView
+        android:id="@+id/iv_express_delivery"
+        android:layout_width="169dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="33dp"
+        android:contentDescription="@string/iv_express_delivery_desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_collect_in_store"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/express_delivery" />
+
+    <ImageView
+        android:id="@+id/iv_standard_delivery"
+        android:layout_width="166dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="41dp"
+        android:contentDescription="@string/iv_standard_delivery_desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_express_delivery"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/standard_delivery" />
+</androidx.constraintlayout.widget.ConstraintLayout>
