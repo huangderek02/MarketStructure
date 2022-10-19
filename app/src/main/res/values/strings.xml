@@ -69,12 +69,22 @@
     <string name="b_cancel">CANCEL</string>
     <string name="tv_collect_in_store_title">COLLECT IN STORE</string>
     <string name="iv_bookstore_desc">iv_bookstore_desc</string>
-    <string name="iv_warning_listing_desc">iv_warning_listing_desc</string>
+    <string name="iv_warning_desc">iv_warning_desc</string>
     <string name="b_express_delivery">EXPRESS DELIVERY</string>
     <string name="b_standard_delivery">STANDARD DELIVERY</string>
     <string name="tv_delivery_options_title">DELIVERY OPTIONS</string>
     <string name="iv_collect_in_store_desc">iv_collect_in_store_desc</string>
     <string name="iv_express_delivery_desc">iv_express_delivery_desc</string>
     <string name="iv_standard_delivery_desc">iv_standard_delivery_desc</string>
+    <string name="tv_card_payment_checkout">CARD PAYMENT CHECKOUT</string>
+    <string name="et_card_expiry_month">mm</string>
+    <string name="et_card_expiry_year">yy</string>
+    <string name="tv_card_payment_expiry_date_month_year_separator_title">/</string>
+    <string name="tv_card_expiry_month">Month</string>
+    <string name="tv_card_expiry_year">Year</string>
+    <string name="tv_card_payment_cvv_title">CVV:</string>
+    <string name="tv_card_payment_expiry_date_title">Expiry Date:</string>
+    <string name="tv_card_payment_card_number_title">Card Number:</string>
+    <string name="et_card_number_hint">Please enter card number</string>
 
 </resources>
