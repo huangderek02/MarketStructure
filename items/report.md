@@ -33,7 +33,7 @@ The following is a report template to help your team successfully provide all th
 | :--- | :----: | ---: |
 | [u7117043] | [Gordon Lum] | [Worked on classes related to textbook searcher] |
 | [u7300484] | [Derek Huang] | [role] |
-| [u7366836] | [Huiguang Zhang] | [role] |
+| [u7366836] | [Huiguang Zhang] | [Worked on chat functions and other methods to connect with firebase] |
 | [u7127350] | [Rhonda Luu] | [role] |
 
 ## Summary of Individual Contributions
@@ -170,17 +170,19 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 1. ArrayList
 
-   * Objective: It is used for storing BTree keys and children for textbook searcher, Used to return a list of tokens in Tokenizer
+   * Objective: It is used for storing BTree keys and children for textbook searcher, Used to return a list of tokens in Tokenizer, Used to store list of symbols, keywords, digits in Tokenizer 
 
-   * Locations: line 40 and 41 in BTree.java, line 157 Tokenizer.java
+   * Locations: line 40 and 41 in BTree.java, line 41, 43, 45, 157 Tokenizer.java
 
    * Reasons:
 
      * Provides faster access to elements in the middle of list compared to linkedlist (O(1))
 
-     * Provides methods not available to arrays (contains, indexOf, remove)
+     * Provides methods not available to arrays or enumerables (contains, indexOf, remove)
 
      * Size is not fixed. Can keep adding elements
+
+     * 
 
 2. ...
 
@@ -192,7 +194,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 * State
 
-* Singleton
+* Singleton 
 
 * Observer (?)
 
@@ -283,7 +285,9 @@ Instantiate BTree with a larger maxKeys value to avoid. This solution works due 
 
 **Tests for Classes Related to Search Function**
 
-Test classes for BTree, Tokenizer and Parser classes were created to increase confidence in the reliability of the search function. It is noted that a test class for TextbookSearcher is not included but should be if further work beyond the project is done. For the test classes that exist a "high" code coverage in the 90%+ is reached but this is an unreliable value to use when considering what is actually tested. Actual confidence 
+Test classes for BTree, Tokenizer and Parser classes were created to increase confidence in the reliability of the search function. It is noted that a test class for TextbookSearcher is not included but should be if further work beyond the project is done. For the test classes that exist a "high" code coverage in the 90%+ is reached but this is an unreliable value to use when considering what is actually tested. Reliability on each class is commented on in descriptions provided. 
+
+![Search Function Coverage](./images/SearchCoverage.PNG) <br>
 
 **[BTreeTest] testing methods in [BTree]**
  
