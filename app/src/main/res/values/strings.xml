@@ -33,7 +33,7 @@
     <string name="number_of_pages_display">Pages</string>
     <string name="topic_title">Topic:</string>
     <string name="topic_display">Topic</string>
-    <string name="fraud_warning">WARNING: Listing/Seller has been identified as Fraudulent. Proceed with Caution!</string>
+    <string name="fraud_warning"><font color='#D51E1E'><b><i>WARNING: Listing/Seller has been identified as Fraudulent. Proceed with Caution!</i></b></font></string>
     <string name="view_sellers_profile_button">View Seller\'s Profile</string>
     <string name="b_buy_now">Buy Now</string>
     <string name="report_listing_button">REPORT LISTING</string>
@@ -43,19 +43,38 @@
     <string name="intent_listing_status" />
     <string name="b_search">Search</string>
     <string name="checkout_menu_description">Welcome to the Checkout Menu! \n
-        \n
-        Please note the following before selecting a payment method: \n
-        "\u2022" Textbooks paid via CASH can only be collected in-store, delivery is not available \n
-        "\u2022" Textbooks paid via CARD can be delivered or collected in-store \n
-        "\u2022" Flat rate of $10 for standard shipping (arrives within 2 to 6 business days) \n
-        "\u2022" Flat rate of $15 for express shipping (arrives within 1 to 3 business days) \n
+        <b>Please note the following before selecting a payment method:</b>\n
+        \u2022 Textbooks paid via CASH can only be collected in-store, delivery is not available \n
+        \u2022 Textbooks paid via CARD can be delivered or collected in-store \n
+        <b>Additional Costs:</b> \n
+        \u2022 All CARD payments will incur a 1.5% surcharge \n
+        \u2022 Flat rate of $10 for standard shipping (arrives within 2 to 6 business days) \n
+        \u2022 Flat rate of $15 for express shipping (arrives within 1 to 3 business days) \n
         \n
         Please select payment method: \n
     </string>
-    <string name="b_cash_payment">cash</string>
-    <string name="b_card_payment">Card</string>
+    <string name="b_cash_payment">CASH</string>
+    <string name="b_card_payment">CARD</string>
     <string name="checkout_menu_title">CHECKOUT MENU</string>
     <string name="iv_cash_payment_desc">cash_payment</string>
     <string name="iv_book_shopping_cart_desc">book_shopping_cart</string>
     <string name="iv_card_payment_desc">card_payment</string>
+    <string name="collect_in_store_description">You have selected to <font color='#D51E1E'><b>COLLECT IN STORE</b></font> and <font color='#D51E1E'><b>PAY IN CASH</b></font>. \n
+        Please note the following before confirming: \n
+        \u2022" The textbook will be put on <font color='#D51E1E'><b>RESERVE</b></font> and must be collected within <font color='#D51E1E'><b>14</b></font> days\n
+        \u2022" Failure to collect the textbook within the timeframe will result in the reservation being <font color='#D51E1E'><b>WITHDRAWN</b></font> \n
+        \n
+    </string>
+    <string name="b_confirm">CONFIRM</string>
+    <string name="b_cancel">CANCEL</string>
+    <string name="tv_collect_in_store_title">COLLECT IN STORE</string>
+    <string name="iv_bookstore_desc">iv_bookstore_desc</string>
+    <string name="iv_warning_listing_desc">iv_warning_listing_desc</string>
+    <string name="b_express_delivery">EXPRESS DELIVERY</string>
+    <string name="b_standard_delivery">STANDARD DELIVERY</string>
+    <string name="tv_delivery_options_title">DELIVERY OPTIONS</string>
+    <string name="iv_collect_in_store_desc">iv_collect_in_store_desc</string>
+    <string name="iv_express_delivery_desc">iv_express_delivery_desc</string>
+    <string name="iv_standard_delivery_desc">iv_standard_delivery_desc</string>
+
 </resources>
