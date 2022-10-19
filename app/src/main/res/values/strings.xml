@@ -42,20 +42,14 @@
     <string name="intent_seller" />
     <string name="intent_listing_status" />
     <string name="b_search">Search</string>
-    <string name="checkout_menu_description">Welcome to the Checkout Menu! \n
-        <b>Please note the following before selecting a payment method:</b>\n
-        \u2022 Textbooks paid via CASH can only be collected in-store, delivery is not available \n
-        \u2022 Textbooks paid via CARD can be delivered or collected in-store \n
-        <b>Additional Costs:</b> \n
-        \u2022 All CARD payments will incur a 1.5% surcharge \n
-        \u2022 Flat rate of $10 for standard shipping (arrives within 2 to 6 business days) \n
-        \u2022 Flat rate of $15 for express shipping (arrives within 1 to 3 business days) \n
-        \n
+    <string name="tv_delivery_option_standard_price"><b>Flat rate of $10</b></string>
+    <string name="tv_delivery_option_express_price"><b>Flat rate of $15</b></string>
+    <string name="checkout_menu_description">Please note the following before selecting a payment method: \n\u2022 CASH payments must be paid upfront upon delivery\n\u2022 All CARD payments will incur a 1.5% surcharge \n\n
         Please select payment method: \n
     </string>
     <string name="b_cash_payment">CASH</string>
     <string name="b_card_payment">CARD</string>
-    <string name="checkout_menu_title">CHECKOUT MENU</string>
+    <string name="tv_payment_method_menu_title">PAYMENT METHOD MENU</string>
     <string name="iv_cash_payment_desc">cash_payment</string>
     <string name="iv_book_shopping_cart_desc">book_shopping_cart</string>
     <string name="iv_card_payment_desc">card_payment</string>
@@ -67,8 +61,8 @@
     </string>
     <string name="b_confirm">CONFIRM</string>
     <string name="b_cancel">CANCEL</string>
-    <string name="tv_collect_in_store_title">COLLECT IN STORE</string>
-    <string name="iv_bookstore_desc">iv_bookstore_desc</string>
+    <string name="tv_delivery_details_title">DELIVERY DETAILS</string>
+    <string name="iv_delivery_package_desc">iv_delivery_package_desc</string>
     <string name="iv_warning_desc">iv_warning_desc</string>
     <string name="b_express_delivery">EXPRESS DELIVERY</string>
     <string name="b_standard_delivery">STANDARD DELIVERY</string>
@@ -86,5 +80,15 @@
     <string name="tv_card_payment_expiry_date_title">Expiry Date:</string>
     <string name="tv_card_payment_card_number_title">Card Number:</string>
     <string name="et_card_number_hint">Please enter card number</string>
+    <string name="b_proceed_to_payment">Proceed To Payment</string>
+    <string name="tv_recipient_name_title"><b>Recipient Name:</b></string>
+    <string name="tv_email_address_title"><b>Email Address:</b></string>
+    <string name="tv_phone_number_title"><b>Phone Number:</b></string>
+    <string name="tv_street_address_title"><b>Street Address:</b></string>
+    <string name="et_recipient_name_hint">Please enter recipient name</string>
+    <string name="et_email_address_hint">Please enter email address</string>
+    <string name="et_phone_number_hint">Please enter phone number</string>
+    <string name="et_street_address_hint">Please enter street address</string>
+
 
 </resources>

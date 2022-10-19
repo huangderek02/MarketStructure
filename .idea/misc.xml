@@ -13,15 +13,19 @@
         <entry key="..\:/Users/FameCS/Desktop/COMP6442_Lab/ga-22s2-comp2100-6442/app/src/main/res/layout/activity_start.xml" value="0.36666666666666664" />
         <entry key="app/src/main/res/drawable/button.xml" value="0.225" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.21822916666666667" />
-        <entry key="app/src/main/res/layout/activity_checkout_1_payment_method_menu.xml" value="0.21822916666666667" />
-        <entry key="app/src/main/res/layout/activity_checkout_2_collect_in_store.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/layout/activity_checkout_1_delivery_options_menu.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_checkout_1_payment_method_menu.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_checkout_2_collect_in_store.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_checkout_2_delivery_details.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_checkout_2_delivery_options_menu.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/activity_checkout_3_payment_card.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/activity_checkout_4_delivery_details.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/layout/activity_checkout_4_payment_card.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_checkout_menu.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_collect_in_store.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_collect_instore.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_delivery.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/layout/activity_delivery_details.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/activity_delivery_options_menu.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.3" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3" />
