@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
@@ -50,14 +52,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Inflate Layout
          View view = LayoutInflater.from(context).inflate(R.layout.card_layout, parent, false);
-        return new RecyclerViewHolder(view);
+         //RecyclerViewHolder holder = new RecyclerViewHolder(view);
+         return new RecyclerViewHolder(view);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.RecyclerViewHolder holder, int position) {
         // Set the data to textview and imageview.
         Listing listing = arrayList.get(position);
-
         Resources resources = this.context.getApplicationContext().getResources();
         int textbookImageId = resources.getIdentifier("textbookImageName", "drawable", "drawable");
         holder.iv_textbook_image.setImageResource(textbookImageId);
@@ -65,21 +68,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.tv_condition.setText(listing.getCondition());
         holder.tv_seller.setText(listing.getSellerUsername());
         holder.tv_listing_status.setText(listing.getListingStatus());
-        /*
-        holder.iv_textbook_image.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent b = new Intent(view.getContext(),DisplayListingDetailsActivity.class);
+                b.putExtra("listing",listing);
+                context.startActivity(b);
 
-                Intent intent = new Intent(view.getContext(), DisplayListingDetailsActivity.class);
-                intent.putExtra(resources.getString(R.string.intent_listing_price), listing.getListingPrice());
-                intent.putExtra(resources.getString(R.string.intent_condition), listing.getCondition());
-                intent.putExtra(resources.getString(R.string.intent_seller), listing.getSellerUsername());
-                intent.putExtra(resources.getString(R.string.intent_listing_status) , listing.getListingStatus());
-                context.startActivity(intent);
             }
         });
-        
-         */
+
+
     }
     @Override
     public int getItemCount() {

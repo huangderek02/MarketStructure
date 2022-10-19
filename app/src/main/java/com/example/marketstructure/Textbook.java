@@ -1,6 +1,8 @@
 package com.example.marketstructure;
 
-public class Textbook {
+import java.io.Serializable;
+
+public class Textbook implements Serializable {
     private String isbn;
     private String title;
     private int edition;
