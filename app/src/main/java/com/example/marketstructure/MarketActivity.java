@@ -28,12 +28,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class MarketActivity extends AppCompatActivity implements RecyclerViewClickListener {
+public class MarketActivity extends AppCompatActivity implements RecyclerViewClickListener, Serializable
+{
 
     private RecyclerView recyclerView;
     private ArrayList<Listing> listingsArrayList = new ArrayList<Listing>();
@@ -69,13 +71,13 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
         //EventChangeListener();
 
 
-        recyclerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent b = new Intent(MarketActivity.this,DisplayListingDetailsActivity.class);
-                startActivity(b);
-            }
-        });
+//        recyclerView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent b = new Intent(MarketActivity.this,DisplayListingDetailsActivity.class);
+//                startActivity(b);
+//            }
+//        });
 
 
 

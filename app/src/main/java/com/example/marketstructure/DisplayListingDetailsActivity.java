@@ -18,7 +18,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class DisplayListingDetailsActivity extends AppCompatActivity {
+import java.io.Serializable;
+
+public class DisplayListingDetailsActivity extends AppCompatActivity implements Serializable {
 
     private static final String TAG = "DisplayListingDetails";;
 
@@ -92,6 +94,14 @@ public class DisplayListingDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent b = new Intent(DisplayListingDetailsActivity.this,ChatActivity.class);
+                startActivity(b);
+            }
+        });
+
+        b_view_seller_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent b = new Intent(DisplayListingDetailsActivity.this,Sellers.class);
                 startActivity(b);
             }
         });
