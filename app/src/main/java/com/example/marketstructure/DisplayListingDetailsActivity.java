@@ -59,8 +59,8 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         tv_textbook_name.setText(listingFromAdapter.getTextbook().getTitle());
         tv_authors.setText(listingFromAdapter.getTextbook().getAuthors());
         //tv_edition.setText(listingFromAdapter.getTextbook().getEdition());
-//        tv_year_published.setText(listingFromAdapter.getYearPublished());
-//        tv_number_of_pages.setText(listingFromAdapter.getNumberOfPages());
+        //tv_year_published.setText(listingFromAdapter.getTextbook().getYearPublished());
+        //tv_number_of_pages.setText(listingFromAdapter.getTextbook().getNumberOfPages());
         tv_topic_code.setText(listingFromAdapter.getTextbook().getTopicCode());
         tv_topic.setText(listingFromAdapter.getTextbook().getTopic());
         tv_additional_details.setText(listingFromAdapter.getAdditionalDetails());

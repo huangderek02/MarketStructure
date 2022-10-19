@@ -17,9 +17,13 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.SearchView;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
@@ -34,6 +38,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+import tokenizer_and_parser.TextbookSearcher;
+
 public class MarketActivity extends AppCompatActivity implements RecyclerViewClickListener, Serializable
 {
 
@@ -47,6 +53,10 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     //private Listing listing = new Listing("","",0,"","","",0,0,"","","","","","","","","");
 
     Button visitProfile;
+    EditText searchText;
+    String searchString;
+    TextbookSearcher textbookSearcher;
+    ArrayList<tokenizer_and_parser.Textbook> results;
 
     @SuppressLint("StaticFieldLeak")
     public static FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -71,7 +81,27 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
+        searchText = findViewById(R.id.search_text);
+        searchText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                searchString = s.toString();
+                textbookSearcher = new TextbookSearcher();
+                textbookSearcher.parseSearch(searchString);
+                textbookSearcher.sortAlphabeticalAscending();
+                results = textbookSearcher.getResults();
+            }
+        });
 
 
 
