@@ -1,8 +1,6 @@
-package com.example.marketstructure.generateData;
+package com.example.marketstructure.GenerateData;
 
 import com.example.marketstructure.Textbook;
-
-import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -68,7 +66,7 @@ public class GenerateRandomListings {
      */
     public static String getRandomListingPrice(Textbook textbook, Object condition, Object additionalDetails) {
         final DecimalFormat df = new DecimalFormat("0.00");
-        double originalPrice = Double.parseDouble(textbook.getOriginalPrice());
+        double originalPrice = textbook.getOriginalPrice();
         double maxPrice = originalPrice - (originalPrice * 0.05);
         double minPrice = originalPrice - (originalPrice * 0.10);
         double randomListingPrice = Math.random() * (maxPrice - minPrice) + minPrice;

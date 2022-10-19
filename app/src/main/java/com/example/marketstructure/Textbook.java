@@ -7,26 +7,25 @@ public class Textbook implements Serializable {
     private String title;
     private int edition;
     private String authors;
-    private String textbookImageName;
-    private String originalPrice;
+    private String textbookImageURL;
+    private double originalPrice;
     private int yearPublished;
     private int numberOfPages;
     private String topicCode;
     private String topic;
 
-    public Textbook(String isbn, String title, int edition, String authors, String textbookImageName, String originalPrice, int yearPublished, int numberOfPages, String topicCode, String topic) {
+    public Textbook(String isbn, String title, int edition, String authors, String textbookImageURL, double originalPrice, int yearPublished, int numberOfPages, String topicCode, String topic) {
         this.isbn = isbn;
         this.title = title;
         this.edition = edition;
         this.authors = authors;
-        this.textbookImageName = textbookImageName;
+        this.textbookImageURL = textbookImageURL;
         this.originalPrice = originalPrice;
         this.yearPublished = yearPublished;
         this.numberOfPages = numberOfPages;
         this.topicCode = topicCode;
         this.topic = topic;
     }
-
     public Textbook() {
     }
 
@@ -62,19 +61,19 @@ public class Textbook implements Serializable {
         this.authors = authors;
     }
 
-    public String getTextbookImageName() {
-        return textbookImageName;
+    public String getTextbookImageURL() {
+        return textbookImageURL;
     }
 
-    public void setTextbookImageName(String textbookImageName) {
-        this.textbookImageName = textbookImageName;
+    public void setTextbookImageURL(String textbookImageURL) {
+        this.textbookImageURL = textbookImageURL;
     }
 
-    public String getOriginalPrice() {
+    public double getOriginalPrice() {
         return originalPrice;
     }
 
-    public void setOriginalPrice(String originalPrice) {
+    public void setOriginalPrice(double originalPrice) {
         this.originalPrice = originalPrice;
     }
 

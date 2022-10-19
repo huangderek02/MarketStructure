@@ -1,10 +1,8 @@
-package com.example.marketstructure.checkout;
+package com.example.marketstructure.Checkout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
-import com.example.marketstructure.R;
 
 public class CollectInStoreActivity extends AppCompatActivity {
 

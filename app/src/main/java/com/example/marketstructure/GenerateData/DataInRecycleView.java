@@ -1,4 +1,4 @@
-package com.example.marketstructure.generateData;
+package com.example.marketstructure.GenerateData;
 
 public class DataInRecycleView {
     private String title;
