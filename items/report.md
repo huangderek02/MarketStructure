@@ -33,7 +33,7 @@ The following is a report template to help your team successfully provide all th
 | :--- | :----: | ---: |
 | [u7117043] | [Gordon Lum] | [Worked on classes related to textbook searcher] |
 | [u7300484] | [Derek Huang] | [role] |
-| [u7366836] | [Huiguang Zhang] | [role] |
+| [u7366836] | [Huiguang Zhang] | [Worked on chat functions and other methods to connect with firebase] |
 | [u7127350] | [Rhonda Luu] | [role] |
 
 ## Summary of Individual Contributions
