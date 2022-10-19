@@ -2,6 +2,7 @@ package com.example.marketstructure;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ public class Sellers extends AppCompatActivity {
     boolean flagged = false;
     TextView status;
     TextView av_r;
+    TextView seller_name_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,10 @@ public class Sellers extends AppCompatActivity {
         avgRtngBtn = findViewById(R.id.view_avg_rtng);
         ratingBar = findViewById(R.id.ratingBar);
         status = findViewById(R.id.status);
-        status.setText("unflaggeg");
+        status.setText("unflagged");
         flagSellerButton = findViewById(R.id.flag_seler);
+
+
 
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -73,7 +77,7 @@ public class Sellers extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(Sellers.this,String.valueOf((sum(Ratings) / Ratings.size())) ,
                         Toast.LENGTH_SHORT).show();
-                writeToFile("file.txt",String.valueOf((sum(Ratings) / Ratings.size())));
+                //writeToFile("file.txt",String.valueOf((sum(Ratings) / Ratings.size())));
             }
         });
 
