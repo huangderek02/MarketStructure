@@ -287,7 +287,7 @@ Instantiate BTree with a larger maxKeys value to avoid. This solution works due 
 
 Test classes for BTree, Tokenizer and Parser classes were created to increase confidence in the reliability of the search function. It is noted that a test class for TextbookSearcher is not included but should be if further work beyond the project is done. For the test classes that exist a "high" code coverage in the 90%+ is reached but this is an unreliable value to use when considering what is actually tested. Reliability on each class is commented on in descriptions provided. 
 
-![Search Function Coverage](./images/SearchCoverage.png) <br>
+![Search Function Coverage](./images/SearchCoverage.PNG) <br>
 
 **[BTreeTest] testing methods in [BTree]**
  
