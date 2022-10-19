@@ -235,7 +235,7 @@ public class TextbookSearcher extends ListingTextbookData{
 	//Sorter Methods------------------------------------------------------------------------------------------------------------------------------
 	
 	//Sort A-Z
-	void sortAlphabeticalAscending() {
+	public void sortAlphabeticalAscending() {
 		
 		Collections.sort(results, new Comparator<Textbook>() {
 		    @Override
@@ -248,7 +248,7 @@ public class TextbookSearcher extends ListingTextbookData{
 	}
 	
 	//Sort Z-A
-	void sortAlphabeticalDescending() {
+	public void sortAlphabeticalDescending() {
 		
 		sortAlphabeticalAscending();
 		
@@ -257,7 +257,7 @@ public class TextbookSearcher extends ListingTextbookData{
 	
 	
 	//Cost from low to high
-	void sortCostAscending() {
+	public void sortCostAscending() {
 		Collections.sort(results, new Comparator<Textbook>() {
 		    @Override
 		    public int compare(Textbook lhs, Textbook rhs) {
@@ -272,14 +272,14 @@ public class TextbookSearcher extends ListingTextbookData{
 	}
 	
 	//Cost from high to low
-	void sortCostDescending() {
+	public void sortCostDescending() {
 		sortCostAscending();
 		Collections.reverse(results);
 	}
 	
 	
 	//Sort by topic (Topics in A-Z)
-	void sortTopicAscending() {
+	public void sortTopicAscending() {
 		
 		Collections.sort(results, new Comparator<Textbook>() {
 		    @Override
@@ -292,7 +292,7 @@ public class TextbookSearcher extends ListingTextbookData{
 	}
 	
 	//Sort by topic (Topics in Z-A)
-	void sortTopicDescending() {
+	public void sortTopicDescending() {
 		
 		sortTopicAscending();
 		
@@ -301,7 +301,7 @@ public class TextbookSearcher extends ListingTextbookData{
 	
 	
 	//Sort by edition from low to high
-	void sortEditionAscending() {
+	public void sortEditionAscending() {
 		
 		Collections.sort(results, new Comparator<Textbook>() {
 		    @Override
@@ -317,7 +317,7 @@ public class TextbookSearcher extends ListingTextbookData{
 	}
 	
 	//Sort by edition from high to low
-	void sortEditionDescending() {
+	public void sortEditionDescending() {
 		
 		sortEditionAscending();
 		
@@ -326,7 +326,7 @@ public class TextbookSearcher extends ListingTextbookData{
 	
 	
 	//Sort by pages from low to high
-	void sortPageAscending() {
+	public void sortPageAscending() {
 		Collections.sort(results, new Comparator<Textbook>() {
 		    @Override
 		    public int compare(Textbook lhs, Textbook rhs) {
@@ -341,7 +341,7 @@ public class TextbookSearcher extends ListingTextbookData{
 	}
 	
 	//Sort by pages from high to low
-	void sortPageDescending() {
+	public void sortPageDescending() {
 		sortPageAscending();
 		
 		Collections.reverse(results);

@@ -51,7 +51,7 @@ public class Tokenizer {
 	 * @param text The text we want to remove white spaces from
 	 * @return String without initial white spaces. Spaces later are left as is
 	 */
-	public String consumeWhiteSpace(String text) {
+	protected String consumeWhiteSpace(String text) {
 		
 		String r = text;
 		
@@ -86,25 +86,6 @@ public class Tokenizer {
 		
 		return text.substring(0, finalCharIndex);
 	}
-
-	
-	/**
-	 * UNUSED, INTEGRATED INTO METHOD:
-	 * tokenizeString()
-	 * 
-	 * Check if the next token is a keyword.
-	 * @param text The text given should not be empty.
-	 */
-	/*
-	protected boolean nextIsKeyword(String text) {
-
-		for(String k:keywords) {
-			if(text.length() < k.length()) continue;
-			if(text.substring(0,k.length()).equals(k)) return true;
-		}
-		return false;
-	}
-	*/
 	
 	/**
 	 * NOTE:
@@ -240,24 +221,7 @@ public class Tokenizer {
 				
 			}
 
-			/* 
-			 * TODO:
-			 * 
-			 * 1)
-			 * If we decide to implement soft search and hard search as separate using quotations (like Google)
-			 * then we need to separate identifiers for soft search. For example if we search:
-			 * 
-			 * Linear Algebra 		(soft search)
-			 * "Linear Algebra"		(hard search)
-			 * 
-			 * The soft search will return all results that contain the string "Linear" or "Algebra" preferably with both
-			 * The hard serach will return all results that contain the string "Linear Algebra" only.
-			 * 
-			 * 
-			 * 2)
-			 * Ignore all identifiers that are not at least length 3 
-			 */
-			
+
 			/* 
 			 * If next token is not a keyword or symbol, then it is a identifier. An identifier ends before the next comma
 			 * The token is built by checking each character until it reaches a comma or it reaches the end of the string
