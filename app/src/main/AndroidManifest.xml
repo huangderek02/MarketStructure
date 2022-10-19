@@ -24,8 +24,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".CheckoutActivityMenu"
-            android:exported="false" />
+            android:name=".generateData.ReportSellersActivity"
+            android:exported="true" />
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />

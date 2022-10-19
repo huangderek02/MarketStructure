@@ -43,7 +43,8 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     private ArrayList<Listing> listingsArrayList2 = new ArrayList<Listing>();
     ProgressDialog progressDialog;
     private Listing listing = new Listing("","",null,"","","","","");
-    private RecyclerViewClickListener recyclerViewClickListener;
+
+
     //private Listing listing = new Listing("","",0,"","","",0,0,"","","","","","","","","");
 
     Button visitProfile;

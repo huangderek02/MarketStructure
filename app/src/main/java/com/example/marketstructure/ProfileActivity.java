@@ -152,6 +152,10 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void displayProfile(FirebaseUser firebaseUser){
+        if(firebaseUser==null){
+
+        }
+        assert firebaseUser != null;
         String userID = firebaseUser.getUid();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("userList").document(userID);

@@ -11,12 +11,14 @@ import android.widget.Toast;
 import com.example.marketstructure.R;
 
 public class ReportSellersActivity extends AppCompatActivity {
-    EditText editText = findViewById(R.id.editTextTextPersonName);
-    Button button = findViewById(R.id.button2);
+    EditText editText;
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_sellers);
+        editText = findViewById(R.id.editTextTextPersonName);
+        button = findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
