@@ -38,7 +38,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        ImageView iv_textbook_image;
+        TextView tv_title;
+        TextView tv_isbn;
         TextView tv_price;
         TextView tv_condition;
         TextView tv_seller;
@@ -46,7 +47,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.iv_textbook_image = itemView.findViewById(R.id.iv_textbook_image_cl);
+            this.tv_title = itemView.findViewById(R.id.tv_textbook_display_cl);
+            this.tv_isbn = itemView.findViewById(R.id.tv_textbook_isbn_display_cl);
             this.tv_price = itemView.findViewById(R.id.tv_price_display_cl);
             this.tv_condition = itemView.findViewById(R.id.tv_condition_display_cl);
             this.tv_seller = itemView.findViewById(R.id.tv_seller_display_cl);
@@ -65,11 +67,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.RecyclerViewHolder holder, int position) {
-        // Set the data to textview and imageview.
+        // Set the data to textview
         Listing listing = arrayList.get(position);
-        Resources resources = this.context.getApplicationContext().getResources();
-        int textbookImageId = resources.getIdentifier("textbookImageName", "drawable", "drawable");
-        holder.iv_textbook_image.setImageResource(textbookImageId);
+        holder.tv_title.setText(listing.getTextbook().getTitle());
+        holder.tv_isbn.setText(listing.getTextbook().getIsbn());
         holder.tv_price.setText(listing.getListingPrice());
         holder.tv_condition.setText(listing.getCondition());
         holder.tv_seller.setText(listing.getSellerUsername());
