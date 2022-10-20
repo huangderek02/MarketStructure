@@ -9,11 +9,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.marketstructure.Checkout.DeliveryOptionsMenuActivity;
-import com.example.marketstructure.GenerateData.ReportSellersActivity;
-import com.example.marketstructure.StateDesignPattern.Event;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
@@ -52,7 +54,7 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         Intent intent = getIntent();
-        String documentId = intent.getStringExtra("documentId");
+        //String documentId = intent.getStringExtra("documentId");
 
         Listing listingFromAdapter = (Listing) intent.getExtras().getSerializable("listing");
         int textbookImageId = getResources().getIdentifier("@drawable/"+listingFromAdapter.getTextbook().getTextbookImageName(),null, getPackageName());
@@ -65,9 +67,13 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         tv_isbn.setText(listingFromAdapter.getTextbook().getIsbn());
         tv_textbook_name.setText(listingFromAdapter.getTextbook().getTitle());
         tv_authors.setText(listingFromAdapter.getTextbook().getAuthors());
-//        tv_edition.setText(listingFromAdapter.getTextbook().getEdition());
-//        tv_year_published.setText(listingFromAdapter.getTextbook().getYearPublished());
-//        tv_number_of_pages.setText(listingFromAdapter.getTextbook().getNumberOfPages());
+
+        tv_edition.setText(String.valueOf(listingFromAdapter.getTextbook().getEdition()));
+
+        tv_year_published.setText(String.valueOf(listingFromAdapter.getTextbook().getYearPublished()));
+
+        tv_number_of_pages.setText(String.valueOf(listingFromAdapter.getTextbook().getNumberOfPages()));
+
         tv_topic_code.setText(listingFromAdapter.getTextbook().getTopicCode());
         tv_topic.setText(listingFromAdapter.getTextbook().getTopic());
         tv_additional_details.setText(listingFromAdapter.getAdditionalDetails());

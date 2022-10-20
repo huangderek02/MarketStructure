@@ -1,5 +1,10 @@
 package tokenizer_and_parser;
 
+import com.example.marketstructure.Listing;
+import com.example.marketstructure.MarketActivity;
+import com.example.marketstructure.Textbook;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -42,13 +47,13 @@ import java.util.Comparator;
  * ArrayList<Textbook> results = tbSearcher.getResults();	<-- update recycle viewer with this
  *
  */
-public class TextbookSearcher extends ListingTextbookData{
+public class TextbookSearcher{
 
 	static BTree BTreeTextbooks = new BTree(10);
 	
 	//Initialize BTree with books inserted
 	static {
-		for(Textbook tb: textbooks) BTreeTextbooks.insert(tb);
+		for(Textbook tb: MarketActivity.listingsArrayList_search) BTreeTextbooks.insert(tb);
 	}
 	
 	//Instance variables
@@ -60,8 +65,15 @@ public class TextbookSearcher extends ListingTextbookData{
 		results = new ArrayList<Textbook>();
 	}
 	
-	public ArrayList<Textbook> getResults(){
-		return results;
+	public ArrayList<Listing> getResults(){
+
+		ArrayList<Listing> r = new ArrayList<Listing>();
+
+		for(Textbook tb : results){
+			Listing tbListing = (Listing) tb;
+			r.add(tbListing);
+		}
+		return r;
 	}
 	
 	
@@ -133,7 +145,7 @@ public class TextbookSearcher extends ListingTextbookData{
 	void isbnTextbook() {
 		if(parser.ISBN == null) return;
 		
-		for(Textbook tb : textbooks) 
+		for(Textbook tb : MarketActivity.listingsArrayList_search)
 			if(tb.getIsbn().equals(parser.ISBN)) {
 				
 				if(results.contains(tb)) results.remove(tb);
@@ -180,20 +192,23 @@ public class TextbookSearcher extends ListingTextbookData{
 		ArrayList<Textbook> filteredResults = new ArrayList<Textbook>(results);
 		
 		for(Textbook tb : results) {
-			
-			if(parser.costOperation[0] != null && tb.getOriginalPrice() >= parser.costOperation[0]) {
+
+			Listing tbAsListing = (Listing) tb;
+			Double tbPrice = Double.parseDouble(tbAsListing.getListingPrice());
+
+			if(parser.costOperation[0] != null && tbPrice >= parser.costOperation[0]) {
 				filteredResults.remove(tb);
 				continue;
 			}
 				
 			
-			if(parser.costOperation[1] != null && tb.getOriginalPrice() <= parser.costOperation[1]) {
+			if(parser.costOperation[1] != null && tbPrice <= parser.costOperation[1]) {
 				filteredResults.remove(tb);
 				continue;
 			}
 			
 			//Rounded down price to nearest integer
-			if(parser.costOperation[2] != null && (int) tb.getOriginalPrice()  != parser.costOperation[2]) {
+			if(parser.costOperation[2] != null && (int) Math.round(tbPrice)  != parser.costOperation[2]) {
 				filteredResults.remove(tb);
 				continue;
 			}
@@ -209,7 +224,8 @@ public class TextbookSearcher extends ListingTextbookData{
 		ArrayList<Textbook> filteredResults = new ArrayList<Textbook>(results);
 		
 		for(Textbook tb : results) {
-			
+
+
 			if(parser.editionOperation[0] != null && tb.getEdition() >= parser.editionOperation[0]) {
 				filteredResults.remove(tb);
 				continue;
@@ -263,9 +279,13 @@ public class TextbookSearcher extends ListingTextbookData{
 		    public int compare(Textbook lhs, Textbook rhs) {
 		       
 		    	// -1 - less than, 1 - greater than, 0 - equal, all inversed for descending
-		    	
-		    	if(lhs.getOriginalPrice() < rhs.getOriginalPrice()) return -1;
-		    	if(lhs.getOriginalPrice() == rhs.getOriginalPrice()) return 0;
+				Listing left = (Listing) lhs;
+				Listing right = (Listing) rhs;
+				Double leftPrice = Double.parseDouble(left.getListingPrice());
+				Double rightPrice = Double.parseDouble(right.getListingPrice());
+
+		    	if(leftPrice < rightPrice) return -1;
+		    	if(leftPrice == rightPrice) return 0;
 		    	return 1;
 		    }
 		});
