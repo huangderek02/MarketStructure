@@ -1,5 +1,7 @@
 package tokenizer_and_parser;
 
+import com.example.marketstructure.Textbook;
+
 import java.util.ArrayList;
 
 /**

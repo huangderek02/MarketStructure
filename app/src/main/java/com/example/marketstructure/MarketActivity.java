@@ -23,9 +23,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SearchView;
 
-import com.example.marketstructure.StateDesignPattern.OrderStatus;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -56,7 +54,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     EditText searchText;
     String searchString;
     TextbookSearcher textbookSearcher;
-    ArrayList<tokenizer_and_parser.Textbook> results;
+    ArrayList<Listing> results;
 
     @SuppressLint("StaticFieldLeak")
     public static FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -294,11 +292,11 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
      */
     public void updateRecycle(){
 
-//        recyclerView = findViewById(R.id.recycle_view);
-//        RecyclerViewAdapter adapter = new RecyclerViewAdapter(myTBSearcher.getResults(), this);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(layoutManager);
-//        recyclerView.setAdapter(adapter);
+        recyclerView = findViewById(R.id.recycle_view);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(myTBSearcher.getResults(), this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 
     /**
