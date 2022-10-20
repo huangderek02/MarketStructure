@@ -1,7 +1,6 @@
 package com.example.marketstructure;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,16 +8,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.marketstructure.Checkout.DeliveryOptionsMenuActivity;
-import com.example.marketstructure.GenerateData.ReportSellersActivity;
-import com.example.marketstructure.StateDesignPattern.Event;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.io.Serializable;
-
-public class DisplayListingDetailsActivity extends AppCompatActivity implements Serializable {
+public class DisplayListingDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "DisplayListingDetails";;
 
@@ -47,32 +46,41 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         Button b_view_seller_profile = findViewById(R.id.b_view_seller_profile);
         Button b_message_seller = findViewById(R.id.b_message_seller);
         Button b_report_listing = findViewById(R.id.b_report_listing);
-        Button b_buy_now= findViewById(R.id.b_buy_now);
+        Button b_make_bid = findViewById(R.id.b_buy_now);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         Intent intent = getIntent();
-        String documentId = intent.getStringExtra("documentId");
+        //String documentId = intent.getStringExtra("documentId");
 
         Listing listingFromAdapter = (Listing) intent.getExtras().getSerializable("listing");
-        int textbookImageId = getResources().getIdentifier("@drawable/"+listingFromAdapter.getTextbook().getTextbookImageName(),null, getPackageName());
-        Drawable resources = getResources().getDrawable(textbookImageId);
-        iv_textbook_image.setImageDrawable(resources);
         tv_listing_id.setText(listingFromAdapter.getListingId());
         tv_listing_status.setText(listingFromAdapter.getListingStatus());
         tv_condition.setText(listingFromAdapter.getCondition());
         tv_listing_price.setText(listingFromAdapter.getListingPrice());
+
         tv_isbn.setText(listingFromAdapter.getTextbook().getIsbn());
+
         tv_textbook_name.setText(listingFromAdapter.getTextbook().getTitle());
+
         tv_authors.setText(listingFromAdapter.getTextbook().getAuthors());
-//        tv_edition.setText(listingFromAdapter.getTextbook().getEdition());
-//        tv_year_published.setText(listingFromAdapter.getTextbook().getYearPublished());
-//        tv_number_of_pages.setText(listingFromAdapter.getTextbook().getNumberOfPages());
+
+        tv_edition.setText(String.valueOf(listingFromAdapter.getTextbook().getEdition()));
+
+        tv_year_published.setText(String.valueOf(listingFromAdapter.getTextbook().getYearPublished()));
+
+        tv_number_of_pages.setText(String.valueOf(listingFromAdapter.getTextbook().getNumberOfPages()));
+
         tv_topic_code.setText(listingFromAdapter.getTextbook().getTopicCode());
+
         tv_topic.setText(listingFromAdapter.getTextbook().getTopic());
+
         tv_additional_details.setText(listingFromAdapter.getAdditionalDetails());
+
         tv_seller.setText(listingFromAdapter.getSellerUsername());
+
         tv_listing_last_updated.setText(listingFromAdapter.getListingLastUpdatedDate());
+
 
 
 //        DocumentReference documentReference = db.collection("listings").document(documentId);
@@ -116,36 +124,5 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
                 startActivity(b);
             }
         });
-
-        b_view_seller_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent b = new Intent(DisplayListingDetailsActivity.this,Sellers.class);
-                startActivity(b);
-            }
-        });
-
-        b_report_listing.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent b = new Intent(DisplayListingDetailsActivity.this, ReportSellersActivity.class);
-                startActivity(b);
-            }
-        });
-        b_buy_now.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DisplayListingDetailsActivity.this, DeliveryOptionsMenuActivity.class);
-                intent.putExtra("price", listingFromAdapter.getListingPrice());
-                startActivity(intent);
-                RecyclerViewAdapter.status.getState().handle(Event.ListingSelectedToBuy);
-                Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
-            }
-        });
-    }
-
-    @Override
-    public Intent getIntent() {
-        return super.getIntent();
     }
 }
