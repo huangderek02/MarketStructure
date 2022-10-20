@@ -23,9 +23,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SearchView;
 
-import com.example.marketstructure.StateDesignPattern.OrderStatus;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -41,22 +39,21 @@ import java.util.Objects;
 
 import tokenizer_and_parser.TextbookSearcher;
 
-public class MarketActivity extends AppCompatActivity implements RecyclerViewClickListener, Serializable
-{
+public class MarketActivity extends AppCompatActivity implements RecyclerViewClickListener, Serializable {
     private RecyclerView recyclerView;
     private ArrayList<Listing> listingsArrayList = new ArrayList<Listing>();
-    private ArrayList<Listing> listingsArrayList2 = new ArrayList<Listing>();
+    public static ArrayList<Listing> listingsArrayList_search = new ArrayList<Listing>();
+
     ProgressDialog progressDialog;
-    private Listing listing = new Listing("","",null,"","","","","");
+    private Listing listing = new Listing("", "", null, "", "", "", "", "");
 
     //private Listing listing = new Listing("","",0,"","","",0,0,"","","","","","","","","");
 
     Button visitProfile;
     EditText searchText;
     String searchString;
-    Button search;
     TextbookSearcher textbookSearcher;
-    ArrayList<tokenizer_and_parser.Textbook> results;
+    ArrayList<Listing> results;
 
     @SuppressLint("StaticFieldLeak")
     public static FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -67,6 +64,8 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
         setContentView(R.layout.activity_market);
 
         listingsArrayList = addListings();
+        listingsArrayList_search = new ArrayList<>(listingsArrayList);
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading Listings...");
@@ -82,18 +81,32 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
         recyclerView.setAdapter(adapter);
 
         searchText = findViewById(R.id.search_text);
+        searchText.addTextChangedListener(new TextWatcher() {
+            //No results are expected to change before the text is changed
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-        search = findViewById(R.id.searchButton);
+            }
 
+            //No results are expected to change when editing the text
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
 
+            }
 
-
+            //After the text is changed,
+            @Override
+            public void afterTextChanged(Editable s) {
+                searchString = s.toString();
+                textbookSearcher = new TextbookSearcher();
+                textbookSearcher.parseSearch(searchString);
+                textbookSearcher.sortAlphabeticalAscending();
+                results = textbookSearcher.getResults();
+            }
+        });
 
 
         //EventChangeListener();
-
-
-
 
 
 //        recyclerView.setOnClickListener(new View.OnClickListener() {
@@ -104,9 +117,8 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
 //            }
 //        });
 
-
-        //This allows the user to visit the profile activity, where the user can update
-        //their details.
+        //When you click on the visit profile button, it takes you to the
+        //page where the seller can upload their details or logout.
         visitProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -172,17 +184,17 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         if (error != null) {
-                            Log.e("Firestore error",error.getMessage());
+                            Log.e("Firestore error", error.getMessage());
                             return;
                         }
                         assert value != null;
                         for (DocumentChange documentChange : value.getDocumentChanges()) {
-                           // if (documentChange.getType() == DocumentChange.Type.ADDED) {
+                            // if (documentChange.getType() == DocumentChange.Type.ADDED) {
 
-                                listingsArrayList.add(documentChange.getDocument().toObject(Listing.class));
-                            }
+                            listingsArrayList.add(documentChange.getDocument().toObject(Listing.class));
                         }
-                 //   }
+                    }
+                    //   }
                 });
         /*
         db.collection("listings").get()
@@ -204,11 +216,6 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     }
 
 
-    /**
-     * adds all the listings to the to an arrayList inside the method and returns it.
-     * All the attributes of the textbook are added to the arrayList.
-     */
-
     public ArrayList<Listing> addListings() {
         CollectionReference listings = db.collection("listings");
         ArrayList<Listing> arrayList = new ArrayList<>();
@@ -223,10 +230,9 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
             listing.put("listingLastUpdatedDate", getRandomDate());
             listing.put("listingStatus", getRandomListingStatus());
             listings.document(String.valueOf(i)).set(listing);
-            Listing listing1 = new Listing((String) listing.get("listingId"),(String) listing.get("sellerUsername"), (Textbook) listing.get("textbook"),
-                    (String) listing.get("listingPrice"),(String) listing.get("condition"),(String) listing.get("additionalDetails"),(String) listing.get("listingStatus"),
+            Listing listing1 = new Listing((String) listing.get("listingId"), (String) listing.get("sellerUsername"), (Textbook) listing.get("textbook"),
+                    (String) listing.get("listingPrice"), (String) listing.get("condition"), (String) listing.get("additionalDetails"), (String) listing.get("listingStatus"),
                     (String) listing.get("listingLastUpdatedDate"));
-
 
 
             arrayList.add(listing1);
@@ -235,14 +241,17 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     }
 
 
-
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
 
 
-
+    /**
+     * TODO: Delete this comment
+     * <p>
+     * Untested code from u7117043 (Gordon) to get search bar and recycle view working.
+     */
 
     //Used to check sorting pattern
     private Integer sortingPattern = 0;
@@ -252,7 +261,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
      * onClick for searchButton:
      * Gets the string in the searh_text, finds and updates textbooks in Recycleview
      */
-    public void updateTextbooks(View v){
+    public void updateTextbooks(View v) {
         String query = searchText.getText().toString();
         myTBSearcher.parseSearch(query);
 
@@ -265,8 +274,8 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
      * onClick for sort_button:
      * Increment sortingPattern and then sort results. Update the recycle view with new sorting pattern
      */
-    public void sortRecycle(View v){
-        if(sortingPattern >= 9) sortingPattern = 0;
+    public void sortRecycle(View v) {
+        if (sortingPattern >= 9) sortingPattern = 0;
         else sortingPattern++;
 
         sortResults();
@@ -276,22 +285,21 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     /**
      * Update recycle viewer with new listings from a user search or sort
      */
-    public void updateRecycle(){
+    public void updateRecycle() {
 
-        ///Currently has errors
-//        recyclerView = findViewById(R.id.recycle_view);
-//        RecyclerViewAdapter adapter = new RecyclerViewAdapter(myTBSearcher.getResults(), this);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(layoutManager);
-//        recyclerView.setAdapter(adapter);
+        recyclerView = findViewById(R.id.recycle_view);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(myTBSearcher.getResults(), this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 
     /**
      * Sort results of a search depending on sorting pattern integer.
      * Sorting pattern integer is changed by the sort button.
      */
-    public void sortResults(){
-        switch(sortingPattern){
+    public void sortResults() {
+        switch (sortingPattern) {
             case 1:
                 myTBSearcher.sortAlphabeticalDescending();
                 break;
@@ -323,8 +331,6 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
                 myTBSearcher.sortAlphabeticalAscending();
         }
     }
-
-
-
-
 }
+
+
