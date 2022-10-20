@@ -1,3 +1,4 @@
+// @author Derek Huang (u7300484), Huiguang Zhang (u7366836) & Rhonda Luu (u7127350)
 package com.example.marketstructure;
 
 import static com.example.marketstructure.GenerateData.GenerateRandomListings.getRandomAdditionalDetails;
@@ -35,7 +36,7 @@ import java.util.TimerTask;
 
 import tokenizer_and_parser.TextbookSearcher;
 
-public class MarketActivity extends AppCompatActivity implements RecyclerViewClickListener, Serializable {
+public class MarketActivity extends AppCompatActivity implements Serializable {
     private RecyclerView recyclerView;
     private ArrayList<Listing> listingsArrayList = new ArrayList<Listing>();
     public static ArrayList<Listing> listingsArrayList_search = new ArrayList<Listing>();

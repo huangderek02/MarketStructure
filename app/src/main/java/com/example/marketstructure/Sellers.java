@@ -1,3 +1,4 @@
+// @author Derek Huang (u7300484)
 package com.example.marketstructure;
 
 import androidx.appcompat.app.AppCompatActivity;

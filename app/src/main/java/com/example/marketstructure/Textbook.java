@@ -1,3 +1,4 @@
+// @author Derek Huang (u7300484), Huiguang Zhang (u7366836) & Rhonda Luu (u7127350)
 package com.example.marketstructure;
 
 import java.io.Serializable;

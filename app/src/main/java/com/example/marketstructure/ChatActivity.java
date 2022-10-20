@@ -1,3 +1,4 @@
+// @author Huiguang Zhang (u7366836)
 package com.example.marketstructure;
 
 
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.marketstructure.Messaging.Msg;
+import com.example.marketstructure.Messaging.MsgAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
