@@ -8,7 +8,6 @@ import static com.example.marketstructure.GenerateData.GenerateRandomListings.ge
 import static com.example.marketstructure.GenerateData.GenerateRandomListings.getRandomSellerUsername;
 import static com.example.marketstructure.GenerateData.GenerateRandomListings.getRandomTextbook;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,23 +18,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import tokenizer_and_parser.TextbookSearcher;
 
@@ -45,9 +41,6 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     public static ArrayList<Listing> listingsArrayList_search = new ArrayList<Listing>();
 
     ProgressDialog progressDialog;
-    private Listing listing = new Listing("", "", null, "", "", "", "", "");
-
-    //private Listing listing = new Listing("","",0,"","","",0,0,"","","","","","","","","");
 
     Button visitProfile;
     EditText searchText;
@@ -69,7 +62,6 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading Listings...");
-        //progressDialog.show();
         recyclerView = findViewById(R.id.recycle_view);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(listingsArrayList, this);
 
@@ -105,18 +97,6 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
             }
         });
 
-
-        //EventChangeListener();
-
-
-//        recyclerView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent b = new Intent(MarketActivity.this,DisplayListingDetailsActivity.class);
-//                startActivity(b);
-//            }
-//        });
-
         //When you click on the visit profile button, it takes you to the
         //page where the seller can upload their details or logout.
         visitProfile.setOnClickListener(new View.OnClickListener() {
@@ -126,95 +106,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
                 startActivity(b);
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-        /*
-        databaseReference = FirebaseDatabase.getInstance().getReference("listings");
-        listView = findViewById(R.id.list_view);
-        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrayList);
-        databaseReference.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                String val = Objects.requireNonNull(snapshot.getValue(Listing.class)).toString();
-                arrayList.add(val);
-                arrayAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-
-
-        });
-        addListings();
-
-         */
-
     }
-
-    private void EventChangeListener() {
-        db.collection("listings")
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        if (error != null) {
-                            Log.e("Firestore error", error.getMessage());
-                            return;
-                        }
-                        assert value != null;
-                        for (DocumentChange documentChange : value.getDocumentChanges()) {
-                            // if (documentChange.getType() == DocumentChange.Type.ADDED) {
-
-                            listingsArrayList.add(documentChange.getDocument().toObject(Listing.class));
-                        }
-                    }
-                    //   }
-                });
-        /*
-        db.collection("listings").get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                            for (DocumentSnapshot documentSnapshot : list) {
-                                Listing listing = documentSnapshot.toObject(Listing.class);
-                                listingsArrayList.add(listing);
-                            }
-                        }
-                    }
-                });
-
-         */
-
-    }
-
 
     public ArrayList<Listing> addListings() {
         CollectionReference listings = db.collection("listings");
@@ -233,13 +125,10 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
             Listing listing1 = new Listing((String) listing.get("listingId"), (String) listing.get("sellerUsername"), (Textbook) listing.get("textbook"),
                     (String) listing.get("listingPrice"), (String) listing.get("condition"), (String) listing.get("additionalDetails"), (String) listing.get("listingStatus"),
                     (String) listing.get("listingLastUpdatedDate"));
-
-
             arrayList.add(listing1);
         }
         return arrayList;
     }
-
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
