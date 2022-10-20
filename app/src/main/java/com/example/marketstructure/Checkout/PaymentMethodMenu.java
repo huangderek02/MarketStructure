@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.marketstructure.MarketActivity;
 import com.example.marketstructure.R;
 import com.example.marketstructure.RecyclerViewAdapter;
 import com.example.marketstructure.StateDesignPattern.Event;
@@ -24,6 +25,17 @@ public class PaymentMethodMenu extends AppCompatActivity {
 
         Button b_cash_payment = findViewById(R.id.b_cash_payment);
         Button b_card_payment = findViewById(R.id.b_card_payment);
+        Button b_cancel = findViewById(R.id.b_cancel_payment);
+
+        b_cash_payment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PaymentMethodMenu.this,ConfirmOrderActivity.class);
+                startActivity(intent);
+                RecyclerViewAdapter.status.getState().handle(Event.CashPaymentMethodSelected);
+                Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
+            }
+        });
 
         b_card_payment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +43,15 @@ public class PaymentMethodMenu extends AppCompatActivity {
                 Intent intent = new Intent(PaymentMethodMenu.this,PaymentCardActivity.class);
                 startActivity(intent);
                 RecyclerViewAdapter.status.getState().handle(Event.CardPaymentMethodSelected);
+                Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
+            }
+        });
+        b_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PaymentMethodMenu.this, MarketActivity.class);
+                startActivity(intent);
+                RecyclerViewAdapter.status.getState().handle(Event.Cancelled);
                 Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
             }
         });
