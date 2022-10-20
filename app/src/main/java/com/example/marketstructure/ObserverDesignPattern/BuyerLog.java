@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public class BuyerLog {
     final private Observer observer; // observer that visited the location
-    final private Integer tickVisited; // tick at which the observer visited the app
+    final private Integer listingsVisited; // tick at which the observer visited the app
 
     /**
      * Constructor which sets tuple values
      */
     public BuyerLog(Observer observer, int tickVisited) {
         this.observer = observer;
-        this.tickVisited = tickVisited;
+        this.listingsVisited = tickVisited;
     }
 
     /**
@@ -24,8 +24,8 @@ public class BuyerLog {
     /**
      * @return current tick value
      */
-    public int getTickVisited() {
-        return tickVisited;
+    public int getListingsVisited() {
+        return listingsVisited;
     }
 
 
@@ -37,7 +37,7 @@ public class BuyerLog {
     public String toString() {
         return "BuyerLog{" +
                 "observer=" + observer +
-                ", tick=" + tickVisited +
+                ", tick=" + listingsVisited +
                 '}';
     }
 
@@ -46,11 +46,11 @@ public class BuyerLog {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BuyerLog that = (BuyerLog) o;
-        return observer.equals(that.observer) && tickVisited.equals(that.tickVisited);
+        return observer.equals(that.observer) && listingsVisited.equals(that.listingsVisited);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(observer, tickVisited);
+        return Objects.hash(observer, listingsVisited);
     }
 }

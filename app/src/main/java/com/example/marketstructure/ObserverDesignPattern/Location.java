@@ -94,7 +94,7 @@ public class Location implements Subject<User> {
         for(BuyerLog buyerLog :buyerLogs){
 
             if (buyerLog.getObserver().equals(scammedPerson)){
-                tick = buyerLog.getTickVisited();
+                tick = buyerLog.getListingsVisited();
                 ticks.add(tick);
             }
         }
@@ -104,7 +104,7 @@ public class Location implements Subject<User> {
 
         for(int t:ticks){
             for(BuyerLog log:buyerLogs){
-                if(log.getTickVisited() >= tickstart && log.getTickVisited()<=tickend && log.getTickVisited() == t){
+                if(log.getListingsVisited() >= tickstart && log.getListingsVisited()<=tickend && log.getListingsVisited() == t){
                     log.getObserver().update();
                 }
             }
