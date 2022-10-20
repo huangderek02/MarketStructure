@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,8 @@ import com.example.marketstructure.StateDesignPattern.Event;
 
 public class PaymentCardActivity extends AppCompatActivity {
 
+    private EditText et_card_payment_card_number, et_card_payment_expiry_month, et_card_payment_expiry_year, et_card_payment_cvv;
+
     private static final String TAG = "PaymentCardActivity";
 
     @Override
@@ -24,10 +27,10 @@ public class PaymentCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_4_payment_card);
 
-        EditText et_card_payment_card_number = findViewById(R.id.et_card_payment_card_number);
-        EditText et_card_payment_expiry_month = findViewById(R.id.et_card_payment_expiry_month);
-        EditText et_card_payment_expiry_year = findViewById(R.id.et_card_payment_expiry_year);
-        EditText et_card_payment_cvv = findViewById(R.id.et_card_payment_cvv);
+        et_card_payment_card_number = findViewById(R.id.et_card_payment_card_number);
+        et_card_payment_expiry_month = findViewById(R.id.et_card_payment_expiry_month);
+        et_card_payment_expiry_year = findViewById(R.id.et_card_payment_expiry_year);
+        et_card_payment_cvv = findViewById(R.id.et_card_payment_cvv);
 
         Button b_confirm = findViewById(R.id.b_confirm_card_payment);
         Button b_cancel = findViewById(R.id.b_cancel_card_payment);
@@ -40,22 +43,33 @@ public class PaymentCardActivity extends AppCompatActivity {
         String streetAddress = intent.getStringExtra("streetAddress");
         String paymentMethod = intent.getStringExtra("paymentMethod");
 
-        String cardNumber = et_card_payment_card_number.getText().toString();
-        String cardExpiryMonth = et_card_payment_expiry_month.getText().toString();
-        String cardExpiryYear = et_card_payment_expiry_year.getText().toString();
-        String cardCvv = et_card_payment_cvv.getText().toString();
-
         b_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*
-                if (cardNumber.isEmpty() || cardExpiryMonth.isEmpty() || cardExpiryYear.isEmpty()
-                        || cardCvv.isEmpty()) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Error: Please ensure that all fields have been filled out ", Toast.LENGTH_LONG);
-                    toast.show();
-                } else {
+                String cardNumber = et_card_payment_card_number.getText().toString();
+                String cardExpiryMonth = et_card_payment_expiry_month.getText().toString();
+                String cardExpiryYear = et_card_payment_expiry_year.getText().toString();
+                String cardCvv = et_card_payment_cvv.getText().toString();
 
-                 */
+
+                if(TextUtils.isEmpty(cardNumber)){
+                    Toast.makeText(getApplicationContext(), "Please enter card number", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(cardExpiryMonth)){
+                    Toast.makeText(getApplicationContext(),"Please enter month of card expiry date",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(cardExpiryYear)){
+                    Toast.makeText(getApplicationContext(),"Please enter year of card expiry date",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(cardCvv)){
+                    Toast.makeText(getApplicationContext(),"Please enter CVV of card",Toast.LENGTH_SHORT).show();
+                } else {
                     Intent intent = new Intent(PaymentCardActivity.this, ConfirmOrderActivity.class);
                     intent.putExtra("isbn", isbn);
                     intent.putExtra("textbookPrice", textbookPrice);
@@ -67,8 +81,8 @@ public class PaymentCardActivity extends AppCompatActivity {
                     RecyclerViewAdapter.status.getState().handle(Event.CardPaymentDetailsEntered);
                     Log.e(TAG, "OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
                 }
-            //}
-            });
+            }
+        });
 
         b_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
