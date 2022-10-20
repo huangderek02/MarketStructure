@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CheckoutDeliveryDetails.PaymentCardActivity">
+    tools:context=".Checkout.PaymentCardActivity">
 
     <TextView
         android:id="@+id/tv_card_payment_checkout_title"

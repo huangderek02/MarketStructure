@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SearchView;
 
+import com.example.marketstructure.StateDesignPattern.OrderStatus;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -42,13 +43,11 @@ import tokenizer_and_parser.TextbookSearcher;
 
 public class MarketActivity extends AppCompatActivity implements RecyclerViewClickListener, Serializable
 {
-
     private RecyclerView recyclerView;
     private ArrayList<Listing> listingsArrayList = new ArrayList<Listing>();
     private ArrayList<Listing> listingsArrayList2 = new ArrayList<Listing>();
     ProgressDialog progressDialog;
     private Listing listing = new Listing("","",null,"","","","","");
-
 
     //private Listing listing = new Listing("","",0,"","","",0,0,"","","","","","","","","");
 
@@ -115,6 +114,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
                 startActivity(b);
             }
         });
+
 
 
 

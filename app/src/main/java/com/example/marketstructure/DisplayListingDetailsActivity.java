@@ -3,6 +3,7 @@ package com.example.marketstructure;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -10,7 +11,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.marketstructure.Checkout.DeliveryOptionsMenuActivity;
 import com.example.marketstructure.GenerateData.ReportSellersActivity;
+import com.example.marketstructure.StateDesignPattern.Event;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
@@ -129,8 +132,16 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
                 startActivity(b);
             }
         });
-
-
+        b_buy_now.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DisplayListingDetailsActivity.this, DeliveryOptionsMenuActivity.class);
+                intent.putExtra("price", listingFromAdapter.getListingPrice());
+                startActivity(intent);
+                RecyclerViewAdapter.status.getState().handle(Event.ListingSelectedToBuy);
+                Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
+            }
+        });
     }
 
     @Override

@@ -13,24 +13,28 @@ import com.example.marketstructure.R;
 import com.example.marketstructure.RecyclerViewAdapter;
 import com.example.marketstructure.StateDesignPattern.Event;
 
-public class PaymentCardActivity extends AppCompatActivity {
+public class DeliveryDetailsActivity extends AppCompatActivity {
 
-    private static final String TAG = "PaymentCardActivity";
+    private static final String TAG = "DeliveryDetailsActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checkout_4_payment_card);
+        setContentView(R.layout.activity_checkout_2_delivery_details);
 
-        Button b_confirm = findViewById(R.id.b_confirm_card_payment);
-        Button b_cancel = findViewById(R.id.b_cancel_card_payment);
+        Button b_proceed_to_payment = findViewById(R.id.b_proceed_to_payment);
+        Button b_cancel = findViewById(R.id.b_cancel_deliver_details);
 
-        b_confirm.setOnClickListener(new View.OnClickListener() {
+        Intent intent = getIntent();
+        String deliveryOption = intent.getStringExtra("deliveryOption");
+
+        b_proceed_to_payment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PaymentCardActivity.this, ConfirmOrderActivity.class);
+                Intent intent = new Intent(DeliveryDetailsActivity.this, PaymentMethodMenu.class);
+                intent.putExtra("deliveryOption",deliveryOption);
                 startActivity(intent);
-                RecyclerViewAdapter.status.getState().handle(Event.CardPaymentDetailsEntered);
+                RecyclerViewAdapter.status.getState().handle(Event.DeliveryDetailsEntered);
                 Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
             }
         });
@@ -38,7 +42,7 @@ public class PaymentCardActivity extends AppCompatActivity {
         b_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PaymentCardActivity.this, MarketActivity.class);
+                Intent intent = new Intent(DeliveryDetailsActivity.this, MarketActivity.class);
                 startActivity(intent);
                 RecyclerViewAdapter.status.getState().handle(Event.Cancelled);
                 Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");

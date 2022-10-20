@@ -1,5 +1,8 @@
 package com.example.marketstructure;
 
+import com.example.marketstructure.StateDesignPattern.Idle;
+import com.example.marketstructure.StateDesignPattern.State;
+
 import java.io.Serializable;
 
 public class Listing extends Textbook implements Serializable {
@@ -59,6 +62,25 @@ public class Listing extends Textbook implements Serializable {
         this.listingStatus = listingStatus;
         this.listingLastUpdatedDate = listingLastUpdatedDate;
     }
+    /*
+    private State state = new Idle(this);
+
+    public State getState() {
+
+        // START YOUR CODE
+        return state;
+        // END YOUR CODE
+    }
+
+    public void setState(State state) {
+
+        // START YOUR CODE
+        this.state = state;
+
+        // END YOUR CODE
+    }
+
+     */
     /*
     public Listing(String isbn, String title, int edition, String authors, String textbookImageName,
                    String originalPrice, int yearPublished, int numberOfPages, String topicCode,
