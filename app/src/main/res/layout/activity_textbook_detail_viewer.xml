@@ -368,7 +368,7 @@
         android:text="@string/topic_display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.012"
+        app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintStart_toEndOf="@+id/tv_topic_title"
         app:layout_constraintTop_toBottomOf="@+id/tv_topic_code_display"
         app:layout_constraintVertical_bias="0.0" />
@@ -417,14 +417,13 @@
         android:id="@+id/tv_seller_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
         android:text="@string/seller_display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toEndOf="@+id/tv_seller_title"
         app:layout_constraintTop_toBottomOf="@+id/tv_additional_details_display"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.061" />
 
     <TextView
         android:id="@+id/tv_fraud_warning"
@@ -437,6 +436,7 @@
         android:textColor="#D51E1E"
         android:textSize="16sp"
         android:textStyle="bold|italic"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/b_view_seller_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

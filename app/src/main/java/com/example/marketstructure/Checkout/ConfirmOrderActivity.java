@@ -1,3 +1,9 @@
+/**
+ * This class is used for the activity_checkout_5_confirm_order activity screen.
+ * It records the user's delivery details and also changes the state of OrderStatus.
+ * @author Rhonda Luu (u7127350)
+ */
+
 package com.example.marketstructure.Checkout;
 
 import android.content.Intent;
@@ -77,6 +83,9 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         });
     }
 
+    /** This method calculates the total cost of the order by adding delivery fees and 1.5% surcharge
+     * if paid via card.
+      */
     public String calculateTotalCost(String textbookPrice, String deliveryOption, String paymentOption) {
         final DecimalFormat df = new DecimalFormat("0.00");
         double textPriceDouble = Double.parseDouble(textbookPrice);

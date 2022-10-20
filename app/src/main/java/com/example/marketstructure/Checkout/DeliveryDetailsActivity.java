@@ -53,7 +53,6 @@ public class DeliveryDetailsActivity extends AppCompatActivity {
          * This method controls the actions of the "Proceed To Payment" button.
          * It checks if all EditText ui elements have been filled in before navigating to
          * "Payment Method Menu" (activity_checkout_3_payment_method_menu.xml).
-         * @author Rhonda Luu (u7127350)
          */
         b_proceed_to_payment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +102,6 @@ public class DeliveryDetailsActivity extends AppCompatActivity {
         /**
          * This method controls the actions of the "Cancel" button.
          * Navigates back to "Market Activity" ui screen (activity_market.xml).
-         * @author Rhonda Luu (u7127350)
          */
         b_cancel.setOnClickListener(new View.OnClickListener() {
             @Override

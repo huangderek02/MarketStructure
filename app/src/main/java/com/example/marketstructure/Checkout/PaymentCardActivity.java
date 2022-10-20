@@ -1,3 +1,9 @@
+/**
+ * This class is used for the activity_checkout_4_payment_card activity screen.
+ * It records the user's card details and also changes the state of OrderStatus.
+ * @author Rhonda Luu (u7127350)
+ */
+
 package com.example.marketstructure.Checkout;
 
 import androidx.appcompat.app.AppCompatActivity;
