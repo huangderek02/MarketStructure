@@ -5,34 +5,34 @@ import java.util.*;
 /**
  * A location.
  * Tracks users who have been to the location.
- * If a user becomes scammed, informs all users that visited the location at the same time as the
- * samed user within 10 ticks
+ * If a user becomes scammed, informs all users that viewed the listing at the same time as the
+ * same user within 10 listings
  *
  */
-public class Location implements Subject<User> {
-    private final int locationId;
+public class SellerSubject implements Subject<User> {
+    private final int sellerId;
     private final Set<BuyerLog> buyerLogs;
     private int currentLocationTick;
 
     /**
      * Constructor which sets class values.
      */
-    public Location(int locationId) {
+    public SellerSubject(int locationId) {
         currentLocationTick = 0; // setting the 'location clock' to zero
-        this.locationId = locationId;
+        this.sellerId = locationId;
         this.buyerLogs = new HashSet<>();
     }
 
     /**
      * This method is executed when a new Fraud case has been reported
-     * @param scammed A user who has found to be scammed at the current tick
+     * @param scammed A user who has found to be scammed whilst viewing the current lisitng
      */
     public void newFraudReportProcedure(User scammed) {
         notifyObservers(scammed);
     }
 
     /**
-     * Updates the current tick of the location
+     * Updates the current listing of the seller
      * @param incQuantity amount by which to increment the tick
      */
     public void incLocationTick(int incQuantity) {
@@ -52,7 +52,7 @@ public class Location implements Subject<User> {
     }
 
     /**
-     * Removes the buyer log at the current tick which contains the provided observer.
+     * Removes the buyer log at the current listing which contains the provided observer.
      * eg. simulating when someone logs into the app and then changes their mind and
      * logs out
      * @param observer to remove
@@ -81,30 +81,30 @@ public class Location implements Subject<User> {
      */
     public void notifyObservers(User scammedPerson) {
         /*
-        TODO: write this method so that it notifies all users that visited the location at the same time as the infected user within 10 ticks
+        TODO: write this method so that it notifies all users that visited the location at the same time as the infected user within 10 listings
         Hint: all observers already have an 'update()' method.
          */
         // YOUR CODE STARTS HERE
 
-        int tick = 0;
-        int tickstart = 0;
-        int tickend = currentLocationTick;
+        int listing = 0;
+        int listingstart = 0;
+        int listingend = currentLocationTick;
 
-        List<Integer> ticks = new ArrayList<>();
+        List<Integer> listings = new ArrayList<>();
         for(BuyerLog buyerLog :buyerLogs){
 
             if (buyerLog.getObserver().equals(scammedPerson)){
-                tick = buyerLog.getListingsVisited();
-                ticks.add(tick);
+                listing = buyerLog.getListingsVisited();
+                listings.add(listing);
             }
         }
-        if(tickend>10){
-            tickstart = tickend - 10;
+        if(listingend>10){
+            listingstart = listingend - 10;
         }
 
-        for(int t:ticks){
+        for(int l:listings){
             for(BuyerLog log:buyerLogs){
-                if(log.getListingsVisited() >= tickstart && log.getListingsVisited()<=tickend && log.getListingsVisited() == t){
+                if(log.getListingsVisited() >= listingstart && log.getListingsVisited()<=listingend && log.getListingsVisited() == l){
                     log.getObserver().update();
                 }
             }
@@ -122,7 +122,7 @@ public class Location implements Subject<User> {
     @Override
     public String toString() {
         return "Location{" +
-                "locationId=" + locationId +
+                "locationId=" + sellerId +
                 ", attendanceLogs=" + buyerLogs +
                 '}';
     }
