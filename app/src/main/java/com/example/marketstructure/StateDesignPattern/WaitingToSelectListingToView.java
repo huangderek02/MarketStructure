@@ -1,5 +1,7 @@
 package com.example.marketstructure.StateDesignPattern;
 
+import android.util.Log;
+
 public class WaitingToSelectListingToView extends State {
 
     public WaitingToSelectListingToView(OrderStatus status) {

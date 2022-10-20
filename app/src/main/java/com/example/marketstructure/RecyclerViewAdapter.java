@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.marketstructure.StateDesignPattern.Event;
 import com.example.marketstructure.StateDesignPattern.OrderStatus;
+import com.example.marketstructure.StateDesignPattern.WaitingToSelectListingToView;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -80,12 +81,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 b.putExtra("listing",listing);
                 context.startActivity(b);
                 status = new OrderStatus();
+                status.setState(new WaitingToSelectListingToView(status));
                 status.getState().handle(Event.ListingSelectedToView);
-                Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
+                Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState() + "State");
             }
         });
-
-
     }
     @Override
     public int getItemCount() {
