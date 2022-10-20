@@ -193,7 +193,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 **Design Patterns**
 
 * State
-- We used the State design pattern as the are a few process to go through before proceeding to payment
+  - We used the State design pattern as the are a few process to go through before proceeding to payment
 
 * Singleton 
 
