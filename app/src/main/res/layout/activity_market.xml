@@ -22,7 +22,7 @@
         android:id="@+id/button_to_profile"
         android:layout_width="127dp"
         android:layout_height="66dp"
-        android:text="Change Profile Details"
+        android:text="Profile Details"
         app:layout_constraintBottom_toTopOf="@+id/recycle_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.996"
@@ -30,28 +30,44 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.17" />
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="254dp"
-        android:layout_height="68dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/recycle_view"
-        app:layout_constraintEnd_toStartOf="@+id/button_to_profile"
-        app:layout_constraintHorizontal_bias="0.761"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173" />
-
     <Button
         android:id="@+id/sort_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:onClick="sortRecycle"
         android:text="SORT"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_to_profile" />
+
+    <EditText
+        android:id="@+id/search_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="he C++ Programming Language"
+        app:layout_constraintBottom_toTopOf="@+id/recycle_view"
+        app:layout_constraintEnd_toStartOf="@+id/button_to_profile"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.321" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="updateTextbooks"
+        android:text="@string/b_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_text" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

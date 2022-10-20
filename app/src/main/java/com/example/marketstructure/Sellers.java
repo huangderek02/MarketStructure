@@ -9,6 +9,11 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class Sellers extends AppCompatActivity {
@@ -68,6 +73,7 @@ public class Sellers extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(Sellers.this,String.valueOf((sum(Ratings) / Ratings.size())) ,
                         Toast.LENGTH_SHORT).show();
+                writeToFile("file.txt",String.valueOf((sum(Ratings) / Ratings.size())));
             }
         });
 
@@ -96,6 +102,17 @@ public class Sellers extends AppCompatActivity {
             sum += arr.get(i);
 
         return sum;
+    }
+
+    public void writeToFile(String fileName, String content){
+        File path = getApplicationContext().getFilesDir();
+        try {
+            FileOutputStream writer = new FileOutputStream(new File(path, fileName));
+            writer.write(content.getBytes());
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
