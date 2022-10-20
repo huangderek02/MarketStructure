@@ -278,6 +278,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
      */
     public void updateRecycle(){
 
+        ///Currently has errors
 //        recyclerView = findViewById(R.id.recycle_view);
 //        RecyclerViewAdapter adapter = new RecyclerViewAdapter(myTBSearcher.getResults(), this);
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
