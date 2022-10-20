@@ -251,6 +251,8 @@ If a term is valid, information contained in the term is stored in the instance 
 
 *[If you implement the surprise item, explain how your solution addresses the surprise task. What decisions do your team make in addressing the problem?]*
 
+The surprise item was a feature that notifies the user of whether a fraudulent seller or item has been identified. To get things started, we added a button in the activity for displaying the listing details, which takes the user to the seller's profile.
+
 **Other**
 
 *[What other design decisions have you made which you feel are relevant? Feel free to separate these into their own subheadings.]*
