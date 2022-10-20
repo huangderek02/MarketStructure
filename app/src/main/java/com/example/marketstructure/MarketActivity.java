@@ -55,6 +55,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     Button visitProfile;
     EditText searchText;
     String searchString;
+    Button search;
     TextbookSearcher textbookSearcher;
     ArrayList<tokenizer_and_parser.Textbook> results;
 
@@ -82,26 +83,10 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
         recyclerView.setAdapter(adapter);
 
         searchText = findViewById(R.id.search_text);
-        searchText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
+        search = findViewById(R.id.searchButton);
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                searchString = s.toString();
-                textbookSearcher = new TextbookSearcher();
-                textbookSearcher.parseSearch(searchString);
-                textbookSearcher.sortAlphabeticalAscending();
-                results = textbookSearcher.getResults();
-            }
-        });
 
 
 
@@ -121,7 +106,8 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
 //        });
 
 
-
+        //This allows the user to visit the profile activity, where the user can update
+        //their details.
         visitProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -218,6 +204,11 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     }
 
 
+    /**
+     * adds all the listings to the to an arrayList inside the method and returns it.
+     * All the attributes of the textbook are added to the arrayList.
+     */
+
     public ArrayList<Listing> addListings() {
         CollectionReference listings = db.collection("listings");
         ArrayList<Listing> arrayList = new ArrayList<>();
@@ -251,11 +242,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     }
 
 
-    /**
-     * TODO: Delete this comment
-     *
-     * Untested code from u7117043 (Gordon) to get search bar and recycle view working.
-     */
+
 
     //Used to check sorting pattern
     private Integer sortingPattern = 0;
