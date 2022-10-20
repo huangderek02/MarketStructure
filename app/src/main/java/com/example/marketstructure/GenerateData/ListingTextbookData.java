@@ -160,7 +160,6 @@ public class ListingTextbookData {
             , "A few textbook page corners have been folded to be used as a bookmark",
             "A few textbook page corners have been torn and sticky taped back together", "N/A"};
 
-    static String[] listingStatuses = {"Active - Purchase Now", "Active - Bidding"
-            , "Processed - Shipped", "Processed - Delivered", "Complete - Inactive",
-            "Fraud Listing/Seller Identified"};
+    static String[] listingStatuses = {"Active - Purchase Now", "Processed - Shipped",
+            "Processed - Delivered", "Complete - Inactive", "Fraud Listing/Seller Identified"};
 }
