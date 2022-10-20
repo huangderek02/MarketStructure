@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.marketstructure.R;
-
 public class ReportSellersActivity extends AppCompatActivity {
     EditText editText;
     Button button;

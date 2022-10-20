@@ -3,7 +3,6 @@ package com.example.marketstructure;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,15 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class Sellers extends AppCompatActivity {
 
-    float rating = 0;
     ArrayList<Float> Ratings = new ArrayList<>();
     Button avgRtngBtn;
     RatingBar ratingBar;
@@ -28,7 +23,6 @@ public class Sellers extends AppCompatActivity {
     boolean flagged = false;
     TextView status;
     TextView av_r;
-    TextView seller_name_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
