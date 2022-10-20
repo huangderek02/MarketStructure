@@ -3,6 +3,7 @@ package com.example.marketstructure;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,8 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.marketstructure.Checkout.DeliveryOptionsMenuActivity;
 import com.example.marketstructure.GenerateData.ReportSellersActivity;
 import com.example.marketstructure.StateDesignPattern.Event;
-import com.example.marketstructure.StateDesignPattern.OrderStatus;
-import com.example.marketstructure.StateDesignPattern.State;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
@@ -139,7 +138,8 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
                 Intent intent = new Intent(DisplayListingDetailsActivity.this, DeliveryOptionsMenuActivity.class);
                 intent.putExtra("price", listingFromAdapter.getListingPrice());
                 startActivity(intent);
-                OrderStatus.getState();
+                RecyclerViewAdapter.status.getState().handle(Event.ListingSelectedToBuy);
+                Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
             }
         });
     }

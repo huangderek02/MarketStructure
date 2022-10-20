@@ -7,16 +7,13 @@ public class WaitingToPay extends State {
 
     @Override
     public void handle(Event event) {
-        if (event.equals(Event.TextbookPaidByCard)) {
-            getOrderStatus().setState(new WaitingToDispatch(status));
+        if (event.equals(Event.CardPaymentDetailsEntered)) {
+            getOrderStatus().setState(new WaitingToPay(status));
         }
         if (event.equals(Event.TextbookPaidByCash)) {
             getOrderStatus().setState(new Delivered(status));
         }
         if (event.equals(Event.Cancelled)) {
-            getOrderStatus().setState(new Idle(status));
-        }
-        if (event.equals(Event.Timeout)) {
             getOrderStatus().setState(new Idle(status));
         }
     }

@@ -89,6 +89,22 @@
     <string name="et_email_address_hint">Please enter email address</string>
     <string name="et_phone_number_hint">Please enter phone number</string>
     <string name="et_street_address_hint">Please enter street address</string>
+    <string name="tv_textbook_ordered_details_title">TEXTBOOK ORDERED DETAILS</string>
+    <string name="tv_order_summary_textbook_price_title">Textbook Price (excl. shipping):</string>
+    <string name="tv_order_summary_delivery_details_title">DELIVERY DETAILS</string>
+    <string name="tv_order_summary_delivery_option_selected_title">Delivery Option Selected:</string>
+    <string name="tv_order_summary_delivery_option_selected_display">Delivery Option</string>
+    <string name="tv_order_summary_recipient_name_title">Recipient Name:</string>
+    <string name="tv_order_summary_recipient_name_display">Name</string>
+    <string name="tv_order_summary_delivery_address_title">Delivery Address:</string>
+    <string name="tv_order_summary_delivery_address_display">Address</string>
+    <string name="tV_order_summary_payment_details_title">PAYMENT DETAILS</string>
+    <string name="tV_order_summary_payment_method_selected_title">Payment Method Selected:</string>
+    <string name="tV_order_summary_payment_method_selected_display">Payment Method</string>
+    <string name="tv_order_summary_total_cost_title">Total Cost (incl. shipping):</string>
+    <string name="tv_order_summary_total_cost_display">Cost</string>
+    <string name="b_place_order">PLACE ORDER</string>
+    <string name="tv_order_summary_confirmation_title">ORDER SUMMARY CONFIRMATION</string>
 
 
 </resources>

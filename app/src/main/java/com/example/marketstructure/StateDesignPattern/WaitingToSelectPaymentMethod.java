@@ -8,10 +8,11 @@ public class WaitingToSelectPaymentMethod extends State {
 
     @Override
     public void handle(Event event) {
-        System.out.println("Order status is in WaitingToSelectListing state");
-        status.setState(this);
-    }
-    public String toString(){
-        return "WaitingToSelectListing State";
+        if (event.equals(Event.CardPaymentMethodSelected)) {
+            getOrderStatus().setState(new WaitingToPay(status));
+        }
+        if (event.equals(Event.CashPaymentMethodSelected)) {
+            getOrderStatus().setState(new WaitingToConfirm(status));
+        }
     }
 }

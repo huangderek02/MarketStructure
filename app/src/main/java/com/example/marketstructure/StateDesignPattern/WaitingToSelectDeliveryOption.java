@@ -14,8 +14,5 @@ public class WaitingToSelectDeliveryOption extends State {
         if (event.equals(Event.Cancelled)) {
             getOrderStatus().setState(new Idle(status));
         }
-        if (event.equals(Event.Timeout)) {
-            getOrderStatus().setState(new Idle(status));
-        }
     }
 }

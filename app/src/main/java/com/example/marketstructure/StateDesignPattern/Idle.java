@@ -9,7 +9,7 @@ public class Idle extends State {
     @Override
     public void handle(Event event) {
         if (event.equals(Event.SearchForListing)) {
-            getListing().setState(new WaitingToSelectListing(status));
+            getOrderStatus().setState(new WaitingToSelectListingToView(status));
         }
     }
 }

@@ -1,15 +1,15 @@
 package com.example.marketstructure.StateDesignPattern;
 
-public class WaitingToEnterDeliveryDetails extends State {
+public class WaitingToConfirm extends State {
 
-    public WaitingToEnterDeliveryDetails(OrderStatus status) {
+    public WaitingToConfirm(OrderStatus status) {
         super(status);
     }
 
     @Override
     public void handle(Event event) {
-        if (event.equals(Event.DeliveryDetailsEntered)) {
-            getOrderStatus().setState(new WaitingToSelectPaymentMethod(status));
+        if (event.equals(Event.OrderConfirmed)) {
+            getOrderStatus().setState(new WaitingToDispatch(status));
         }
         if (event.equals(Event.Cancelled)) {
             getOrderStatus().setState(new Idle(status));

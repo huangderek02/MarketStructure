@@ -8,7 +8,8 @@ public abstract class State {
         this.status = status;
     }
 
-    public abstract void handle(Event event);
+    public void handle(Event event) {
+    }
 
     public OrderStatus getOrderStatus() {
         return status;

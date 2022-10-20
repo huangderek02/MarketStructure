@@ -3,23 +3,28 @@ package com.example.marketstructure;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.marketstructure.StateDesignPattern.Event;
+import com.example.marketstructure.StateDesignPattern.OrderStatus;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
+
+    public static OrderStatus status;
+
+    private static final String TAG = "RecyclerViewAdapter";
 
     private final ArrayList<Listing> arrayList;
     private final Context context;
@@ -74,7 +79,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 Intent b = new Intent(view.getContext(),DisplayListingDetailsActivity.class);
                 b.putExtra("listing",listing);
                 context.startActivity(b);
-
+                status = new OrderStatus();
+                status.getState().handle(Event.ListingSelectedToView);
+                Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
             }
         });
 

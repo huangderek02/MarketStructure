@@ -16,10 +16,14 @@
         <entry key="app/src/main/res/layout/activity_checkout_1_delivery_options_menu.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_checkout_1_payment_method_menu.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/activity_checkout_2_collect_in_store.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/layout/activity_checkout_2_delivery_details.xml" value="0.18796296296296297" />
         <entry key="app/src/main/res/layout/activity_checkout_2_delivery_options_menu.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/activity_checkout_3_payment_card.xml" value="0.21822916666666667" />
-        <entry key="app/src/main/res/layout/activity_checkout_3_payment_method_menu.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_checkout_3_payment_method_menu.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_checkout_4_confirm_order.xml" value="0.31745758056640616" />
         <entry key="app/src/main/res/layout/activity_checkout_4_delivery_details.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/layout/activity_checkout_4_payment_card.xml" value="0.18796296296296297" />
+        <entry key="app/src/main/res/layout/activity_checkout_5_confirm.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_checkout_menu.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_collect_in_store.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_collect_instore.xml" value="0.375" />
