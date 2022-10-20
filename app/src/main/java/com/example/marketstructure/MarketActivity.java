@@ -36,6 +36,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import tokenizer_and_parser.TextbookSearcher;
 
@@ -214,7 +220,6 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
          */
 
     }
-
 
     public ArrayList<Listing> addListings() {
         CollectionReference listings = db.collection("listings");
