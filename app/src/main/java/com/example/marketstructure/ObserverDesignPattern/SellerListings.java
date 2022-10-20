@@ -2,16 +2,16 @@ package com.example.marketstructure.ObserverDesignPattern;
 
 import java.util.Objects;
 
-public class BuyerLog {
-    final private Observer observer; // observer that visited the location
-    final private Integer listingsVisited; // tick at which the observer visited the app
+public class SellerListings {
+    final private Observer observer; // seller that has been identified as fraud
+    final private Integer listingNumber; // listing number of identified fraud seller
 
     /**
      * Constructor which sets tuple values
      */
-    public BuyerLog(Observer observer, int tickVisited) {
+    public SellerListings(Observer observer, int tickVisited) {
         this.observer = observer;
-        this.listingsVisited = tickVisited;
+        this.listingNumber = tickVisited;
     }
 
     /**
@@ -22,22 +22,22 @@ public class BuyerLog {
     }
 
     /**
-     * @return current tick value
+     * @return current listng number
      */
-    public int getListingsVisited() {
-        return listingsVisited;
+    public int getListingNumber() {
+        return listingNumber;
     }
 
 
     /**
-     * Prints out the user details
+     * Prints out the seller details
      * @return string containing the information of the user
      */
     @Override
     public String toString() {
-        return "BuyerLog{" +
+        return "SellerListings{" +
                 "observer=" + observer +
-                ", tick=" + listingsVisited +
+                ", listing=" + listingNumber +
                 '}';
     }
 
@@ -45,12 +45,12 @@ public class BuyerLog {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        BuyerLog that = (BuyerLog) o;
-        return observer.equals(that.observer) && listingsVisited.equals(that.listingsVisited);
+        SellerListings that = (SellerListings) o;
+        return observer.equals(that.observer) && listingNumber.equals(that.listingNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(observer, listingsVisited);
+        return Objects.hash(observer, listingNumber);
     }
 }

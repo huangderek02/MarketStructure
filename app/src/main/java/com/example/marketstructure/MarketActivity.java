@@ -111,7 +111,7 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
     public ArrayList<Listing> addListings() {
         CollectionReference listings = db.collection("listings");
         ArrayList<Listing> arrayList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2500; i++) {
             Map<String, Object> listing = new HashMap<>();
             listing.put("listingId", String.valueOf(i));
             listing.put("sellerUsername", getRandomSellerUsername());
