@@ -8,7 +8,7 @@ public class WaitingToPay extends State {
     @Override
     public void handle(Event event) {
         if (event.equals(Event.CardPaymentDetailsEntered)) {
-            getOrderStatus().setState(new WaitingToPay(status));
+            getOrderStatus().setState(new WaitingToConfirm(status));
         }
         if (event.equals(Event.TextbookPaidByCash)) {
             getOrderStatus().setState(new Delivered(status));

@@ -136,7 +136,8 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DisplayListingDetailsActivity.this, DeliveryOptionsMenuActivity.class);
-                intent.putExtra("price", listingFromAdapter.getListingPrice());
+                intent.putExtra("isbn", listingFromAdapter.getTextbook().getIsbn());
+                intent.putExtra("textbookPrice", listingFromAdapter.getListingPrice());
                 startActivity(intent);
                 RecyclerViewAdapter.status.getState().handle(Event.ListingSelectedToBuy);
                 Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");

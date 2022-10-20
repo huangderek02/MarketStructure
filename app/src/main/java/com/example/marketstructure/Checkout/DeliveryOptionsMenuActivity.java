@@ -27,12 +27,18 @@ public class DeliveryOptionsMenuActivity extends AppCompatActivity {
         Button b_express_delivery = findViewById(R.id.b_express_delivery);
         Button b_cancel = findViewById(R.id.b_cancel_delivery);
 
+        Intent intent = getIntent();
+        String isbn = intent.getStringExtra("isbn");
+        String textbookPrice = intent.getStringExtra("textbookPrice");
+
         b_standard_delivery.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("LongLogTag")
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DeliveryOptionsMenuActivity.this,DeliveryDetailsActivity.class);
-                intent.putExtra("deliveryOption", "standard");
+                intent.putExtra("isbn", isbn);
+                intent.putExtra("textbookPrice", textbookPrice);
+                intent.putExtra("deliveryOption", "Standard");
                 startActivity(intent);
                 RecyclerViewAdapter.status.getState().handle(Event.DeliveryOptionSelected);
                 Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
@@ -44,7 +50,9 @@ public class DeliveryOptionsMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DeliveryOptionsMenuActivity.this,DeliveryDetailsActivity.class);
-                intent.putExtra("Delivery Option", "express");
+                intent.putExtra("isbn", isbn);
+                intent.putExtra("textbookPrice", textbookPrice);
+                intent.putExtra("deliveryOption", "Express");
                 startActivity(intent);
                 RecyclerViewAdapter.status.getState().handle(Event.DeliveryOptionSelected);
                 Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");

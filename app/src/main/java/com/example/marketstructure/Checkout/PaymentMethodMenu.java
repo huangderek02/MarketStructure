@@ -27,10 +27,21 @@ public class PaymentMethodMenu extends AppCompatActivity {
         Button b_card_payment = findViewById(R.id.b_card_payment);
         Button b_cancel = findViewById(R.id.b_cancel_payment);
 
+        Intent intent = getIntent();
+        String isbn = intent.getStringExtra("isbn");
+        String textbookPrice = intent.getStringExtra("textbookPrice");
+        String deliveryOption = intent.getStringExtra("deliveryOption");
+        String recipientName = intent.getStringExtra("recipientName");
+        String streetAddress = intent.getStringExtra("streetAddress");
+
         b_cash_payment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PaymentMethodMenu.this,ConfirmOrderActivity.class);
+                intent.putExtra("deliveryOption", deliveryOption);
+                intent.putExtra("recipientName", recipientName);
+                intent.putExtra("streetAddress", recipientName);
+                intent.putExtra("paymentMethod", "Cash");
                 startActivity(intent);
                 RecyclerViewAdapter.status.getState().handle(Event.CashPaymentMethodSelected);
                 Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");
@@ -41,6 +52,12 @@ public class PaymentMethodMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PaymentMethodMenu.this,PaymentCardActivity.class);
+                intent.putExtra("isbn", isbn);
+                intent.putExtra("textbookPrice", textbookPrice);
+                intent.putExtra("deliveryOption", deliveryOption);
+                intent.putExtra("recipientName", recipientName);
+                intent.putExtra("streetAddress", streetAddress);
+                intent.putExtra("paymentMethod", "Card");
                 startActivity(intent);
                 RecyclerViewAdapter.status.getState().handle(Event.CardPaymentMethodSelected);
                 Log.e(TAG,"OrderStatus is in" + RecyclerViewAdapter.status.getState().toString() + "State");

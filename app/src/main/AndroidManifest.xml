@@ -57,6 +57,9 @@
             android:name=".Checkout.PaymentCardActivity"
             android:exported="true" />
         <activity
+            android:name=".Checkout.ConfirmOrderActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>

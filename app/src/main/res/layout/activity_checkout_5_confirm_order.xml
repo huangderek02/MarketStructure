@@ -20,40 +20,28 @@
         app:layout_constraintVertical_bias="0.067" />
 
     <TextView
-        android:id="@+id/tV_order_summary_payment_details_title"
+        android:id="@+id/tv_order_summary_payment_details_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tV_order_summary_payment_details_title"
+        android:text="@string/tv_order_summary_payment_details_title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_delivery_address_display"
-        app:layout_constraintVertical_bias="0.216" />
-
-    <TextView
-        android:id="@+id/tV_order_summary_payment_method_selected_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tV_order_summary_payment_method_selected_title"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.23"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tV_order_summary_payment_details_title"
-        app:layout_constraintVertical_bias="0.054" />
+        app:layout_constraintVertical_bias="0.182" />
 
     <TextView
         android:id="@+id/tV_order_summary_payment_method_selected_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tV_order_summary_payment_method_selected_display"
+        android:text="@string/tv_order_summary_payment_method_selected_display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.162"
-        app:layout_constraintStart_toEndOf="@+id/tV_order_summary_payment_method_selected_title"
-        app:layout_constraintTop_toBottomOf="@+id/tV_order_summary_payment_details_title"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toEndOf="@+id/tv_order_summary_payment_method_selected_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_payment_details_title"
+        app:layout_constraintVertical_bias="0.069" />
 
     <TextView
         android:id="@+id/tv_order_summary_total_cost_title"
@@ -63,9 +51,9 @@
         android:text="@string/tv_order_summary_total_cost_title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.221"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tV_order_summary_payment_method_selected_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_payment_method_selected_title"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -79,7 +67,19 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_order_summary_total_cost_title"
         app:layout_constraintTop_toBottomOf="@+id/tV_order_summary_payment_method_selected_display"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.056" />
+
+    <TextView
+        android:id="@+id/tv_order_summary_payment_method_selected_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_order_summary_payment_method_selected_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_payment_details_title"
+        app:layout_constraintVertical_bias="0.064" />
 
     <Button
         android:id="@+id/b_order_confirm_cancel"
@@ -109,27 +109,14 @@
         android:id="@+id/tv_order_summary_delivery_details_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="54dp"
         android:text="@string/tv_order_summary_delivery_details_title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintHorizontal_bias="0.184"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_textbook_price_title"
-        app:layout_constraintVertical_bias="0.002" />
-
-    <TextView
-        android:id="@+id/tv_order_summary_delivery_address_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/tv_order_summary_delivery_address_title"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_recipient_name_title"
-        app:layout_constraintVertical_bias="0.003" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_order_summary_delivery_option_selected_title"
@@ -138,10 +125,10 @@
         android:text="@string/tv_order_summary_delivery_option_selected_title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_delivery_details_title"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.029" />
 
     <TextView
         android:id="@+id/tv_order_summary_delivery_option_selected_display"
@@ -164,10 +151,10 @@
         android:text="@string/tv_order_summary_recipient_name_title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_delivery_option_selected_title"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <TextView
         android:id="@+id/tv_order_summary_recipient_name_display"
@@ -178,10 +165,10 @@
         android:text="@string/tv_order_summary_recipient_name_display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.004"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_order_summary_recipient_name_title"
         app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_delivery_option_selected_display"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.007" />
 
     <TextView
         android:id="@+id/tv_order_summary_delivery_address_display"
@@ -190,10 +177,23 @@
         android:text="@string/tv_order_summary_delivery_address_display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toEndOf="@+id/tv_order_summary_delivery_address_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_recipient_name_display"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <TextView
+        android:id="@+id/tv_order_summary_delivery_address_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_order_summary_delivery_address_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_delivery_address_title"
-        app:layout_constraintVertical_bias="0.035" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_recipient_name_title"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_textbook_ordered_details_title"
@@ -217,7 +217,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_order_summary_textbook_price_title"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/tv_order_summary_isbn_display"
         app:layout_constraintVertical_bias="0.018" />
 
     <TextView
@@ -245,7 +245,7 @@
         app:layout_constraintVertical_bias="0.018" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tv_order_summary_isbn_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/isbn_display"
