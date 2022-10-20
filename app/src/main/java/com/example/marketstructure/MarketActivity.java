@@ -45,7 +45,8 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
 {
     private RecyclerView recyclerView;
     private ArrayList<Listing> listingsArrayList = new ArrayList<Listing>();
-    private ArrayList<Listing> listingsArrayList2 = new ArrayList<Listing>();
+    public static ArrayList<Listing> listingsArrayList_search = new ArrayList<Listing>();
+
     ProgressDialog progressDialog;
     private Listing listing = new Listing("","",null,"","","","","");
 
@@ -66,6 +67,8 @@ public class MarketActivity extends AppCompatActivity implements RecyclerViewCli
         setContentView(R.layout.activity_market);
 
         listingsArrayList = addListings();
+        listingsArrayList_search = new ArrayList<>(listingsArrayList);
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading Listings...");
