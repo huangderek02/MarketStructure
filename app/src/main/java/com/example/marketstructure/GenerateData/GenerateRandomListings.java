@@ -1,3 +1,8 @@
+/**
+ * This class is used to create the random methods to use for listings
+ * @author Rhonda Luu (u7127350)
+ */
+
 package com.example.marketstructure.GenerateData;
 
 import com.example.marketstructure.Textbook;

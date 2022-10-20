@@ -1,3 +1,4 @@
+// @author Derek Huang (u7300484), Huiguang Zhang (u7366836) & Rhonda Luu (u7127350)
 package com.example.marketstructure;
 
 import android.content.Intent;
@@ -9,17 +10,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.marketstructure.Checkout.DeliveryOptionsMenuActivity;
-import com.example.marketstructure.GenerateData.ReportSellersActivity;
 import com.example.marketstructure.StateDesignPattern.Event;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
 
@@ -31,6 +25,8 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_textbook_detail_viewer);
+
+        TextView tv_fraud_warning = findViewById(R.id.tv_fraud_warning);
 
         ImageView iv_textbook_image = findViewById(R.id.iv_textbook_image);
         TextView tv_listing_id = findViewById(R.id.tv_listing_id_display);
@@ -54,11 +50,7 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         Button b_report_listing = findViewById(R.id.b_report_listing);
         Button b_buy_now= findViewById(R.id.b_buy_now);
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
         Intent intent = getIntent();
-        //String documentId = intent.getStringExtra("documentId");
-
         Listing listingFromAdapter = (Listing) intent.getExtras().getSerializable("listing");
         int textbookImageId = getResources().getIdentifier("@drawable/"+listingFromAdapter.getTextbook().getTextbookImageName(),null, getPackageName());
         Drawable resources = getResources().getDrawable(textbookImageId);
@@ -70,53 +62,18 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         tv_isbn.setText(listingFromAdapter.getTextbook().getIsbn());
         tv_textbook_name.setText(listingFromAdapter.getTextbook().getTitle());
         tv_authors.setText(listingFromAdapter.getTextbook().getAuthors());
-
         tv_edition.setText(String.valueOf(listingFromAdapter.getTextbook().getEdition()));
-
         tv_year_published.setText(String.valueOf(listingFromAdapter.getTextbook().getYearPublished()));
-
         tv_number_of_pages.setText(String.valueOf(listingFromAdapter.getTextbook().getNumberOfPages()));
-
         tv_topic_code.setText(listingFromAdapter.getTextbook().getTopicCode());
         tv_topic.setText(listingFromAdapter.getTextbook().getTopic());
         tv_additional_details.setText(listingFromAdapter.getAdditionalDetails());
         tv_seller.setText(listingFromAdapter.getSellerUsername());
         tv_listing_last_updated.setText(listingFromAdapter.getListingLastUpdatedDate());
 
-
-//        DocumentReference documentReference = db.collection("listings").document(documentId);
-//        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                if (task.isSuccessful()) {
-//                    DocumentSnapshot documentSnapshot = task.getResult();
-//                    if (documentSnapshot.exists()) {
-//                        int textbookImageId = getResources().getIdentifier(documentSnapshot.getString("textbookImageName"), "drawable", getPackageName());
-//                        iv_textbook_image.setImageResource(textbookImageId);
-//                        tv_listing_id.setText(documentSnapshot.getString("listingId"));
-//                        tv_listing_status.setText(documentSnapshot.getString("listingStatus"));
-//                        tv_condition.setText(documentSnapshot.getString("condition"));
-//                        tv_listing_price.setText(documentSnapshot.getString("listingPrice"));
-//                        tv_isbn.setText(documentSnapshot.getString("isbn"));
-//                        tv_textbook_name.setText(documentSnapshot.getString("title"));
-//                        tv_authors.setText(documentSnapshot.getString("authors"));
-//                        tv_edition.setText(documentSnapshot.getString("edition"));
-//                        tv_year_published.setText(documentSnapshot.getString("yearPublished"));
-//                        tv_number_of_pages.setText(documentSnapshot.getString("numberOfPages"));
-//                        tv_topic_code.setText(documentSnapshot.getString("topicCode"));
-//                        tv_topic.setText(documentSnapshot.getString("topic"));
-//                        tv_additional_details.setText(documentSnapshot.getString("additionalDetails"));
-//                        tv_seller.setText(documentSnapshot.getString("seller"));
-//                        tv_listing_last_updated.setText(documentSnapshot.getString("listingLastUpdatedDate"));
-//                        Log.d(TAG, "DocumentSnapshot data: " + documentSnapshot.getData());
-//                        } else {
-//                            Log.d(TAG, "No such document");
-//                        }
-//                    } else {
-//                        Log.d(TAG, "get failed with ", task.getException());
-//                    }
-//                }
-//        });
+        if (tv_listing_status.getText() == "Fraud Listing/Seller Identified") {
+//            tv_fraud_warning.isShown();
+        }
 
         b_message_seller.setOnClickListener(new View.OnClickListener() {
             @Override

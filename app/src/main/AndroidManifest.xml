@@ -24,7 +24,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".GenerateData.ReportSellersActivity"
+            android:name=".ReportSellersActivity"
             android:exported="true" />
         <activity
             android:name=".ProfileActivity"

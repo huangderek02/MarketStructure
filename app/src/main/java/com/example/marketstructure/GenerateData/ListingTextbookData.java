@@ -1,3 +1,7 @@
+/**
+ * This class is used for string storage of data.
+ * @author Rhonda Luu (u7127350)
+ */
 package com.example.marketstructure.GenerateData;
 
 import com.example.marketstructure.Textbook;

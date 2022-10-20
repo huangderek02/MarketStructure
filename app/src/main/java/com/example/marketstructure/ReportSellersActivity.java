@@ -1,4 +1,4 @@
-package com.example.marketstructure.GenerateData;
+package com.example.marketstructure;
 
 import androidx.appcompat.app.AppCompatActivity;
 

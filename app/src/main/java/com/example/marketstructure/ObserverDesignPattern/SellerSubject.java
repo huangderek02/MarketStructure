@@ -1,3 +1,4 @@
+// @author Derek Huang (u7300484)
 package com.example.marketstructure.ObserverDesignPattern;
 
 import java.util.*;
@@ -11,14 +12,14 @@ import java.util.*;
  */
 public class SellerSubject implements Subject<User> {
     private final int sellerId;
-    private final Set<BuyerLog> buyerLogs;
-    private int currentLocationTick;
+    private final Set<SellerListings> buyerLogs;
+    private int currentListingNumber;
 
     /**
      * Constructor which sets class values.
      */
     public SellerSubject(int locationId) {
-        currentLocationTick = 0; // setting the 'location clock' to zero
+        currentListingNumber = 0; // setting the 'location clock' to zero
         this.sellerId = locationId;
         this.buyerLogs = new HashSet<>();
     }
@@ -33,13 +34,10 @@ public class SellerSubject implements Subject<User> {
 
     /**
      * Updates the current listing of the seller
-     * @param incQuantity amount by which to increment the tick
+     * @param incListingNumber amount by which to increment the tick
      */
-    public void incLocationTick(int incQuantity) {
-        // TODO: write this method so that it increments the current location tick (currentLocationTick)
-        // YOUR CODE STARTS HERE
-        currentLocationTick = currentLocationTick + incQuantity;
-        // YOUR CODE ENDS HERE
+    public void incListingNumber(int incListingNumber) {
+        currentListingNumber = currentListingNumber + incListingNumber;
     }
 
 
@@ -48,7 +46,7 @@ public class SellerSubject implements Subject<User> {
      * @param observer user to be added.
      */
     public void attach(Observer observer) {
-        buyerLogs.add(new BuyerLog(observer,currentLocationTick));
+        buyerLogs.add(new SellerListings(observer, currentListingNumber));
     }
 
     /**
@@ -58,18 +56,13 @@ public class SellerSubject implements Subject<User> {
      * @param observer to remove
      */
     public void detach(Observer observer) {
-        // TODO: write this method so that it removes the attendance log at the current tick which contains the provided observer.
-        // YOUR CODE STARTS HERE
-//        attendanceLogs.removeIf(log -> log.getObserver().equals(observer));
-        BuyerLog pointer = null;
-        for(BuyerLog log: buyerLogs){
+        SellerListings pointer = null;
+        for(SellerListings log: buyerLogs){
             if(log.getObserver().equals(observer)){
                 pointer = log;
             }
         }
         buyerLogs.remove(pointer);
-
-        // YOUR CODE ENDS HERE
     }
 
 
@@ -80,21 +73,15 @@ public class SellerSubject implements Subject<User> {
      *                      for the scam
      */
     public void notifyObservers(User scammedPerson) {
-        /*
-        TODO: write this method so that it notifies all users that visited the location at the same time as the infected user within 10 listings
-        Hint: all observers already have an 'update()' method.
-         */
-        // YOUR CODE STARTS HERE
-
         int listing = 0;
         int listingstart = 0;
-        int listingend = currentLocationTick;
+        int listingend = currentListingNumber;
 
         List<Integer> listings = new ArrayList<>();
-        for(BuyerLog buyerLog :buyerLogs){
+        for(SellerListings buyerLog :buyerLogs){
 
             if (buyerLog.getObserver().equals(scammedPerson)){
-                listing = buyerLog.getListingsVisited();
+                listing = buyerLog.getListingNumber();
                 listings.add(listing);
             }
         }
@@ -103,16 +90,12 @@ public class SellerSubject implements Subject<User> {
         }
 
         for(int l:listings){
-            for(BuyerLog log:buyerLogs){
-                if(log.getListingsVisited() >= listingstart && log.getListingsVisited()<=listingend && log.getListingsVisited() == l){
+            for(SellerListings log:buyerLogs){
+                if(log.getListingNumber() >= listingstart && log.getListingNumber()<=listingend && log.getListingNumber() == l){
                     log.getObserver().update();
                 }
             }
-            //
         }
-
-
-        //YOUR CODE ENDS HERE
     }
 
     /**

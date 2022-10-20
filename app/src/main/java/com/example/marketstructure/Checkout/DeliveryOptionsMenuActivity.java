@@ -1,3 +1,9 @@
+/**
+ * This class is used for the activity_checkout_1_delivery_options_menu activity screen.
+ * It shows the different delivery options.
+ * @author Rhonda Luu (u7127350)
+ */
+
 package com.example.marketstructure.Checkout;
 
 import androidx.appcompat.app.AppCompatActivity;

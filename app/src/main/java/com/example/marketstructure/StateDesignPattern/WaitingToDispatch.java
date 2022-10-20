@@ -1,3 +1,4 @@
+// @author Rhonda Luu (u7127350)
 package com.example.marketstructure.StateDesignPattern;
 
 public class WaitingToDispatch extends State {

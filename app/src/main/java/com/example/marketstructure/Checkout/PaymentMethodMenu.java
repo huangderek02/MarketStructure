@@ -1,3 +1,9 @@
+/**
+ * This class is used for the activity_checkout_3_payment_method_menu activity screen.
+ * It shows the different payment options.
+ * @author Rhonda Luu (u7127350)
+ */
+
 package com.example.marketstructure.Checkout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +18,6 @@ import com.example.marketstructure.MarketActivity;
 import com.example.marketstructure.R;
 import com.example.marketstructure.RecyclerViewAdapter;
 import com.example.marketstructure.StateDesignPattern.Event;
-import com.example.marketstructure.StateDesignPattern.OrderStatus;
 
 public class PaymentMethodMenu extends AppCompatActivity {
 

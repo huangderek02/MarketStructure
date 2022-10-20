@@ -1,4 +1,5 @@
-package com.example.marketstructure;
+// @author Huiguang Zhang (u7366836)
+package com.example.marketstructure.Messaging;
 
 public class Msg {
     public static final int TYPE_RECEIVED = 0;

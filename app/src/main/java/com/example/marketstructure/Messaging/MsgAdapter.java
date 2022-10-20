@@ -1,4 +1,5 @@
-package com.example.marketstructure;
+// @author Huiguang Zhang (u7366836)
+package com.example.marketstructure.Messaging;
 
 
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.marketstructure.R;
 
 import java.util.List;
 public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder>{
