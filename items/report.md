@@ -50,7 +50,9 @@ U7117043, Gordon Lum, Contribution: X%
 * [[Tokenizer](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Tokenizer.java)](Entire Class)
 * [[TextbookSearcher](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/TextbookSearcher.java)] (Entire Class)
 * All test classes in [tokenizer_and_parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/test/java/tokenizer_and_parser)
+* [[MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java)] methods: updateTextbooks(), sortRecycle(), updateRecycle(), sortResults(), [lines 261 onwards](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L261)
 
+* Filled out parts of the report: Application Description, UML for [[BTree, Parser, Textbook, TextbookSearcher, Tokenizer classes](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/items/images)], Data Structures for ArrayList and BTree, Grammar, Tokenizer and Parser, Bugs for BTree, Testing related to Search function
 
 U7300484, Derek Huang, Contribution: X%
 * A.class
@@ -170,11 +172,11 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 1. ArrayList
 
-   * Objective: It is used for storing BTree keys and children for textbook searcher, Used to return a list of tokens in Tokenizer, Used to store list of symbols, keywords, digits in Tokenizer 
+ * Objective: It is used for storing BTree keys and children for textbook searcher, Used to return a list of tokens in Tokenizer, Used to store list of symbols, keywords, digits in Tokenizer 
 
-   * Locations: line 40 and 41 in BTree.java, line 41, 43, 45, 157 Tokenizer.java
+ * Locations: line 40 and 41 in BTree.java, line 41, 43, 45, 157 Tokenizer.java
 
-   * Reasons:
+ * Reasons:
 
      * Provides faster access to elements in the middle of list compared to linkedlist (O(1))
 
@@ -182,9 +184,22 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
      * Size is not fixed. Can keep adding elements
 
-     * 
 
-2. ...
+
+2. B-Tree
+
+ * Objective: It is used to store textbooks/listings in a way that allows for fast searching. 
+ 
+ * Location: [BTree Class](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/BTree.java)
+ 
+ * Reasons:
+ 	
+ 	* Provides a faster way to search for elements than in a list
+ 	
+ 	* Provides a way to store much more objects in a single node and completely balanced compared to BST, Red black tree and other tree variants
+ 	
+ 
+ 
 
 3. ...
 
@@ -196,6 +211,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
   - We used the State design pattern as the are a few process to go through before proceeding to payment
 
 * Singleton 
+  - The singleton design patter is used in the [Parser Class](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java) to ensure that only a single instance of a Parser exists. A parser instance contains many variables and thus to save memory, a singleton ensures that at most only one instance exists.
 
 * Observer (?)
 
@@ -207,20 +223,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 Production Rules:
 
-* Abbreviations:
-* - exp = expression
-* - id = identifier
-* - op = operation/operator
-* - int = integer
-    
--      <exp> ::= <term>, <exp> | <term>
--      <term> ::= <id> | <op_keyword> | <id_keyword> 
--      <id>	::= (any string non keyword or symbol string)
--      <op_keyword> ::= PAGES <op> <int> | COST <op> <int> | EDITION <op> <int>
--      <op> ::= < | > | =
--      <int> ::= (any positive or 0 integer less than 9999)
--      <id_keyword> ::= TOPIC: <id> | CODE: <id> | ISBN: <isbn>
--      <isbn> ::= (a string that conforms to isbn format, see isbn section below) 
+![See CFG.PNG](./images/CFG.PNG) <br>
 
 [ISBN]
 
@@ -288,7 +291,7 @@ Instantiate BTree with a larger maxKeys value to avoid. This solution works due 
 
 **Tests for Classes Related to Search Function**
 
-Test classes for BTree, Tokenizer and Parser classes were created to increase confidence in the reliability of the search function. It is noted that a test class for TextbookSearcher is not included but should be if further work beyond the project is done. For the test classes that exist a "high" code coverage in the 90%+ is reached but this is an unreliable value to use when considering what is actually tested. Reliability on each class is commented on in descriptions provided. 
+Test classes for BTree, Tokenizer and Parser classes were created to increase confidence in the reliability of the search function. It is noted that a test class for TextbookSearcher is not included but should be if further work beyond the project is done. However methods were 'tested' in a main method during creation to ensure some indication of correct funtionality. For the test classes that exist a "high" code coverage in the 90%+ is reached but this is an unreliable value to use when considering what is actually tested. Reliability on each class is commented on in descriptions provided. 
 
 ![Search Function Coverage](./images/SearchCoverage.PNG) <br>
 
