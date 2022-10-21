@@ -28,21 +28,21 @@
 U7117043, Gordon Lum, Contribution: 20%
 * [[BTree](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/BTree.java)] (Entire Class)
 * [[Parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java)] (Entire Class)
-* [[Tokenizer](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Tokenizer.java)] (Entire Class)
+* [[Tokenizer](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Tokenizer.java)](Entire Class)
 * [[TextbookSearcher](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/TextbookSearcher.java)] (Entire Class)
 * All test classes in [tokenizer_and_parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/test/java/tokenizer_and_parser)
 * [[MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java)] methods: updateTextbooks(), sortRecycle(), updateRecycle(), sortResults(), [lines 261 onwards](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L261)
 * Filled out parts of the report: Application Description, Data Structure: ArrayList and BTree, UML for [[Application Flow (UI_UML_total), Search_Function_UML and there related images](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/items/images)], Data Structures for ArrayList and BTree, Grammar Section, Tokenizer and Parser Section, Bugs for BTree, Testing related to Search function. Helped with presentation creation
-* Helped with presentation creation
 <br>
+* Helped with presentation creation
 
 U7300484, Derek Huang, Contribution: 20%
-- [ObserverDesignPattern (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)] (Entire Package)
-* [Sellers (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)] (Created class)
-* [DisplayListingDetailsActivity (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 53 - 72, 79-100)
-* [MarketActivity] (Lines 75-97, Lines 101-108)
+- [[ObserverDesignPattern] (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)] (Entire Package)
+* [[Sellers] (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)] (Created class)
+* [[DisplayListingDetailsActivity] (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 53 - 72, 79-100)
+* [[MarketActivity]] (Lines 75-97, Lines 101-108)
 * Helped with presentation creation
-<br>
+* <br>
 
 U7366836, Huiguang Zhang, Contribution: 20%
 * [DisplayListingDetailsActivity (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 0 - 72)
@@ -53,7 +53,7 @@ U7366836, Huiguang Zhang, Contribution: 20%
 * [MarketActivity(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java)] (read data from database and sent the data to recycleViewer to show the list)
 * [RecyclerViewAdapter(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] (read data from recycleViewer and sent the data to DisplayListingDetailsActivity to show the details)
 * Helped with presentation creation
-<br>
+* <br>
 
 U7444134, Ratchanont Treevijitpaisan, Contribution: 20%
 * [[LoginActivity]([[UI design and Firebase Authentication](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/LoginActivity.java)] (Entire Class)
@@ -82,7 +82,7 @@ U7127350 , Rhonda Luu, Contribution: 20% <br>
    - [[onClickListener() for Buy Now Button](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L102-112)]
 * [[card_layout.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/card_layout.xml)] (Entire card layout UI)
 * [[activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml)] (Rearranged UI elements created by Huiguang and added in additional TextViews to display each of the fields)
-<br>
+ <br>
 
 **Part 1: Basic App - Design Patterns**<br>
 **Code Design:**
@@ -148,7 +148,7 @@ The group member who requires a decision to be made should contact the other mem
 
 ## Application Description
 
-Textbook Warehouse is a marketplace application that is specifically made for university students. It provides a quick and easy way to obtain cheaper, secondhand textbooks and avoid having to purchase new ones. Clients can create an account using an email and password to be able to access these services, search for textbooks and view available listings with different prices and sellers. 
+Textbook Warehouse is a marketplace application that is specifically made for university students. It provies a quick and easy way to obtain cheaper, secondhand textbooks and avoid having to purchase new ones. Clients can create an account using an email and password to be able to access these services, search for textbooks and view available listings with different prices and sellers. 
 
 
 **Application Use Cases and Examples**
@@ -168,7 +168,7 @@ Target Users: Students studying at university
 * User gets warned about potential fraud and scams 
 
 
-Bob is studying for a building degree and is currently enrolled in BUIL1011, BUIL1100 and ENGN1211. He wants to purchase the textbooks for further study but like most university, is poor and doesn't want to be eating 2 minute noodles for the entire semester. 
+Bob is studying for a building degree and is currently enrolled in BUIL1011, BUIL1100 and ENGN1211. He wants to purchase the textbooks for further study but like most university, is poor and doesnt want to be eating 2 minute noodles for the entire semester. 
 * Bob needs to buy 3 textbooks
 * He creates an account with an email and password on [app name]
 * He logs in to his account which takes him to the marketplace
@@ -237,10 +237,6 @@ MarketActivity Dependency:
     - [DeliveryDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/DeliveryDetailsActivity.java#L96-97)
     - [ConfirmOrderActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/ConfirmOrderActivity.java#L80-81)
 
-![State Design Pattern UML](./images/StateDesignPatternUML.png)<br>
-![State Design Pattern Transition Diagram](./images/StateDesignPatternTransitionDiagram.png)<br>
-
-
 * Singleton 
   - The singleton design patter is used in the [Parser Class](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java) to ensure that only a single instance of a Parser exists. A parser instance contains many variables and thus to save memory, a singleton ensures that at most only one instance exists.
   <br>
@@ -267,7 +263,7 @@ Only the number string is stored (including leading zeroes)
 
 * Non-ambiguous grammar.
 * All strings are accepted as a valid grammar due to being apart of a searcher
-* A comma is used to separate terms from each other. Comma is an intuitive separator and not common in titles. Titles that have a comma do not start with one allowing for search to occur even if it does.
+* A comma is used to separate terms from each other. Comma is an inuitive separator and not common in titles. Titles that have a comma do not start with one allowing for search to occur even if it does.
 
 
 **Tokenizer and Parser Classes**
@@ -275,7 +271,7 @@ Only the number string is stored (including leading zeroes)
 
 The tokenizer class is used to convert a search string into the parts that define the Context Free Grammar and is used by the parser class. The tokenizer developed accepts all strings and does not throw an error due to its use in a searcher. It ignores whitespace between important characters, keywords and terms as they are unimportant to the grammar and could cause errors in the parser. 
 
-The tokenizer can store positive integers (including 0) below 10000 and stores other integers as a string, it stores operators as Characters and it stores important keywords and all other terms as strings. It is noted that this implementation could be improved by using enumerators to help the parser in its decision making by instead checking the type of the token rather than if a token is a keyword. 
+The tokenizer can store positive integers (including 0) below 10000 and stores other integers as a string, it stores operators as Characters and it stores important keywords and all other terms as strings. It is noted that this implementation could be improved by using enumerators to help the parser in its decison making by instead checking the type of the tokne rather than if a token is a keyword. 
 
 The tokenizer instantly converts a string into tokens which is a design choice to split the process of searching for a textbook into individual parts. This simplifies the testing of the parser as it is no longer repeatedly calling the tokenizer class when dealing with tokens allowing for easier identification of an error between the tokenizer and parser. Tokens are stored as an Arraylist due to the inbuilt methods in the List interface allowing for quick access and removal of tokens compare to arrays.
 
@@ -306,16 +302,23 @@ Location: [BTree] Class > insert() method: Causes Null Pointer Exception when in
 
 Description: 
 
-[BTreeTest] Class has a test that produces the error. It is believed that the error occurs due to a pointer error where the parent is not correctly assigned and occurs during the split() method. This is because the BTree works as intended if its height is at most 3 and fails when attempting to split to a height of 4. 
+[BTreeTest] Class has a test that produces the error. It is believed that the error occurs due to a pointer error where the parent is not correctly assigned and occurs during the split() method. This is because the BTree works as intended if its height is atmost 3 and fails when attempting to split to a height of 4. 
 
 Work around solution:
 
-Instantiate BTree with a larger maxKeys value to avoid. This solution works due to the lower number of textbooks used. In addition a BTree generally does not have a large height but it will be an issue if the app is up scaled to contain much more textbooks. 
+Instantiate BTree with a larger maxKeys value to avoid. This solution works due to the lower number of textbooks used. In addition a BTree generally does not have a large height but it will be an issue if the app is upscaled to contain much more textbooks. 
 
 
 
 2. *Observer Design Pattern not linked to UI*
-    The plan was to use the Observer Design Pattern to notify users of a fraudulent listing. When the seller makes a fraudulent listing, there is supposed to be an entity acting as a shadow of the seller, who notifies the users when the seller does so. That entity has the same attributes as the seller. 
+Severity/Priority: High (Affects major feature. Minor work around required)
+
+    The plan was to use the Observer Design Pattern to notify users of a fraudulent listing. When the seller makes a fraudulent listing, there is supposed to be an entity acting as a shadow of the seller, who notifies the users when the seller does so. That entity has the same attributes as the seller. However, due to time constraints, it could not be implemented. This was an important part of the suprize feature and this was the third and final design pattern we planned to implement.
+
+
+Work around solution:
+Give the seller the same attributes as what was implemented in the Observer Design Pattern, and learn how to implemented an Observer Design Pattern together with the UI.
+
 3. Firebase Integration issues
 
 Severity/Priority: Medium (Affects major feature. Minor work around required)
@@ -323,7 +326,7 @@ Severity/Priority: Medium (Affects major feature. Minor work around required)
 Location: https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure
 
 Description: 
-When we create a new account, normally it will linked the account with firebase authentication services and cloud firestore which editing user details might get some errors. For instance, User update profile, normally user will get update realtime at cloud firestore. Unfortunately, Firebase authentication services need more implementation to update the user authentication realtime.
+When we create a new account, normally it will linked the account with firebase authentication services and cloudfirestore which editing user details might get some errors. For instance, User update profile, normally user will get update realtime at cloudfirestore. Unfortunately, Firebase authentication services need more implementation to update the user authentication realtime.
 
 Work around solution:
 Try to understand the firebase re authentication method to fix these issue
@@ -333,7 +336,7 @@ Try to understand the firebase re authentication method to fix these issue
 
 **Tests for Classes Related to Search Function**
 
-Test classes for BTree, Tokenizer and Parser classes were created to increase confidence in the reliability of the search function. It is noted that a test class for TextbookSearcher is not included but should be if further work beyond the project is done. However methods were 'tested' in a main method during creation to ensure some indication of correct functionality. For the test classes that exist a "high" code coverage in the 90%+ is reached but this is an unreliable value to use when considering what is actually tested. Reliability on each class is commented on in descriptions provided. 
+Test classes for BTree, Tokenizer and Parser classes were created to increase confidence in the reliability of the search function. It is noted that a test class for TextbookSearcher is not included but should be if further work beyond the project is done. However methods were 'tested' in a main method during creation to ensure some indication of correct funtionality. For the test classes that exist a "high" code coverage in the 90%+ is reached but this is an unreliable value to use when considering what is actually tested. Reliability on each class is commented on in descriptions provided. 
 
 ![Search Function Coverage](./images/SearchCoverage.PNG) <br>
 
@@ -354,7 +357,7 @@ The focus of the tests is on the values of a BTree's keys as it is where Textboo
 
 8 Test Cases:
 - Tests Strings stored in searchTerms
-- Tests Strings stored in topicTerms
+- Tests Strings stored in topichTerms
 - Tests Strings stored in codeTerms
 - Tests Strings stored in errorTerms
 - Tests String stored in ISBN
@@ -460,8 +463,8 @@ Feature Category: Voice Your Feature <br>
 1. Feature 1: User registration including changing details (easy) (Approved suggested feature)
    * Class: [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java), (The class is used to register a new user, all methods) Lines of code: 28-159
    * Class: [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
-   * Description: Users may create an account using an email and password. Password needs to be at least 6 characters long and user needs to confirm the password. The account can be used to login to the application. A progress bar shows how far the user is from creating a new account. Users can change their password and email or delete their account in their profile page.
-   <br>
+   * Description: Users may create an account using an email and password. Password needs to be atleast 6 characters long and user needs to confirm the password. The account can be used to login to the application. A progress bar shows how far the user is from creating a new account. Users can change their password and email or delete their account in their profile page.
+<br>
 
 Feature Category: Peer to Peer Messaging <br>
 2. Feature 2: Provide users with the ability to message each other directly (hard) (listed as 1 under the category on the assignment sheet)
@@ -496,17 +499,17 @@ Feature Category: UI Design and Testing <br>
    * Description: Espresso has been used to test Login and Register.
 
 Feature Category: Surprise <br>
-7. Feature 7: Fraud Behaviours/Scams
-   * Class: [listing status](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java#L167-168)
-   * Class: [Sellers](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java#L87-104)
-   * Class: [DisplayListingDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L74-77)
-   * Class: [ReportSellersActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ReportSellersActivity.java)
-   * Package: [ObserverDesignPattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)
-   * UI Design: [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-481) (fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481), please note it is currently set invisible)
-   * UI Design: [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443)
-   * UI Design: [activity_report_sellers.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_report_sellers.xml)
-   * Description: UI elements include a fraudulent warning textView and a warning sign imageView to warn the user when clicking on a listing of a fraudulent seller and before entering their card payment details. The report listing button was created with the intention to enable the user to notify us that the listing and associated seller is fraudulent where we would in turn update the to "Fraud Listing/Seller Identified." The user is also able to record details of the fraudulent activity for us to look into as it navigates to another screen when the button is pressed. The user can click on a button to flag the seller inside the seller's profile. This will update the seller's status and a message pops up saying that the administrators will look into the seller.
-   * Note: Unfortunately, this was only partially implemented.
+6. Feature 7: Fraud Behaviours/Scams
+    * Class: [listing status](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java#L167-168)
+    * Class: [Sellers](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java#L87-104)
+    * Class: [DisplayListingDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L74-77)
+    * Class: [ReportSellersActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ReportSellersActivity.java)
+    * Package: [ObserverDesignPattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)
+    * UI Design: [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-481) (fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481), please note it is currently set invisible)
+    * UI Design: [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443)
+    * UI Design: [activity_report_sellers.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_report_sellers.xml)
+    * Description: UI elements include a fraudulent warning textView and a warning sign imageView to warn the user when clicking on a listing of a fraudulent seller and before entering their card payment details. The report listing button was created with the intention to enable the user to notify us that the listing and associated seller is fraudulent where we would in turn update the to "Fraud Listing/Seller Identified." The user is also able to record details of the fraudulent activity for us to look into as it navigates to another screen when the button is pressed. The user can click on a button to flag the seller inside the seller's profile. This will update the seller's status and a message pops up saying that the administrators will look into the seller.
+    * Note: Unfortunately, this was only partially implemented.
 
 ## Team Meetings
 
