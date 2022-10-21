@@ -199,9 +199,11 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 ## Application UML
 
-![ClassDiagramExample](./images/ClassDiagramExample.png) <br>
-*[Replace the above with a class diagram. You can look at how we have linked an image here as an example of how you can do it too.]*
+![Application Diagram](./images/UI_UML_total) <br>
 
+MarketActivity Dependency:
+
+![Search Function](./images/Search_Function_UML.png) <br>
 ## Application Design and Decisions
 
 *Please give clear and concise descriptions for each subsections of this part. It would be better to list all the concrete items for each subsection and give no more than `5` concise, crucial reasons of your design. Here is an example for the subsection `Data Structures`:*
