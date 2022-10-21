@@ -57,8 +57,8 @@ U7117043, Gordon Lum, Contribution: X%
 
 U7300484, Derek Huang, Contribution: X%
 - [ObserverDesignPattern] (Entire Package)
-* [Seller] (Created class)
-* [DisplayListingDetailsActivity] (Lines 53 - 72)
+* [Sellers] (Created class)
+* [DisplayListingDetailsActivity] (Lines 53 - 72, 79-100)
 * [MarketActivity] (Lines 75-97, Lines 101-108)
 
 
@@ -401,12 +401,17 @@ Feature Category: Voice Your Feature <br>
 
 Feature Category: Firebase Integration <br>
 
-1. Use Firebase to implement user Authentication/Authorisation. (easy)
+3. Use Firebase to implement user Authentication/Authorisation. (easy)
    * Class [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java) Method: createUser, lines: 123 - 60
     * Class [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
    * Description: Users account are stored on Firebase. Creating an accouting or changing user profile details access Firebase and update these details.
 
 *List all features you have completed in their separate categories with their difficulty classification. If they are features that are suggested and approved, please state this somewhere as well.*
+
+4. The ability to micro-interact with items in your app
+    * Class [Sellers]
+
+    *Description: The user can use the rating bar in the activity_seller to give the seller a rating. Although the rating bar have increments of 0.5 from 0 - 5, the rating is rounded down to the nearest whole number e.g. 0.5 goes down to 0. Each time the seller clicks on the rating bar, a Toast message is displayed based on the different cases for the different possible scores. In addition, the rating for each click is stored in an arrayList.
 
 ## Team Meetings
 
