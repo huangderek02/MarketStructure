@@ -199,7 +199,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 ## Application UML
 
-![Application Diagram](./images/UI_UML_total) <br>
+![Application Diagram](./images/UI_UML_total.png) <br>
 
 MarketActivity Dependency:
 
