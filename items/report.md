@@ -200,7 +200,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 *I used the following data structures in my project:*
 
-
+*[What data structures did your team utilise? Where and why?]*
 
 **Data Structures**
 
@@ -237,8 +237,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 3. ...
 
-*[What data structures did your team utilise? Where and why?]*
-
+*[What design patterns did your team utilise? Where and why?]*
 **Design Patterns**
 
 * State
@@ -260,8 +259,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 - However, it was not successfully linked to the following UI elements:
      - A warning sign imageView and fraudulent warning textView in [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443) and [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-231). 
      - A fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481) in [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-481).
-
-*[What design patterns did your team utilise? Where and why?]*
+     
 
 **Grammar**
 
