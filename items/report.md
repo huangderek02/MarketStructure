@@ -113,6 +113,9 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 - [[activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml)] (Entire UI activity screen)
 - [[activity_checkout_5_confirm_order.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_5_confirm_order.xml)] (Entire UI activity screen)
 
+**Surprise Feature: identify fraudulent behaviours/scams**<br>
+**UI Design:** 
+
 *you should ALSO provide links to the specified classes and/or functions*
 
 *[Code Design. What design patterns, data structures, did the involved member propose?]*
@@ -143,7 +146,7 @@ The group member who requires a decison to be made should contact the other memb
 
 [Other responsibilities]
 
-1. Everyone must use good code documentation to ensure that others can read through the code easily and troublshoot the issue/help complete the task.
+1. Everyone must use good code documentation to ensure that others can read through the code easily and troubleshoot the issue/help complete the task.
 2. Time estimates will be set to complete tasks.
 3. Updates on our progress on tasks and any issues will be communicated in the group chat and in team meetings, we might use trello (Rhonda will look into this)
 5. Ensure that diagrams are clear, large and easier for marker/team members to read
@@ -151,7 +154,7 @@ The group member who requires a decison to be made should contact the other memb
 
 ## Application Description
 
-TextWarehouse is a markplace application that is specifically made for university students. It provies a quick and easy way to obtain cheaper, secondhand textbooks and avoid having to purchase new ones. Clients can create an account using an email and password to be able to access these services, search for textbooks and view available listings with different prices and sellers. 
+Textbook Warehouse is a marketplace application that is specifically made for university students. It provies a quick and easy way to obtain cheaper, secondhand textbooks and avoid having to purchase new ones. Clients can create an account using an email and password to be able to access these services, search for textbooks and view available listings with different prices and sellers. 
 
 
 **Application Use Cases and Examples**
@@ -239,13 +242,24 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 **Design Patterns**
 
 * State
-  - We used the State design pattern as the are a few process to go through before proceeding to payment
+  - The [State design pattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/StateDesignPattern) to handle the events for the chain of actions/steps involved in the ordering process from searching for a textbook, selecting a textbook to buy to payment, delivery and confirmation of the order.
+  - It was used in the following classes:
+    - [MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java#L83-86)
+    - [DisplayListingDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L109-110)
+    - [PaymentMethodMenu](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/PaymentMethodMenu.java#L51-77) (Lines 51-52, 67-68 and 76-77)
+    - [PaymentCardActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/PaymentCardActivity.java#L87-99) (Lines 87-88 and 98-99)
+    - [DeliveryOptionsMenuActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/DeliveryOptionsMenuActivity.java#L49-75) (Lines 49-50, 63-64 and 74-75)
+    - [DeliveryDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/DeliveryDetailsActivity.java#L96-97)
+    - [ConfirmOrderActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/ConfirmOrderActivity.java#L80-81)
 
 * Singleton 
   - The singleton design patter is used in the [Parser Class](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java) to ensure that only a single instance of a Parser exists. A parser instance contains many variables and thus to save memory, a singleton ensures that at most only one instance exists.
 
 * Observer (?)
-  - The Observer Design Pattern was not successfully linked to the UI. However, it was attempted to be implemented as we believe that all users should be notified when a fraudulent listing was made. 
+  - The Observer Design Pattern was not successfully linked to the following UI elements:
+     - A warning sign imageView and fraudulent warning textView in [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443) and [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-231). 
+     - A fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481) in [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-481). 
+  - However, it was attempted to be implemented as we believe that all users should be notified when a fraudulent listing was made. 
 
 
 *[What design patterns did your team utilise? Where and why?]*
