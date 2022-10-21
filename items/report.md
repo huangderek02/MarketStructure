@@ -76,28 +76,42 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 
 *U7127350 , Rhonda Luu, Contribution: X% <br>
 **Part 1: Basic App - Task 2 - Created data file with at least 2,500 valid data instances**<br>
-**Code Design:** <br>
 * [[GenerateData](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/GenerateData)] (All classes in Package)
-* [[MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)]: [[addListings() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)], [[Added ProgressDialog in onCreate() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L61-63)]
-   - [[listings collection in Firebase repository](https://console.firebase.google.com/project/marketplace-db-6139c/firestore/data/~2Flistings~2F0)] (Added from [[addListings() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)] in [[onCreate() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L61-63)]
-
-* [[Listing](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Listing.java)] (Entire Class)
-* [[Listing](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Listing.java)] (Entire Class)
 * [[Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Textbook.java)] (Designed Class with Huiguang and Derek and created Class)
-* [[Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] (Created Class)
-
-- [[State Design Pattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/StateDesignPattern)] (All classes in Package)
-- [[Checkout Feature](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/Checkout)] (All classes in Package)
-
+* [[Listing](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Listing.java)] (Entire Class)
+* [[MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)] method: [[addListings()](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)]
+* [[listings collection in Firebase repository](https://console.firebase.google.com/project/marketplace-db-6139c/firestore/data/~2Flistings~2F0)] (Created from [[addListings() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)] in [[onCreate() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L58)])
 
 
+**Part 1: Basic App - Task 3 - load data/information (from the data file(s) or Firebase) and visualise it**<br>
+**UI Design:**
+* [[RecyclerViewAdapter](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] (Created Class and involved in process of attempting to load data into card layout UI to visualise - Huiguang resolved)
+* [[MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)] methods: [[onCreate()](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L61-63)] (Created ProgressDialog)
+* [[DisplayListingDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Created class, contributed to onCreate() method by: 
+   - [[retrieving views from UI screen](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L29-51)]
+   - implementing [[displaying Textbook image on UI screen](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L54-56)]
+   - [[onClickListener() for Buy Now Button](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L102-112)]
+* [[card_layout.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/card_layout.xml)] (Entire card layout UI)
+* [[activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml)] (Rearranged UI elements created by Huiguang and added in additional TextViews to display each of the fields)
 
 
+**Part 1: Basic App - Design Patterns**<br>
+**Code Design:**
+* [[State Design Pattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/StateDesignPattern)] (All classes in Package)
+* [[ObserverDesignPattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)] (Contributed to design process and idea to implement for surprise feature for fraudulent sellers and listings)
+* [[RecyclerViewAdapter](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] method: [[onBindViewHolder()](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java#L83-86)] (created instance of OrderStatus to use for State Design Pattern)
 
 
+**Part 2: Additional/General features of the App - Creating Processes - Chain of Actions/Steps (1) and Payment Process (6)**<br>
+**Code Design:**
+* [[Checkout Feature (Combines Payment Process with Delivery and Order Confirmation)](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/Checkout)] (All classes in Package)
 
-
-
+* **UI Design:**
+* [[activity_checkout_1_delivery_options_menu.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_1_delivery_options_menu.xml)] (Entire UI activity screen)
+* [[activity_checkout_2_delivery_details.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_2_delivery_details.xml)] (Entire UI activity screen)
+* [[activity_checkout_3_payment_method_menu.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_3_payment_method_menu.xml)] (Entire UI activity screen)
+* [[activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml)] (Entire UI activity screen)
+* [[activity_checkout_5_confirm_order.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_5_confirm_order.xml)] (Entire UI activity screen)
 
 *you should ALSO provide links to the specified classes and/or functions*
 
