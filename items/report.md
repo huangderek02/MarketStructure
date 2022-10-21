@@ -37,21 +37,21 @@ U7117043, Gordon Lum, Contribution: 20%
 * Helped with presentation creation
 
 U7300484, Derek Huang, Contribution: 20%
-* [[ObserverDesignPattern] (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)] (Entire Package)
-* [[Sellers] (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)] (Created class)
-* [[DisplayListingDetailsActivity] (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 53 - 72, 79-100)
+* [[ObserverDesignPattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)](Entire Package)
+* [[Sellers](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)] (Created class)
+* [[DisplayListingDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)](Lines 53 - 72, 79-100)
 * [[MarketActivity]] (Lines 75-97, Lines 101-108)
 * Helped with presentation creation
 * <br>
 
 U7366836, Huiguang Zhang, Contribution: 20%
-* [[DisplayListingDetailsActivity] (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 0 - 72)
+* [[DisplayListingDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 0 - 72)
 [Msg(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/Msg.java)] (Entire Class)
-* [MsgAdapter(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/MsgAdapter.java)] (Entire Class)
-* [ReportSellersActivity(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ReportSellersActivity.java)] (Entire Class)
+* [[]MsgAdapter](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/MsgAdapter.java)] (Entire Class)
+* [[ReportSellersActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ReportSellersActivity.java)] (Entire Class)
 * [ChatActivity(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ChatActivity.java)] (Entire Class)
-* [MarketActivity(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java)] (read data from database and sent the data to recycleViewer to show the list)
-* [RecyclerViewAdapter(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] (read data from recycleViewer and sent the data to DisplayListingDetailsActivity to show the details)
+* [[MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java)] (read data from database and sent the data to recycleViewer to show the list)
+* [RecyclerViewAdapter(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/[[[[[[RecyclerViewAdapter.java)] (read data from recycleViewer and sent the data to DisplayListingDetailsActivity to show the details)
 * Helped with presentation creation
 * <br>
 
