@@ -279,7 +279,7 @@ Instantiate BTree with a larger maxKeys value to avoid. This solution works due 
 
 
 2. *Observer Design Pattern not linked to UI*
-    The plan was to use the Observer Design Pattern to notify users of a fraudulent listing. When the seller makes a fraudulent listing, there is supposed to be an entity acting as a shadow of the seller, who notifies the users when the seller does so.
+    The plan was to use the Observer Design Pattern to notify users of a fraudulent listing. When the seller makes a fraudulent listing, there is supposed to be an entity acting as a shadow of the seller, who notifies the users when the seller does so. That entity has the same attributes as the seller.
 3. ...
 
 *List all the known errors and bugs here. If we find bugs/errors that your team does not know of, it shows that your testing is not thorough.*
