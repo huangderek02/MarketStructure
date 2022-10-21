@@ -59,6 +59,7 @@ U7300484, Derek Huang, Contribution: X%
 - [ObserverDesignPattern] (Entire Package)
 * [Seller] (Created class)
 * [DisplayListingDetailsActivity] (Lines 53 - 72)
+* [MarketActivity] (Lines 75-97, Lines 101-108)
 
 
 U7366836, Huiguang Zhang, Contribution: X%
