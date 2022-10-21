@@ -284,7 +284,7 @@ If a term is valid, information contained in the term is stored in the instance 
 
 *[If you implement the surprise item, explain how your solution addresses the surprise task. What decisions do your team make in addressing the problem?]*
 The surprise item was a feature that notifies the user of whether a fraudulent seller or item has been identified. 
-It was partially implemented through the creation of UI elements, unfortunately, the code to connect the UI elements and simulate the processs was not implemented. These UI elements include a fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481) in [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-481) (please note it is currently set invisible) where the user is warned that the user when clicking on a listing of a fraudulent seller.
+It was partially implemented through the creation of UI elements, unfortunately, the code to connect the UI elements and simulate the process was not implemented. These UI elements include a fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481) in [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-481) (please note it is currently set invisible) where the user is warned that the user when clicking on a listing of a fraudulent seller.
 The report listing button was created with the intention to enable the user to notify us that the listing and associated seller is fraudulent where we would in turn update the [listing status](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java#L167-168) to "Fraud Listing/Seller Identified." The user is also able to record details of the fraudulent activity for us to look into as it navigates to another screen when the button is pressed.
 A warning sign imageView and fraudulent warning textView was also created in [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443) and [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-231) to warn the user once more before entering their card payment details.
 Additionally, the user can click on a button to flag the seller inside the seller's profile. This will update the seller's status and a message pops up saying that the administrators will look into the seller.
@@ -433,10 +433,13 @@ The Login and Register UI Login and Register activities were tested with Espress
     * Description: 2,500 valid data instances are randomly generated in [MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130) using pre-defined data in [ListingTextbookData.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java). Random listings were generated using methods in [GenerateRandomListings.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/GenerateRandomListings.java)
     * Note: Unfortunately, the data stream was unable to be simulated
 
-3.Feature 3: Users must be able to log in (not necessarily sign up). (easy)
-    * Class: [MainActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MainActivity.java)
-    * Class: [LoginActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/LoginActivity.java)
-    * Description: Opening screen contains option for user to sign in and then users can login using the two accounts for markers to access app.
+3. Feature 3: Users must be able to load data/information (from the data file(s) or Firebase) and visualise it (e.g., a list of products or the last shopping activities of a user). (medium)
+    * Class: [DisplayListingDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)
+    * Class: [MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java)
+    * Class: [RecyclerViewAdapter](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)
+    * UI Design: [activity_market.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_market.xml)
+    * UI Design: [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml)
+    * Description: Listings data is able to be loaded into a RecycleView to display a list of textbooks for sale and when a listing is clicked, a detailed view of the listing with more information is displayed. 
 
 4. Feature 4: Users must be able to search for information on your app. (medium)
    * Class: [BTree](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/BTree.java)
@@ -487,6 +490,19 @@ Feature Category: UI Design and Testing <br>
 6. Feature 6: UI tests using espresso or similar (hard) (listed as 2 under the category on the assignment sheet)
    * Package: [Espresso Tests](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/androidTest/java/Espresso);
    * Description: Espresso has been used to test Login and Register.
+
+Feature Category: Surprise <br>
+6. Feature 7: Fraud Behaviours/Scams
+    * Class: [listing status](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java#L167-168)
+    * Class: [Sellers](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java#L87-104)
+    * Class: [DisplayListingDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L74-77)
+    * Class: [ReportSellersActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ReportSellersActivity.java)
+    * Package: [ObserverDesignPattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)
+    * UI Design: [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-481) (fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481), please note it is currently set invisible)
+    * UI Design: [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443)
+    * UI Design: [activity_report_sellers.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_report_sellers.xml)
+    * Description: UI elements include a fraudulent warning textView and a warning sign imageView to warn the user when clicking on a listing of a fraudulent seller and before entering their card payment details. The report listing button was created with the intention to enable the user to notify us that the listing and associated seller is fraudulent where we would in turn update the to "Fraud Listing/Seller Identified." The user is also able to record details of the fraudulent activity for us to look into as it navigates to another screen when the button is pressed. The user can click on a button to flag the seller inside the seller's profile. This will update the seller's status and a message pops up saying that the administrators will look into the seller.
+    * Note: Unfortunately, this was only partially implemented.
 
 ## Team Meetings
 
