@@ -34,7 +34,8 @@ The following is a report template to help your team successfully provide all th
 | [u7117043] | [Gordon Lum] | [Worked on classes related to textbook searcher] |
 | [u7300484] | [Derek Huang] | [Worked on the Observer Design Pattern Package, Worked on the Seller Class, Some methods in DisplayListingDetailsActivity and MarketActivity] |
 | [u7366836] | [Huiguang Zhang] | [Worked on chat functions and other methods to connect with firebase] |
-| [u7127350] | [Rhonda Luu] | [Worked on creating data files, designing UI to visualise data loaded from Firebase, State Design pattern and chain of Actions(Checkout, Delivery and Confirm Order Processes] |
+| [u7127350] | [Rhonda Luu] | [Worked on creating data files, designing UI to visualise data loaded from Firebase, State Design pattern and Checkout process]
+|
 | [u7444134] | [Ratchanont Treevijitpaisan] | [role] |
 
 ## Summary of Individual Contributions
@@ -102,7 +103,7 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 * [[RecyclerViewAdapter](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] method: [[onBindViewHolder()](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java#L83-86)] (created instance of OrderStatus to use for State Design Pattern)
 <br>
 
-**Part 2: Additional/General features of the App - Creating Processes - Chain of Actions/Steps (1) and Payment Process (6)**<br>
+**Part 2: Additional/General features of the App - Creating Processes - Payment Process (listed as number 6 on the assignment sheet)**<br>
 **Code Design:**
 * [[Checkout Feature (Combines Payment Process with Delivery and Order Confirmation)](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/Checkout)] (All classes in Package)
 
@@ -113,13 +114,13 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 - [[activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml)] (Entire UI activity screen)
 - [[activity_checkout_5_confirm_order.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_5_confirm_order.xml)] (Entire UI activity screen)
 
-**Surprise Feature: identify fraudulent behaviours/scams**<br>
+**Surprise Feature: Identify fraudulent behaviours/scams**<br>
 **UI Design:**
 - [[activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-481)] (Created a fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481))
 - [[activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-231)] (Created warning sign imageView and fraudulent warning textView)
 - [[ListingTextbookData](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java#L167-168)] (Added "Fraud Listing/Seller Identified" listingStatus)
 - Contributed to UI design implementation of adding a report listing button to use with Observer Design Pattern
-- 
+
 **Miscellaneous contributions**<br>
 - Final code clean-up to remove redundant code and add missing @author annotations to classes
 
@@ -394,6 +395,9 @@ Code Coverage: 98.7% of Tokenizer (100% method coverage)
 The test class tests every method in the Tokenizer class. It is noted that each test case could be separated to be a unit test, and as a result be improved, but was not done due to time limitations. Each test attempts to cover every statement condition as it is impossible to cover every case. The tokenizerString() method contains two tests but could be extended as it integrates the other methods. However a randomized test string from a random online string generator was obtained for a complex test. Overall there is decent confidence that the tokenizer works as intended.
 
 
+**UI Testing**
+
+**Firestore Tesitng
 
 
 *Here is an example:*
@@ -451,16 +455,12 @@ Feature Category: Firebase Integration <br>
     *Description: The user can use the rating bar in the activity_seller to give the seller a rating. Although the rating bar have increments of 0.5 from 0 - 5, the rating is rounded down to the nearest whole number e.g. 0.5 goes down to 0. Each time the seller clicks on the rating bar, a Toast message is displayed based on the different cases for the different possible scores. In addition, the rating for each click is stored in an arrayList. The average rating is also recorded in a TextView and is updated every time a rating is added. This is stored in memory as every time the program restarts, the arrayList resets to empty.
 
 Feature Category: Creating Processes <br>
-5. Feature 1:Implement a chain of action/steps (at least 3 steps) to follow up on a process required by your app's theme (hard) (listed as number 1 on assignment sheet) (maybe - to edit if yes)
-   * Description: handle the events for the chain of actions/steps involved in the ordering process from searching for a textbook, selecting a textbook to buy to payment, delivery and confirmation of the order.
-6. Feature 2: Payment process (easy) (listed as number 6 on assignment sheet)
-   * Class [PaymentCardActivity.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/PaymentCardActivity.java)
-   * Class [PaymentMethodMenu.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/PaymentMethodMenu.java)
-   * Class [ConfirmOrderActivity.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/ConfirmOrderActivity.java)
+5. Feature 2: Payment process (easy) (listed as number 6 on assignment sheet)
+   * Package [[Checkout Feature (Combining Payment Process with Delivery and Order Confirmation)](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/Checkout)] (All classes in Package)
    * Payment Method Menu - UI Design: [activity_checkout_3_payment_method_menu.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_3_payment_method_menu.xml)
    * Fill out Credit Card Details Form - UI Design: [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml)
    * Order Summary - UI Design: [activity_checkout_5_confirm_order.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_5_confirm_order.xml) (Includes total cost of order which includes additional costs such as delivery and card surcharge (if selected))
-   * Description: The user is able to choose between two payment methods: Cash or Credit Card. If the user decides to pay by card there is a 1.5% additional surcharge added to the total cost of the order.
+   * Description: The user is able to choose between two payment methods: Cash or Credit Card. If the user decides to pay by card there is a 1.5% additional surcharge added to the total cost of the order. This feature has been extended to include delivery to add additional costs based on the delivery option selected to the total cost of the order displayed on the order summary confirmation UI screen.
 
 ## Team Meetings
 
