@@ -200,7 +200,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 *I used the following data structures in my project:*
 
-*[What data structures did your team utilise? Where and why?]*
+*[What data structures did your team utilise? Where and why?]* <br>
 
 **Data Structures**
 
@@ -237,7 +237,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 3. ...
 
-*[What design patterns did your team utilise? Where and why?]*
+*[What design patterns did your team utilise? Where and why?]* <br>
 **Design Patterns**
 
 * State
@@ -253,8 +253,9 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 * Singleton 
   - The singleton design patter is used in the [Parser Class](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java) to ensure that only a single instance of a Parser exists. A parser instance contains many variables and thus to save memory, a singleton ensures that at most only one instance exists.
-
-* Observer (?)
+  <br>
+  
+* Observer
 - The Observer Design Pattern was attempted to be implemented as we believe that all users should be notified when a fraudulent listing was made. The user can subscribe to the subject so they can stay alert about potential scams on the marketplace.
 - However, it was not successfully linked to the following UI elements:
      - A warning sign imageView and fraudulent warning textView in [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443) and [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-231). 
