@@ -5,7 +5,7 @@ import java.util.*;
 
 /**
  * A location.
- * Tracks users who have been to the location.
+ * Tracks listings that are under the fraud seller identified
  * If a user becomes scammed, informs all users that viewed the listing at the same time as the
  * same user within 10 listings
  *

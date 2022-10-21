@@ -71,8 +71,9 @@ public class DisplayListingDetailsActivity extends AppCompatActivity implements 
         tv_seller.setText(listingFromAdapter.getSellerUsername());
         tv_listing_last_updated.setText(listingFromAdapter.getListingLastUpdatedDate());
 
+        // show fraud warning if fraud Listing/Seller Identified - currently set as invisible
         if (tv_listing_status.getText() == "Fraud Listing/Seller Identified") {
-//            tv_fraud_warning.isShown();
+           tv_fraud_warning.isShown();
         }
 
         b_message_seller.setOnClickListener(new View.OnClickListener() {

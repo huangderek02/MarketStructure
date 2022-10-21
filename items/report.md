@@ -1,4 +1,4 @@
-# Gorderhuifam Report
+# Gorderhuifamda Report
 
 The following is a report template to help your team successfully provide all the details necessary for your report in a structured and organised manner. Please give a straightforward and concise report that best demonstrates your project. Note that a good report will give a better impression of your project to the reviewers.
 
@@ -32,9 +32,10 @@ The following is a report template to help your team successfully provide all th
 | UID | Name | Role |
 | :--- | :----: | ---: |
 | [u7117043] | [Gordon Lum] | [Worked on classes related to textbook searcher] |
-| [u7300484] | [Derek Huang] | [role] |
+| [u7300484] | [Derek Huang] | [Worked on the Observer Design Pattern Package, Worked on the Seller Class] |
 | [u7366836] | [Huiguang Zhang] | [Worked on chat functions and other methods to connect with firebase] |
 | [u7127350] | [Rhonda Luu] | [role] |
+| [u7444134] | [Ratchanont Treevijitpaisan] | [ [role] ] |
 
 ## Summary of Individual Contributions
 
@@ -55,9 +56,9 @@ U7117043, Gordon Lum, Contribution: X%
 * Filled out parts of the report: Application Description, UML for [[BTree, Parser, Textbook, TextbookSearcher, Tokenizer classes](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/items/images)], Data Structures for ArrayList and BTree, Grammar, Tokenizer and Parser, Bugs for BTree, Testing related to Search function
 
 U7300484, Derek Huang, Contribution: X%
-* A.class
-* B.class: function1(), function2(), ...
-* ....
+- [ObserverDesignPattern] (Entire Package)
+* [Seller] (Created class)
+* [DisplayListingDetailsActivity] (Lines 53 - 72)
 
 
 U7366836, Huiguang Zhang, Contribution: X%
@@ -73,9 +74,38 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 
 
 *U7127350 , Rhonda Luu, Contribution: X%
-* A.class
-* B.class: function1(), function2(), ...
-* ....
+
+* [[Listing](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Listing.java)] (Entire Class)
+* [[Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Textbook.java)] (Designed Class with Huiguang and Derek and created Class)
+* [[Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] (created Class)
+
+- [[State Design Pattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/StateDesignPattern)] (Entire Package)
+   - [[Delivered](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/Delivered.java)] (Entire Class)
+   - [[Event](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/Event.java)] (Entire Class)
+   - [[Idle](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/Idle.java)] (Entire Class)
+   - [[OrderStatus](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/OrderStatus.java)] (Entire Class)
+   - [[State](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/State.java)] (Entire Class)
+   - [[WaitingToConfirm](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToConfirm.java)] (Entire Class)
+   - [[WaitingToDispatch](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToDispatch.java)] (Entire Class)
+   - [[WaitingToEnterDeliveryDetails](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToEnterDeliveryDetails.java)] (Entire Class)
+   - [[WaitingToPay](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToPay.java)] (Entire Class)
+   - [[WaitingToSelectDeliveryOption](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToSelectDeliveryOption.java)] (Entire Class)
+   - [[WaitingToSelectListingToBuy](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToSelectListingToBuy.java)] (Entire Class)
+   - [[WaitingToSelectListingToView](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToSelectListingToView.java)] (Entire Class)
+   - [[WaitingToSelectPaymentMethod](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToSelectPaymentMethod.java)] (Entire Class)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 *you should ALSO provide links to the specified classes and/or functions*
 
@@ -115,7 +145,7 @@ The group member who requires a decison to be made should contact the other memb
 
 ## Application Description
 
-[App name] is a markplace application that is specifically made for university students. It provies a quick and easy way to obtain cheaper, secondhand textbooks and avoid having to purchase new ones. Clients can create an account using an email and password to be able to access these services, search for textbooks and view available listings with different prices and sellers. 
+TextWarehouse is a markplace application that is specifically made for university students. It provies a quick and easy way to obtain cheaper, secondhand textbooks and avoid having to purchase new ones. Clients can create an account using an email and password to be able to access these services, search for textbooks and view available listings with different prices and sellers. 
 
 
 **Application Use Cases and Examples**
@@ -124,12 +154,14 @@ Target Users: Students studying at university
 
 * User can create an account using an email and password
 * User can login to the application using an existing email and password
+* User can delete their account or change their login details
 * User can search for textbooks by title or by ISBN
 * User can filter textbooks found by cost, pages, edition, topic, class code
 * User can sort textbooks found in ascending or descending order: alphabetically, price, topic, pages
 * User can view listings available, there prices and sellers if they exist
 * User can purchase an existing textbook
 * User can send messages to other users
+* User can leave a review on a seller 
 * User gets warned about potential fraud and scams 
 
 
@@ -147,13 +179,6 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 
 -----------------------------------------------------------------------------------
-
-*[What is your application, what does it do? Include photos or diagrams if necessary]*
-
-*Here is a pet specific application example*
-
-*PetBook is a social media application specifically targetting pet owners... it provides... certified practitioners, such as veterians are indicated by a label next to their profile...*
-
 
 ## Application UML
 
@@ -214,7 +239,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
   - The singleton design patter is used in the [Parser Class](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java) to ensure that only a single instance of a Parser exists. A parser instance contains many variables and thus to save memory, a singleton ensures that at most only one instance exists.
 
 * Observer (?)
-
+  - The Observer Design Pattern was not successfully linked to the UI. However, it was attempted to be implemented as we believe that all users should be notified when a fraudulent listing was made. 
 
 
 *[What design patterns did your team utilise? Where and why?]*
@@ -282,7 +307,8 @@ Instantiate BTree with a larger maxKeys value to avoid. This solution works due 
 -
 
 
-2. *Bug 2:*
+2. *Observer Design Pattern not linked to UI*
+    The plan was to use the Observer Design Pattern to notify users of a fraudulent listing. When the seller makes a fraudulent listing, there is supposed to be an entity acting as a shadow of the seller, who notifies the users when the seller does so. That entity has the same attributes as the seller. 
 3. ...
 
 *List all the known errors and bugs here. If we find bugs/errors that your team does not know of, it shows that your testing is not thorough.*
@@ -356,7 +382,7 @@ The test class tests every method in the Tokenizer class. It is noted that each 
 *Here are some examples:*
 
 Feature Category: Voice Your Feature <br>
-*Implemented features:*
+
 1. Feature 1: User registration including changing details (easy)
    * Class [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java), (The class is used to register a new user, all methods) Lines of code: 28-159
    * Class [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
@@ -368,10 +394,11 @@ Feature Category: Voice Your Feature <br>
 <br>
 
 Feature Category: Firebase Integration <br>
-*Implemented features:* <br>
-1. **Use Firebase to implement user Authentication/Authorisation. (easy)**
-   * Class A: methods A, B, C, lines of code: whole file
-   * …
+
+1. Use Firebase to implement user Authentication/Authorisation. (easy)
+   * Class [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java) Method: createUser, lines: 123 - 60
+    * Class [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
+   * Description: Users account are stored on Firebase. Creating an accouting or changing user profile details access Firebase and update these details.
 
 *List all features you have completed in their separate categories with their difficulty classification. If they are features that are suggested and approved, please state this somewhere as well.*
 

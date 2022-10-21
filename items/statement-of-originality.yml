@@ -9,26 +9,70 @@ declaration: >-
 
 # add as many "name+comment" entries as necessary
 # (or remove it altogether if you haven't collaborated with anyone outside your group)
-collaboration:
-  - name:
-    comment: >-
+# collaboration:
+#  - name:
+#    comment: >-
 
 
 # add as many "url+licence+comment" entries as necessary
 # (or remove it altogether if you haven't used any external code)
-code:
-  - comment:
-    url:
-    licence:
+# code:
+  - comment: "Code from lectures, labs and mid-semester exam has been used has a foundation"
+    url: N/A
+    licence: N/A
 
 
 # add as many "url+licence+comment" entries as necessary
 # (or remove it altogether if you haven't used any external assets)
 assets:
   # NOTE: "Bliss" is just here as an example, you SHOULD REMOVE IT
-  - comment: "_Bliss_ by Charles O'Rear"
-    url: https://en.wikipedia.org/wiki/Bliss_(image)
+  - comment: "delivery truck icon for app"
+    url: https://www.flaticon.com/free-icons/delivery
     licence: fair use
+
+    comment 2: "credit card icon for app"
+    url 2: https://www.flaticon.com/free-icon/credit_1198299?term=credit%20card&page=1&position=17&page=1&position=17&related_id=1198299&origin=search 
+    licence 2: fair use
+    
+    comment 3: "warning icon for app"
+    url 3: https://www.flaticon.com/free-icon/warning_2183462?term=warning%20sign&page=1&position=17&page=1&position=17&related_id=2183462&origin=search 
+    licence 3: fair use
+
+    comment 4: "book in cart icon for app"
+    url 4: https://www.flaticon.com/free-icon/bookstore_4683476?term=book%20cart&page=1&position=19&page=1&position=19&related_id=4683476&origin=search
+    licence 4: fair use
+
+    comment 5: "book pay cash icon for app"
+    url 5: https://www.flaticon.com/free-icon/payment_3532267?term=book%20pay&page=1&position=5&page=1&position=5&related_id=3532267&origin=search 
+    licence 5: fair use
+
+    comment 5: "book pay card icon for app"
+    url 5: https://www.flaticon.com/free-icon/payment_3532160
+    licence 5: fair use
+
+    comment 6: "package delivery icon for app"
+    url 6: https://www.flaticon.com/free-icon/delivery_1350253?term=delivery&page=1&position=30&page=1&position=30&related_id=1350253&origin=tag
+    licence 6: fair use
+
+    comment 7: "express delivery icon for app"
+    url 7: https://www.flaticon.com/free-icon/fast-delivery_2203124id=1350253&origin=tag
+    licence 7: fair use
+
+    comment 8: "standard delivery icon for app"
+    url 8: https://www.flaticon.com/free-icon/delivery_870130?term=truck&related_id=870130
+    licence 8: fair use
+
+    comment 9: "sourced all textbook images for app"
+    url 9: https://www.booktopia.com.au/
+    licence 9: fair use
+
+    comment 10: "sourced all textbook images for app"
+    url 10: https://www.booktopia.com.au/
+    licence 10: fair use
+
+    comment 11: "sourced book shelf cart image for app"
+    url 11: https://www.hiclipart.com/free-transparent-background-png-clipart-ppuui
+    licence 11: fair use
 
 # for each member, write your name and uid here
 # remove any empty "name+uid" entries
@@ -41,3 +85,5 @@ members:
     uid: u7444134
   - name: Huiguang Zhang
     uid: u7366836
+  - name: Rhonda Luu
+    uid: u7127350
