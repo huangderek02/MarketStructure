@@ -401,7 +401,12 @@ All listings generated were unique and the random additionalDetails generated ma
 ## Implemented Features
 
 **Part 1: Basic App** <br>
-1. Feature 2: Data file(s) with at least 2,500 valid data instances (easy) (listed as number 2 on assignment sheet)
+1. Feature 1: Users must be able to log in (not necessarily sign up). (easy)
+   * Class: [MainActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MainActivity.java)
+   * Class: [LoginActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/LoginActivity.java)
+   * Description: Opening screen contains option for user to sign in and then users can login using the two accounts for markers to access app.
+
+2. Feature 2: Data file(s) with at least 2,500 valid data instances (easy) (listed as number 2 on assignment sheet)
     * Package: [GenerateData](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/GenerateData) (includes class for string storage data used to create listings and generating random data methods to use for listings)
     * Class: [Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Textbook.java)
     * Class: [Listing](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Listing.java)
@@ -410,6 +415,19 @@ All listings generated were unique and the random additionalDetails generated ma
     * Description: 2,500 valid data instances are randomly generated in [MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130) using pre-defined data in [ListingTextbookData.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java). Random listings were generated using methods in [GenerateRandomListings.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/GenerateRandomListings.java)
     * Note: Unfortunately, the data stream was unable to be simulated
 
+3.Feature 3: Users must be able to log in (not necessarily sign up). (easy)
+    * Class: [MainActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MainActivity.java)
+    * Class: [LoginActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/LoginActivity.java)
+    * Description: Opening screen contains option for user to sign in and then users can login using the two accounts for markers to access app.
+
+4. Featuer 4: Users must be able to search for information on your app. (medium)
+   * Class: [BTree](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/BTree.java)
+   * Class: [Parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java)
+   * Class: [Tokenizer](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Tokenizer.java)
+   * Class: [TextbookSearcher](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/TextbookSearcher.java)
+   * Class: All test classes in [tokenizer_and_parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/test/java/tokenizer_and_parser)
+   * Class: [MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java) methods: updateTextbooks(), sortRecycle(), updateRecycle(), sortResults(), [lines 261 onwards](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L261)
+   Description: 
 
 **Part 2: Additional/General features of the App** <br>
 Feature Category: Voice Your Feature <br>
