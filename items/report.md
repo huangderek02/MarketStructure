@@ -56,8 +56,8 @@ U7117043, Gordon Lum, Contribution: X%
 * Filled out parts of the report: Application Description, UML for [[BTree, Parser, Textbook, TextbookSearcher, Tokenizer classes](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/items/images)], Data Structures for ArrayList and BTree, Grammar, Tokenizer and Parser, Bugs for BTree, Testing related to Search function
 
 U7300484, Derek Huang, Contribution: X%
-- [ObserverDesignPattern] (Entire Package)
-* [Sellers] (Created class)
+- [ObserverDesignPattern (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)] (Entire Package)
+* [Sellers (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)] (Created class)
 * [DisplayListingDetailsActivity (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 53 - 72, 79-100)
 * [MarketActivity] (Lines 75-97, Lines 101-108)
 
