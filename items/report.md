@@ -423,10 +423,13 @@ Feature Category: Firebase Integration <br>
 
 *List all features you have completed in their separate categories with their difficulty classification. If they are features that are suggested and approved, please state this somewhere as well.*
 
-4. The ability to micro-interact with items in your app
+4. The ability to micro-interact with items in your app (easy)
     * Class [Sellers (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)]
 
     *Description: The user can use the rating bar in the activity_seller to give the seller a rating. Although the rating bar have increments of 0.5 from 0 - 5, the rating is rounded down to the nearest whole number e.g. 0.5 goes down to 0. Each time the seller clicks on the rating bar, a Toast message is displayed based on the different cases for the different possible scores. In addition, the rating for each click is stored in an arrayList. The average rating is also recorded in a TextView and is updated every time a rating is added. This is stored in memory as every time the program restarts, the arrayList resets to empty.
+
+5. Suprize Feature (Notifying users of fraudulent listings) 
+    *Description: There have been a few attempts to implement the feature to notify users of fraudulent listings.   
 
 ## Team Meetings
 
