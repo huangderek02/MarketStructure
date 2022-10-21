@@ -69,9 +69,11 @@ U7366836, Huiguang Zhang, Contribution: X%
 
 
 U7444134, Ratchanont Treevijitpaisan, Contribution: X%
-* A.class
-* B.class: function1(), function2(), ...
-* ....
+* [[LoginActivity]([[UI design and Firebase Authentication](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/LoginActivity.java)] (Entire Class)
+* [[RegisterActivity]([[UI design and Firebase Integration](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java)] (Entire Class)
+* [[MainActivity]([[UI design and Firebase Integration](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MainActivity.java)] (Entire Class)
+* [[ProfileActivity]([[UI design and Firebase Integration](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java)] (Entire Class)
+* [[UI testing]([[UI testing (basic)](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/androidTest/java/Espresso)] (All classes in Package)
 
 
 *U7127350 , Rhonda Luu, Contribution: X% <br>
