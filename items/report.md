@@ -33,8 +33,8 @@ U7117043, Gordon Lum, Contribution: 20%
 * All test classes in [tokenizer_and_parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/test/java/tokenizer_and_parser)
 * [[MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java)] methods: updateTextbooks(), sortRecycle(), updateRecycle(), sortResults(), [lines 261 onwards](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L261)
 * Filled out parts of the report: Application Description, Data Structure: ArrayList and BTree, UML for [[Application Flow (UI_UML_total), Search_Function_UML and there related images](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/items/images)], Data Structures for ArrayList and BTree, Grammar Section, Tokenizer and Parser Section, Bugs for BTree, Testing related to Search function. Helped with presentation creation
-<br>
 * Helped with presentation creation
+<br>
 
 U7300484, Derek Huang, Contribution: 20%
 - [ObserverDesignPattern (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)] (Entire Package)
@@ -42,7 +42,7 @@ U7300484, Derek Huang, Contribution: 20%
 * [DisplayListingDetailsActivity (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 53 - 72, 79-100)
 * [MarketActivity] (Lines 75-97, Lines 101-108)
 * Helped with presentation creation
-* <br>
+<br>
 
 U7366836, Huiguang Zhang, Contribution: 20%
 * [DisplayListingDetailsActivity (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 0 - 72)
@@ -53,7 +53,7 @@ U7366836, Huiguang Zhang, Contribution: 20%
 * [MarketActivity(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java)] (read data from database and sent the data to recycleViewer to show the list)
 * [RecyclerViewAdapter(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] (read data from recycleViewer and sent the data to DisplayListingDetailsActivity to show the details)
 * Helped with presentation creation
-* <br>
+<br>
 
 U7444134, Ratchanont Treevijitpaisan, Contribution: 20%
 * [[LoginActivity]([[UI design and Firebase Authentication](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/LoginActivity.java)] (Entire Class)
@@ -82,7 +82,7 @@ U7127350 , Rhonda Luu, Contribution: 20% <br>
    - [[onClickListener() for Buy Now Button](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L102-112)]
 * [[card_layout.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/card_layout.xml)] (Entire card layout UI)
 * [[activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml)] (Rearranged UI elements created by Huiguang and added in additional TextViews to display each of the fields)
- <br>
+<br>
 
 **Part 1: Basic App - Design Patterns**<br>
 **Code Design:**
