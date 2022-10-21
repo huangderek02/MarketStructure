@@ -420,53 +420,55 @@ All listings generated were unique and the random additionalDetails generated ma
     * Class: [LoginActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/LoginActivity.java)
     * Description: Opening screen contains option for user to sign in and then users can login using the two accounts for markers to access app.
 
-4. Featuer 4: Users must be able to search for information on your app. (medium)
+4. Feature 4: Users must be able to search for information on your app. (medium)
    * Class: [BTree](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/BTree.java)
    * Class: [Parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java)
    * Class: [Tokenizer](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Tokenizer.java)
    * Class: [TextbookSearcher](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/TextbookSearcher.java)
    * Class: All test classes in [tokenizer_and_parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/test/java/tokenizer_and_parser)
    * Class: [MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java) methods: updateTextbooks(), sortRecycle(), updateRecycle(), sortResults(), [lines 261 onwards](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L261)
-   Description: 
+   * Description: The search function accepts any string as input an attempts to return textbooks with a related title or ISBN. Users can filter and sort their search using special keywords with more information in the grammar section. The list of textbooks is updated when the user clicks the search button. In addition they can sort their list in different ways using the sort button.
+   * Note: Unfortunately, was not able to fully implement correctly.
 
 **Part 2: Additional/General features of the App** <br>
 Feature Category: Voice Your Feature <br>
-
-1. Feature 1: User registration including changing details (easy)
-   * Class [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java), (The class is used to register a new user, all methods) Lines of code: 28-159
-   * Class [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
+1. Feature 1: User registration including changing details (easy) (Approved suggested feature)
+   * Class: [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java), (The class is used to register a new user, all methods) Lines of code: 28-159
+   * Class: [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
    * Description: Users may create an account using an email and password. Password needs to be atleast 6 characters long and user needs to confirm the password. The account can be used to login to the application. A progress bar shows how far the user is from creating a new account. Users can change their password and email or delete their account in their profile page.
-
 <br>
 
-2. Feature 2: User can chat with the sellers
-   * Class [ChatActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ChatActivity.java), (The class is to all user to char) (entire class)
-   * Class [Msg](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/Msg.java), (Define the message objects)
-   * Class [MsgAdapter](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/MsgAdapter.java), (put msg into the viewer)
+Feature Category: Peer to Peer Messaging <br>
+2. Feature 2: Provide users with the ability to message each other directly (hard) (listed as 1 under the category on the assignment sheet)
+   * Class: [ChatActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ChatActivity.java), (The class is to all user to char) (entire class)
+   * Class: [Msg](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/Msg.java), (Define the message objects)
+   * Class: [MsgAdapter](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/MsgAdapter.java), (put msg into the viewer)
    * Description: Users may chat with the sellers, to know more details about the book, and decides whether should buy it.
 <br>
 
 Feature Category: Firebase Integration <br>
-
-3. Use Firebase to implement user Authentication/Authorisation. (easy)
+3. Feature 3: Use Firebase to implement user Authentication/Authorisation (easy) (listed as 1 under the category on the assignment sheet)
    * Class [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java) Method: createUser, lines: 123 - 60
-    * Class [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
-   * Description: Users account are stored on Firebase. Creating an accouting or changing user profile details access Firebase and update these details.
+   * Class [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
+   * Description: Users account are stored on Firebase. Creating an accounting or changing user profile details access Firebase and update these details.
 
-*List all features you have completed in their separate categories with their difficulty classification. If they are features that are suggested and approved, please state this somewhere as well.*
-
-4. The ability to micro-interact with items in your app
-    * Class [Sellers (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)]
-
-    *Description: The user can use the rating bar in the activity_seller to give the seller a rating. Although the rating bar have increments of 0.5 from 0 - 5, the rating is rounded down to the nearest whole number e.g. 0.5 goes down to 0. Each time the seller clicks on the rating bar, a Toast message is displayed based on the different cases for the different possible scores. In addition, the rating for each click is stored in an arrayList. The average rating is also recorded in a TextView and is updated every time a rating is added. This is stored in memory as every time the program restarts, the arrayList resets to empty.
+Feature Category: User Interactivity <br>
+4. Feature 4: The ability to micro-interact with items in your app (listed as 1 under the category on the assignment sheet)
+    * Class: [Sellers](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)
+    * Description: The user can use the rating bar in the activity_seller to give the seller a rating. Although the rating bar have increments of 0.5 from 0 - 5, the rating is rounded down to the nearest whole number e.g. 0.5 goes down to 0. Each time the seller clicks on the rating bar, a Toast message is displayed based on the different cases for the different possible scores. In addition, the rating for each click is stored in an arrayList. The average rating is also recorded in a TextView and is updated every time a rating is added. This is stored in memory as every time the program restarts, the arrayList resets to empty.
 
 Feature Category: Creating Processes <br>
-5. Feature 2: Payment process (easy) (listed as number 6 on assignment sheet)
-   * Package [Checkout Feature (Combining Payment Process with Delivery and Order Confirmation)](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/Checkout)] (All classes in Package)
+5. Feature 5: Payment process (easy) (listed as number 6 under category on assignment sheet)
+   * Package: [Checkout Feature (Combining Payment Process with Delivery and Order Confirmation)](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/Checkout)
    * Payment Method Menu - UI Design: [activity_checkout_3_payment_method_menu.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_3_payment_method_menu.xml)
    * Fill out Credit Card Details Form - UI Design: [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml)
    * Order Summary - UI Design: [activity_checkout_5_confirm_order.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_5_confirm_order.xml) (Includes total cost of order which includes additional costs such as delivery and card surcharge (if selected))
    * Description: The user is able to choose between two payment methods: Cash or Credit Card. If the user decides to pay by card there is a 1.5% additional surcharge added to the total cost of the order. This feature has been extended to include delivery to add additional costs based on the delivery option selected to the total cost of the order displayed on the order summary confirmation UI screen.
+
+Feature Category: UI Design and Testing <br>
+6. Feature 6: UI tests using espresso or similar (hard) (listed as 2 under the category on the assignment sheet)
+   * Package: [Espresso Tests](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/androidTest/java/Espresso);
+   * Description: Espresso has been used to test Login and Register.
 
 ## Team Meetings
 
