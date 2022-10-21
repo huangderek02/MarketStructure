@@ -32,7 +32,7 @@ The following is a report template to help your team successfully provide all th
 | UID | Name | Role |
 | :--- | :----: | ---: |
 | [u7117043] | [Gordon Lum] | [Worked on classes related to textbook searcher] |
-| [u7300484] | [Derek Huang] | [Worked on the Observer Design Pattern Package, Worked on the Seller Class] |
+| [u7300484] | [Derek Huang] | [Worked on the Observer Design Pattern Package, Worked on the Seller Class, Some methods in DisplayListingDetailsActivity and MarketActivity] |
 | [u7366836] | [Huiguang Zhang] | [Worked on chat functions and other methods to connect with firebase] |
 | [u7127350] | [Rhonda Luu] | [Worked on creating data files, designing UI to visualise data loaded from Firebase, State Design pattern and chain of Actions(Checkout, Delivery and Confirm Order Processes] |
 | [u7444134] | [Ratchanont Treevijitpaisan] | [role] |
