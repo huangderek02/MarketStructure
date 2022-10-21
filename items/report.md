@@ -237,6 +237,10 @@ MarketActivity Dependency:
     - [DeliveryDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/DeliveryDetailsActivity.java#L96-97)
     - [ConfirmOrderActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/ConfirmOrderActivity.java#L80-81)
 
+![State Design Pattern UML](./images/StateDesignPatternUML.png)<br>
+![State Design Pattern Transition Diagram](./images/StateDesignPatternTransitionDiagram.png)<br>
+
+
 * Singleton 
   - The singleton design patter is used in the [Parser Class](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java) to ensure that only a single instance of a Parser exists. A parser instance contains many variables and thus to save memory, a singleton ensures that at most only one instance exists.
   <br>
