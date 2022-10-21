@@ -469,7 +469,7 @@ Feature Category: Firebase Integration <br>
 
 Feature Category: Creating Processes <br>
 5. Feature 2: Payment process (easy) (listed as number 6 on assignment sheet)
-   * Package [[Checkout Feature (Combining Payment Process with Delivery and Order Confirmation)](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/Checkout)] (All classes in Package)
+   * Package [Checkout Feature (Combining Payment Process with Delivery and Order Confirmation)](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/Checkout)] (All classes in Package)
    * Payment Method Menu - UI Design: [activity_checkout_3_payment_method_menu.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_3_payment_method_menu.xml)
    * Fill out Credit Card Details Form - UI Design: [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml)
    * Order Summary - UI Design: [activity_checkout_5_confirm_order.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_5_confirm_order.xml) (Includes total cost of order which includes additional costs such as delivery and card surcharge (if selected))
@@ -477,7 +477,7 @@ Feature Category: Creating Processes <br>
 
 ## Team Meetings
 
-Meetings have occured every Saturday at around 3pm with additional meetings as required:
+Meetings have occurred every Saturday at around 3pm with additional meetings as required:
 
 - 04/09/22: [Team Meeting 1](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/items/meeting%20minutes%20-%20team/meeting1.md)  
 - 10/09/22: [Team Meeting 2](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/items/meeting%20minutes%20-%20team/meeting2.md)
