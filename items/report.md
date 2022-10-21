@@ -74,9 +74,38 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 
 
 *U7127350 , Rhonda Luu, Contribution: X%
-* A.class
-* B.class: function1(), function2(), ...
-* ....
+
+* [[Listing](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Listing.java)] (Entire Class)
+* [[Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Textbook.java)] (Designed Class with Huiguang and Derek and created Class)
+* [[Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] (created Class)
+
+* [[State Design Pattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/StateDesignPattern)] (Entire Package)
+- [[Delivered](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/Delivered.java)] (Entire Class)
+- [[Event](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/Event.java)] (Entire Class)
+- [[Idle](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/Idle.java)] (Entire Class)
+- [[OrderStatus](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/OrderStatus.java)] (Entire Class)
+- [[State](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/State.java)] (Entire Class)
+- [[WaitingToConfirm](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToConfirm.java)] (Entire Class)
+- [[WaitingToDispatch](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToDispatch.java)] (Entire Class)
+- [[ WaitingToEnterDeliveryDetails](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToEnterDeliveryDetails.java)] (Entire Class)
+- [[WaitingToPay](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToPay.java)] (Entire Class)
+- [[WaitingToSelectDeliveryOption](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToSelectDeliveryOption.java)] (Entire Class)
+- [[WaitingToSelectListingToBuy](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToSelectListingToBuy.java)] (Entire Class)
+- [[WaitingToSelectListingToView](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToSelectListingToView.java)] (Entire Class)
+- [[WaitingToSelectPaymentMethod](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToSelectPaymentMethod.java)] (Entire Class)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 *you should ALSO provide links to the specified classes and/or functions*
 
