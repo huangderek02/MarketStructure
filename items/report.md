@@ -120,8 +120,14 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 - [[ListingTextbookData](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java#L167-168)] (Added "Fraud Listing/Seller Identified" listingStatus)
 - Contributed to UI design implementation of adding a report listing button to use with Observer Design Pattern
 
+**Report Writing**<br> 
+* Application Design and Decisions: State and Observer Design Patterns
+* Surprise Item
+* Testing Summary: UI Testing – Application Flow, Payment Process and Generate Random Listings
+
 **Miscellaneous contributions**<br>
 - Final code clean-up to remove redundant code and add missing @author annotations to classes
+
 
 *you should ALSO provide links to the specified classes and/or functions*
 
