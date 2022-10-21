@@ -421,7 +421,11 @@ Feature Category: Voice Your Feature <br>
 
 <br>
 
-2. Feature 2: **A user can only ... . (medium)**
+2. Feature 2: User can chat with the sellers
+   * Class [ChatActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ChatActivity.java), (The class is to all user to char) (entire class)
+   * Class [Msg](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/Msg.java), (Define the message objects)
+   * Class [MsgAdapter](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/MsgAdapter.java), (put msg into the viewer)
+   * Description: Users may chat with the sellers, to know more details about the book, and decides whether should buy it.
 <br>
 
 Feature Category: Firebase Integration <br>
