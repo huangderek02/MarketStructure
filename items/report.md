@@ -45,7 +45,7 @@ U7300484, Derek Huang, Contribution: 20%
 * <br>
 
 U7366836, Huiguang Zhang, Contribution: 20%
-* [DisplayListingDetailsActivity] (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 0 - 72)
+* [[DisplayListingDetailsActivity] (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 0 - 72)
 [Msg(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/Msg.java)] (Entire Class)
 * [MsgAdapter(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/MsgAdapter.java)] (Entire Class)
 * [ReportSellersActivity(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ReportSellersActivity.java)] (Entire Class)
