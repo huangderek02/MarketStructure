@@ -461,7 +461,7 @@ Feature Category: Voice Your Feature <br>
    * Class: [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java), (The class is used to register a new user, all methods) Lines of code: 28-159
    * Class: [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
    * Description: Users may create an account using an email and password. Password needs to be at least 6 characters long and user needs to confirm the password. The account can be used to login to the application. A progress bar shows how far the user is from creating a new account. Users can change their password and email or delete their account in their profile page.
-<br>
+   <br>
 
 Feature Category: Peer to Peer Messaging <br>
 2. Feature 2: Provide users with the ability to message each other directly (hard) (listed as 1 under the category on the assignment sheet)
@@ -496,17 +496,17 @@ Feature Category: UI Design and Testing <br>
    * Description: Espresso has been used to test Login and Register.
 
 Feature Category: Surprise <br>
-6. Feature 7: Fraud Behaviours/Scams
-    * Class: [listing status](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java#L167-168)
-    * Class: [Sellers](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java#L87-104)
-    * Class: [DisplayListingDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L74-77)
-    * Class: [ReportSellersActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ReportSellersActivity.java)
-    * Package: [ObserverDesignPattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)
-    * UI Design: [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-481) (fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481), please note it is currently set invisible)
-    * UI Design: [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443)
-    * UI Design: [activity_report_sellers.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_report_sellers.xml)
-    * Description: UI elements include a fraudulent warning textView and a warning sign imageView to warn the user when clicking on a listing of a fraudulent seller and before entering their card payment details. The report listing button was created with the intention to enable the user to notify us that the listing and associated seller is fraudulent where we would in turn update the to "Fraud Listing/Seller Identified." The user is also able to record details of the fraudulent activity for us to look into as it navigates to another screen when the button is pressed. The user can click on a button to flag the seller inside the seller's profile. This will update the seller's status and a message pops up saying that the administrators will look into the seller.
-    * Note: Unfortunately, this was only partially implemented.
+7. Feature 7: Fraud Behaviours/Scams
+   * Class: [listing status](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java#L167-168)
+   * Class: [Sellers](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java#L87-104)
+   * Class: [DisplayListingDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L74-77)
+   * Class: [ReportSellersActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ReportSellersActivity.java)
+   * Package: [ObserverDesignPattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)
+   * UI Design: [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-481) (fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481), please note it is currently set invisible)
+   * UI Design: [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443)
+   * UI Design: [activity_report_sellers.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_report_sellers.xml)
+   * Description: UI elements include a fraudulent warning textView and a warning sign imageView to warn the user when clicking on a listing of a fraudulent seller and before entering their card payment details. The report listing button was created with the intention to enable the user to notify us that the listing and associated seller is fraudulent where we would in turn update the to "Fraud Listing/Seller Identified." The user is also able to record details of the fraudulent activity for us to look into as it navigates to another screen when the button is pressed. The user can click on a button to flag the seller inside the seller's profile. This will update the seller's status and a message pops up saying that the administrators will look into the seller.
+   * Note: Unfortunately, this was only partially implemented.
 
 ## Team Meetings
 
