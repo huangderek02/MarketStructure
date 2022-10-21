@@ -77,7 +77,7 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 
 * [[Listing](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Listing.java)] (Entire Class)
 * [[Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Textbook.java)] (Designed Class with Huiguang and Derek and created Class)
-* [[Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] (created Class)
+* [[Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] (Created Class)
 
 - [[State Design Pattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/StateDesignPattern)] (Entire Package)
    - [[Delivered](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/Delivered.java)] (Entire Class)
@@ -94,7 +94,12 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
    - [[WaitingToSelectListingToView](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToSelectListingToView.java)] (Entire Class)
    - [[WaitingToSelectPaymentMethod](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/StateDesignPattern/WaitingToSelectPaymentMethod.java)] (Entire Class)
 
-
+- [[Checkout Feature](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/Checkout)] (Entire Package)
+    - [[ConfirmOrderActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/ConfirmOrderActivity.java)] (Entire Class)
+    - [[DeliveryDetailsActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/DeliveryDetailsActivity.java)] (Entire Class)
+    - [[DeliveryOptionsMenuActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/DeliveryOptionsMenuActivity.java)] (Entire Class)
+    - [[PaymentCardActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/PaymentCardActivity.java)] (Entire Class)
+    - [[PaymentMethodMenu](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/PaymentMethodMenu.java)] (Entire Class)
 
 
 
