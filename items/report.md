@@ -32,7 +32,7 @@ The following is a report template to help your team successfully provide all th
 | UID | Name | Role |
 | :--- | :----: | ---: |
 | [u7117043] | [Gordon Lum] | [Worked on classes related to textbook searcher] |
-| [u7300484] | [Derek Huang] | [Worked on the Observer Design Pattern Package, Worked on the Seller Class] |
+| [u7300484] | [Derek Huang] | [Worked on the Observer Design Pattern Package, Worked on the Seller Class, Some methods in DisplayListingDetailsActivity and MarketActivity] |
 | [u7366836] | [Huiguang Zhang] | [Worked on chat functions and other methods to connect with firebase] |
 | [u7127350] | [Rhonda Luu] | [Worked on creating data files, designing UI to visualise data loaded from Firebase, State Design pattern and chain of Actions(Checkout, Delivery and Confirm Order Processes] |
 | [u7444134] | [Ratchanont Treevijitpaisan] | [role] |
@@ -56,9 +56,9 @@ U7117043, Gordon Lum, Contribution: X%
 * Filled out parts of the report: Application Description, UML for [[BTree, Parser, Textbook, TextbookSearcher, Tokenizer classes](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/items/images)], Data Structures for ArrayList and BTree, Grammar, Tokenizer and Parser, Bugs for BTree, Testing related to Search function
 
 U7300484, Derek Huang, Contribution: X%
-- [ObserverDesignPattern] (Entire Package)
-* [Sellers] (Created class)
-* [DisplayListingDetailsActivity] (Lines 53 - 72, 79-100)
+- [ObserverDesignPattern (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)] (Entire Package)
+* [Sellers (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)] (Created class)
+* [DisplayListingDetailsActivity (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 53 - 72, 79-100)
 * [MarketActivity] (Lines 75-97, Lines 101-108)
 
 
@@ -260,6 +260,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
      - A warning sign imageView and fraudulent warning textView in [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443) and [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-231). 
      - A fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481) in [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-481). 
   - However, it was attempted to be implemented as we believe that all users should be notified when a fraudulent listing was made. 
+  - The Observer Design Pattern was not successfully linked to the UI. However, it was attempted to be implemented as we believe that all users should be notified when a fraudulent listing was made. The user can subscribe to the subject so they can stay alert about potential scams on the marketplace.
 
 
 *[What design patterns did your team utilise? Where and why?]*
@@ -423,9 +424,9 @@ Feature Category: Firebase Integration <br>
 *List all features you have completed in their separate categories with their difficulty classification. If they are features that are suggested and approved, please state this somewhere as well.*
 
 4. The ability to micro-interact with items in your app
-    * Class [Sellers]
+    * Class [Sellers (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)]
 
-    *Description: The user can use the rating bar in the activity_seller to give the seller a rating. Although the rating bar have increments of 0.5 from 0 - 5, the rating is rounded down to the nearest whole number e.g. 0.5 goes down to 0. Each time the seller clicks on the rating bar, a Toast message is displayed based on the different cases for the different possible scores. In addition, the rating for each click is stored in an arrayList.
+    *Description: The user can use the rating bar in the activity_seller to give the seller a rating. Although the rating bar have increments of 0.5 from 0 - 5, the rating is rounded down to the nearest whole number e.g. 0.5 goes down to 0. Each time the seller clicks on the rating bar, a Toast message is displayed based on the different cases for the different possible scores. In addition, the rating for each click is stored in an arrayList. The average rating is also recorded in a TextView and is updated every time a rating is added. This is stored in memory as every time the program restarts, the arrayList resets to empty.
 
 ## Team Meetings
 
