@@ -28,7 +28,7 @@
 U7117043, Gordon Lum, Contribution: 20%
 * [[BTree](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/BTree.java)] (Entire Class)
 * [[Parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java)] (Entire Class)
-* [[Tokenizer](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Tokenizer.java)](Entire Class)
+* [[Tokenizer](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Tokenizer.java)] (Entire Class)
 * [[TextbookSearcher](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/TextbookSearcher.java)] (Entire Class)
 * All test classes in [tokenizer_and_parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/test/java/tokenizer_and_parser)
 * [[MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java)] methods: updateTextbooks(), sortRecycle(), updateRecycle(), sortResults(), [lines 261 onwards](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L261)
@@ -148,7 +148,7 @@ The group member who requires a decision to be made should contact the other mem
 
 ## Application Description
 
-Textbook Warehouse is a marketplace application that is specifically made for university students. It provies a quick and easy way to obtain cheaper, secondhand textbooks and avoid having to purchase new ones. Clients can create an account using an email and password to be able to access these services, search for textbooks and view available listings with different prices and sellers. 
+Textbook Warehouse is a marketplace application that is specifically made for university students. It provides a quick and easy way to obtain cheaper, secondhand textbooks and avoid having to purchase new ones. Clients can create an account using an email and password to be able to access these services, search for textbooks and view available listings with different prices and sellers. 
 
 
 **Application Use Cases and Examples**
@@ -168,7 +168,7 @@ Target Users: Students studying at university
 * User gets warned about potential fraud and scams 
 
 
-Bob is studying for a building degree and is currently enrolled in BUIL1011, BUIL1100 and ENGN1211. He wants to purchase the textbooks for further study but like most university, is poor and doesnt want to be eating 2 minute noodles for the entire semester. 
+Bob is studying for a building degree and is currently enrolled in BUIL1011, BUIL1100 and ENGN1211. He wants to purchase the textbooks for further study but like most university, is poor and doesn't want to be eating 2 minute noodles for the entire semester. 
 * Bob needs to buy 3 textbooks
 * He creates an account with an email and password on [app name]
 * He logs in to his account which takes him to the marketplace
@@ -267,7 +267,7 @@ Only the number string is stored (including leading zeroes)
 
 * Non-ambiguous grammar.
 * All strings are accepted as a valid grammar due to being apart of a searcher
-* A comma is used to separate terms from each other. Comma is an inuitive separator and not common in titles. Titles that have a comma do not start with one allowing for search to occur even if it does.
+* A comma is used to separate terms from each other. Comma is an intuitive separator and not common in titles. Titles that have a comma do not start with one allowing for search to occur even if it does.
 
 
 **Tokenizer and Parser Classes**
@@ -275,7 +275,7 @@ Only the number string is stored (including leading zeroes)
 
 The tokenizer class is used to convert a search string into the parts that define the Context Free Grammar and is used by the parser class. The tokenizer developed accepts all strings and does not throw an error due to its use in a searcher. It ignores whitespace between important characters, keywords and terms as they are unimportant to the grammar and could cause errors in the parser. 
 
-The tokenizer can store positive integers (including 0) below 10000 and stores other integers as a string, it stores operators as Characters and it stores important keywords and all other terms as strings. It is noted that this implementation could be improved by using enumerators to help the parser in its decison making by instead checking the type of the tokne rather than if a token is a keyword. 
+The tokenizer can store positive integers (including 0) below 10000 and stores other integers as a string, it stores operators as Characters and it stores important keywords and all other terms as strings. It is noted that this implementation could be improved by using enumerators to help the parser in its decision making by instead checking the type of the token rather than if a token is a keyword. 
 
 The tokenizer instantly converts a string into tokens which is a design choice to split the process of searching for a textbook into individual parts. This simplifies the testing of the parser as it is no longer repeatedly calling the tokenizer class when dealing with tokens allowing for easier identification of an error between the tokenizer and parser. Tokens are stored as an Arraylist due to the inbuilt methods in the List interface allowing for quick access and removal of tokens compare to arrays.
 
@@ -306,11 +306,11 @@ Location: [BTree] Class > insert() method: Causes Null Pointer Exception when in
 
 Description: 
 
-[BTreeTest] Class has a test that produces the error. It is believed that the error occurs due to a pointer error where the parent is not correctly assigned and occurs during the split() method. This is because the BTree works as intended if its height is atmost 3 and fails when attempting to split to a height of 4. 
+[BTreeTest] Class has a test that produces the error. It is believed that the error occurs due to a pointer error where the parent is not correctly assigned and occurs during the split() method. This is because the BTree works as intended if its height is at most 3 and fails when attempting to split to a height of 4. 
 
 Work around solution:
 
-Instantiate BTree with a larger maxKeys value to avoid. This solution works due to the lower number of textbooks used. In addition a BTree generally does not have a large height but it will be an issue if the app is upscaled to contain much more textbooks. 
+Instantiate BTree with a larger maxKeys value to avoid. This solution works due to the lower number of textbooks used. In addition a BTree generally does not have a large height but it will be an issue if the app is up scaled to contain much more textbooks. 
 
 
 
@@ -323,7 +323,7 @@ Severity/Priority: Medium (Affects major feature. Minor work around required)
 Location: https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure
 
 Description: 
-When we create a new account, normally it will linked the account with firebase authentication services and cloudfirestore which editing user details might get some errors. For instance, User update profile, normally user will get update realtime at cloudfirestore. Unfortunately, Firebase authentication services need more implementation to update the user authentication realtime.
+When we create a new account, normally it will linked the account with firebase authentication services and cloud firestore which editing user details might get some errors. For instance, User update profile, normally user will get update realtime at cloud firestore. Unfortunately, Firebase authentication services need more implementation to update the user authentication realtime.
 
 Work around solution:
 Try to understand the firebase re authentication method to fix these issue
@@ -333,7 +333,7 @@ Try to understand the firebase re authentication method to fix these issue
 
 **Tests for Classes Related to Search Function**
 
-Test classes for BTree, Tokenizer and Parser classes were created to increase confidence in the reliability of the search function. It is noted that a test class for TextbookSearcher is not included but should be if further work beyond the project is done. However methods were 'tested' in a main method during creation to ensure some indication of correct funtionality. For the test classes that exist a "high" code coverage in the 90%+ is reached but this is an unreliable value to use when considering what is actually tested. Reliability on each class is commented on in descriptions provided. 
+Test classes for BTree, Tokenizer and Parser classes were created to increase confidence in the reliability of the search function. It is noted that a test class for TextbookSearcher is not included but should be if further work beyond the project is done. However methods were 'tested' in a main method during creation to ensure some indication of correct functionality. For the test classes that exist a "high" code coverage in the 90%+ is reached but this is an unreliable value to use when considering what is actually tested. Reliability on each class is commented on in descriptions provided. 
 
 ![Search Function Coverage](./images/SearchCoverage.PNG) <br>
 
@@ -354,7 +354,7 @@ The focus of the tests is on the values of a BTree's keys as it is where Textboo
 
 8 Test Cases:
 - Tests Strings stored in searchTerms
-- Tests Strings stored in topichTerms
+- Tests Strings stored in topicTerms
 - Tests Strings stored in codeTerms
 - Tests Strings stored in errorTerms
 - Tests String stored in ISBN
@@ -460,7 +460,7 @@ Feature Category: Voice Your Feature <br>
 1. Feature 1: User registration including changing details (easy) (Approved suggested feature)
    * Class: [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java), (The class is used to register a new user, all methods) Lines of code: 28-159
    * Class: [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
-   * Description: Users may create an account using an email and password. Password needs to be atleast 6 characters long and user needs to confirm the password. The account can be used to login to the application. A progress bar shows how far the user is from creating a new account. Users can change their password and email or delete their account in their profile page.
+   * Description: Users may create an account using an email and password. Password needs to be at least 6 characters long and user needs to confirm the password. The account can be used to login to the application. A progress bar shows how far the user is from creating a new account. Users can change their password and email or delete their account in their profile page.
 <br>
 
 Feature Category: Peer to Peer Messaging <br>
