@@ -25,7 +25,7 @@
 
 ## Summary of Individual Contributions
 
-U7117043, Gordon Lum, Contribution: X%
+U7117043, Gordon Lum, Contribution: 20%
 * [[BTree](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/BTree.java)] (Entire Class)
 * [[Parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java)] (Entire Class)
 * [[Tokenizer](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Tokenizer.java)](Entire Class)
@@ -35,14 +35,14 @@ U7117043, Gordon Lum, Contribution: X%
 
 * Filled out parts of the report: Application Description, Data Structure: ArrayList and BTree, UML for [[Application Flow (UI_UML_total), Search_Function_UML and there related images](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/items/images)], Data Structures for ArrayList and BTree, Grammar Section, Tokenizer and Parser Section, Bugs for BTree, Testing related to Search function. Helped with presentation creation
 
-U7300484, Derek Huang, Contribution: X%
+U7300484, Derek Huang, Contribution: 20%
 - [ObserverDesignPattern (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)] (Entire Package)
 * [Sellers (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)] (Created class)
 * [DisplayListingDetailsActivity (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 53 - 72, 79-100)
 * [MarketActivity] (Lines 75-97, Lines 101-108)
 
 
-U7366836, Huiguang Zhang, Contribution: X%
+U7366836, Huiguang Zhang, Contribution: 20%
 * [DisplayListingDetailsActivity (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 0 - 72)
 [Msg(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/Msg.java)] (Entire Class)
 * [MsgAdapter(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/MsgAdapter.java)] (Entire Class)
@@ -52,7 +52,7 @@ U7366836, Huiguang Zhang, Contribution: X%
 * [RecyclerViewAdapter(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] (read data from recycleViewer and sent the data to DisplayListingDetailsActivity to show the details)
 
 
-U7444134, Ratchanont Treevijitpaisan, Contribution: X%
+U7444134, Ratchanont Treevijitpaisan, Contribution: 20%
 * [[LoginActivity]([[UI design and Firebase Authentication](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/LoginActivity.java)] (Entire Class)
 * [[RegisterActivity]([[UI design and Firebase Integration](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java)] (Entire Class)
 * [[MainActivity]([[UI design and Firebase Integration](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MainActivity.java)] (Entire Class)
@@ -61,7 +61,7 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 * Helped with presentation creation
 
 
-*U7127350 , Rhonda Luu, Contribution: X% <br>
+*U7127350 , Rhonda Luu, Contribution: 20% <br>
 **Part 1: Basic App - Task 2 - Created data file with at least 2,500 valid data instances**<br>
 * [[GenerateData](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/GenerateData)] (All classes in Package)
 * [[Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Textbook.java)] (Designed Class with Huiguang and Derek and created Class)
