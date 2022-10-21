@@ -1,19 +1,5 @@
 # Gorderhuifamda Report
 
-The following is a report template to help your team successfully provide all the details necessary for your report in a structured and organised manner. Please give a straightforward and concise report that best demonstrates your project. Note that a good report will give a better impression of your project to the reviewers.
-
-*Here are some tips to write a good report:*
-
-* *Try to summarise and list the `bullet points` of your project as many as possible rather than give long, tedious paragraphs that mix up everything together.*
-
-* *Try to create `diagrams` instead of text descriptions, which are more straightforward and explanatory.*
-
-* *Try to make your report `well structured`, which is easier for the reviewers to capture the necessary information.*
-
-*We give instructions enclosed in square brackets [...] and examples for each sections to demonstrate what are expected for your project report.*
-
-*Please remove the instructions or examples in `italic` in your final report.*
-
 ## Table of Contents
 
 1. [Team Members and Roles](#team-members-and-roles)
@@ -39,12 +25,6 @@ The following is a report template to help your team successfully provide all th
 
 ## Summary of Individual Contributions
 
-*[Summarise the contributions made by each member to the project, e.g. code implementation, code design, UI design, report writing, etc.]*
-
-*[Code Implementation. Which features did you implement? Which classes or methods was each member involved in? Provide an approximate proportion in pecentage of the contribution of each member to the whole code implementation, e.g. 30%.]*
-
-*Here is an example:*
-
 U7117043, Gordon Lum, Contribution: X%
 * [[BTree](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/BTree.java)] (Entire Class)
 * [[Parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java)] (Entire Class)
@@ -53,7 +33,7 @@ U7117043, Gordon Lum, Contribution: X%
 * All test classes in [tokenizer_and_parser](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/test/java/tokenizer_and_parser)
 * [[MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java)] methods: updateTextbooks(), sortRecycle(), updateRecycle(), sortResults(), [lines 261 onwards](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L261)
 
-* Filled out parts of the report: Application Description, Data Structure: ArrayList and BTree, UML for [[Application Flow (UI_UML_total), Search_Function_UML and there related images](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/items/images)], Data Structures for ArrayList and BTree, Grammar Section, Tokenizer and Parser Section, Bugs for BTree, Testing related to Search function
+* Filled out parts of the report: Application Description, Data Structure: ArrayList and BTree, UML for [[Application Flow (UI_UML_total), Search_Function_UML and there related images](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/items/images)], Data Structures for ArrayList and BTree, Grammar Section, Tokenizer and Parser Section, Bugs for BTree, Testing related to Search function. Helped with presentation creation
 
 U7300484, Derek Huang, Contribution: X%
 - [ObserverDesignPattern (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)] (Entire Package)
@@ -74,6 +54,7 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 * [[MainActivity]([[UI design and Firebase Integration](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MainActivity.java)] (Entire Class)
 * [[ProfileActivity]([[UI design and Firebase Integration](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java)] (Entire Class)
 * [[UI testing]([[UI testing (basic)](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/androidTest/java/Espresso)] (All classes in Package)
+* Helped with presentation creation
 
 
 *U7127350 , Rhonda Luu, Contribution: X% <br>
@@ -126,22 +107,12 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 * Application Design and Decisions: State and Observer Design Patterns
 * Surprise Item
 * Testing Summary: UI Testing – Application Flow, Payment Process and Generate Random Listings
+* Helped with presentation creation
 
 **Miscellaneous contributions**<br>
 - Final code clean-up to remove redundant code and add missing @author annotations to classes
 
 
-*you should ALSO provide links to the specified classes and/or functions*
-
-*[Code Design. What design patterns, data structures, did the involved member propose?]*
-
-*[UI Design. Specify what design did the involved member propose? What tools were used for the design?]*
-
-*[Report Writing. Which part of the report did the involved member write?]*
-
-*[Slide preparation. Were you responsible for the slides?]*
-
-*[Miscellaneous contributions. You are welcome to provide anything that you consider as a contribution to the project or team.]*
 
 ## Conflict Resolution Protocol
 
@@ -213,12 +184,6 @@ MarketActivity Dependency:
 
 ![Search Function](./images/Search_Function_UML.png) <br>
 ## Application Design and Decisions
-
-*Please give clear and concise descriptions for each subsections of this part. It would be better to list all the concrete items for each subsection and give no more than `5` concise, crucial reasons of your design. Here is an example for the subsection `Data Structures`:*
-
-*I used the following data structures in my project:*
-
-*[What data structures did your team utilise? Where and why?]* <br>
 
 **Data Structures**
 
@@ -321,9 +286,6 @@ The report listing button was created with the intention to enable the user to n
 A warning sign imageView and fraudulent warning textView was also created in [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443) and [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-231) to warn the user once more before entering their card payment details.
 Additionally, the user can click on a button to flag the seller inside the seller's profile. This will update the seller's status and a message pops up saying that the administrators will look into the seller.
 
-**Other**
-
-*[What other design decisions have you made which you feel are relevant? Feel free to separate these into their own subheadings.]*
 
 ## Summary of Known Errors and Bugs
 
@@ -431,21 +393,8 @@ These methods were created in [GenerateRandomListings.java](https://gitlab.cecs.
 All listings generated were unique and the random additionalDetails generated matched the condition (outlined in red box) and the listingPrice was adjusted from the originalPrice correctly according to the condition and additional details (outlined in blue box)
 ![Example of randomly generated listing](./images/GeneratingRandomListingsFirestoreDataListingExample.png)<br>
 
-*Here is an example:*
-
-- *Number of test cases: ...*
-
-- *Code coverage: ...*
-
-- *Types of tests created: ...*
-
-*Please provide some screenshots of your testing summary, showing the achieved testing coverage. Feel free to provide further details on your tests.*
 
 ## Implemented Features
-
-*[What features have you implemented?]*
-
-*Here are some examples:*
 
 **Part 1: Basic App** <br>
 1. Feature 2: Data file(s) with at least 2,500 valid data instances (easy) (listed as number 2 on assignment sheet)
