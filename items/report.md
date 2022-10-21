@@ -399,7 +399,7 @@ The test class tests every method in the Tokenizer class. It is noted that each 
 The application flow of the app was tested by stepping through the different instances and checking if the next activity screen is navigated to as intended.
 
 **Payment Process - Total Order Cost Method**
-The [calculateTotalCost()](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/ConfirmOrderActivity.java#L86-107) method was testing by stepping through the order process. In the example below, it can be seen that the total cost of the order has been calculated to include the listingPrice and the additional cost of $15 for Express delivery and a 1.5% surcharge of the total cost of the listingPrice and delivery cost combined.
+The [calculateTotalCost()](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/ConfirmOrderActivity.java#L86-107) method was testing by stepping through the order process. In the example below, it can be seen that the total cost of the order has been calculated to include the listingPrice and the additional cost of $15 for Express delivery and a 1.5% surcharge of the total cost of the listingPrice and delivery cost combined.<br>
 ![UI Testing: Payment Process - Total Order Cost Method](./images/PaymentProcess-TotalOrderCostMethodExample.png)<br>
 
 **State Design Pattern Testing**<br>
