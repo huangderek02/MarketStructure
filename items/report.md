@@ -35,7 +35,7 @@ The following is a report template to help your team successfully provide all th
 | [u7300484] | [Derek Huang] | [Worked on the Observer Design Pattern Package, Worked on the Seller Class] |
 | [u7366836] | [Huiguang Zhang] | [Worked on chat functions and other methods to connect with firebase] |
 | [u7127350] | [Rhonda Luu] | [Worked on creating data files, designing UI to visualise data loaded from Firebase, State Design pattern and chain of Actions(Checkout, Delivery and Confirm Order Processes] |
-| [u7444134] | [Ratchanont Treevijitpaisan] | [ [role] ] |
+| [u7444134] | [Ratchanont Treevijitpaisan] | [role] |
 
 ## Summary of Individual Contributions
 
@@ -81,7 +81,7 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 * [[Listing](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Listing.java)] (Entire Class)
 * [[MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)] method: [[addListings()](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)]
 * [[listings collection in Firebase repository](https://console.firebase.google.com/project/marketplace-db-6139c/firestore/data/~2Flistings~2F0)] (Created from [[addListings() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)] in [[onCreate() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L58)])
-
+<br>
 
 **Part 1: Basic App - Task 3 - load data/information (from the data file(s) or Firebase) and visualise it**<br>
 **UI Design:**
@@ -93,14 +93,14 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
    - [[onClickListener() for Buy Now Button](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L102-112)]
 * [[card_layout.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/card_layout.xml)] (Entire card layout UI)
 * [[activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml)] (Rearranged UI elements created by Huiguang and added in additional TextViews to display each of the fields)
-
+ <br>
 
 **Part 1: Basic App - Design Patterns**<br>
 **Code Design:**
 * [[State Design Pattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/StateDesignPattern)] (All classes in Package)
 * [[ObserverDesignPattern](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/ObserverDesignPattern)] (Contributed to design process and idea to implement for surprise feature for fraudulent sellers and listings)
 * [[RecyclerViewAdapter](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] method: [[onBindViewHolder()](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java#L83-86)] (created instance of OrderStatus to use for State Design Pattern)
-
+<br>
 
 **Part 2: Additional/General features of the App - Creating Processes - Chain of Actions/Steps (1) and Payment Process (6)**<br>
 **Code Design:**
