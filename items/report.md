@@ -219,11 +219,6 @@ MarketActivity Dependency:
  	
  	* Provides a way to store much more objects in a single node and completely balanced compared to BST, Red black tree and other tree variants
  	
- 
- 
-
-
-
 
 **Design Patterns**
 
@@ -309,7 +304,6 @@ Work around solution:
 
 Instantiate BTree with a larger maxKeys value to avoid. This solution works due to the lower number of textbooks used. In addition a BTree generally does not have a large height but it will be an issue if the app is upscaled to contain much more textbooks. 
 
--
 
 
 2. *Observer Design Pattern not linked to UI*
@@ -326,7 +320,6 @@ When we create a new account, normally it will linked the account with firebase 
 Work around solution:
 Try to understand the firebase re authentication method to fix these issue
 
-*List all the known errors and bugs here. If we find bugs/errors that your team does not know of, it shows that your testing is not thorough.*
 
 ## Testing Summary
 
@@ -396,6 +389,27 @@ When creating the data instances, various methods used to help generate random d
 These methods were created in [GenerateRandomListings.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/GenerateRandomListings.java) and the accuracy of these methods were tested by visually comparing the listing generated in the [Firestore repository](https://console.firebase.google.com/project/marketplace-db-6139c/firestore/data/~2Flistings~2F0).
 All listings generated were unique and the random additionalDetails generated matched the condition (outlined in red box) and the listingPrice was adjusted from the originalPrice correctly according to the condition and additional details (outlined in blue box)
 ![Example of randomly generated listing](./images/GeneratingRandomListingsFirestoreDataListingExample.png)<br>
+
+**Espresso Testing**<br>
+The Login and Register UI Login and Register activities were tested with Espresso.
+
+[Login Test](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/androidTest/java/Espresso/LoginTest.java)
+| Test Method | Code Test | Result |
+| :--- | :----: | ---: |
+| emailIsEmpty() | TextUtils.isEmpty(email) | pass |
+| passIsEmpty() | TextUtils.isEmpty(password) | pass |
+| passIsShort() | password.length() < 6 | pass |
+| loginSuccessfully() | loginSuccessfully() | failed |
+
+[Register Test](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/androidTest/java/Espresso/RegisterTest.java)
+| Test Method | Code Test | Result |
+| :--- | :----: | ---: |
+| emailIsEmpty() | TextUtils.isEmpty(email) | pass |
+| nameIsEmpty() | TextUtils.isEmpty(name) | pass |
+| passIsEmpty() | TextUtils.isEmpty(password) | pass |
+| cPassIsEmpty() | TextUtils.isEmpty(cPassword) | pass |
+| passNotMatch() | !cPassword.matches(cPassword) | pass |
+| passIsShort() | password.length() < 6 | pass |
 
 
 ## Implemented Features
