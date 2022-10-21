@@ -114,7 +114,15 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 - [[activity_checkout_5_confirm_order.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_5_confirm_order.xml)] (Entire UI activity screen)
 
 **Surprise Feature: identify fraudulent behaviours/scams**<br>
-**UI Design:** 
+**UI Design:**
+- [[activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-481)] (Created a fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481))
+- [[activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-231)] (Created warning sign imageView and fraudulent warning textView)
+- [[ListingTextbookData](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java#L167-168)] (Added "Fraud Listing/Seller Identified" listingStatus)
+- Contributed to UI design implementation of adding a report listing button to use with Observer Design Pattern
+- 
+**Miscellaneous contributions**<br>
+- Final code clean-up to remove redundant code
+- Add missing @author annotations to classes
 
 *you should ALSO provide links to the specified classes and/or functions*
 
@@ -130,7 +138,7 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 
 ## Conflict Resolution Protocol
 
-[Sickness or unability to work]
+[Sickness or inability to work]
 
 * If a team member is unwell, whoever has completed their delegated task first will help complete the unwell team member's part.
 The unwell team member will help the other team member with their other assigned tasks. Key requirements of the assignment will be prioritised.
@@ -138,7 +146,7 @@ The unwell team member will help the other team member with their other assigned
 [Decision making]
 
 * When the group member has issues or needs to make a decision that is open ended, we will reach consensus and solve the issue by majority vote.
-The group member who requires a decison to be made should contact the other members in the group chat or next meeting.
+The group member who requires a decision to be made should contact the other members in the group chat or next meeting.
 
 [Not meeting expected deadlines]
 
@@ -297,8 +305,11 @@ If a term is valid, information contained in the term is stored in the instance 
 **Surprise Item**
 
 *[If you implement the surprise item, explain how your solution addresses the surprise task. What decisions do your team make in addressing the problem?]*
-
-The surprise item was a feature that notifies the user of whether a fraudulent seller or item has been identified. To get things started, we added a button in the activity for displaying the listing details, which takes the user to the seller's profile. Inside the seller's profile, the user can click on a button to flag the seller. This will update the seller's status and a message pops up saying that the administrators will look into the seller.
+The surprise item was a feature that notifies the user of whether a fraudulent seller or item has been identified. 
+It was partially implemented through the creation of UI elements, unfortunately, the code to connect the UI elements and simulate the processs was not implemented. These UI elements include a fraudulent warning textView (Lines 206-231) and a report listing button (Lines 470-481) in [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-481) (please note it is currently set invisible) where the user is warned that the user when clicking on a listing of a fraudulent seller.
+The report listing button was created with the intention to enable the user to notify us that the listing and associated seller is fraudulent where we would in turn update the [listing status](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java#L167-168) to "Fraud Listing/Seller Identified." The user is also able to record details of the fraudulent activity for us to look into as it navigates to another screen when the button is pressed.
+A warning sign imageView and fraudulent warning textView was also created in [activity_textbook_detail_viewer.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml#L428-443) and [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml#L206-231) to warn the user once more before entering their card payment details.
+Additionally, the user can click on a button to flag the seller inside the seller's profile. This will update the seller's status and a message pops up saying that the administrators will look into the seller.
 
 **Other**
 
