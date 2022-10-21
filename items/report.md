@@ -77,7 +77,7 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 *U7127350 , Rhonda Luu, Contribution: X% <br>
 **Part 1: Basic App - Task 2 - Created data file with at least 2,500 valid data instances**<br>
 **Code Design:** <br>
--[[GenerateData](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/GenerateData)] (Entire Package)
+* [[GenerateData](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/GenerateData)] (Entire Package)
    -[[GenerateRandomListings](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/GenerateRandomListings.java)] (Entire Class)
    -[[ListingTextbookData](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java)] (Entire Class)
 -[[MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)]: [[addListings() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130)], [[Added ProgressDialog in onCreate() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L61-63)]
