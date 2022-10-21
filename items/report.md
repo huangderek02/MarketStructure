@@ -58,7 +58,7 @@ U7117043, Gordon Lum, Contribution: X%
 U7300484, Derek Huang, Contribution: X%
 - [ObserverDesignPattern] (Entire Package)
 * [Seller] (Created class)
-* [DisplayListingDetailsActivity] (Lines 53 - 72)
+* [DisplayListingDetailsActivity] (Lines 53 - 72, 79-100)
 * [MarketActivity] (Lines 75-97, Lines 101-108)
 
 
