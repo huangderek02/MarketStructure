@@ -397,8 +397,16 @@ The test class tests every method in the Tokenizer class. It is noted that each 
 
 **UI Testing**
 
-**Firestore Tesitng
 
+**State Design Pattern Testing**
+UI testing by navigating through events in the app and looking at the log output was used to test whether the State design pattern was working as intended. The example below shows the [log](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L110) printed when the "Buy Now" button is pressed on the [activity_textbook_detail_viewer](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml) UI screen. When the "Buy Now" button is pressed, the state of OrderStatus changes from WaitingToSelectListingToBuy to WaitingToSelectDeliveryOption.
+![Example of State Design Pattern Testing](./images/StateDesignPatternTestingExample.png)<br>
+
+**Generating Random Listings Firestore Data Testing**
+When creating the data instances, various methods used to help generate random data for each of the attributes to a listing in the [addListings() method in MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130).
+These methods were created in [GenerateRandomListings.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/GenerateRandomListings.java) and the accuracy of these methods were tested by visually comparing the listing generated in the [Firestore repository](https://console.firebase.google.com/project/marketplace-db-6139c/firestore/data/~2Flistings~2F0).
+All listings generated were unique and the random additionalDetails generated matched the condition and the listingPrice was adjusted from the originalPrice correctly according to the condition and additional details.
+![Example of randomly generated listing](./images/GeneratingRandomListingsFirestoreDataListingExample.png)<br>
 
 *Here is an example:*
 
