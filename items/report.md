@@ -210,7 +210,7 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
   - The singleton design patter is used in the [Parser Class](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/tokenizer_and_parser/Parser.java) to ensure that only a single instance of a Parser exists. A parser instance contains many variables and thus to save memory, a singleton ensures that at most only one instance exists.
 
 * Observer (?)
-  - The Observer Design Pattern was not successfully linked to the UI. However, it was attempted to be implemented as we believe that all users should be notified when a fraudulent listing was made.
+  - The Observer Design Pattern was not successfully linked to the UI. However, it was attempted to be implemented as we believe that all users should be notified when a fraudulent listing was made. 
 
 
 *[What design patterns did your team utilise? Where and why?]*
