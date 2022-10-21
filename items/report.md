@@ -121,8 +121,7 @@ U7444134, Ratchanont Treevijitpaisan, Contribution: X%
 - Contributed to UI design implementation of adding a report listing button to use with Observer Design Pattern
 - 
 **Miscellaneous contributions**<br>
-- Final code clean-up to remove redundant code
-- Add missing @author annotations to classes
+- Final code clean-up to remove redundant code and add missing @author annotations to classes
 
 *you should ALSO provide links to the specified classes and/or functions*
 
@@ -410,6 +409,18 @@ The test class tests every method in the Tokenizer class. It is noted that each 
 
 *Here are some examples:*
 
+**Part 1: Basic App** <br>
+1. Feature 2: Data file(s) with at least 2,500 valid data instances (easy) (listed as number 2 on assignment sheet)
+    * Package: [GenerateData](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure/GenerateData) (includes class for string storage data used to create listings and generating random data methods to use for listings)
+    * Class: [Textbook](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Textbook.java)
+    * Class: [Listing](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Listing.java)
+    * Class: [MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130) method: [addListings()](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130) (where the data instances are generated)
+    * Firebase: [listings collection in Firebase repository](https://console.firebase.google.com/project/marketplace-db-6139c/firestore/data/~2Flistings~2F0) (Created from [addListings() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130) in [onCreate() method](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L58)
+    * Description: 2,500 valid data instances are randomly generated in [MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130) using pre-defined data in [ListingTextbookData.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/ListingTextbookData.java). Random listings were generated using methods in [GenerateRandomListings.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/GenerateRandomListings.java)
+    * Note: Unfortunately, the data stream was unable to be simulated
+
+
+**Part 2: Additional/General features of the App** <br>
 Feature Category: Voice Your Feature <br>
 
 1. Feature 1: User registration including changing details (easy)
@@ -435,6 +446,18 @@ Feature Category: Firebase Integration <br>
     * Class [Sellers (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Sellers.java)]
 
     *Description: The user can use the rating bar in the activity_seller to give the seller a rating. Although the rating bar have increments of 0.5 from 0 - 5, the rating is rounded down to the nearest whole number e.g. 0.5 goes down to 0. Each time the seller clicks on the rating bar, a Toast message is displayed based on the different cases for the different possible scores. In addition, the rating for each click is stored in an arrayList. The average rating is also recorded in a TextView and is updated every time a rating is added. This is stored in memory as every time the program restarts, the arrayList resets to empty.
+
+Feature Category: Creating Processes <br>
+5. Feature 1:Implement a chain of action/steps (at least 3 steps) to follow up on a process required by your app's theme (hard) (listed as number 1 on assignment sheet) (maybe - to edit if yes)
+   * Description: handle the events for the chain of actions/steps involved in the ordering process from searching for a textbook, selecting a textbook to buy to payment, delivery and confirmation of the order.
+6. Feature 2: Payment process (easy) (listed as number 6 on assignment sheet)
+   * Class [PaymentCardActivity.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/PaymentCardActivity.java)
+   * Class [PaymentMethodMenu.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/PaymentMethodMenu.java)
+   * Class [ConfirmOrderActivity.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/ConfirmOrderActivity.java)
+   * Payment Method Menu - UI Design: [activity_checkout_3_payment_method_menu.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_3_payment_method_menu.xml)
+   * Fill out Credit Card Details Form - UI Design: [activity_checkout_4_payment_card.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_4_payment_card.xml)
+   * Order Summary - UI Design: [activity_checkout_5_confirm_order.xml](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_5_confirm_order.xml) (Includes total cost of order which includes additional costs such as delivery and card surcharge (if selected))
+   * Description: The user is able to choose between two payment methods: Cash or Credit Card. If the user decides to pay by card there is a 1.5% additional surcharge added to the total cost of the order.
 
 ## Team Meetings
 
