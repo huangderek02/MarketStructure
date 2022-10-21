@@ -58,7 +58,7 @@ U7117043, Gordon Lum, Contribution: X%
 U7300484, Derek Huang, Contribution: X%
 - [ObserverDesignPattern] (Entire Package)
 * [Sellers] (Created class)
-* [DisplayListingDetailsActivity] (Lines 53 - 72, 79-100)
+* [DisplayListingDetailsActivity (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 53 - 72, 79-100)
 * [MarketActivity] (Lines 75-97, Lines 101-108)
 
 
