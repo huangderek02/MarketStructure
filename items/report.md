@@ -34,7 +34,6 @@ The following is a report template to help your team successfully provide all th
 | [u7117043] | [Gordon Lum] | [Worked on classes related to textbook searcher] |
 | [u7300484] | [Derek Huang] | [role] |
 | [u7366836] | [Huiguang Zhang] | [Worked on chat functions and other methods to connect with firebase] |
-| [u7444134] | [Ratchanont Treevijitpaisan] | [ [role] ] |
 | [u7127350] | [Rhonda Luu] | [role] |
 
 ## Summary of Individual Contributions
@@ -116,7 +115,7 @@ The group member who requires a decison to be made should contact the other memb
 
 ## Application Description
 
-[App name] is a markplace application that is specifically made for university students. It provies a quick and easy way to obtain cheaper, secondhand textbooks and avoid having to purchase new ones. Clients can create an account using an email and password to be able to access these services, search for textbooks and view available listings with different prices and sellers. 
+TextWarehouse is a markplace application that is specifically made for university students. It provies a quick and easy way to obtain cheaper, secondhand textbooks and avoid having to purchase new ones. Clients can create an account using an email and password to be able to access these services, search for textbooks and view available listings with different prices and sellers. 
 
 
 **Application Use Cases and Examples**
@@ -125,12 +124,14 @@ Target Users: Students studying at university
 
 * User can create an account using an email and password
 * User can login to the application using an existing email and password
+* User can delete their account or change their login details
 * User can search for textbooks by title or by ISBN
 * User can filter textbooks found by cost, pages, edition, topic, class code
 * User can sort textbooks found in ascending or descending order: alphabetically, price, topic, pages
 * User can view listings available, there prices and sellers if they exist
 * User can purchase an existing textbook
 * User can send messages to other users
+* User can leave a review on a seller 
 * User gets warned about potential fraud and scams 
 
 
@@ -148,13 +149,6 @@ Bob is studying for a building degree and is currently enrolled in BUIL1011, BUI
 
 
 -----------------------------------------------------------------------------------
-
-*[What is your application, what does it do? Include photos or diagrams if necessary]*
-
-*Here is a pet specific application example*
-
-*PetBook is a social media application specifically targetting pet owners... it provides... certified practitioners, such as veterians are indicated by a label next to their profile...*
-
 
 ## Application UML
 
@@ -284,7 +278,7 @@ Instantiate BTree with a larger maxKeys value to avoid. This solution works due 
 
 
 2. *Observer Design Pattern not linked to UI*
-    The plan was to use the Observer Design Pattern to notify users of a fraudulent listing. When a seller makes a fraudulent listing, there is a person acting as a shadow for the seller, who notifies the users when the seller does so.
+    The plan was to use the Observer Design Pattern to notify users of a fraudulent listing.
 3. ...
 
 *List all the known errors and bugs here. If we find bugs/errors that your team does not know of, it shows that your testing is not thorough.*
@@ -358,7 +352,7 @@ The test class tests every method in the Tokenizer class. It is noted that each 
 *Here are some examples:*
 
 Feature Category: Voice Your Feature <br>
-*Implemented features:*
+
 1. Feature 1: User registration including changing details (easy)
    * Class [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java), (The class is used to register a new user, all methods) Lines of code: 28-159
    * Class [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
@@ -370,10 +364,11 @@ Feature Category: Voice Your Feature <br>
 <br>
 
 Feature Category: Firebase Integration <br>
-*Implemented features:* <br>
-1. **Use Firebase to implement user Authentication/Authorisation. (easy)**
-   * Class A: methods A, B, C, lines of code: whole file
-   * …
+
+1. Use Firebase to implement user Authentication/Authorisation. (easy)
+   * Class [RegisterActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RegisterActivity.java) Method: createUser, lines: 123 - 60
+    * Class [ProfileActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ProfileActivity.java), methods updateProfile(), openEditEmailDialog(), updateEmail(), openEditNameDialog(), openChangePassword() Lines of code: 75-358
+   * Description: Users account are stored on Firebase. Creating an accouting or changing user profile details access Firebase and update these details.
 
 *List all features you have completed in their separate categories with their difficulty classification. If they are features that are suggested and approved, please state this somewhere as well.*
 
