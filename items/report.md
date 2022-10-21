@@ -33,7 +33,7 @@ The following is a report template to help your team successfully provide all th
 | :--- | :----: | ---: |
 | [u7117043] | [Gordon Lum] | [Worked on classes related to textbook searcher] |
 | [u7300484] | [Derek Huang] | [Worked on the Observer Design Pattern Package, Worked on the Seller Class, Some methods in DisplayListingDetailsActivity and MarketActivity] |
-| [u7366836] | [Huiguang Zhang] | [Worked on chat functions, UI design in some part and other methods to connect with firebase] |
+| [u7366836] | [Huiguang Zhang] | [Worked on chat functions and other methods to connect with firebase] |
 | [u7127350] | [Rhonda Luu] | [Worked on creating data files, designing UI to visualise data loaded from Firebase, State Design pattern and Checkout process]
 | [u7444134] | [Ratchanont Treevijitpaisan] | [role] |
 
@@ -63,13 +63,9 @@ U7300484, Derek Huang, Contribution: X%
 
 
 U7366836, Huiguang Zhang, Contribution: X%
-* [DisplayListingDetailsActivity (https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java)] (Lines 0 - 72)
-* [Msg(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/Msg.java)] (Entire Class)
-* [MsgAdapter(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Messaging/MsgAdapter.java)] (Entire Class)
-* [ReportSellersActivity(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ReportSellersActivity.java)] (Entire Class)
-* [ChatActivity(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/ChatActivity.java)] (Entire Class)
-* [MarketActivity(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java)] (read data from database and sent the data to recycleViewer to show the list)
-* [RecyclerViewAdapter(https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/RecyclerViewAdapter.java)] (read data from recycleViewer and sent the data to DisplayListingDetailsActivity to show the details)
+* A.class
+* B.class: function1(), function2(), ...
+* ....
 
 
 U7444134, Ratchanont Treevijitpaisan, Contribution: X%
@@ -352,7 +348,17 @@ Instantiate BTree with a larger maxKeys value to avoid. This solution works due 
 
 2. *Observer Design Pattern not linked to UI*
     The plan was to use the Observer Design Pattern to notify users of a fraudulent listing. When the seller makes a fraudulent listing, there is supposed to be an entity acting as a shadow of the seller, who notifies the users when the seller does so. That entity has the same attributes as the seller. 
-3. ...
+3. Firebase Integration issues
+
+Severity/Priority: Medium (Affects major feature. Minor work around required)
+
+Location: https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/tree/main/app/src/main/java/com/example/marketstructure
+
+Description: 
+When we create a new account, normally it will linked the account with firebase authentication services and cloudfirestore which editing user details might get some errors. For instance, User update profile, normally user will get update realtime at cloudfirestore. Unfortunately, Firebase authentication services need more implementation to update the user authentication realtime.
+
+Work around solution:
+Try to understand the firebase re authentication method to fix these issue
 
 *List all the known errors and bugs here. If we find bugs/errors that your team does not know of, it shows that your testing is not thorough.*
 
