@@ -394,17 +394,23 @@ Code Coverage: 98.7% of Tokenizer (100% method coverage)
 The test class tests every method in the Tokenizer class. It is noted that each test case could be separated to be a unit test, and as a result be improved, but was not done due to time limitations. Each test attempts to cover every statement condition as it is impossible to cover every case. The tokenizerString() method contains two tests but could be extended as it integrates the other methods. However a randomized test string from a random online string generator was obtained for a complex test. Overall there is decent confidence that the tokenizer works as intended.
 
 
-**UI Testing**
+**UI Testing**<br>
+**Application Flow**
+The application flow of the app was tested by stepping through the different instances and checking if the next activity screen is navigated to as intended.
 
+**Payment Process - Total Order Cost Method**
+The [calculateTotalCost()](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/Checkout/ConfirmOrderActivity.java#L86-107) method was testing by stepping through the order process. In the example below, it can be seen that the total cost of the order has been calculated to include the listingPrice and the additional cost of $15 for Express delivery and a 1.5% surcharge of the total cost of the listingPrice and delivery cost combined.
+![UI Testing: Payment Process - Total Order Cost Method](./images/PaymentProcess-TotalOrderCostMethodExample.png)<br>
 
 **State Design Pattern Testing**<br>
-UI testing by navigating through events in the app and looking at the log output was used to test whether the State design pattern was working as intended. The example below shows the [log](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L110) printed when the "Buy Now" button is pressed on the [activity_textbook_detail_viewer](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml) UI screen. When the "Buy Now" button is pressed, the state of OrderStatus changes from WaitingToSelectListingToBuy to WaitingToSelectDeliveryOption.
+UI testing by navigating through events in the app and looking at the log output was used to test whether the State design pattern was working as intended. The example below shows the [log](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/DisplayListingDetailsActivity.java#L110) (outlined in orange box) printed when the "Buy Now" button is pressed on the [Detailed viewer of a Listing when a listing is clicked on the recycleViewer](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_textbook_detail_viewer.xml) UI screen. When the "Buy Now" button is pressed, the state of OrderStatus changes from WaitingToSelectListingToBuy to WaitingToSelectDeliveryOption as the user is navigated to the [Delivery Options Menu](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/res/layout/activity_checkout_1_delivery_options_menu.xml) .
 ![Example of State Design Pattern Testing](./images/StateDesignPatternTestingExample.png)<br>
+<br>
 
 **Generating Random Listings Firestore Data Testing**<br>
 When creating the data instances, various methods used to help generate random data for each of the attributes to a listing in the [addListings() method in MarketActivity](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/MarketActivity.java#L110-130).
 These methods were created in [GenerateRandomListings.java](https://gitlab.cecs.anu.edu.au/u7127350/ga-22s2-comp2100-6442/-/blob/main/app/src/main/java/com/example/marketstructure/GenerateData/GenerateRandomListings.java) and the accuracy of these methods were tested by visually comparing the listing generated in the [Firestore repository](https://console.firebase.google.com/project/marketplace-db-6139c/firestore/data/~2Flistings~2F0).
-All listings generated were unique and the random additionalDetails generated matched the condition and the listingPrice was adjusted from the originalPrice correctly according to the condition and additional details.
+All listings generated were unique and the random additionalDetails generated matched the condition (outlined in red box) and the listingPrice was adjusted from the originalPrice correctly according to the condition and additional details (outlined in blue box)
 ![Example of randomly generated listing](./images/GeneratingRandomListingsFirestoreDataListingExample.png)<br>
 
 *Here is an example:*
